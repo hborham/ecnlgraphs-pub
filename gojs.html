@@ -17,11 +17,27 @@
   table.scores td { padding: 5px 8px; border-bottom: 1px solid #f0f0f0; }
   table.scores tr:nth-child(even) td { background: #fafafa; }
   footer { color: #999; font-size: 13px; margin-top: 32px; }
+  .legend { color: #555; font-size: 13px; margin: -20px 0 32px; }
+  .loops-note { color: #8a6d00; font-size: 13px; margin: -4px 0 12px; }
+  .details { border: 1px solid #ddd; background: #fbfbfb; padding: 12px 14px; margin-top: 12px; font-size: 13px; }
+  .details .d-head { font-size: 15px; margin-bottom: 4px; }
+  .details .badge { background: #B8860B; color: #fff; font-size: 11px; padding: 1px 6px; border-radius: 8px; }
+  .details .d-paths { color: #555; margin-bottom: 8px; }
+  table.results { border-collapse: collapse; margin: 4px 0 8px; }
+  table.results td { padding: 2px 10px 2px 0; border: none; }
+  .res { display: inline-block; width: 18px; text-align: center; font-weight: bold; border-radius: 3px; color: #fff; }
+  .res.w { background: #2ca02c; } .res.l { background: #d62728; } .res.d { background: #888; }
+  .tag { font-size: 11px; color: #555; }
+  .tag.win { color: #1e7a1e; font-weight: bold; }
+  .d-links { margin: 2px 0; }
+  .d-loop { margin-top: 8px; padding: 6px 8px; background: #fff8e1; border-left: 3px solid #B8860B; }
+  .d-loop.none { background: transparent; border-left: none; color: #888; padding: 0; }
 </style>
 </head>
 <body>
 <h1>U14 Girls BeatGraphs</h1>
 <p class="sub">Weighted Method (beatgraphs.com), rendered live with GoJS &middot; rebuilt weekly</p>
+<p class="legend"><b>BeatWin</b> = direct win, arrow weighted by goal difference &middot; <b>BeatPath</b> = chain of BeatWins &middot; <b>Broken BeatLoop</b> = a win cycle resolved by removing its weakest link &middot; Draws create no link. Hover or tap a team for its results.</p>
 <div id="leagues"></div>
 <footer>Data: beatgraphs.com Weighted Method &middot; <a href="https://github.com/hborham/ecnlgraphs">hborham/ecnlgraphs</a></footer>
 
@@ -55,7 +71,77 @@ async function logoURI(team, idx) {
   }
 }
 
-function makeDiagram(div, league, logos) {
+const PLACEHOLDER = 'Hover or tap a team to see its results, BeatWin links, and any broken BeatLoops.';
+function esc(s) {
+  return String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+}
+function fmtNum(n) {
+  return Number.isInteger(n) ? String(n) : n.toFixed(1);
+}
+
+function teamDetails(league, key) {
+  const r = league.rankings.find(x => x.team === key);
+  const short = {};
+  league.rankings.forEach(x => { short[x.team] = x.short; });
+  const s = t => esc(short[t] || t);
+  let h = `<div class="d-head"><strong>${s(key)}</strong> <span>#${r.rank} &middot; rating ${r.rating.toFixed(2)} &middot; ${r.w}&ndash;${r.l}&ndash;${r.d}</span>${r.bracket_team ? ' <span class="badge">Bracket team</span>' : ''}</div>`;
+  h += `<div class="d-paths">BeatPaths out ${fmtNum(r.paths_out)} &middot; in ${fmtNum(r.paths_in)} &mdash; the rating comes from weighted paths over teams beaten, directly or through others.</div>`;
+  const games = league.games_list.filter(g => g.home === key || g.away === key).slice()
+    .sort((a, b) => a.date < b.date ? -1 : a.date > b.date ? 1 : 0);
+  const rows = games.map(g => {
+    const home = g.home === key;
+    const ts = home ? g.home_score : g.away_score;
+    const os = home ? g.away_score : g.home_score;
+    const opp = home ? g.away : g.home;
+    const res = ts > os ? 'W' : ts < os ? 'L' : 'D';
+    const tag = res === 'W' ? '<span class="tag win">BeatWin</span>' : res === 'D' ? '<span class="tag draw">Draw &middot; no link</span>' : '';
+    return `<tr><td>${esc(g.date)}</td><td><span class="res ${res.toLowerCase()}">${res}</span></td><td>${ts}&ndash;${os}</td><td>vs ${s(opp)}</td><td>${tag}</td></tr>`;
+  }).join('');
+  h += `<table class="results">${rows}</table>`;
+  const beat = league.beatwins.filter(b => b.winner === key);
+  const lost = league.beatwins.filter(b => b.loser === key);
+  const fmt = (list, field) => list.map(b => `${s(b[field])} (+${fmtNum(b.weight)})`).join(', ') || '&mdash;';
+  h += `<div class="d-links">Beat directly (BeatWin links): ${fmt(beat, 'loser')}</div>`;
+  h += `<div class="d-links">Beaten directly by: ${fmt(lost, 'winner')}</div>`;
+  const loops = (league.loops || []).filter(lp => lp.cycle.includes(key));
+  loops.forEach(lp => {
+    const cyc = lp.cycle.map(s).join(' &rarr; ') + ' &rarr; ' + s(lp.cycle[0]);
+    const br = lp.broken.map(b => `${s(b.winner)} &rarr; ${s(b.loser)}`).join(', ');
+    h += `<div class="d-loop">Broken BeatLoop: ${cyc}. Weakest link ${br} removed (weight ${fmtNum(lp.weight)}).</div>`;
+  });
+  if ((league.loops || []).length > 0 && loops.length === 0) {
+    h += `<div class="d-loop none">Not part of any broken BeatLoop.</div>`;
+  }
+  return h;
+}
+
+function setHighlight(diagram, key) {
+  const keep = new Set();
+  if (key) {
+    keep.add(key);
+    diagram.links.each(l => {
+      if (!l.fromNode || !l.toNode) return;
+      if (l.fromNode.data.key === key) keep.add(l.toNode.data.key);
+      if (l.toNode.data.key === key) keep.add(l.fromNode.data.key);
+    });
+  }
+  diagram.nodes.each(n => { n.opacity = !key || keep.has(n.data.key) ? 1 : 0.15; });
+  diagram.links.each(l => {
+    const on = !key || (l.fromNode && l.fromNode.data.key === key) || (l.toNode && l.toNode.data.key === key);
+    l.opacity = key ? (on ? 1 : 0.05) : 0.55;
+  });
+}
+function showTeam(diagram, key) {
+  setHighlight(diagram, key);
+  diagram._panel.innerHTML = teamDetails(diagram._league, key);
+}
+function clearTeam(diagram) {
+  if (diagram._pinned) { showTeam(diagram, diagram._pinned); return; }
+  setHighlight(diagram, null);
+  diagram._panel.innerHTML = PLACEHOLDER;
+}
+
+function makeDiagram(div, league, logos, panel) {
   const diagram = $(go.Diagram, div, {
     layout: $(go.LayeredDigraphLayout, { direction: 90, layerSpacing: 30, columnSpacing: 25 }),
     'undoManager.isEnabled': false,
@@ -65,6 +151,16 @@ function makeDiagram(div, league, logos) {
   // Like the GoJS beatPaths sample: label above the logo, no node border.
   diagram.nodeTemplate =
     $(go.Node, 'Vertical',
+      {
+        mouseEnter: (e, node) => showTeam(node.diagram, node.data.key),
+        mouseLeave: (e, node) => clearTeam(node.diagram),
+        click: (e, node) => {
+          const d = node.diagram, k = node.data.key;
+          d._pinned = d._pinned === k ? null : k;
+          if (d._pinned) showTeam(d, k); else clearTeam(d);
+        },
+        cursor: 'pointer'
+      },
       $(go.TextBlock, { font: 'bold 12px sans-serif', stroke: '#222' },
         new go.Binding('text', 'short')),
       $(go.Panel, 'Spot',
@@ -88,6 +184,13 @@ function makeDiagram(div, league, logos) {
   }));
   const linkData = league.beatwins.map(b => ({ from: b.winner, to: b.loser }));
   diagram.model = new go.GraphLinksModel(nodeData, linkData);
+
+  diagram._league = league;
+  diagram._panel = panel;
+  diagram._pinned = null;
+  diagram.addDiagramListener('MouseLeave', () => clearTeam(diagram));
+  diagram.addDiagramListener('BackgroundSingleClicked', () => { diagram._pinned = null; clearTeam(diagram); });
+  setHighlight(diagram, null);
 }
 
 function scoresTable(league) {
@@ -102,12 +205,14 @@ async function main() {
   const root = document.getElementById('leagues');
   for (const league of data.leagues) {
     const sec = document.createElement('section');
-    sec.innerHTML = `<h2>${league.title}</h2><div class="diagram" id="d-${league.id}"></div>`;
+    sec.innerHTML = `<h2>${league.title}</h2>` +
+      (league.loops_resolved > 0 ? `<p class="loops-note">${league.loops_resolved} BeatLoop${league.loops_resolved === 1 ? '' : 's'} resolved &mdash; hover a team in the loop to see which link broke.</p>` : '') +
+      `<div class="diagram" id="d-${league.id}"></div><div class="details">${PLACEHOLDER}</div>`;
     root.appendChild(sec);
     // preload logos
     const logos = {};
     await Promise.all(league.rankings.map(async (r, i) => { logos[r.team] = await logoURI(r.team, i); }));
-    makeDiagram(sec.querySelector('.diagram'), league, logos);
+    makeDiagram(sec.querySelector('.diagram'), league, logos, sec.querySelector('.details'));
     sec.insertAdjacentHTML('beforeend', scoresTable(league));
   }
 }
