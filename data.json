@@ -10,7 +10,8 @@
       "season": "2026-27",
       "gender": "Girls",
       "age": "U14",
-      "league": "ECNL NorCal",
+      "type": "League",
+      "competition": "ECNL NorCal",
       "games": 79,
       "draws": 12,
       "teams": 12,
@@ -501,6 +502,78 @@
         {
           "winner": "Santa Rosa United ECNL G2012/13",
           "loser": "Davis Legacy ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Stanislaus Surf - ECNL G2012/13",
+          "loser": "Santa Rosa United ECNL G2012/13",
+          "weight": 1
+        }
+      ],
+      "arrows": [
+        {
+          "winner": "San Juan SC ECNL G2012/13",
+          "loser": "Bay Area Surf - ECNL G2012/13",
+          "weight": 7
+        },
+        {
+          "winner": "MVLA ECNL G2012/13",
+          "loser": "Stanislaus Surf - ECNL G2012/13",
+          "weight": 6
+        },
+        {
+          "winner": "San Juan SC ECNL G2012/13",
+          "loser": "Placer United ECNL G2012/13",
+          "weight": 5
+        },
+        {
+          "winner": "MVLA ECNL G2012/13",
+          "loser": "Marin FC ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Davis Legacy ECNL G2012/13",
+          "loser": "Pleasanton RAGE ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Placer United ECNL G2012/13",
+          "loser": "Marin FC ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Placer United ECNL G2012/13",
+          "loser": "Stanislaus Surf - ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2012/13",
+          "loser": "Force (CA) ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Santa Rosa United ECNL G2012/13",
+          "loser": "COSC ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2012/13",
+          "loser": "MVLA ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "COSC ECNL G2012/13",
+          "loser": "Davis Legacy ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Marin FC ECNL G2012/13",
+          "loser": "COSC ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2012/13",
+          "loser": "San Juan SC ECNL G2012/13",
           "weight": 1
         },
         {
@@ -1071,7 +1144,8 @@
       "season": "2026-27",
       "gender": "Girls",
       "age": "U14",
-      "league": "ECNL Texas",
+      "type": "League",
+      "competition": "ECNL Texas",
       "games": 72,
       "draws": 11,
       "teams": 16,
@@ -1580,6 +1654,93 @@
         {
           "winner": "Sting Royal ECNL G2012/13",
           "loser": "Real Colorado Athletico ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "West Side Alliance ECNL G2012/13",
+          "loser": "Lonestar ATX Red ECNL G2012/13",
+          "weight": 1
+        }
+      ],
+      "arrows": [
+        {
+          "winner": "Sting Black ECNL G2012/13",
+          "loser": "OK Energy FC ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "Colorado Rush ECNL G2012/13",
+          "loser": "Albion Hurricanes FC ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Colorado Storm ECNL G2012/13",
+          "loser": "Lonestar ATX Red ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Lonestar ATX Red ECNL G2012/13",
+          "loser": "Real Colorado Athletico ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Sting Royal ECNL G2012/13",
+          "loser": "Sting Black ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Challenge SC ECNL G2012/13",
+          "loser": "Colorado Storm ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "FC Dallas Youth ECNL G2012/13",
+          "loser": "Sting Royal ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Real Colorado National ECNL G2012/13",
+          "loser": "FC Westlake ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Challenge SC ECNL G2012/13",
+          "loser": "West Side Alliance ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Colorado Rush ECNL G2012/13",
+          "loser": "Challenge SC ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Colorado Rush ECNL G2012/13",
+          "loser": "Dallas Texans ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "DKSC ECNL G2012/13",
+          "loser": "Real Colorado National ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Dallas Texans ECNL G2012/13",
+          "loser": "Lonestar ATX Red ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "FC Westlake ECNL G2012/13",
+          "loser": "Colorado Rush ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "OK Energy FC ECNL G2012/13",
+          "loser": "DKSC ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "SOLAR SC ECNL G2012/13",
+          "loser": "DKSC ECNL G2012/13",
           "weight": 1
         },
         {
@@ -2101,7 +2262,8 @@
       "season": "2026-27",
       "gender": "Girls",
       "age": "U14",
-      "league": "ECNL Southwest",
+      "type": "League",
+      "competition": "ECNL Southwest",
       "games": 53,
       "draws": 8,
       "teams": 17,
@@ -2576,6 +2738,128 @@
           "weight": 1
         }
       ],
+      "arrows": [
+        {
+          "winner": "Slammers FC HB Koge ECNL G2012/13",
+          "loser": "Slammers FC ECNL G2012/13",
+          "weight": 8
+        },
+        {
+          "winner": "Slammers FC HB Koge ECNL G2012/13",
+          "loser": "Pateadores ECNL G2012/13",
+          "weight": 7
+        },
+        {
+          "winner": "Slammers FC HB Koge ECNL G2012/13",
+          "loser": "Rebels SC ECNL G2012/13",
+          "weight": 6
+        },
+        {
+          "winner": "Arizona Arsenal ECNL G2012/13",
+          "loser": "Legends FC - Del Mar ECNL G2012/13",
+          "weight": 5
+        },
+        {
+          "winner": "Beach Futbol Club ECNL G2012/13",
+          "loser": "LAFC So Cal ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "Beach Futbol Club ECNL G2012/13",
+          "loser": "Arizona Arsenal ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Legends FC (CA) ECNL G2012/13",
+          "loser": "Eagles SC ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Phoenix Rising FC ECNL G2012/13",
+          "loser": "LV Heat Surf ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Slammers FC ECNL G2012/13",
+          "loser": "Utah Royals FC-AZ ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Slammers FC HB Koge ECNL G2012/13",
+          "loser": "LAFC So Cal ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Utah Royals FC-AZ ECNL G2012/13",
+          "loser": "Phoenix Rising FC ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Eagles SC ECNL G2012/13",
+          "loser": "Phoenix Rising FC ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "LAFC So Cal ECNL G2012/13",
+          "loser": "Utah Royals FC-AZ ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Legends FC (CA) ECNL G2012/13",
+          "loser": "Rebels SC ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Phoenix Rising FC ECNL G2012/13",
+          "loser": "Sporting California USA ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Rebels SC ECNL G2012/13",
+          "loser": "Legends FC - Del Mar ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "San Diego Surf Soccer Club ECNL G2012/13",
+          "loser": "Rebels SC ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "LAFC So Cal ECNL G2012/13",
+          "loser": "LA Breakers ECNL G2012/2013",
+          "weight": 1
+        },
+        {
+          "winner": "Pateadores ECNL G2012/13",
+          "loser": "Eagles SC ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Phoenix Rising FC ECNL G2012/13",
+          "loser": "Legends FC - Del Mar ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "San Diego Surf Soccer Club ECNL G2012/13",
+          "loser": "Utah Royals FC-AZ ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Slammers FC ECNL G2012/13",
+          "loser": "Arizona Arsenal ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "So Cal Blues ECNL G2012/13",
+          "loser": "Legends FC (CA) ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "So Cal Blues ECNL G2012/13",
+          "loser": "Pateadores ECNL G2012/13",
+          "weight": 1
+        }
+      ],
       "games_list": [
         {
           "date": "2026-09-12",
@@ -2956,7 +3240,8 @@
       "season": "2026",
       "gender": "Girls",
       "age": "U14",
-      "league": "Surf Cup Youngers",
+      "type": "Tournament",
+      "competition": "Surf Cup Youngers",
       "games": 80,
       "draws": 16,
       "teams": 62,
@@ -4018,6 +4303,248 @@
         {
           "winner": "Sporting California USA ECNL G2012/13",
           "loser": "CIty SC Carlsbad, GU14 GA Blue- Mattos",
+          "weight": 1
+        },
+        {
+          "winner": "Sporting San Diego GU14Black Adamos",
+          "loser": "Legends sb gu14 Gold",
+          "weight": 1
+        },
+        {
+          "winner": "Utah Royals FC-AZ ECNL G2012/13",
+          "loser": "Pateadores ECNL G2012/13",
+          "weight": 1
+        }
+      ],
+      "arrows": [
+        {
+          "winner": "Eagles SC ECNL G2012/13",
+          "loser": "South Valley Surf U14 GA",
+          "weight": 5
+        },
+        {
+          "winner": "Avalanche ECNL G2012/13",
+          "loser": "Leahi 12/13 Premier West Green - U14G",
+          "weight": 4
+        },
+        {
+          "winner": "Avalanche ECNL G2012/13",
+          "loser": "SDSC GA 12/13",
+          "weight": 4
+        },
+        {
+          "winner": "Tudela FC Los Angeles Black",
+          "loser": "Force U14G, Porras",
+          "weight": 4
+        },
+        {
+          "winner": "XF ECNL, GU14",
+          "loser": "Lamorinda U14GA - Pinto",
+          "weight": 4
+        },
+        {
+          "winner": "Express SC GU14 Elite Shuttleworth",
+          "loser": "Team-4",
+          "weight": 3
+        },
+        {
+          "winner": "PacNW U14 ECNL",
+          "loser": "Palo Alto SC U14 GA - 2012/2013",
+          "weight": 3
+        },
+        {
+          "winner": "SC Sporting GU14 GA Red - Gomez",
+          "loser": "South Valley Surf U14 N1",
+          "weight": 3
+        },
+        {
+          "winner": "Sporting California USA ECNL G2012/13",
+          "loser": "SRU U14G Gold-ECNL",
+          "weight": 3
+        },
+        {
+          "winner": "Sporting San Diego GU14Black Adamos",
+          "loser": "Beach FC N1 G2012/13 SB I.Lopez",
+          "weight": 3
+        },
+        {
+          "winner": "Team-4",
+          "loser": "Team-8",
+          "weight": 3
+        },
+        {
+          "winner": "Team-8",
+          "loser": "East Valley Surf U14 N1 Peacock",
+          "weight": 3
+        },
+        {
+          "winner": "City SC Carlsbad G13 GA White- Williams",
+          "loser": "Placer United ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Eagles SC ECNL G2012/13",
+          "loser": "Sporting California USA ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Express SC GU14 Elite Shuttleworth",
+          "loser": "Inferno SC, Copa 2013G, Welch",
+          "weight": 2
+        },
+        {
+          "winner": "LA Breakers ECNL G2012/2013",
+          "loser": "Mustang SC ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "LAFC So Cal ECNL G2012/13",
+          "loser": "XF ECNL, GU14",
+          "weight": 2
+        },
+        {
+          "winner": "La Jolla Impact GU14 Blue - McManus",
+          "loser": "Team-8",
+          "weight": 2
+        },
+        {
+          "winner": "Lamorinda U14GA",
+          "loser": "Surf Hawaii 13G Academy III - U14G",
+          "weight": 2
+        },
+        {
+          "winner": "Legends FC San Diego ECNL U14 Williams",
+          "loser": "Real Colorado Athletico ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Oregon Surf ECNL G2012/13",
+          "loser": "LA Breakers ECNL G2012/2013",
+          "weight": 2
+        },
+        {
+          "winner": "Rangers FC, Girls Academy U14, Allgeirer",
+          "loser": "PacNW U14 ECNL",
+          "weight": 2
+        },
+        {
+          "winner": "Rebels SC ECNL G2012/13",
+          "loser": "Clovis Crossfire U14G GA",
+          "weight": 2
+        },
+        {
+          "winner": "Rebels SC ECNL G2012/13",
+          "loser": "Seattle Celtic G12 GA",
+          "weight": 2
+        },
+        {
+          "winner": "SC Blues GU14 DPL",
+          "loser": "Legends FC GU14",
+          "weight": 2
+        },
+        {
+          "winner": "Slammers FC ECNL G2012/13",
+          "loser": "Lamorinda U14GA - Pinto",
+          "weight": 2
+        },
+        {
+          "winner": "Sporting San Diego GU14 White Sandoval",
+          "loser": "Surf Academy Select U14G South",
+          "weight": 2
+        },
+        {
+          "winner": "Team-1",
+          "loser": "Inferno SC, Copa 2013G, Welch",
+          "weight": 2
+        },
+        {
+          "winner": "Beach FC N1 G2012/13 SB I.Lopez",
+          "loser": "WW Surf Academy GU14 GA",
+          "weight": 1
+        },
+        {
+          "winner": "COSC ECNL G2012/13",
+          "loser": "Surf Hawaii 12/13G Academy I -U14G",
+          "weight": 1
+        },
+        {
+          "winner": "City SC Carlsbad G13 GA White- Williams",
+          "loser": "Utah Royals FC-AZ ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Eagles SC ECNL G2012/13",
+          "loser": "Rebels SC ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "FRAM GA U14",
+          "loser": "Rage 2013 ECNL",
+          "weight": 1
+        },
+        {
+          "winner": "Force U14G, Porras",
+          "loser": "1974 Newark FC 2012/2013 GA",
+          "weight": 1
+        },
+        {
+          "winner": "Hawaii Rush 13G, Matas",
+          "loser": "SRU U14G Gold-ECNL",
+          "weight": 1
+        },
+        {
+          "winner": "LA Surf U14 GA",
+          "loser": "Rangers GA 2013, Allgeirer",
+          "weight": 1
+        },
+        {
+          "winner": "LA Surf U14 GA",
+          "loser": "Sporting San Diego GU14 White Sandoval",
+          "weight": 1
+        },
+        {
+          "winner": "LAFC So Cal ECNL G2012/13",
+          "loser": "Avalanche ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "LV Heat Surf ECNL G2012/13",
+          "loser": "Seattle Celtic G12 GA",
+          "weight": 1
+        },
+        {
+          "winner": "Lamorinda U14GA - Pinto",
+          "loser": "West Coast FC GA 2013",
+          "weight": 1
+        },
+        {
+          "winner": "Legends sb gu14 Gold",
+          "loser": "WW Surf Academy GU14 GA",
+          "weight": 1
+        },
+        {
+          "winner": "SRU U14G Gold-ECNL",
+          "loser": "CIty SC Carlsbad, GU14 GA Blue- Mattos",
+          "weight": 1
+        },
+        {
+          "winner": "Seattle United ECNL GU14",
+          "loser": "South Valley Surf U14 GA",
+          "weight": 1
+        },
+        {
+          "winner": "SoCal Reds GA U14 Flores",
+          "loser": "Legends FC San Diego ECNL U14 Williams",
+          "weight": 1
+        },
+        {
+          "winner": "South Valley Surf U14 GA",
+          "loser": "City Sc Southwest GU14 GA",
+          "weight": 1
+        },
+        {
+          "winner": "South Valley Surf U14 N1",
+          "loser": "Surf Hawaii 13G Academy II - U14G",
           "weight": 1
         },
         {

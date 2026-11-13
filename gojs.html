@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>U14 Girls BeatGraphs</title>
+<title>BeatGraphs</title>
 <script src="https://unpkg.com/gojs/release/go.js"></script>
 <style>
   body { font-family: -apple-system, sans-serif; max-width: 1100px; margin: 0 auto; padding: 24px; background: #fff; color: #222; }
@@ -38,14 +38,15 @@
 </style>
 </head>
 <body>
-<h1>U14 Girls BeatGraphs</h1>
+<h1>BeatGraphs</h1>
 <p class="sub">Weighted Method (beatgraphs.com), rendered live with GoJS &middot; rebuilt weekly</p>
-<p class="legend"><b>BeatWin</b> = direct win, arrow weighted by goal difference &middot; <b>BeatPath</b> = chain of BeatWins &middot; <b>Broken BeatLoop</b> = a win cycle resolved by removing its weakest link &middot; Draws create no link. Hover or tap a team for its results.</p>
+<p class="legend"><b>BeatWin</b> = direct win, arrow weighted by goal difference &middot; <b>BeatPath</b> = chain of BeatWins &middot; <b>Broken BeatLoop</b> = a win cycle resolved by removing its weakest link &middot; Draws create no link. Only the smallest set of arrows is drawn: an arrow is omitted when a BeatPath through other teams already implies it. Hover or tap a team to see its BeatPaths and its direct BeatWins (dashed).</p>
 <div class="controls" id="controls">
   <div><label for="sel-season">Season</label><select id="sel-season"></select></div>
   <div><label for="sel-gender">Gender</label><select id="sel-gender"></select></div>
   <div><label for="sel-age">Age</label><select id="sel-age"></select></div>
-  <div><label for="sel-league">League</label><select id="sel-league"></select></div>
+  <div><label for="sel-type">Type</label><select id="sel-type"></select></div>
+  <div><label for="sel-competition">Competition</label><select id="sel-competition"></select></div>
 </div>
 <div id="view"></div>
 <footer>Data: beatgraphs.com Weighted Method &middot; <a href="https://github.com/hborham/ecnlgraphs">hborham/ecnlgraphs</a></footer>
@@ -124,20 +125,51 @@ function teamDetails(league, key) {
   return h;
 }
 
+// BeatPath neighborhood: every team on a BeatPath through `team`, computed
+// over the drawn arrows. Reachability is identical on the full BeatWin set,
+// because the drawn arrows are a transitive reduction of it.
+function pathNeighborhood(arrows, team) {
+  const succ = {}, pred = {};
+  arrows.forEach(a => {
+    (succ[a.winner] = succ[a.winner] || []).push(a.loser);
+    (pred[a.loser] = pred[a.loser] || []).push(a.winner);
+  });
+  const keep = new Set([team]);
+  [succ, pred].forEach(adj => {
+    const stack = [team];
+    while (stack.length) {
+      const n = stack.pop();
+      (adj[n] || []).forEach(m => { if (!keep.has(m)) { keep.add(m); stack.push(m); } });
+    }
+  });
+  return keep;
+}
+// Direct BeatWins hidden by the reduction: incident to `team` but not drawn.
+function hiddenEdges(beatwins, arrows, team) {
+  const drawn = new Set(arrows.map(a => a.winner + '\x00' + a.loser));
+  return beatwins.filter(b => (b.winner === team || b.loser === team) &&
+    !drawn.has(b.winner + '\x00' + b.loser));
+}
+
 function setHighlight(diagram, key) {
-  const keep = new Set();
+  // Drop any temporary BeatWin links shown for the previous team.
+  (diagram._temp || []).forEach(d => diagram.model.removeLinkData(d));
+  diagram._temp = [];
+  const league = diagram._league;
+  let keep = null;
   if (key) {
-    keep.add(key);
-    diagram.links.each(l => {
-      if (!l.fromNode || !l.toNode) return;
-      if (l.fromNode.data.key === key) keep.add(l.toNode.data.key);
-      if (l.toNode.data.key === key) keep.add(l.fromNode.data.key);
-    });
+    keep = pathNeighborhood(league.arrows, key);
+    // Reveal this team's direct BeatWins that the reduction hid.
+    diagram._temp = hiddenEdges(league.beatwins, league.arrows, key)
+      .map(b => ({ from: b.winner, to: b.loser, temp: true }));
+    diagram._temp.forEach(d => diagram.model.addLinkData(d));
   }
   diagram.nodes.each(n => { n.opacity = !key || keep.has(n.data.key) ? 1 : 0.15; });
   diagram.links.each(l => {
-    const on = !key || (l.fromNode && l.fromNode.data.key === key) || (l.toNode && l.toNode.data.key === key);
-    l.opacity = key ? (on ? 1 : 0.05) : 0.55;
+    if (!key) { l.opacity = 0.55; return; }
+    const d = l.data;
+    const on = d.temp || (l.fromNode && keep.has(l.fromNode.data.key) && l.toNode && keep.has(l.toNode.data.key));
+    l.opacity = on ? 1 : 0.05;
   });
 }
 function showTeam(diagram, key) {
@@ -152,7 +184,7 @@ function clearTeam(diagram) {
 
 function makeDiagram(div, league, logos, panel) {
   const diagram = $(go.Diagram, div, {
-    layout: $(go.LayeredDigraphLayout, { direction: 90, layerSpacing: 30, columnSpacing: 25 }),
+    layout: $(go.LayeredDigraphLayout, { direction: 90, layerSpacing: 30, columnSpacing: 25, isOngoing: false }),
     'undoManager.isEnabled': false,
     allowZoom: true, allowHorizontalScroll: true, allowVerticalScroll: true
   });
@@ -183,20 +215,25 @@ function makeDiagram(div, league, logos, panel) {
 
   diagram.linkTemplate =
     $(go.Link,
-      $(go.Shape, { stroke: '#333', strokeWidth: 1.5 }),
-      $(go.Shape, { toArrow: 'Standard', fill: '#333', stroke: '#333' })
+      $(go.Shape, { stroke: '#333', strokeWidth: 1.5 },
+        new go.Binding('strokeDashArray', 'temp', t => t ? [6, 3] : null),
+        new go.Binding('stroke', 'temp', t => t ? '#b3541e' : '#333')),
+      $(go.Shape, { toArrow: 'Standard', fill: '#333', stroke: '#333' },
+        new go.Binding('fill', 'temp', t => t ? '#b3541e' : '#333'),
+        new go.Binding('stroke', 'temp', t => t ? '#b3541e' : '#333'))
     );
 
   const nodeData = league.rankings.map((r, i) => ({
     key: r.team, short: r.short, rating: r.rating,
     bracket: r.bracket_team, logo: logos[r.team]
   }));
-  const linkData = league.beatwins.map(b => ({ from: b.winner, to: b.loser }));
+  const linkData = league.arrows.map(b => ({ from: b.winner, to: b.loser }));
   diagram.model = new go.GraphLinksModel(nodeData, linkData);
 
   diagram._league = league;
   diagram._panel = panel;
   diagram._pinned = null;
+  diagram._temp = [];
   diagram.addDiagramListener('MouseLeave', () => clearTeam(diagram));
   diagram.addDiagramListener('BackgroundSingleClicked', () => { diagram._pinned = null; clearTeam(diagram); });
   setHighlight(diagram, null);
@@ -224,16 +261,18 @@ function resolveSelection(leagues, want) {
   const gender = genders.includes(want.gender) ? want.gender : genders[0];
   const ages = uniq(leagues.filter(l => l.season === season && l.gender === gender).map(l => l.age));
   const age = ages.includes(want.age) ? want.age : ages[0];
-  const matches = leagues.filter(l => l.season === season && l.gender === gender && l.age === age);
-  const league = matches.find(l => l.id === want.league) || matches[0];
-  return { season, gender, age, league, seasons, genders, ages, matches };
+  const types = uniq(leagues.filter(l => l.season === season && l.gender === gender && l.age === age).map(l => l.type));
+  const type = types.includes(want.type) ? want.type : types[0];
+  const matches = leagues.filter(l => l.season === season && l.gender === gender && l.age === age && l.type === type);
+  const league = matches.find(l => l.id === want.competition) || matches[0];
+  return { season, gender, age, type, league, seasons, genders, ages, types, matches };
 }
-function leagueOptions(matches) {
+function competitionOptions(matches) {
   const counts = {};
-  matches.forEach(l => { counts[l.league] = (counts[l.league] || 0) + 1; });
+  matches.forEach(l => { counts[l.competition] = (counts[l.competition] || 0) + 1; });
   return matches.map(l => ({
     value: l.id,
-    label: counts[l.league] > 1 ? l.league + ' — ' + l.title : l.league
+    label: counts[l.competition] > 1 ? l.competition + ' — ' + l.title : l.competition
   }));
 }
 
@@ -252,12 +291,12 @@ function fillSelect(el, options, current) {
 }
 function readParams() {
   const p = new URLSearchParams(location.search);
-  return { season: p.get('season') || '', gender: p.get('gender') || '', age: p.get('age') || '', league: p.get('league') || '' };
+  return { season: p.get('season') || '', gender: p.get('gender') || '', age: p.get('age') || '', type: p.get('type') || '', competition: p.get('competition') || '' };
 }
 function syncURL(sel) {
   try {
     const p = new URLSearchParams();
-    p.set('season', sel.season); p.set('gender', sel.gender); p.set('age', sel.age); p.set('league', sel.league.id);
+    p.set('season', sel.season); p.set('gender', sel.gender); p.set('age', sel.age); p.set('type', sel.type); p.set('competition', sel.league.id);
     history.replaceState(null, '', '?' + p.toString());
   } catch (e) { /* file:// or restricted contexts: URL sharing unavailable */ }
 }
@@ -268,13 +307,15 @@ async function renderSelected() {
     season: document.getElementById('sel-season').value,
     gender: document.getElementById('sel-gender').value,
     age: document.getElementById('sel-age').value,
-    league: document.getElementById('sel-league').value
+    type: document.getElementById('sel-type').value,
+    competition: document.getElementById('sel-competition').value
   };
   const sel = resolveSelection(ALL, want);
   fillSelect(document.getElementById('sel-season'), sel.seasons.map(v => ({ value: v, label: v })), sel.season);
   fillSelect(document.getElementById('sel-gender'), sel.genders.map(v => ({ value: v, label: v })), sel.gender);
   fillSelect(document.getElementById('sel-age'), sel.ages.map(v => ({ value: v, label: v })), sel.age);
-  fillSelect(document.getElementById('sel-league'), leagueOptions(sel.matches), sel.league.id);
+  fillSelect(document.getElementById('sel-type'), sel.types.map(v => ({ value: v, label: v })), sel.type);
+  fillSelect(document.getElementById('sel-competition'), competitionOptions(sel.matches), sel.league.id);
   syncURL(sel);
   // Tear down the previous diagram, then render only the selected league.
   if (currentDiagram) { currentDiagram.div = null; currentDiagram = null; }
@@ -297,8 +338,9 @@ async function main() {
   fillSelect(document.getElementById('sel-season'), sel.seasons.map(v => ({ value: v, label: v })), sel.season);
   fillSelect(document.getElementById('sel-gender'), sel.genders.map(v => ({ value: v, label: v })), sel.gender);
   fillSelect(document.getElementById('sel-age'), sel.ages.map(v => ({ value: v, label: v })), sel.age);
-  fillSelect(document.getElementById('sel-league'), leagueOptions(sel.matches), sel.league.id);
-  ['sel-season', 'sel-gender', 'sel-age', 'sel-league'].forEach(id =>
+  fillSelect(document.getElementById('sel-type'), sel.types.map(v => ({ value: v, label: v })), sel.type);
+  fillSelect(document.getElementById('sel-competition'), competitionOptions(sel.matches), sel.league.id);
+  ['sel-season', 'sel-gender', 'sel-age', 'sel-type', 'sel-competition'].forEach(id =>
     document.getElementById(id).addEventListener('change', renderSelected));
   renderSelected();
 }
