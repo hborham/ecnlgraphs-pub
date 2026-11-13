@@ -1,0 +1,4395 @@
+{
+  "meta": {
+    "method": "beatgraphs.com Weighted Method, one graph per league",
+    "note": "Scaling uses rating = 10*raw/(|raw|+k), k=(maxOut+maxIn)/4.4; beatgraphs.com does not publish its exact scaling formula."
+  },
+  "leagues": [
+    {
+      "id": "norcal",
+      "title": "ECNL Girls NorCal 2026-27 — GU14",
+      "games": 79,
+      "draws": 12,
+      "teams": 12,
+      "links": 50,
+      "loops_resolved": 6,
+      "rankings": [
+        {
+          "rank": 1,
+          "team": "Mustang SC ECNL G2012/13",
+          "short": "MUSTANG",
+          "bracket_team": true,
+          "rating": 6.57,
+          "paths_out": 780,
+          "paths_in": 0,
+          "w": 9,
+          "l": 2,
+          "d": 2
+        },
+        {
+          "rank": 2,
+          "team": "San Juan SC ECNL G2012/13",
+          "short": "SAN JUAN",
+          "bracket_team": true,
+          "rating": 5.91,
+          "paths_out": 590,
+          "paths_in": 1,
+          "w": 12,
+          "l": 1,
+          "d": 1
+        },
+        {
+          "rank": 3,
+          "team": "Bay Area Surf - ECNL G2012/13",
+          "short": "BAY SURF",
+          "bracket_team": true,
+          "rating": 3.56,
+          "paths_out": 233,
+          "paths_in": 8,
+          "w": 7,
+          "l": 1,
+          "d": 3
+        },
+        {
+          "rank": 4,
+          "team": "MVLA ECNL G2012/13",
+          "short": "MVLA",
+          "bracket_team": true,
+          "rating": 1.86,
+          "paths_out": 105,
+          "paths_in": 12,
+          "w": 8,
+          "l": 3,
+          "d": 2
+        },
+        {
+          "rank": 5,
+          "team": "Placer United ECNL G2012/13",
+          "short": "PLACER",
+          "bracket_team": true,
+          "rating": 1.73,
+          "paths_out": 92,
+          "paths_in": 7,
+          "w": 6,
+          "l": 3,
+          "d": 5
+        },
+        {
+          "rank": 6,
+          "team": "Stanislaus Surf - ECNL G2012/13",
+          "short": "STANISLAUS",
+          "bracket_team": true,
+          "rating": -0.38,
+          "paths_out": 33,
+          "paths_in": 49,
+          "w": 5,
+          "l": 7,
+          "d": 2
+        },
+        {
+          "rank": 7,
+          "team": "Marin FC ECNL G2012/13",
+          "short": "MARIN",
+          "bracket_team": true,
+          "rating": -0.42,
+          "paths_out": 29,
+          "paths_in": 47,
+          "w": 6,
+          "l": 5,
+          "d": 3
+        },
+        {
+          "rank": 8,
+          "team": "Santa Rosa United ECNL G2012/13",
+          "short": "SANTA ROSA",
+          "bracket_team": false,
+          "rating": -0.83,
+          "paths_out": 29,
+          "paths_in": 66,
+          "w": 7,
+          "l": 5,
+          "d": 2
+        },
+        {
+          "rank": 9,
+          "team": "COSC ECNL G2012/13",
+          "short": "COSC",
+          "bracket_team": true,
+          "rating": -2.63,
+          "paths_out": 12,
+          "paths_in": 157,
+          "w": 3,
+          "l": 10,
+          "d": 1
+        },
+        {
+          "rank": 10,
+          "team": "Davis Legacy ECNL G2012/13",
+          "short": "DAVIS",
+          "bracket_team": true,
+          "rating": -4.36,
+          "paths_out": 4,
+          "paths_in": 319,
+          "w": 2,
+          "l": 11,
+          "d": 0
+        },
+        {
+          "rank": 11,
+          "team": "Pleasanton RAGE ECNL G2012/13",
+          "short": "RAGE",
+          "bracket_team": true,
+          "rating": -6.07,
+          "paths_out": 2,
+          "paths_in": 632,
+          "w": 2,
+          "l": 9,
+          "d": 2
+        },
+        {
+          "rank": 12,
+          "team": "Force (CA) ECNL G2012/13",
+          "short": "FORCE CA",
+          "bracket_team": false,
+          "rating": -7.13,
+          "paths_out": 0,
+          "paths_in": 1012,
+          "w": 0,
+          "l": 10,
+          "d": 1
+        }
+      ],
+      "beatwins": [
+        {
+          "winner": "MVLA ECNL G2012/13",
+          "loser": "Force (CA) ECNL G2012/13",
+          "weight": 8
+        },
+        {
+          "winner": "San Juan SC ECNL G2012/13",
+          "loser": "Force (CA) ECNL G2012/13",
+          "weight": 8
+        },
+        {
+          "winner": "San Juan SC ECNL G2012/13",
+          "loser": "Bay Area Surf - ECNL G2012/13",
+          "weight": 7
+        },
+        {
+          "winner": "San Juan SC ECNL G2012/13",
+          "loser": "Marin FC ECNL G2012/13",
+          "weight": 7
+        },
+        {
+          "winner": "MVLA ECNL G2012/13",
+          "loser": "Stanislaus Surf - ECNL G2012/13",
+          "weight": 6
+        },
+        {
+          "winner": "Mustang SC ECNL G2012/13",
+          "loser": "Stanislaus Surf - ECNL G2012/13",
+          "weight": 6
+        },
+        {
+          "winner": "San Juan SC ECNL G2012/13",
+          "loser": "Santa Rosa United ECNL G2012/13",
+          "weight": 6
+        },
+        {
+          "winner": "Marin FC ECNL G2012/13",
+          "loser": "Force (CA) ECNL G2012/13",
+          "weight": 5
+        },
+        {
+          "winner": "Placer United ECNL G2012/13",
+          "loser": "Force (CA) ECNL G2012/13",
+          "weight": 5
+        },
+        {
+          "winner": "San Juan SC ECNL G2012/13",
+          "loser": "Placer United ECNL G2012/13",
+          "weight": 5
+        },
+        {
+          "winner": "San Juan SC ECNL G2012/13",
+          "loser": "Pleasanton RAGE ECNL G2012/13",
+          "weight": 5
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2012/13",
+          "loser": "Davis Legacy ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2012/13",
+          "loser": "Marin FC ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2012/13",
+          "loser": "Stanislaus Surf - ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "Marin FC ECNL G2012/13",
+          "loser": "Pleasanton RAGE ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "Placer United ECNL G2012/13",
+          "loser": "Davis Legacy ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "San Juan SC ECNL G2012/13",
+          "loser": "COSC ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "San Juan SC ECNL G2012/13",
+          "loser": "Davis Legacy ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "Santa Rosa United ECNL G2012/13",
+          "loser": "Force (CA) ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "Santa Rosa United ECNL G2012/13",
+          "loser": "Pleasanton RAGE ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2012/13",
+          "loser": "COSC ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "COSC ECNL G2012/13",
+          "loser": "Force (CA) ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "MVLA ECNL G2012/13",
+          "loser": "Davis Legacy ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "MVLA ECNL G2012/13",
+          "loser": "Marin FC ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "MVLA ECNL G2012/13",
+          "loser": "Pleasanton RAGE ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Mustang SC ECNL G2012/13",
+          "loser": "COSC ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Mustang SC ECNL G2012/13",
+          "loser": "Davis Legacy ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Mustang SC ECNL G2012/13",
+          "loser": "Force (CA) ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Mustang SC ECNL G2012/13",
+          "loser": "Marin FC ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "San Juan SC ECNL G2012/13",
+          "loser": "Stanislaus Surf - ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Stanislaus Surf - ECNL G2012/13",
+          "loser": "Force (CA) ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2012/13",
+          "loser": "Pleasanton RAGE ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "COSC ECNL G2012/13",
+          "loser": "Pleasanton RAGE ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Davis Legacy ECNL G2012/13",
+          "loser": "Pleasanton RAGE ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "MVLA ECNL G2012/13",
+          "loser": "COSC ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Placer United ECNL G2012/13",
+          "loser": "Marin FC ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Placer United ECNL G2012/13",
+          "loser": "Stanislaus Surf - ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2012/13",
+          "loser": "Force (CA) ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "San Juan SC ECNL G2012/13",
+          "loser": "MVLA ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Santa Rosa United ECNL G2012/13",
+          "loser": "COSC ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2012/13",
+          "loser": "MVLA ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2012/13",
+          "loser": "Santa Rosa United ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "COSC ECNL G2012/13",
+          "loser": "Davis Legacy ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Marin FC ECNL G2012/13",
+          "loser": "COSC ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Marin FC ECNL G2012/13",
+          "loser": "Davis Legacy ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2012/13",
+          "loser": "Placer United ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2012/13",
+          "loser": "San Juan SC ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Placer United ECNL G2012/13",
+          "loser": "COSC ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Santa Rosa United ECNL G2012/13",
+          "loser": "Davis Legacy ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Stanislaus Surf - ECNL G2012/13",
+          "loser": "Santa Rosa United ECNL G2012/13",
+          "weight": 1
+        }
+      ],
+      "games_list": [
+        {
+          "date": "2026-08-22",
+          "home": "Davis Legacy ECNL G2012/13",
+          "away": "Mustang SC ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Force (CA) ECNL G2012/13",
+          "away": "Marin FC ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-22",
+          "home": "MVLA ECNL G2012/13",
+          "away": "Stanislaus Surf - ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Placer United ECNL G2012/13",
+          "away": "San Juan SC ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 3
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Santa Rosa United ECNL G2012/13",
+          "away": "COSC ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-29",
+          "home": "COSC ECNL G2012/13",
+          "away": "Stanislaus Surf - ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Davis Legacy ECNL G2012/13",
+          "away": "MVLA ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Marin FC ECNL G2012/13",
+          "away": "Bay Area Surf - ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 5
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Mustang SC ECNL G2012/13",
+          "away": "Force (CA) ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Placer United ECNL G2012/13",
+          "away": "Santa Rosa United ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Pleasanton RAGE ECNL G2012/13",
+          "away": "San Juan SC ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 6
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Bay Area Surf - ECNL G2012/13",
+          "away": "Santa Rosa United ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Davis Legacy ECNL G2012/13",
+          "away": "Pleasanton RAGE ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Force (CA) ECNL G2012/13",
+          "away": "Placer United ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 5
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Marin FC ECNL G2012/13",
+          "away": "COSC ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Mustang SC ECNL G2012/13",
+          "away": "MVLA ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-30",
+          "home": "San Juan SC ECNL G2012/13",
+          "away": "Stanislaus Surf - ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-12",
+          "home": "COSC ECNL G2012/13",
+          "away": "Force (CA) ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Davis Legacy ECNL G2012/13",
+          "away": "Placer United ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-12",
+          "home": "MVLA ECNL G2012/13",
+          "away": "Marin FC ECNL G2012/13",
+          "home_score": 4,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Mustang SC ECNL G2012/13",
+          "away": "Bay Area Surf - ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Pleasanton RAGE ECNL G2012/13",
+          "away": "Stanislaus Surf - ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-12",
+          "home": "San Juan SC ECNL G2012/13",
+          "away": "Santa Rosa United ECNL G2012/13",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Davis Legacy ECNL G2012/13",
+          "away": "COSC ECNL G2012/13",
+          "home_score": 4,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Force (CA) ECNL G2012/13",
+          "away": "MVLA ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 8
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Marin FC ECNL G2012/13",
+          "away": "Mustang SC ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 4
+        },
+        {
+          "date": "2026-09-19",
+          "home": "San Juan SC ECNL G2012/13",
+          "away": "Bay Area Surf - ECNL G2012/13",
+          "home_score": 7,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Santa Rosa United ECNL G2012/13",
+          "away": "Pleasanton RAGE ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Stanislaus Surf - ECNL G2012/13",
+          "away": "Placer United ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Bay Area Surf - ECNL G2012/13",
+          "away": "Stanislaus Surf - ECNL G2012/13",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-20",
+          "home": "COSC ECNL G2012/13",
+          "away": "MVLA ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 4
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Davis Legacy ECNL G2012/13",
+          "away": "Santa Rosa United ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Placer United ECNL G2012/13",
+          "away": "Mustang SC ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Pleasanton RAGE ECNL G2012/13",
+          "away": "Marin FC ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 5
+        },
+        {
+          "date": "2026-09-20",
+          "home": "San Juan SC ECNL G2012/13",
+          "away": "Force (CA) ECNL G2012/13",
+          "home_score": 9,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-26",
+          "home": "COSC ECNL G2012/13",
+          "away": "San Juan SC ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 6
+        },
+        {
+          "date": "2026-09-26",
+          "home": "MVLA ECNL G2012/13",
+          "away": "Santa Rosa United ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Marin FC ECNL G2012/13",
+          "away": "Davis Legacy ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Mustang SC ECNL G2012/13",
+          "away": "Stanislaus Surf - ECNL G2012/13",
+          "home_score": 6,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Placer United ECNL G2012/13",
+          "away": "Pleasanton RAGE ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Pleasanton RAGE ECNL G2012/13",
+          "away": "COSC ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 4
+        },
+        {
+          "date": "2026-09-27",
+          "home": "San Juan SC ECNL G2012/13",
+          "away": "MVLA ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Santa Rosa United ECNL G2012/13",
+          "away": "Mustang SC ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Stanislaus Surf - ECNL G2012/13",
+          "away": "Marin FC ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-03",
+          "home": "COSC ECNL G2012/13",
+          "away": "Placer United ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Davis Legacy ECNL G2012/13",
+          "away": "Bay Area Surf - ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 5
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Force (CA) ECNL G2012/13",
+          "away": "Stanislaus Surf - ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-03",
+          "home": "MVLA ECNL G2012/13",
+          "away": "Pleasanton RAGE ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Marin FC ECNL G2012/13",
+          "away": "Santa Rosa United ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-03",
+          "home": "San Juan SC ECNL G2012/13",
+          "away": "Mustang SC ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 4
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Bay Area Surf - ECNL G2012/13",
+          "away": "COSC ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Davis Legacy ECNL G2012/13",
+          "away": "Stanislaus Surf - ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Placer United ECNL G2012/13",
+          "away": "MVLA ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Pleasanton RAGE ECNL G2012/13",
+          "away": "Mustang SC ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-17",
+          "home": "San Juan SC ECNL G2012/13",
+          "away": "Marin FC ECNL G2012/13",
+          "home_score": 7,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Santa Rosa United ECNL G2012/13",
+          "away": "Force (CA) ECNL G2012/13",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Bay Area Surf - ECNL G2012/13",
+          "away": "MVLA ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Davis Legacy ECNL G2012/13",
+          "away": "San Juan SC ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 4
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Marin FC ECNL G2012/13",
+          "away": "Placer United ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Mustang SC ECNL G2012/13",
+          "away": "COSC ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Pleasanton RAGE ECNL G2012/13",
+          "away": "Force (CA) ECNL G2012/13",
+          "home_score": 4,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Santa Rosa United ECNL G2012/13",
+          "away": "Stanislaus Surf - ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-25",
+          "home": "COSC ECNL G2012/13",
+          "away": "Santa Rosa United ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Marin FC ECNL G2012/13",
+          "away": "Force (CA) ECNL G2012/13",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Mustang SC ECNL G2012/13",
+          "away": "Davis Legacy ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Pleasanton RAGE ECNL G2012/13",
+          "away": "Bay Area Surf - ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-25",
+          "home": "San Juan SC ECNL G2012/13",
+          "away": "Placer United ECNL G2012/13",
+          "home_score": 5,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Stanislaus Surf - ECNL G2012/13",
+          "away": "MVLA ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 5
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Force (CA) ECNL G2012/13",
+          "away": "COSC ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Marin FC ECNL G2012/13",
+          "away": "MVLA ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Placer United ECNL G2012/13",
+          "away": "Davis Legacy ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Santa Rosa United ECNL G2012/13",
+          "away": "San Juan SC ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Stanislaus Surf - ECNL G2012/13",
+          "away": "Pleasanton RAGE ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Bay Area Surf - ECNL G2012/13",
+          "away": "San Juan SC ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-11-07",
+          "home": "COSC ECNL G2012/13",
+          "away": "Davis Legacy ECNL G2012/13",
+          "home_score": 5,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Mustang SC ECNL G2012/13",
+          "away": "Marin FC ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Placer United ECNL G2012/13",
+          "away": "Stanislaus Surf - ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Pleasanton RAGE ECNL G2012/13",
+          "away": "Santa Rosa United ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-08",
+          "home": "Bay Area Surf - ECNL G2012/13",
+          "away": "Placer United ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 2
+        }
+      ]
+    },
+    {
+      "id": "texas",
+      "title": "ECNL Girls Texas 2026-27 — GU14",
+      "games": 72,
+      "draws": 11,
+      "teams": 16,
+      "links": 59,
+      "loops_resolved": 1,
+      "rankings": [
+        {
+          "rank": 1,
+          "team": "FC Dallas Youth ECNL G2012/13",
+          "short": "FC Dallas Youth",
+          "bracket_team": false,
+          "rating": 6.65,
+          "paths_out": 922,
+          "paths_in": 0,
+          "w": 8,
+          "l": 0,
+          "d": 1
+        },
+        {
+          "rank": 2,
+          "team": "Sting Royal ECNL G2012/13",
+          "short": "Sting Royal",
+          "bracket_team": false,
+          "rating": 5.49,
+          "paths_out": 566,
+          "paths_in": 2,
+          "w": 8,
+          "l": 2,
+          "d": 0
+        },
+        {
+          "rank": 3,
+          "team": "SOLAR SC ECNL G2012/13",
+          "short": "SOLAR SC",
+          "bracket_team": false,
+          "rating": 4.7,
+          "paths_out": 411,
+          "paths_in": 0,
+          "w": 8,
+          "l": 0,
+          "d": 0
+        },
+        {
+          "rank": 4,
+          "team": "Sting Black ECNL G2012/13",
+          "short": "Sting Black",
+          "bracket_team": false,
+          "rating": 4.47,
+          "paths_out": 380,
+          "paths_in": 5,
+          "w": 5,
+          "l": 1,
+          "d": 0
+        },
+        {
+          "rank": 5,
+          "team": "OK Energy FC ECNL G2012/13",
+          "short": "OK Energy FC",
+          "bracket_team": false,
+          "rating": 3.17,
+          "paths_out": 226,
+          "paths_in": 11,
+          "w": 3,
+          "l": 3,
+          "d": 2
+        },
+        {
+          "rank": 6,
+          "team": "DKSC ECNL G2012/13",
+          "short": "DKSC",
+          "bracket_team": false,
+          "rating": 2.33,
+          "paths_out": 154,
+          "paths_in": 13,
+          "w": 4,
+          "l": 2,
+          "d": 0
+        },
+        {
+          "rank": 7,
+          "team": "Real Colorado National ECNL G2012/13",
+          "short": "Real Colorado National",
+          "bracket_team": false,
+          "rating": 1.82,
+          "paths_out": 129,
+          "paths_in": 26,
+          "w": 6,
+          "l": 4,
+          "d": 3
+        },
+        {
+          "rank": 8,
+          "team": "FC Westlake ECNL G2012/13",
+          "short": "FC Westlake",
+          "bracket_team": false,
+          "rating": 0.39,
+          "paths_out": 63,
+          "paths_in": 44,
+          "w": 7,
+          "l": 4,
+          "d": 0
+        },
+        {
+          "rank": 9,
+          "team": "Colorado Rush ECNL G2012/13",
+          "short": "CO RUSH",
+          "bracket_team": true,
+          "rating": -1.01,
+          "paths_out": 30,
+          "paths_in": 82,
+          "w": 4,
+          "l": 5,
+          "d": 1
+        },
+        {
+          "rank": 10,
+          "team": "Challenge SC ECNL G2012/13",
+          "short": "Challenge SC",
+          "bracket_team": false,
+          "rating": -1.7,
+          "paths_out": 17,
+          "paths_in": 112,
+          "w": 3,
+          "l": 2,
+          "d": 1
+        },
+        {
+          "rank": 11,
+          "team": "Albion Hurricanes FC ECNL G2012/13",
+          "short": "Albion Hurricanes FC",
+          "bracket_team": false,
+          "rating": -2.03,
+          "paths_out": 0,
+          "paths_in": 118,
+          "w": 0,
+          "l": 2,
+          "d": 4
+        },
+        {
+          "rank": 12,
+          "team": "Dallas Texans ECNL G2012/13",
+          "short": "Dallas Texans",
+          "bracket_team": false,
+          "rating": -2.41,
+          "paths_out": 4,
+          "paths_in": 151,
+          "w": 1,
+          "l": 5,
+          "d": 3
+        },
+        {
+          "rank": 13,
+          "team": "Colorado Storm ECNL G2012/13",
+          "short": "CO STORM",
+          "bracket_team": true,
+          "rating": -2.83,
+          "paths_out": 8,
+          "paths_in": 191,
+          "w": 2,
+          "l": 7,
+          "d": 3
+        },
+        {
+          "rank": 14,
+          "team": "West Side Alliance ECNL G2012/13",
+          "short": "West Side Alliance",
+          "bracket_team": false,
+          "rating": -2.91,
+          "paths_out": 4,
+          "paths_in": 194,
+          "w": 1,
+          "l": 6,
+          "d": 1
+        },
+        {
+          "rank": 15,
+          "team": "Lonestar ATX Red ECNL G2012/13",
+          "short": "Lonestar ATX Red",
+          "bracket_team": false,
+          "rating": -5.77,
+          "paths_out": 3,
+          "paths_in": 635,
+          "w": 1,
+          "l": 9,
+          "d": 1
+        },
+        {
+          "rank": 16,
+          "team": "Real Colorado Athletico ECNL G2012/13",
+          "short": "Real Colorado Athletic",
+          "bracket_team": false,
+          "rating": -7.07,
+          "paths_out": 0,
+          "paths_in": 1118,
+          "w": 0,
+          "l": 9,
+          "d": 2
+        }
+      ],
+      "beatwins": [
+        {
+          "winner": "Real Colorado National ECNL G2012/13",
+          "loser": "Albion Hurricanes FC ECNL G2012/13",
+          "weight": 7
+        },
+        {
+          "winner": "FC Dallas Youth ECNL G2012/13",
+          "loser": "Real Colorado Athletico ECNL G2012/13",
+          "weight": 5
+        },
+        {
+          "winner": "FC Dallas Youth ECNL G2012/13",
+          "loser": "West Side Alliance ECNL G2012/13",
+          "weight": 5
+        },
+        {
+          "winner": "Colorado Rush ECNL G2012/13",
+          "loser": "Real Colorado Athletico ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "DKSC ECNL G2012/13",
+          "loser": "West Side Alliance ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "FC Dallas Youth ECNL G2012/13",
+          "loser": "Colorado Rush ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "FC Westlake ECNL G2012/13",
+          "loser": "West Side Alliance ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "SOLAR SC ECNL G2012/13",
+          "loser": "Real Colorado Athletico ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "Sting Black ECNL G2012/13",
+          "loser": "OK Energy FC ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "Colorado Rush ECNL G2012/13",
+          "loser": "Albion Hurricanes FC ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Colorado Storm ECNL G2012/13",
+          "loser": "Lonestar ATX Red ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "DKSC ECNL G2012/13",
+          "loser": "Colorado Storm ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "FC Westlake ECNL G2012/13",
+          "loser": "Colorado Storm ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "FC Westlake ECNL G2012/13",
+          "loser": "Real Colorado Athletico ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Lonestar ATX Red ECNL G2012/13",
+          "loser": "Real Colorado Athletico ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "OK Energy FC ECNL G2012/13",
+          "loser": "Lonestar ATX Red ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Real Colorado National ECNL G2012/13",
+          "loser": "Challenge SC ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "SOLAR SC ECNL G2012/13",
+          "loser": "Colorado Storm ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "SOLAR SC ECNL G2012/13",
+          "loser": "Dallas Texans ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "SOLAR SC ECNL G2012/13",
+          "loser": "Lonestar ATX Red ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Sting Royal ECNL G2012/13",
+          "loser": "Sting Black ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Challenge SC ECNL G2012/13",
+          "loser": "Colorado Storm ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Challenge SC ECNL G2012/13",
+          "loser": "Real Colorado Athletico ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Colorado Storm ECNL G2012/13",
+          "loser": "Real Colorado Athletico ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "FC Dallas Youth ECNL G2012/13",
+          "loser": "Colorado Storm ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "FC Dallas Youth ECNL G2012/13",
+          "loser": "OK Energy FC ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "FC Dallas Youth ECNL G2012/13",
+          "loser": "Sting Royal ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "FC Westlake ECNL G2012/13",
+          "loser": "Lonestar ATX Red ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "OK Energy FC ECNL G2012/13",
+          "loser": "FC Westlake ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Real Colorado National ECNL G2012/13",
+          "loser": "FC Westlake ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Real Colorado National ECNL G2012/13",
+          "loser": "Real Colorado Athletico ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "SOLAR SC ECNL G2012/13",
+          "loser": "Colorado Rush ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "SOLAR SC ECNL G2012/13",
+          "loser": "FC Westlake ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "SOLAR SC ECNL G2012/13",
+          "loser": "Real Colorado National ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Sting Black ECNL G2012/13",
+          "loser": "West Side Alliance ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Sting Royal ECNL G2012/13",
+          "loser": "Colorado Rush ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Sting Royal ECNL G2012/13",
+          "loser": "Real Colorado National ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Sting Royal ECNL G2012/13",
+          "loser": "West Side Alliance ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Challenge SC ECNL G2012/13",
+          "loser": "West Side Alliance ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Colorado Rush ECNL G2012/13",
+          "loser": "Challenge SC ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Colorado Rush ECNL G2012/13",
+          "loser": "Dallas Texans ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "DKSC ECNL G2012/13",
+          "loser": "Dallas Texans ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "DKSC ECNL G2012/13",
+          "loser": "Real Colorado National ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Dallas Texans ECNL G2012/13",
+          "loser": "Lonestar ATX Red ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "FC Dallas Youth ECNL G2012/13",
+          "loser": "FC Westlake ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "FC Dallas Youth ECNL G2012/13",
+          "loser": "Lonestar ATX Red ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "FC Westlake ECNL G2012/13",
+          "loser": "Colorado Rush ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "FC Westlake ECNL G2012/13",
+          "loser": "Dallas Texans ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "OK Energy FC ECNL G2012/13",
+          "loser": "DKSC ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Real Colorado National ECNL G2012/13",
+          "loser": "Colorado Rush ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Real Colorado National ECNL G2012/13",
+          "loser": "Lonestar ATX Red ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "SOLAR SC ECNL G2012/13",
+          "loser": "DKSC ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Sting Black ECNL G2012/13",
+          "loser": "Colorado Storm ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Sting Black ECNL G2012/13",
+          "loser": "Dallas Texans ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Sting Black ECNL G2012/13",
+          "loser": "Real Colorado National ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Sting Royal ECNL G2012/13",
+          "loser": "Colorado Storm ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Sting Royal ECNL G2012/13",
+          "loser": "Lonestar ATX Red ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Sting Royal ECNL G2012/13",
+          "loser": "Real Colorado Athletico ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "West Side Alliance ECNL G2012/13",
+          "loser": "Lonestar ATX Red ECNL G2012/13",
+          "weight": 1
+        }
+      ],
+      "games_list": [
+        {
+          "date": "2026-08-30",
+          "home": "Colorado Storm ECNL G2012/13",
+          "away": "Real Colorado Athletico ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Real Colorado National ECNL G2012/13",
+          "away": "Colorado Rush ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-05",
+          "home": "Albion Hurricanes FC ECNL G2012/13",
+          "away": "Colorado Rush ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-05",
+          "home": "Challenge SC ECNL G2012/13",
+          "away": "Real Colorado Athletico ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-05",
+          "home": "Colorado Storm ECNL G2012/13",
+          "away": "Lonestar ATX Red ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-05",
+          "home": "Real Colorado National ECNL G2012/13",
+          "away": "FC Westlake ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-06",
+          "home": "Albion Hurricanes FC ECNL G2012/13",
+          "away": "Real Colorado Athletico ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-06",
+          "home": "Challenge SC ECNL G2012/13",
+          "away": "Colorado Rush ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-06",
+          "home": "Colorado Storm ECNL G2012/13",
+          "away": "FC Westlake ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-06",
+          "home": "Real Colorado National ECNL G2012/13",
+          "away": "Lonestar ATX Red ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-13",
+          "home": "Sting Black ECNL G2012/13",
+          "away": "Sting Royal ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 5
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Dallas Texans ECNL G2012/13",
+          "away": "DKSC ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-19",
+          "home": "FC Dallas Youth ECNL G2012/13",
+          "away": "Colorado Storm ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-19",
+          "home": "OK Energy FC ECNL G2012/13",
+          "away": "Lonestar ATX Red ECNL G2012/13",
+          "home_score": 4,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Sting Royal ECNL G2012/13",
+          "away": "Real Colorado National ECNL G2012/13",
+          "home_score": 5,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-19",
+          "home": "West Side Alliance ECNL G2012/13",
+          "away": "FC Westlake ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 5
+        },
+        {
+          "date": "2026-09-20",
+          "home": "FC Dallas Youth ECNL G2012/13",
+          "away": "Real Colorado National ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-20",
+          "home": "OK Energy FC ECNL G2012/13",
+          "away": "FC Westlake ECNL G2012/13",
+          "home_score": 4,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Sting Royal ECNL G2012/13",
+          "away": "Colorado Storm ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-20",
+          "home": "West Side Alliance ECNL G2012/13",
+          "away": "Lonestar ATX Red ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Colorado Storm ECNL G2012/13",
+          "away": "Albion Hurricanes FC ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Dallas Texans ECNL G2012/13",
+          "away": "Sting Black ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-26",
+          "home": "FC Dallas Youth ECNL G2012/13",
+          "away": "OK Energy FC ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Real Colorado National ECNL G2012/13",
+          "away": "Challenge SC ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-26",
+          "home": "SOLAR SC ECNL G2012/13",
+          "away": "DKSC ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Sting Royal ECNL G2012/13",
+          "away": "West Side Alliance ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Colorado Storm ECNL G2012/13",
+          "away": "Challenge SC ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-27",
+          "home": "FC Dallas Youth ECNL G2012/13",
+          "away": "West Side Alliance ECNL G2012/13",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Real Colorado National ECNL G2012/13",
+          "away": "Albion Hurricanes FC ECNL G2012/13",
+          "home_score": 8,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Sting Royal ECNL G2012/13",
+          "away": "OK Energy FC ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Dallas Texans ECNL G2012/13",
+          "away": "Colorado Storm ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-03",
+          "home": "FC Westlake ECNL G2012/13",
+          "away": "Real Colorado Athletico ECNL G2012/13",
+          "home_score": 4,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Lonestar ATX Red ECNL G2012/13",
+          "away": "Colorado Rush ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-03",
+          "home": "SOLAR SC ECNL G2012/13",
+          "away": "Real Colorado National ECNL G2012/13",
+          "home_score": 4,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-04",
+          "home": "Dallas Texans ECNL G2012/13",
+          "away": "Real Colorado National ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-04",
+          "home": "FC Westlake ECNL G2012/13",
+          "away": "Colorado Rush ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-04",
+          "home": "Lonestar ATX Red ECNL G2012/13",
+          "away": "Real Colorado Athletico ECNL G2012/13",
+          "home_score": 4,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-04",
+          "home": "SOLAR SC ECNL G2012/13",
+          "away": "Colorado Storm ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-11",
+          "home": "SOLAR SC ECNL G2012/13",
+          "away": "Dallas Texans ECNL G2012/13",
+          "home_score": 4,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Albion Hurricanes FC ECNL G2012/13",
+          "away": "OK Energy FC ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Challenge SC ECNL G2012/13",
+          "away": "West Side Alliance ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Colorado Storm ECNL G2012/13",
+          "away": "Sting Black ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Dallas Texans ECNL G2012/13",
+          "away": "Lonestar ATX Red ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Real Colorado National ECNL G2012/13",
+          "away": "DKSC ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-17",
+          "home": "SOLAR SC ECNL G2012/13",
+          "away": "FC Westlake ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-18",
+          "home": "Albion Hurricanes FC ECNL G2012/13",
+          "away": "West Side Alliance ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-18",
+          "home": "Challenge SC ECNL G2012/13",
+          "away": "OK Energy FC ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-18",
+          "home": "Colorado Rush ECNL G2012/13",
+          "away": "Real Colorado Athletico ECNL G2012/13",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-18",
+          "home": "Colorado Storm ECNL G2012/13",
+          "away": "DKSC ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 5
+        },
+        {
+          "date": "2026-10-18",
+          "home": "Dallas Texans ECNL G2012/13",
+          "away": "FC Westlake ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-18",
+          "home": "FC Dallas Youth ECNL G2012/13",
+          "away": "Sting Royal ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-18",
+          "home": "Real Colorado National ECNL G2012/13",
+          "away": "Sting Black ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-18",
+          "home": "SOLAR SC ECNL G2012/13",
+          "away": "Lonestar ATX Red ECNL G2012/13",
+          "home_score": 5,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-21",
+          "home": "Real Colorado National ECNL G2012/13",
+          "away": "Real Colorado Athletico ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Colorado Rush ECNL G2012/13",
+          "away": "Sting Royal ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Lonestar ATX Red ECNL G2012/13",
+          "away": "FC Westlake ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-24",
+          "home": "OK Energy FC ECNL G2012/13",
+          "away": "Sting Black ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 4
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Real Colorado Athletico ECNL G2012/13",
+          "away": "FC Dallas Youth ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 5
+        },
+        {
+          "date": "2026-10-24",
+          "home": "West Side Alliance ECNL G2012/13",
+          "away": "DKSC ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 4
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Colorado Rush ECNL G2012/13",
+          "away": "FC Dallas Youth ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 4
+        },
+        {
+          "date": "2026-10-25",
+          "home": "OK Energy FC ECNL G2012/13",
+          "away": "DKSC ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Real Colorado Athletico ECNL G2012/13",
+          "away": "Sting Royal ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-25",
+          "home": "West Side Alliance ECNL G2012/13",
+          "away": "Sting Black ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Colorado Rush ECNL G2012/13",
+          "away": "Dallas Texans ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "FC Westlake ECNL G2012/13",
+          "away": "Sting Royal ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Lonestar ATX Red ECNL G2012/13",
+          "away": "FC Dallas Youth ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Real Colorado Athletico ECNL G2012/13",
+          "away": "SOLAR SC ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 4
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Real Colorado National ECNL G2012/13",
+          "away": "Colorado Storm ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-08",
+          "home": "Colorado Rush ECNL G2012/13",
+          "away": "SOLAR SC ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-11-08",
+          "home": "FC Westlake ECNL G2012/13",
+          "away": "FC Dallas Youth ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-11-08",
+          "home": "Lonestar ATX Red ECNL G2012/13",
+          "away": "Sting Royal ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-08",
+          "home": "Real Colorado Athletico ECNL G2012/13",
+          "away": "Dallas Texans ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 0
+        }
+      ]
+    },
+    {
+      "id": "southwest",
+      "title": "ECNL Girls Southwest 2026-27 — GU14",
+      "games": 53,
+      "draws": 8,
+      "teams": 17,
+      "links": 38,
+      "loops_resolved": 4,
+      "rankings": [
+        {
+          "rank": 1,
+          "team": "Slammers FC HB Koge ECNL G2012/13",
+          "short": "Slammers FC HB Koge",
+          "bracket_team": false,
+          "rating": 6.98,
+          "paths_out": 108,
+          "paths_in": 0,
+          "w": 7,
+          "l": 0,
+          "d": 0
+        },
+        {
+          "rank": 2,
+          "team": "So Cal Blues ECNL G2012/13",
+          "short": "SO CAL BLUES",
+          "bracket_team": true,
+          "rating": 5.06,
+          "paths_out": 48,
+          "paths_in": 0,
+          "w": 4,
+          "l": 0,
+          "d": 1
+        },
+        {
+          "rank": 3,
+          "team": "Beach Futbol Club ECNL G2012/13",
+          "short": "BEACH",
+          "bracket_team": true,
+          "rating": 4.41,
+          "paths_out": 37,
+          "paths_in": 0,
+          "w": 4,
+          "l": 0,
+          "d": 2
+        },
+        {
+          "rank": 4,
+          "team": "Legends FC (CA) ECNL G2012/13",
+          "short": "LEGENDS CA",
+          "bracket_team": true,
+          "rating": 3.57,
+          "paths_out": 27,
+          "paths_in": 1,
+          "w": 4,
+          "l": 2,
+          "d": 0
+        },
+        {
+          "rank": 5,
+          "team": "San Diego Surf Soccer Club ECNL G2012/13",
+          "short": "SD SURF",
+          "bracket_team": true,
+          "rating": 2.66,
+          "paths_out": 17,
+          "paths_in": 0,
+          "w": 3,
+          "l": 0,
+          "d": 1
+        },
+        {
+          "rank": 6,
+          "team": "LAFC So Cal ECNL G2012/13",
+          "short": "LAFC SO CAL",
+          "bracket_team": true,
+          "rating": 2.3,
+          "paths_out": 21,
+          "paths_in": 7,
+          "w": 4,
+          "l": 3,
+          "d": 0
+        },
+        {
+          "rank": 7,
+          "team": "Slammers FC ECNL G2012/13",
+          "short": "Slammers FC",
+          "bracket_team": false,
+          "rating": 2.17,
+          "paths_out": 21,
+          "paths_in": 8,
+          "w": 3,
+          "l": 2,
+          "d": 2
+        },
+        {
+          "rank": 8,
+          "team": "Pateadores ECNL G2012/13",
+          "short": "PATEADORES",
+          "bracket_team": true,
+          "rating": 1.14,
+          "paths_out": 14,
+          "paths_in": 8,
+          "w": 3,
+          "l": 3,
+          "d": 0
+        },
+        {
+          "rank": 9,
+          "team": "Eagles SC ECNL G2012/13",
+          "short": "EAGLES SC",
+          "bracket_team": true,
+          "rating": -0.79,
+          "paths_out": 12,
+          "paths_in": 16,
+          "w": 3,
+          "l": 3,
+          "d": 0
+        },
+        {
+          "rank": 10,
+          "team": "Arizona Arsenal ECNL G2012/13",
+          "short": "AZ ARSENAL",
+          "bracket_team": true,
+          "rating": -1.3,
+          "paths_out": 5,
+          "paths_in": 12,
+          "w": 2,
+          "l": 2,
+          "d": 1
+        },
+        {
+          "rank": 11,
+          "team": "Rebels SC ECNL G2012/13",
+          "short": "REBELS SC",
+          "bracket_team": true,
+          "rating": -1.61,
+          "paths_out": 2,
+          "paths_in": 11,
+          "w": 1,
+          "l": 3,
+          "d": 1
+        },
+        {
+          "rank": 12,
+          "team": "Utah Royals FC-AZ ECNL G2012/13",
+          "short": "UT ROYALS AZ",
+          "bracket_team": true,
+          "rating": -2.04,
+          "paths_out": 9,
+          "paths_in": 21,
+          "w": 1,
+          "l": 3,
+          "d": 3
+        },
+        {
+          "rank": 13,
+          "team": "LA Breakers ECNL G2012/2013",
+          "short": "LA BREAKERS",
+          "bracket_team": true,
+          "rating": -2.43,
+          "paths_out": 0,
+          "paths_in": 15,
+          "w": 2,
+          "l": 5,
+          "d": 1
+        },
+        {
+          "rank": 14,
+          "team": "Phoenix Rising FC ECNL G2012/13",
+          "short": "PHX RISING",
+          "bracket_team": true,
+          "rating": -4.96,
+          "paths_out": 6,
+          "paths_in": 52,
+          "w": 3,
+          "l": 3,
+          "d": 0
+        },
+        {
+          "rank": 15,
+          "team": "LV Heat Surf ECNL G2012/13",
+          "short": "LV Heat Surf",
+          "bracket_team": false,
+          "rating": -6.06,
+          "paths_out": 0,
+          "paths_in": 72,
+          "w": 1,
+          "l": 5,
+          "d": 1
+        },
+        {
+          "rank": 16,
+          "team": "Legends FC - Del Mar ECNL G2012/13",
+          "short": "LEGENDS DM",
+          "bracket_team": true,
+          "rating": -6.53,
+          "paths_out": 0,
+          "paths_in": 88,
+          "w": 0,
+          "l": 5,
+          "d": 2
+        },
+        {
+          "rank": 17,
+          "team": "Sporting California USA ECNL G2012/13",
+          "short": "SPORTING CA",
+          "bracket_team": true,
+          "rating": -6.77,
+          "paths_out": 0,
+          "paths_in": 98,
+          "w": 0,
+          "l": 6,
+          "d": 1
+        }
+      ],
+      "beatwins": [
+        {
+          "winner": "Slammers FC HB Koge ECNL G2012/13",
+          "loser": "Slammers FC ECNL G2012/13",
+          "weight": 8
+        },
+        {
+          "winner": "Slammers FC HB Koge ECNL G2012/13",
+          "loser": "Pateadores ECNL G2012/13",
+          "weight": 7
+        },
+        {
+          "winner": "Slammers FC HB Koge ECNL G2012/13",
+          "loser": "Rebels SC ECNL G2012/13",
+          "weight": 6
+        },
+        {
+          "winner": "Slammers FC HB Koge ECNL G2012/13",
+          "loser": "Sporting California USA ECNL G2012/13",
+          "weight": 6
+        },
+        {
+          "winner": "Arizona Arsenal ECNL G2012/13",
+          "loser": "Legends FC - Del Mar ECNL G2012/13",
+          "weight": 5
+        },
+        {
+          "winner": "Legends FC (CA) ECNL G2012/13",
+          "loser": "Sporting California USA ECNL G2012/13",
+          "weight": 5
+        },
+        {
+          "winner": "Slammers FC HB Koge ECNL G2012/13",
+          "loser": "LA Breakers ECNL G2012/2013",
+          "weight": 5
+        },
+        {
+          "winner": "Beach Futbol Club ECNL G2012/13",
+          "loser": "LAFC So Cal ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "Eagles SC ECNL G2012/13",
+          "loser": "Sporting California USA ECNL G2012/13",
+          "weight": 4
+        },
+        {
+          "winner": "Beach Futbol Club ECNL G2012/13",
+          "loser": "Arizona Arsenal ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "LAFC So Cal ECNL G2012/13",
+          "loser": "Phoenix Rising FC ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Legends FC (CA) ECNL G2012/13",
+          "loser": "Eagles SC ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Legends FC (CA) ECNL G2012/13",
+          "loser": "LV Heat Surf ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Phoenix Rising FC ECNL G2012/13",
+          "loser": "LV Heat Surf ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "San Diego Surf Soccer Club ECNL G2012/13",
+          "loser": "Legends FC - Del Mar ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Slammers FC ECNL G2012/13",
+          "loser": "LV Heat Surf ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Slammers FC ECNL G2012/13",
+          "loser": "Utah Royals FC-AZ ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Slammers FC HB Koge ECNL G2012/13",
+          "loser": "Eagles SC ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Slammers FC HB Koge ECNL G2012/13",
+          "loser": "LAFC So Cal ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "So Cal Blues ECNL G2012/13",
+          "loser": "Sporting California USA ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Utah Royals FC-AZ ECNL G2012/13",
+          "loser": "Phoenix Rising FC ECNL G2012/13",
+          "weight": 3
+        },
+        {
+          "winner": "Beach Futbol Club ECNL G2012/13",
+          "loser": "LA Breakers ECNL G2012/2013",
+          "weight": 2
+        },
+        {
+          "winner": "Beach Futbol Club ECNL G2012/13",
+          "loser": "Legends FC - Del Mar ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Eagles SC ECNL G2012/13",
+          "loser": "Phoenix Rising FC ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "LAFC So Cal ECNL G2012/13",
+          "loser": "Utah Royals FC-AZ ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Legends FC (CA) ECNL G2012/13",
+          "loser": "Rebels SC ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Phoenix Rising FC ECNL G2012/13",
+          "loser": "Sporting California USA ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Rebels SC ECNL G2012/13",
+          "loser": "Legends FC - Del Mar ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "San Diego Surf Soccer Club ECNL G2012/13",
+          "loser": "Rebels SC ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "So Cal Blues ECNL G2012/13",
+          "loser": "LV Heat Surf ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "LAFC So Cal ECNL G2012/13",
+          "loser": "LA Breakers ECNL G2012/2013",
+          "weight": 1
+        },
+        {
+          "winner": "Pateadores ECNL G2012/13",
+          "loser": "Eagles SC ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Pateadores ECNL G2012/13",
+          "loser": "Sporting California USA ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Phoenix Rising FC ECNL G2012/13",
+          "loser": "Legends FC - Del Mar ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "San Diego Surf Soccer Club ECNL G2012/13",
+          "loser": "Utah Royals FC-AZ ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Slammers FC ECNL G2012/13",
+          "loser": "Arizona Arsenal ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "So Cal Blues ECNL G2012/13",
+          "loser": "Legends FC (CA) ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "So Cal Blues ECNL G2012/13",
+          "loser": "Pateadores ECNL G2012/13",
+          "weight": 1
+        }
+      ],
+      "games_list": [
+        {
+          "date": "2026-09-12",
+          "home": "Beach Futbol Club ECNL G2012/13",
+          "away": "LAFC So Cal ECNL G2012/13",
+          "home_score": 5,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Eagles SC ECNL G2012/13",
+          "away": "Legends FC (CA) ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 5
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Pateadores ECNL G2012/13",
+          "away": "Slammers FC HB Koge ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 7
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Rebels SC ECNL G2012/13",
+          "away": "Legends FC - Del Mar ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-12",
+          "home": "San Diego Surf Soccer Club ECNL G2012/13",
+          "away": "Utah Royals FC-AZ ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-12",
+          "home": "So Cal Blues ECNL G2012/13",
+          "away": "Sporting California USA ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-13",
+          "home": "LV Heat Surf ECNL G2012/13",
+          "away": "LA Breakers ECNL G2012/2013",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-13",
+          "home": "Slammers FC ECNL G2012/13",
+          "away": "Utah Royals FC-AZ ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Eagles SC ECNL G2012/13",
+          "away": "Pateadores ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-19",
+          "home": "LA Breakers ECNL G2012/2013",
+          "away": "Beach Futbol Club ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Legends FC (CA) ECNL G2012/13",
+          "away": "So Cal Blues ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Legends FC - Del Mar ECNL G2012/13",
+          "away": "Slammers FC ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Phoenix Rising FC ECNL G2012/13",
+          "away": "LV Heat Surf ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Sporting California USA ECNL G2012/13",
+          "away": "Slammers FC HB Koge ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 6
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Utah Royals FC-AZ ECNL G2012/13",
+          "away": "LV Heat Surf ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-26",
+          "home": "LA Breakers ECNL G2012/2013",
+          "away": "Pateadores ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-26",
+          "home": "LV Heat Surf ECNL G2012/13",
+          "away": "Legends FC (CA) ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Phoenix Rising FC ECNL G2012/13",
+          "away": "Utah Royals FC-AZ ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Rebels SC ECNL G2012/13",
+          "away": "Slammers FC HB Koge ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 6
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Slammers FC ECNL G2012/13",
+          "away": "Arizona Arsenal ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Sporting California USA ECNL G2012/13",
+          "away": "San Diego Surf Soccer Club ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Beach Futbol Club ECNL G2012/13",
+          "away": "Arizona Arsenal ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-27",
+          "home": "LAFC So Cal ECNL G2012/13",
+          "away": "Eagles SC ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Utah Royals FC-AZ ECNL G2012/13",
+          "away": "LAFC So Cal ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-04",
+          "home": "LV Heat Surf ECNL G2012/13",
+          "away": "Slammers FC ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-04",
+          "home": "Phoenix Rising FC ECNL G2012/13",
+          "away": "LAFC So Cal ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 4
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Legends FC (CA) ECNL G2012/13",
+          "away": "Sporting California USA ECNL G2012/13",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Rebels SC ECNL G2012/13",
+          "away": "Arizona Arsenal ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Slammers FC ECNL G2012/13",
+          "away": "Beach Futbol Club ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Slammers FC HB Koge ECNL G2012/13",
+          "away": "LA Breakers ECNL G2012/2013",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-18",
+          "home": "Legends FC - Del Mar ECNL G2012/13",
+          "away": "Arizona Arsenal ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 5
+        },
+        {
+          "date": "2026-10-24",
+          "home": "LA Breakers ECNL G2012/2013",
+          "away": "LAFC So Cal ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Legends FC (CA) ECNL G2012/13",
+          "away": "Rebels SC ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Pateadores ECNL G2012/13",
+          "away": "LV Heat Surf ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Phoenix Rising FC ECNL G2012/13",
+          "away": "Legends FC - Del Mar ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Slammers FC HB Koge ECNL G2012/13",
+          "away": "Slammers FC ECNL G2012/13",
+          "home_score": 9,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-25",
+          "home": "So Cal Blues ECNL G2012/13",
+          "away": "LV Heat Surf ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Utah Royals FC-AZ ECNL G2012/13",
+          "away": "Legends FC - Del Mar ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Beach Futbol Club ECNL G2012/13",
+          "away": "Legends FC - Del Mar ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-31",
+          "home": "LA Breakers ECNL G2012/2013",
+          "away": "Slammers FC ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Pateadores ECNL G2012/13",
+          "away": "So Cal Blues ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-31",
+          "home": "San Diego Surf Soccer Club ECNL G2012/13",
+          "away": "Rebels SC ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Slammers FC HB Koge ECNL G2012/13",
+          "away": "LAFC So Cal ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Sporting California USA ECNL G2012/13",
+          "away": "Phoenix Rising FC ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-11-01",
+          "home": "Eagles SC ECNL G2012/13",
+          "away": "Phoenix Rising FC ECNL G2012/13",
+          "home_score": 4,
+          "away_score": 2
+        },
+        {
+          "date": "2026-11-07",
+          "home": "LAFC So Cal ECNL G2012/13",
+          "away": "Legends FC (CA) ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Pateadores ECNL G2012/13",
+          "away": "Sporting California USA ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "San Diego Surf Soccer Club ECNL G2012/13",
+          "away": "Legends FC - Del Mar ECNL G2012/13",
+          "home_score": 4,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Slammers FC HB Koge ECNL G2012/13",
+          "away": "Eagles SC ECNL G2012/13",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "So Cal Blues ECNL G2012/13",
+          "away": "Beach Futbol Club ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Utah Royals FC-AZ ECNL G2012/13",
+          "away": "LA Breakers ECNL G2012/2013",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-08",
+          "home": "Arizona Arsenal ECNL G2012/13",
+          "away": "LA Breakers ECNL G2012/2013",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-08",
+          "home": "Eagles SC ECNL G2012/13",
+          "away": "Sporting California USA ECNL G2012/13",
+          "home_score": 6,
+          "away_score": 2
+        }
+      ]
+    },
+    {
+      "id": "surfcup",
+      "title": "Surf Cup Youngers 2026 — Girls-U14 (all flights)",
+      "games": 80,
+      "draws": 16,
+      "teams": 62,
+      "links": 64,
+      "loops_resolved": 0,
+      "rankings": [
+        {
+          "rank": 1,
+          "team": "Eagles SC ECNL G2012/13",
+          "short": "EAGLES SC",
+          "bracket_team": true,
+          "rating": 6.4,
+          "paths_out": 23,
+          "paths_in": 0,
+          "w": 4,
+          "l": 0,
+          "d": 1
+        },
+        {
+          "rank": 2,
+          "team": "Express SC GU14 Elite Shuttleworth",
+          "short": "Express SC Elite Shutt",
+          "bracket_team": false,
+          "rating": 6.4,
+          "paths_out": 23,
+          "paths_in": 0,
+          "w": 2,
+          "l": 0,
+          "d": 1
+        },
+        {
+          "rank": 3,
+          "team": "LAFC So Cal ECNL G2012/13",
+          "short": "LAFC SO CAL",
+          "bracket_team": true,
+          "rating": 6.18,
+          "paths_out": 21,
+          "paths_in": 0,
+          "w": 4,
+          "l": 0,
+          "d": 0
+        },
+        {
+          "rank": 4,
+          "team": "Team-4",
+          "short": "Team-4",
+          "bracket_team": false,
+          "rating": 5.37,
+          "paths_out": 18,
+          "paths_in": 3,
+          "w": 2,
+          "l": 1,
+          "d": 1
+        },
+        {
+          "rank": 5,
+          "team": "La Jolla Impact GU14 Blue - McManus",
+          "short": "La Jolla Impact Blue -",
+          "bracket_team": false,
+          "rating": 5.01,
+          "paths_out": 13,
+          "paths_in": 0,
+          "w": 2,
+          "l": 0,
+          "d": 1
+        },
+        {
+          "rank": 6,
+          "team": "Sporting San Diego GU14Black Adamos",
+          "short": "Sporting San DiegoBlac",
+          "bracket_team": false,
+          "rating": 4.1,
+          "paths_out": 9,
+          "paths_in": 0,
+          "w": 3,
+          "l": 0,
+          "d": 0
+        },
+        {
+          "rank": 7,
+          "team": "Avalanche ECNL G2012/13",
+          "short": "AVALANCHE",
+          "bracket_team": true,
+          "rating": 3.51,
+          "paths_out": 8,
+          "paths_in": 1,
+          "w": 2,
+          "l": 1,
+          "d": 0
+        },
+        {
+          "rank": 8,
+          "team": "Rangers FC, Girls Academy U14, Allgeirer",
+          "short": "Rangers FC, Girls Acad",
+          "bracket_team": false,
+          "rating": 3.51,
+          "paths_out": 7,
+          "paths_in": 0,
+          "w": 2,
+          "l": 0,
+          "d": 0
+        },
+        {
+          "rank": 9,
+          "team": "Slammers FC ECNL G2012/13",
+          "short": "Slammers FC",
+          "bracket_team": false,
+          "rating": 3.51,
+          "paths_out": 7,
+          "paths_in": 0,
+          "w": 2,
+          "l": 0,
+          "d": 1
+        },
+        {
+          "rank": 10,
+          "team": "Tudela FC Los Angeles Black",
+          "short": "Tudela FC Los Angeles ",
+          "bracket_team": false,
+          "rating": 3.51,
+          "paths_out": 7,
+          "paths_in": 0,
+          "w": 2,
+          "l": 0,
+          "d": 0
+        },
+        {
+          "rank": 11,
+          "team": "Seattle United ECNL GU14",
+          "short": "Seattle United",
+          "bracket_team": false,
+          "rating": 3.17,
+          "paths_out": 6,
+          "paths_in": 0,
+          "w": 2,
+          "l": 0,
+          "d": 1
+        },
+        {
+          "rank": 12,
+          "team": "XF ECNL, GU14",
+          "short": "XF,",
+          "bracket_team": false,
+          "rating": 3.17,
+          "paths_out": 8,
+          "paths_in": 2,
+          "w": 2,
+          "l": 1,
+          "d": 1
+        },
+        {
+          "rank": 13,
+          "team": "City SC Carlsbad G13 GA White- Williams",
+          "short": "City SC Carlsbad G13 G",
+          "bracket_team": false,
+          "rating": 3.17,
+          "paths_out": 6,
+          "paths_in": 0,
+          "w": 3,
+          "l": 0,
+          "d": 0
+        },
+        {
+          "rank": 14,
+          "team": "LA Surf U14 GA",
+          "short": "LA Surf GA",
+          "bracket_team": false,
+          "rating": 2.78,
+          "paths_out": 5,
+          "paths_in": 0,
+          "w": 3,
+          "l": 0,
+          "d": 0
+        },
+        {
+          "rank": 15,
+          "team": "SC Sporting GU14 GA Red - Gomez",
+          "short": "SC Sporting GA Red - G",
+          "bracket_team": false,
+          "rating": 2.36,
+          "paths_out": 4,
+          "paths_in": 0,
+          "w": 1,
+          "l": 0,
+          "d": 1
+        },
+        {
+          "rank": 16,
+          "team": "Hawaii Rush 13G, Matas",
+          "short": "Hawaii Rush 13G, Matas",
+          "bracket_team": false,
+          "rating": 2.36,
+          "paths_out": 4,
+          "paths_in": 0,
+          "w": 2,
+          "l": 0,
+          "d": 1
+        },
+        {
+          "rank": 17,
+          "team": "Oregon Surf ECNL G2012/13",
+          "short": "OREGON SURF",
+          "bracket_team": true,
+          "rating": 2.36,
+          "paths_out": 4,
+          "paths_in": 0,
+          "w": 1,
+          "l": 0,
+          "d": 1
+        },
+        {
+          "rank": 18,
+          "team": "SoCal Reds GA U14 Flores",
+          "short": "SoCal Reds GA Flores",
+          "bracket_team": false,
+          "rating": 2.36,
+          "paths_out": 4,
+          "paths_in": 0,
+          "w": 2,
+          "l": 0,
+          "d": 1
+        },
+        {
+          "rank": 19,
+          "team": "Rebels SC ECNL G2012/13",
+          "short": "REBELS SC",
+          "bracket_team": true,
+          "rating": 1.88,
+          "paths_out": 4,
+          "paths_in": 1,
+          "w": 2,
+          "l": 1,
+          "d": 2
+        },
+        {
+          "rank": 20,
+          "team": "Sporting California USA ECNL G2012/13",
+          "short": "SPORTING CA",
+          "bracket_team": true,
+          "rating": 1.88,
+          "paths_out": 5,
+          "paths_in": 2,
+          "w": 2,
+          "l": 1,
+          "d": 1
+        },
+        {
+          "rank": 21,
+          "team": "Lamorinda U14GA",
+          "short": "LamorindaA",
+          "bracket_team": false,
+          "rating": 1.34,
+          "paths_out": 2,
+          "paths_in": 0,
+          "w": 1,
+          "l": 0,
+          "d": 0
+        },
+        {
+          "rank": 22,
+          "team": "SC Blues GU14 DPL",
+          "short": "SC Blues DPL",
+          "bracket_team": false,
+          "rating": 1.34,
+          "paths_out": 2,
+          "paths_in": 0,
+          "w": 1,
+          "l": 0,
+          "d": 0
+        },
+        {
+          "rank": 23,
+          "team": "Team-1",
+          "short": "Team-1",
+          "bracket_team": false,
+          "rating": 1.34,
+          "paths_out": 2,
+          "paths_in": 0,
+          "w": 1,
+          "l": 0,
+          "d": 1
+        },
+        {
+          "rank": 24,
+          "team": "FRAM GA U14",
+          "short": "FRAM GA",
+          "bracket_team": false,
+          "rating": 0.72,
+          "paths_out": 1,
+          "paths_in": 0,
+          "w": 1,
+          "l": 0,
+          "d": 0
+        },
+        {
+          "rank": 25,
+          "team": "PacNW U14 ECNL",
+          "short": "PacNW",
+          "bracket_team": false,
+          "rating": 0.72,
+          "paths_out": 3,
+          "paths_in": 2,
+          "w": 1,
+          "l": 1,
+          "d": 0
+        },
+        {
+          "rank": 26,
+          "team": "Sporting San Diego GU14 White Sandoval",
+          "short": "Sporting San Diego Whi",
+          "bracket_team": false,
+          "rating": 0.72,
+          "paths_out": 2,
+          "paths_in": 1,
+          "w": 1,
+          "l": 1,
+          "d": 0
+        },
+        {
+          "rank": 27,
+          "team": "COSC ECNL G2012/13",
+          "short": "COSC",
+          "bracket_team": true,
+          "rating": 0.72,
+          "paths_out": 1,
+          "paths_in": 0,
+          "w": 1,
+          "l": 0,
+          "d": 0
+        },
+        {
+          "rank": 28,
+          "team": "Legends FC San Diego ECNL U14 Williams",
+          "short": "Legends FC San Diego W",
+          "bracket_team": false,
+          "rating": 0.72,
+          "paths_out": 2,
+          "paths_in": 1,
+          "w": 1,
+          "l": 1,
+          "d": 0
+        },
+        {
+          "rank": 29,
+          "team": "LV Heat Surf ECNL G2012/13",
+          "short": "LV Heat Surf",
+          "bracket_team": false,
+          "rating": 0.72,
+          "paths_out": 1,
+          "paths_in": 0,
+          "w": 1,
+          "l": 0,
+          "d": 2
+        },
+        {
+          "rank": 30,
+          "team": "Legends sb gu14 Gold",
+          "short": "Legends sb gu14 Gold",
+          "bracket_team": false,
+          "rating": 0,
+          "paths_out": 1,
+          "paths_in": 1,
+          "w": 1,
+          "l": 1,
+          "d": 1
+        },
+        {
+          "rank": 31,
+          "team": "Utah Royals FC-AZ ECNL G2012/13",
+          "short": "UT ROYALS AZ",
+          "bracket_team": true,
+          "rating": 0,
+          "paths_out": 1,
+          "paths_in": 1,
+          "w": 1,
+          "l": 1,
+          "d": 1
+        },
+        {
+          "rank": 32,
+          "team": "LA Breakers ECNL G2012/2013",
+          "short": "LA BREAKERS",
+          "bracket_team": true,
+          "rating": 0,
+          "paths_out": 2,
+          "paths_in": 2,
+          "w": 1,
+          "l": 1,
+          "d": 0
+        },
+        {
+          "rank": 33,
+          "team": "Rangers GA 2013, Allgeirer",
+          "short": "Rangers GA 2013, Allge",
+          "bracket_team": false,
+          "rating": -0.72,
+          "paths_out": 0,
+          "paths_in": 1,
+          "w": 0,
+          "l": 1,
+          "d": 0
+        },
+        {
+          "rank": 34,
+          "team": "Surf Hawaii 12/13G Academy I -U14G",
+          "short": "Surf Hawaii 12/13G Aca",
+          "bracket_team": false,
+          "rating": -0.72,
+          "paths_out": 0,
+          "paths_in": 1,
+          "w": 0,
+          "l": 1,
+          "d": 0
+        },
+        {
+          "rank": 35,
+          "team": "Rage 2013 ECNL",
+          "short": "Rage 2013",
+          "bracket_team": false,
+          "rating": -0.72,
+          "paths_out": 0,
+          "paths_in": 1,
+          "w": 0,
+          "l": 1,
+          "d": 0
+        },
+        {
+          "rank": 36,
+          "team": "Legends FC GU14",
+          "short": "Legends FC",
+          "bracket_team": false,
+          "rating": -1.34,
+          "paths_out": 0,
+          "paths_in": 2,
+          "w": 0,
+          "l": 1,
+          "d": 0
+        },
+        {
+          "rank": 37,
+          "team": "South Valley Surf U14 N1",
+          "short": "South Valley Surf N1",
+          "bracket_team": false,
+          "rating": -1.34,
+          "paths_out": 1,
+          "paths_in": 3,
+          "w": 1,
+          "l": 1,
+          "d": 0
+        },
+        {
+          "rank": 38,
+          "team": "Beach FC N1 G2012/13 SB I.Lopez",
+          "short": "Beach FC N1 G2012/13 S",
+          "bracket_team": false,
+          "rating": -1.34,
+          "paths_out": 1,
+          "paths_in": 3,
+          "w": 1,
+          "l": 1,
+          "d": 1
+        },
+        {
+          "rank": 39,
+          "team": "Placer United ECNL G2012/13",
+          "short": "PLACER",
+          "bracket_team": true,
+          "rating": -1.34,
+          "paths_out": 0,
+          "paths_in": 2,
+          "w": 0,
+          "l": 1,
+          "d": 2
+        },
+        {
+          "rank": 40,
+          "team": "Surf Hawaii 13G Academy III - U14G",
+          "short": "Surf Hawaii 13G Academ",
+          "bracket_team": false,
+          "rating": -1.34,
+          "paths_out": 0,
+          "paths_in": 2,
+          "w": 0,
+          "l": 1,
+          "d": 0
+        },
+        {
+          "rank": 41,
+          "team": "Clovis Crossfire U14G GA",
+          "short": "Clovis Crossfire GA",
+          "bracket_team": false,
+          "rating": -1.88,
+          "paths_out": 0,
+          "paths_in": 3,
+          "w": 0,
+          "l": 1,
+          "d": 2
+        },
+        {
+          "rank": 42,
+          "team": "Force U14G, Porras",
+          "short": "Force, Porras",
+          "bracket_team": false,
+          "rating": -1.88,
+          "paths_out": 1,
+          "paths_in": 4,
+          "w": 1,
+          "l": 1,
+          "d": 0
+        },
+        {
+          "rank": 43,
+          "team": "Inferno SC, Copa 2013G, Welch",
+          "short": "Inferno SC, Copa 2013G",
+          "bracket_team": false,
+          "rating": -2.36,
+          "paths_out": 0,
+          "paths_in": 4,
+          "w": 0,
+          "l": 2,
+          "d": 0
+        },
+        {
+          "rank": 44,
+          "team": "Surf Hawaii 13G Academy II - U14G",
+          "short": "Surf Hawaii 13G Academ",
+          "bracket_team": false,
+          "rating": -2.36,
+          "paths_out": 0,
+          "paths_in": 4,
+          "w": 0,
+          "l": 1,
+          "d": 1
+        },
+        {
+          "rank": 45,
+          "team": "Pateadores ECNL G2012/13",
+          "short": "PATEADORES",
+          "bracket_team": true,
+          "rating": -2.36,
+          "paths_out": 0,
+          "paths_in": 4,
+          "w": 0,
+          "l": 2,
+          "d": 1
+        },
+        {
+          "rank": 46,
+          "team": "Surf Academy Select U14G South",
+          "short": "Surf Academy Select So",
+          "bracket_team": false,
+          "rating": -2.36,
+          "paths_out": 0,
+          "paths_in": 4,
+          "w": 0,
+          "l": 2,
+          "d": 0
+        },
+        {
+          "rank": 47,
+          "team": "Real Colorado Athletico ECNL G2012/13",
+          "short": "Real Colorado Athletic",
+          "bracket_team": false,
+          "rating": -2.36,
+          "paths_out": 0,
+          "paths_in": 4,
+          "w": 0,
+          "l": 2,
+          "d": 0
+        },
+        {
+          "rank": 48,
+          "team": "Mustang SC ECNL G2012/13",
+          "short": "MUSTANG",
+          "bracket_team": true,
+          "rating": -2.36,
+          "paths_out": 0,
+          "paths_in": 4,
+          "w": 0,
+          "l": 1,
+          "d": 1
+        },
+        {
+          "rank": 49,
+          "team": "Seattle Celtic G12 GA",
+          "short": "Seattle Celtic G12 GA",
+          "bracket_team": false,
+          "rating": -2.36,
+          "paths_out": 0,
+          "paths_in": 4,
+          "w": 0,
+          "l": 2,
+          "d": 1
+        },
+        {
+          "rank": 50,
+          "team": "Team-8",
+          "short": "Team-8",
+          "bracket_team": false,
+          "rating": -2.78,
+          "paths_out": 3,
+          "paths_in": 8,
+          "w": 1,
+          "l": 2,
+          "d": 0
+        },
+        {
+          "rank": 51,
+          "team": "SRU U14G Gold-ECNL",
+          "short": "SRU Gold-ECNL",
+          "bracket_team": false,
+          "rating": -2.78,
+          "paths_out": 1,
+          "paths_in": 6,
+          "w": 1,
+          "l": 2,
+          "d": 0
+        },
+        {
+          "rank": 52,
+          "team": "South Valley Surf U14 GA",
+          "short": "South Valley Surf GA",
+          "bracket_team": false,
+          "rating": -2.78,
+          "paths_out": 1,
+          "paths_in": 6,
+          "w": 1,
+          "l": 2,
+          "d": 0
+        },
+        {
+          "rank": 53,
+          "team": "SDSC GA 12/13",
+          "short": "SDSC GA 12/13",
+          "bracket_team": false,
+          "rating": -3.17,
+          "paths_out": 0,
+          "paths_in": 6,
+          "w": 0,
+          "l": 2,
+          "d": 1
+        },
+        {
+          "rank": 54,
+          "team": "Leahi 12/13 Premier West Green - U14G",
+          "short": "Leahi 12/13 Premier We",
+          "bracket_team": false,
+          "rating": -3.17,
+          "paths_out": 0,
+          "paths_in": 6,
+          "w": 0,
+          "l": 2,
+          "d": 1
+        },
+        {
+          "rank": 55,
+          "team": "1974 Newark FC 2012/2013 GA",
+          "short": "1974 Newark FC 2012/20",
+          "bracket_team": false,
+          "rating": -3.51,
+          "paths_out": 0,
+          "paths_in": 7,
+          "w": 0,
+          "l": 2,
+          "d": 0
+        },
+        {
+          "rank": 56,
+          "team": "Palo Alto SC U14 GA - 2012/2013",
+          "short": "Palo Alto SC GA - 2012",
+          "bracket_team": false,
+          "rating": -3.51,
+          "paths_out": 0,
+          "paths_in": 7,
+          "w": 0,
+          "l": 2,
+          "d": 0
+        },
+        {
+          "rank": 57,
+          "team": "Lamorinda U14GA - Pinto",
+          "short": "LamorindaA - Pinto",
+          "bracket_team": false,
+          "rating": -3.51,
+          "paths_out": 1,
+          "paths_in": 8,
+          "w": 1,
+          "l": 2,
+          "d": 0
+        },
+        {
+          "rank": 58,
+          "team": "WW Surf Academy GU14 GA",
+          "short": "WW Surf Academy GA",
+          "bracket_team": false,
+          "rating": -4.1,
+          "paths_out": 0,
+          "paths_in": 9,
+          "w": 0,
+          "l": 3,
+          "d": 0
+        },
+        {
+          "rank": 59,
+          "team": "CIty SC Carlsbad, GU14 GA Blue- Mattos",
+          "short": "CIty SC Carlsbad, GA B",
+          "bracket_team": false,
+          "rating": -4.81,
+          "paths_out": 0,
+          "paths_in": 12,
+          "w": 0,
+          "l": 3,
+          "d": 0
+        },
+        {
+          "rank": 60,
+          "team": "City Sc Southwest GU14 GA",
+          "short": "City Sc Southwest GA",
+          "bracket_team": false,
+          "rating": -5.53,
+          "paths_out": 0,
+          "paths_in": 16,
+          "w": 0,
+          "l": 3,
+          "d": 0
+        },
+        {
+          "rank": 61,
+          "team": "West Coast FC GA 2013",
+          "short": "West Coast FC GA 2013",
+          "bracket_team": false,
+          "rating": -5.81,
+          "paths_out": 0,
+          "paths_in": 18,
+          "w": 0,
+          "l": 3,
+          "d": 0
+        },
+        {
+          "rank": 62,
+          "team": "East Valley Surf U14 N1 Peacock",
+          "short": "East Valley Surf N1 Pe",
+          "bracket_team": false,
+          "rating": -7.24,
+          "paths_out": 0,
+          "paths_in": 34,
+          "w": 0,
+          "l": 3,
+          "d": 0
+        }
+      ],
+      "beatwins": [
+        {
+          "winner": "Team-4",
+          "loser": "East Valley Surf U14 N1 Peacock",
+          "weight": 12
+        },
+        {
+          "winner": "La Jolla Impact GU14 Blue - McManus",
+          "loser": "East Valley Surf U14 N1 Peacock",
+          "weight": 8
+        },
+        {
+          "winner": "Eagles SC ECNL G2012/13",
+          "loser": "City Sc Southwest GU14 GA",
+          "weight": 5
+        },
+        {
+          "winner": "Eagles SC ECNL G2012/13",
+          "loser": "South Valley Surf U14 GA",
+          "weight": 5
+        },
+        {
+          "winner": "Avalanche ECNL G2012/13",
+          "loser": "Leahi 12/13 Premier West Green - U14G",
+          "weight": 4
+        },
+        {
+          "winner": "Avalanche ECNL G2012/13",
+          "loser": "SDSC GA 12/13",
+          "weight": 4
+        },
+        {
+          "winner": "Seattle United ECNL GU14",
+          "loser": "City Sc Southwest GU14 GA",
+          "weight": 4
+        },
+        {
+          "winner": "Slammers FC ECNL G2012/13",
+          "loser": "West Coast FC GA 2013",
+          "weight": 4
+        },
+        {
+          "winner": "Tudela FC Los Angeles Black",
+          "loser": "Force U14G, Porras",
+          "weight": 4
+        },
+        {
+          "winner": "XF ECNL, GU14",
+          "loser": "Lamorinda U14GA - Pinto",
+          "weight": 4
+        },
+        {
+          "winner": "Express SC GU14 Elite Shuttleworth",
+          "loser": "Team-4",
+          "weight": 3
+        },
+        {
+          "winner": "PacNW U14 ECNL",
+          "loser": "Palo Alto SC U14 GA - 2012/2013",
+          "weight": 3
+        },
+        {
+          "winner": "SC Sporting GU14 GA Red - Gomez",
+          "loser": "South Valley Surf U14 N1",
+          "weight": 3
+        },
+        {
+          "winner": "Sporting California USA ECNL G2012/13",
+          "loser": "SRU U14G Gold-ECNL",
+          "weight": 3
+        },
+        {
+          "winner": "Sporting San Diego GU14Black Adamos",
+          "loser": "Beach FC N1 G2012/13 SB I.Lopez",
+          "weight": 3
+        },
+        {
+          "winner": "Sporting San Diego GU14Black Adamos",
+          "loser": "WW Surf Academy GU14 GA",
+          "weight": 3
+        },
+        {
+          "winner": "Team-4",
+          "loser": "Team-8",
+          "weight": 3
+        },
+        {
+          "winner": "Team-8",
+          "loser": "East Valley Surf U14 N1 Peacock",
+          "weight": 3
+        },
+        {
+          "winner": "XF ECNL, GU14",
+          "loser": "West Coast FC GA 2013",
+          "weight": 3
+        },
+        {
+          "winner": "City SC Carlsbad G13 GA White- Williams",
+          "loser": "Pateadores ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "City SC Carlsbad G13 GA White- Williams",
+          "loser": "Placer United ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Eagles SC ECNL G2012/13",
+          "loser": "Sporting California USA ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Express SC GU14 Elite Shuttleworth",
+          "loser": "Inferno SC, Copa 2013G, Welch",
+          "weight": 2
+        },
+        {
+          "winner": "Hawaii Rush 13G, Matas",
+          "loser": "CIty SC Carlsbad, GU14 GA Blue- Mattos",
+          "weight": 2
+        },
+        {
+          "winner": "LA Breakers ECNL G2012/2013",
+          "loser": "Mustang SC ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "LAFC So Cal ECNL G2012/13",
+          "loser": "XF ECNL, GU14",
+          "weight": 2
+        },
+        {
+          "winner": "La Jolla Impact GU14 Blue - McManus",
+          "loser": "Team-8",
+          "weight": 2
+        },
+        {
+          "winner": "Lamorinda U14GA",
+          "loser": "Surf Hawaii 13G Academy III - U14G",
+          "weight": 2
+        },
+        {
+          "winner": "Legends FC San Diego ECNL U14 Williams",
+          "loser": "Real Colorado Athletico ECNL G2012/13",
+          "weight": 2
+        },
+        {
+          "winner": "Oregon Surf ECNL G2012/13",
+          "loser": "LA Breakers ECNL G2012/2013",
+          "weight": 2
+        },
+        {
+          "winner": "Rangers FC, Girls Academy U14, Allgeirer",
+          "loser": "PacNW U14 ECNL",
+          "weight": 2
+        },
+        {
+          "winner": "Rangers FC, Girls Academy U14, Allgeirer",
+          "loser": "Palo Alto SC U14 GA - 2012/2013",
+          "weight": 2
+        },
+        {
+          "winner": "Rebels SC ECNL G2012/13",
+          "loser": "Clovis Crossfire U14G GA",
+          "weight": 2
+        },
+        {
+          "winner": "Rebels SC ECNL G2012/13",
+          "loser": "Seattle Celtic G12 GA",
+          "weight": 2
+        },
+        {
+          "winner": "SC Blues GU14 DPL",
+          "loser": "Legends FC GU14",
+          "weight": 2
+        },
+        {
+          "winner": "Slammers FC ECNL G2012/13",
+          "loser": "Lamorinda U14GA - Pinto",
+          "weight": 2
+        },
+        {
+          "winner": "Sporting San Diego GU14 White Sandoval",
+          "loser": "Surf Academy Select U14G South",
+          "weight": 2
+        },
+        {
+          "winner": "Team-1",
+          "loser": "Inferno SC, Copa 2013G, Welch",
+          "weight": 2
+        },
+        {
+          "winner": "Tudela FC Los Angeles Black",
+          "loser": "1974 Newark FC 2012/2013 GA",
+          "weight": 2
+        },
+        {
+          "winner": "Beach FC N1 G2012/13 SB I.Lopez",
+          "loser": "WW Surf Academy GU14 GA",
+          "weight": 1
+        },
+        {
+          "winner": "COSC ECNL G2012/13",
+          "loser": "Surf Hawaii 12/13G Academy I -U14G",
+          "weight": 1
+        },
+        {
+          "winner": "City SC Carlsbad G13 GA White- Williams",
+          "loser": "Utah Royals FC-AZ ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "Eagles SC ECNL G2012/13",
+          "loser": "Rebels SC ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "FRAM GA U14",
+          "loser": "Rage 2013 ECNL",
+          "weight": 1
+        },
+        {
+          "winner": "Force U14G, Porras",
+          "loser": "1974 Newark FC 2012/2013 GA",
+          "weight": 1
+        },
+        {
+          "winner": "Hawaii Rush 13G, Matas",
+          "loser": "SRU U14G Gold-ECNL",
+          "weight": 1
+        },
+        {
+          "winner": "LA Surf U14 GA",
+          "loser": "Rangers GA 2013, Allgeirer",
+          "weight": 1
+        },
+        {
+          "winner": "LA Surf U14 GA",
+          "loser": "Sporting San Diego GU14 White Sandoval",
+          "weight": 1
+        },
+        {
+          "winner": "LA Surf U14 GA",
+          "loser": "Surf Academy Select U14G South",
+          "weight": 1
+        },
+        {
+          "winner": "LAFC So Cal ECNL G2012/13",
+          "loser": "Avalanche ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "LAFC So Cal ECNL G2012/13",
+          "loser": "Leahi 12/13 Premier West Green - U14G",
+          "weight": 1
+        },
+        {
+          "winner": "LAFC So Cal ECNL G2012/13",
+          "loser": "SDSC GA 12/13",
+          "weight": 1
+        },
+        {
+          "winner": "LV Heat Surf ECNL G2012/13",
+          "loser": "Seattle Celtic G12 GA",
+          "weight": 1
+        },
+        {
+          "winner": "Lamorinda U14GA - Pinto",
+          "loser": "West Coast FC GA 2013",
+          "weight": 1
+        },
+        {
+          "winner": "Legends sb gu14 Gold",
+          "loser": "WW Surf Academy GU14 GA",
+          "weight": 1
+        },
+        {
+          "winner": "SRU U14G Gold-ECNL",
+          "loser": "CIty SC Carlsbad, GU14 GA Blue- Mattos",
+          "weight": 1
+        },
+        {
+          "winner": "Seattle United ECNL GU14",
+          "loser": "South Valley Surf U14 GA",
+          "weight": 1
+        },
+        {
+          "winner": "SoCal Reds GA U14 Flores",
+          "loser": "Legends FC San Diego ECNL U14 Williams",
+          "weight": 1
+        },
+        {
+          "winner": "SoCal Reds GA U14 Flores",
+          "loser": "Real Colorado Athletico ECNL G2012/13",
+          "weight": 1
+        },
+        {
+          "winner": "South Valley Surf U14 GA",
+          "loser": "City Sc Southwest GU14 GA",
+          "weight": 1
+        },
+        {
+          "winner": "South Valley Surf U14 N1",
+          "loser": "Surf Hawaii 13G Academy II - U14G",
+          "weight": 1
+        },
+        {
+          "winner": "Sporting California USA ECNL G2012/13",
+          "loser": "CIty SC Carlsbad, GU14 GA Blue- Mattos",
+          "weight": 1
+        },
+        {
+          "winner": "Sporting San Diego GU14Black Adamos",
+          "loser": "Legends sb gu14 Gold",
+          "weight": 1
+        },
+        {
+          "winner": "Utah Royals FC-AZ ECNL G2012/13",
+          "loser": "Pateadores ECNL G2012/13",
+          "weight": 1
+        }
+      ],
+      "games_list": [
+        {
+          "date": "2026-07-31",
+          "home": "1974 Newark FC 2012/2013 GA",
+          "away": "Tudela FC Los Angeles Black",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-07-31",
+          "home": "Beach FC N1 G2012/13 SB I.Lopez",
+          "away": "WW Surf Academy GU14 GA",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-07-31",
+          "home": "City SC Carlsbad G13 GA White- Williams",
+          "away": "Pateadores ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-07-31",
+          "home": "Eagles SC ECNL G2012/13",
+          "away": "South Valley Surf U14 GA",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-07-31",
+          "home": "East Valley Surf U14 N1 Peacock",
+          "away": "La Jolla Impact GU14 Blue - McManus",
+          "home_score": 1,
+          "away_score": 9
+        },
+        {
+          "date": "2026-07-31",
+          "home": "LAFC So Cal ECNL G2012/13",
+          "away": "Leahi 12/13 Premier West Green - U14G",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-07-31",
+          "home": "LV Heat Surf ECNL G2012/13",
+          "away": "Clovis Crossfire U14G GA",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-07-31",
+          "home": "Legends sb gu14 Gold",
+          "away": "Sporting San Diego GU14Black Adamos",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-07-31",
+          "home": "Mustang SC ECNL G2012/13",
+          "away": "LA Breakers ECNL G2012/2013",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-07-31",
+          "home": "Palo Alto SC U14 GA - 2012/2013",
+          "away": "Rangers FC, Girls Academy U14, Allgeirer",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-07-31",
+          "home": "Placer United ECNL G2012/13",
+          "away": "Utah Royals FC-AZ ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-07-31",
+          "home": "Rage 2013 ECNL",
+          "away": "FRAM GA U14",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-07-31",
+          "home": "Real Colorado Athletico ECNL G2012/13",
+          "away": "SoCal Reds GA U14 Flores",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-07-31",
+          "home": "Rebels SC ECNL G2012/13",
+          "away": "Seattle Celtic G12 GA",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-07-31",
+          "home": "SDSC GA 12/13",
+          "away": "Avalanche ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 5
+        },
+        {
+          "date": "2026-07-31",
+          "home": "SRU U14G Gold-ECNL",
+          "away": "Hawaii Rush 13G, Matas",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-07-31",
+          "home": "Seattle United ECNL GU14",
+          "away": "City Sc Southwest GU14 GA",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-07-31",
+          "home": "Slammers FC ECNL G2012/13",
+          "away": "West Coast FC GA 2013",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-07-31",
+          "home": "South Valley Surf U14 N1",
+          "away": "SC Sporting GU14 GA Red - Gomez",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-07-31",
+          "home": "Sporting California USA ECNL G2012/13",
+          "away": "CIty SC Carlsbad, GU14 GA Blue- Mattos",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-07-31",
+          "home": "Surf Academy Select U14G South",
+          "away": "LA Surf U14 GA",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-07-31",
+          "home": "Team-1",
+          "away": "Inferno SC, Copa 2013G, Welch",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-07-31",
+          "home": "Team-4",
+          "away": "Team-8",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-07-31",
+          "home": "XF ECNL, GU14",
+          "away": "Lamorinda U14GA - Pinto",
+          "home_score": 6,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-01",
+          "home": "1974 Newark FC 2012/2013 GA",
+          "away": "Force U14G, Porras",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-01",
+          "home": "Beach FC N1 G2012/13 SB I.Lopez",
+          "away": "Legends sb gu14 Gold",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-01",
+          "home": "City SC Carlsbad G13 GA White- Williams",
+          "away": "Placer United ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-01",
+          "home": "City Sc Southwest GU14 GA",
+          "away": "South Valley Surf U14 GA",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-01",
+          "home": "Clovis Crossfire U14G GA",
+          "away": "Seattle Celtic G12 GA",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-01",
+          "home": "Express SC GU14 Elite Shuttleworth",
+          "away": "Inferno SC, Copa 2013G, Welch",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-01",
+          "home": "Hawaii Rush 13G, Matas",
+          "away": "CIty SC Carlsbad, GU14 GA Blue- Mattos",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-01",
+          "home": "LAFC So Cal ECNL G2012/13",
+          "away": "SDSC GA 12/13",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-01",
+          "home": "LV Heat Surf ECNL G2012/13",
+          "away": "Rebels SC ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-01",
+          "home": "Leahi 12/13 Premier West Green - U14G",
+          "away": "Avalanche ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 4
+        },
+        {
+          "date": "2026-08-01",
+          "home": "Legends FC GU14",
+          "away": "SC Blues GU14 DPL",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-01",
+          "home": "Oregon Surf ECNL G2012/13",
+          "away": "Mustang SC ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-01",
+          "home": "Palo Alto SC U14 GA - 2012/2013",
+          "away": "PacNW U14 ECNL",
+          "home_score": 2,
+          "away_score": 5
+        },
+        {
+          "date": "2026-08-01",
+          "home": "Pateadores ECNL G2012/13",
+          "away": "Utah Royals FC-AZ ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-01",
+          "home": "Real Colorado Athletico ECNL G2012/13",
+          "away": "Legends FC San Diego ECNL U14 Williams",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-01",
+          "home": "SRU U14G Gold-ECNL",
+          "away": "Sporting California USA ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 4
+        },
+        {
+          "date": "2026-08-01",
+          "home": "Seattle United ECNL GU14",
+          "away": "Eagles SC ECNL G2012/13",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-01",
+          "home": "Slammers FC ECNL G2012/13",
+          "away": "XF ECNL, GU14",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-01",
+          "home": "Surf Academy Select U14G South",
+          "away": "Sporting San Diego GU14 White Sandoval",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-08-01",
+          "home": "Surf Hawaii 13G Academy II - U14G",
+          "away": "South Valley Surf U14 N1",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-01",
+          "home": "Team-4",
+          "away": "East Valley Surf U14 N1 Peacock",
+          "home_score": 13,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-01",
+          "home": "Team-8",
+          "away": "La Jolla Impact GU14 Blue - McManus",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-01",
+          "home": "WW Surf Academy GU14 GA",
+          "away": "Sporting San Diego GU14Black Adamos",
+          "home_score": 1,
+          "away_score": 4
+        },
+        {
+          "date": "2026-08-01",
+          "home": "West Coast FC GA 2013",
+          "away": "Lamorinda U14GA - Pinto",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-02",
+          "home": "Avalanche ECNL G2012/13",
+          "away": "LAFC So Cal ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-02",
+          "home": "CIty SC Carlsbad, GU14 GA Blue- Mattos",
+          "away": "SRU U14G Gold-ECNL",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-02",
+          "home": "COSC ECNL G2012/13",
+          "away": "Surf Hawaii 12/13G Academy I -U14G",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-02",
+          "home": "Eagles SC ECNL G2012/13",
+          "away": "City Sc Southwest GU14 GA",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-02",
+          "home": "East Valley Surf U14 N1 Peacock",
+          "away": "Team-8",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-08-02",
+          "home": "Force U14G, Porras",
+          "away": "Tudela FC Los Angeles Black",
+          "home_score": 0,
+          "away_score": 4
+        },
+        {
+          "date": "2026-08-02",
+          "home": "LA Breakers ECNL G2012/2013",
+          "away": "Oregon Surf ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-02",
+          "home": "LA Surf U14 GA",
+          "away": "Sporting San Diego GU14 White Sandoval",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-02",
+          "home": "La Jolla Impact GU14 Blue - McManus",
+          "away": "Team-4",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-02",
+          "home": "Lamorinda U14GA",
+          "away": "Surf Hawaii 13G Academy III - U14G",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-02",
+          "home": "Lamorinda U14GA - Pinto",
+          "away": "Slammers FC ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-02",
+          "home": "Legends FC San Diego ECNL U14 Williams",
+          "away": "SoCal Reds GA U14 Flores",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-02",
+          "home": "Legends sb gu14 Gold",
+          "away": "WW Surf Academy GU14 GA",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-02",
+          "home": "Mustang SC, Girls U14 Elite I, Lego",
+          "away": "Inland empire FC gold",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-02",
+          "home": "PacNW U14 ECNL",
+          "away": "Rangers FC, Girls Academy U14, Allgeirer",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-02",
+          "home": "Placer United ECNL G2012/13",
+          "away": "Pateadores ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-02",
+          "home": "Rebels SC ECNL G2012/13",
+          "away": "Clovis Crossfire U14G GA",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-02",
+          "home": "SDSC GA 12/13",
+          "away": "Leahi 12/13 Premier West Green - U14G",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-02",
+          "home": "Seattle Celtic G12 GA",
+          "away": "LV Heat Surf ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-02",
+          "home": "South Valley Surf U14 GA",
+          "away": "Seattle United ECNL GU14",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-02",
+          "home": "Sporting California USA ECNL G2012/13",
+          "away": "Hawaii Rush 13G, Matas",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-02",
+          "home": "Sporting San Diego GU14Black Adamos",
+          "away": "Beach FC N1 G2012/13 SB I.Lopez",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-02",
+          "home": "Surf Hawaii 13G Academy II - U14G",
+          "away": "SC Sporting GU14 GA Red - Gomez",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-02",
+          "home": "Team-1",
+          "away": "Express SC GU14 Elite Shuttleworth",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-02",
+          "home": "Utah Royals FC-AZ ECNL G2012/13",
+          "away": "City SC Carlsbad G13 GA White- Williams",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-02",
+          "home": "XF ECNL, GU14",
+          "away": "West Coast FC GA 2013",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-03",
+          "home": "Eagles SC ECNL G2012/13",
+          "away": "Rebels SC ECNL G2012/13",
+          "home_score": 4,
+          "away_score": 3
+        },
+        {
+          "date": "2026-08-03",
+          "home": "Express SC GU14 Elite Shuttleworth",
+          "away": "Team-4",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-03",
+          "home": "LA Surf U14 GA",
+          "away": "Rangers GA 2013, Allgeirer",
+          "home_score": 3,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-03",
+          "home": "LAFC So Cal ECNL G2012/13",
+          "away": "XF ECNL, GU14",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-03",
+          "home": "SoCal Reds GA U14 Flores",
+          "away": "Rebels SC ECNL G2012/13",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-03",
+          "home": "Sporting California USA ECNL G2012/13",
+          "away": "Eagles SC ECNL G2012/13",
+          "home_score": 0,
+          "away_score": 2
+        }
+      ]
+    }
+  ]
+}

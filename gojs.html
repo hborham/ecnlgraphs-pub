@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>U14 Girls BeatGraphs</title>
+<script src="https://unpkg.com/gojs/release/go.js"></script>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 1100px; margin: 0 auto; padding: 24px; background: #fff; color: #222; }
+  h1 { font-size: 28px; margin-bottom: 4px; }
+  .sub { color: #666; margin-bottom: 32px; }
+  section { margin-bottom: 56px; }
+  h2 { font-size: 20px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+  .diagram { width: 100%; height: 640px; border: 1px solid #ddd; background: #f5f5f5; }
+  table.scores { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 13px; }
+  table.scores th { background: #e8e8e8; text-align: left; padding: 6px 8px; }
+  table.scores td { padding: 5px 8px; border-bottom: 1px solid #f0f0f0; }
+  table.scores tr:nth-child(even) td { background: #fafafa; }
+  footer { color: #999; font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<h1>U14 Girls BeatGraphs</h1>
+<p class="sub">Weighted Method (beatgraphs.com), rendered live with GoJS &middot; rebuilt weekly</p>
+<div id="leagues"></div>
+<footer>Data: beatgraphs.com Weighted Method &middot; <a href="https://github.com/hborham/ecnlgraphs">hborham/ecnlgraphs</a></footer>
+
+<script>
+const $ = go.GraphObject.make;
+
+// slugify matches the Go LogoSlug: lowercase, non-alnum -> hyphen
+function slug(t) {
+  return t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+function initials(name) {
+  const words = name.split(/\s+/).filter(w => /^[a-z]/i.test(w));
+  return (words.slice(0, 2).map(w => w[0].toUpperCase()).join('') || '?');
+}
+function placeholderURI(name, color) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">` +
+    `<circle cx="32" cy="32" r="30" fill="${color}"/>` +
+    `<text x="32" y="41" text-anchor="middle" font-size="22" font-weight="bold" fill="white">${initials(name)}</text></svg>`;
+  return 'data:image/svg+xml;base64,' + btoa(svg);
+}
+const PALETTE = ["#1f77b4","#ff7f0e","#2ca02c","#d62728","#9467bd","#8c564b","#e377c2","#7f7f7f","#bcbd22","#17becf"];
+
+async function logoURI(team, idx) {
+  try {
+    const r = await fetch('logos/' + slug(team) + '.jpg.b64');
+    if (!r.ok) throw 0;
+    const b64 = (await r.text()).trim();
+    return 'data:image/jpeg;base64,' + b64;
+  } catch (e) {
+    return placeholderURI(team, PALETTE[idx % PALETTE.length]);
+  }
+}
+
+function makeDiagram(div, league, logos) {
+  const diagram = $(go.Diagram, div, {
+    layout: $(go.LayeredDigraphLayout, { direction: 90, layerSpacing: 30, columnSpacing: 25 }),
+    'undoManager.isEnabled': false,
+    allowZoom: true, allowHorizontalScroll: true, allowVerticalScroll: true
+  });
+
+  // Like the GoJS beatPaths sample: label above the logo, no node border.
+  diagram.nodeTemplate =
+    $(go.Node, 'Vertical',
+      $(go.TextBlock, { font: 'bold 12px sans-serif', stroke: '#222' },
+        new go.Binding('text', 'short')),
+      $(go.Panel, 'Spot',
+        $(go.Shape, 'Ellipse', { width: 72, height: 72, fill: 'transparent', stroke: '#B8860B', strokeWidth: 3.5 },
+          new go.Binding('visible', 'bracket')),
+        $(go.Picture, { width: 64, height: 64 }, new go.Binding('source', 'logo'))
+      ),
+      $(go.TextBlock, { font: '11px sans-serif', stroke: '#666' },
+        new go.Binding('text', 'rating', r => r.toFixed(2)))
+    );
+
+  diagram.linkTemplate =
+    $(go.Link,
+      $(go.Shape, { stroke: '#333', strokeWidth: 1.5 }),
+      $(go.Shape, { toArrow: 'Standard', fill: '#333', stroke: '#333' })
+    );
+
+  const nodeData = league.rankings.map((r, i) => ({
+    key: r.team, short: r.short, rating: r.rating,
+    bracket: r.bracket_team, logo: logos[r.team]
+  }));
+  const linkData = league.beatwins.map(b => ({ from: b.winner, to: b.loser }));
+  diagram.model = new go.GraphLinksModel(nodeData, linkData);
+}
+
+function scoresTable(league) {
+  const rows = league.games_list.map(g =>
+    `<tr><td>${g.date}</td><td>${g.home}</td><td>${g.home_score}&ndash;${g.away_score}</td><td>${g.away}</td></tr>`
+  ).join('');
+  return `<h3>Game Scores</h3><table class="scores"><tr><th>Date</th><th>Home</th><th>Score</th><th>Away</th></tr>${rows}</table>`;
+}
+
+async function main() {
+  const data = await (await fetch('data.json')).json();
+  const root = document.getElementById('leagues');
+  for (const league of data.leagues) {
+    const sec = document.createElement('section');
+    sec.innerHTML = `<h2>${league.title}</h2><div class="diagram" id="d-${league.id}"></div>`;
+    root.appendChild(sec);
+    // preload logos
+    const logos = {};
+    await Promise.all(league.rankings.map(async (r, i) => { logos[r.team] = await logoURI(r.team, i); }));
+    makeDiagram(sec.querySelector('.diagram'), league, logos);
+    sec.insertAdjacentHTML('beforeend', scoresTable(league));
+  }
+}
+main();
+</script>
+</body>
+</html>
