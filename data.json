@@ -5120,6 +5120,5696 @@
           "away_score": 2
         }
       ]
+    },
+    {
+      "id": "norcal-gu13",
+      "title": "ECNL Girls NorCal 2026-27 — GU13",
+      "season": "2026-27",
+      "gender": "Girls",
+      "age": "U13",
+      "type": "League",
+      "competition": "ECNL NorCal",
+      "games": 78,
+      "draws": 8,
+      "teams": 12,
+      "links": 57,
+      "loops_resolved": 3,
+      "loops": [
+        {
+          "cycle": [
+            "Marin FC ECNL G2013/14",
+            "Mustang SC ECNL G2013/14"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "Marin FC ECNL G2013/14",
+              "loser": "Mustang SC ECNL G2013/14"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "Pleasanton RAGE ECNL G2013/14",
+            "Santa Rosa United ECNL G2013/14"
+          ],
+          "weight": 2,
+          "broken": [
+            {
+              "winner": "Pleasanton RAGE ECNL G2013/14",
+              "loser": "Santa Rosa United ECNL G2013/14"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "Bay Area Surf - ECNL G2013/14",
+            "Placer United ECNL G2013/14",
+            "MVLA ECNL G2013/14"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "Bay Area Surf - ECNL G2013/14",
+              "loser": "Placer United ECNL G2013/14"
+            },
+            {
+              "winner": "Placer United ECNL G2013/14",
+              "loser": "MVLA ECNL G2013/14"
+            }
+          ]
+        }
+      ],
+      "rankings": [
+        {
+          "rank": 1,
+          "team": "San Juan SC ECNL G2013/14",
+          "short": "SAN JUAN",
+          "bracket_team": false,
+          "rating": 6.73,
+          "paths_out": 1492,
+          "paths_in": 0,
+          "w": 11,
+          "l": 0,
+          "d": 2
+        },
+        {
+          "rank": 2,
+          "team": "Mustang SC ECNL G2013/14",
+          "short": "MUSTANG",
+          "bracket_team": false,
+          "rating": 6.7,
+          "paths_out": 1470,
+          "paths_in": 0,
+          "w": 11,
+          "l": 1,
+          "d": 0
+        },
+        {
+          "rank": 3,
+          "team": "MVLA ECNL G2013/14",
+          "short": "MVLA",
+          "bracket_team": false,
+          "rating": 4.29,
+          "paths_out": 546,
+          "paths_in": 2,
+          "w": 10,
+          "l": 3,
+          "d": 1
+        },
+        {
+          "rank": 4,
+          "team": "Bay Area Surf - ECNL G2013/14",
+          "short": "BAY SURF",
+          "bracket_team": false,
+          "rating": 3.42,
+          "paths_out": 385,
+          "paths_in": 8,
+          "w": 7,
+          "l": 3,
+          "d": 1
+        },
+        {
+          "rank": 5,
+          "team": "Davis Legacy ECNL G2013/14",
+          "short": "DAVIS",
+          "bracket_team": false,
+          "rating": 2.56,
+          "paths_out": 264,
+          "paths_in": 15,
+          "w": 8,
+          "l": 4,
+          "d": 1
+        },
+        {
+          "rank": 6,
+          "team": "Placer United ECNL G2013/14",
+          "short": "PLACER",
+          "bracket_team": false,
+          "rating": 1.37,
+          "paths_out": 136,
+          "paths_in": 21,
+          "w": 7,
+          "l": 5,
+          "d": 2
+        },
+        {
+          "rank": 7,
+          "team": "Marin FC ECNL G2013/14",
+          "short": "MARIN",
+          "bracket_team": false,
+          "rating": -0.03,
+          "paths_out": 59,
+          "paths_in": 61,
+          "w": 5,
+          "l": 7,
+          "d": 2
+        },
+        {
+          "rank": 8,
+          "team": "Santa Rosa United ECNL G2013/14",
+          "short": "SANTA ROSA",
+          "bracket_team": false,
+          "rating": -1.23,
+          "paths_out": 34,
+          "paths_in": 136,
+          "w": 5,
+          "l": 9,
+          "d": 0
+        },
+        {
+          "rank": 9,
+          "team": "Force (CA) ECNL G2013/14",
+          "short": "FORCE CA",
+          "bracket_team": false,
+          "rating": -2.44,
+          "paths_out": 12,
+          "paths_in": 246,
+          "w": 2,
+          "l": 7,
+          "d": 2
+        },
+        {
+          "rank": 10,
+          "team": "Pleasanton RAGE ECNL G2013/14",
+          "short": "RAGE",
+          "bracket_team": false,
+          "rating": -3.8,
+          "paths_out": 10,
+          "paths_in": 454,
+          "w": 3,
+          "l": 8,
+          "d": 2
+        },
+        {
+          "rank": 11,
+          "team": "COSC ECNL G2013/14",
+          "short": "COSC",
+          "bracket_team": false,
+          "rating": -4.94,
+          "paths_out": 3,
+          "paths_in": 711,
+          "w": 1,
+          "l": 10,
+          "d": 2
+        },
+        {
+          "rank": 12,
+          "team": "Stanislaus Surf - ECNL G2013/14",
+          "short": "STANISLAUS",
+          "bracket_team": false,
+          "rating": -7.01,
+          "paths_out": 0,
+          "paths_in": 1698,
+          "w": 0,
+          "l": 13,
+          "d": 1
+        }
+      ],
+      "beatwins": [
+        {
+          "winner": "San Juan SC ECNL G2013/14",
+          "loser": "Santa Rosa United ECNL G2013/14",
+          "weight": 12
+        },
+        {
+          "winner": "Davis Legacy ECNL G2013/14",
+          "loser": "COSC ECNL G2013/14",
+          "weight": 10
+        },
+        {
+          "winner": "MVLA ECNL G2013/14",
+          "loser": "Force (CA) ECNL G2013/14",
+          "weight": 10
+        },
+        {
+          "winner": "Placer United ECNL G2013/14",
+          "loser": "Stanislaus Surf - ECNL G2013/14",
+          "weight": 10
+        },
+        {
+          "winner": "MVLA ECNL G2013/14",
+          "loser": "Pleasanton RAGE ECNL G2013/14",
+          "weight": 8
+        },
+        {
+          "winner": "MVLA ECNL G2013/14",
+          "loser": "Stanislaus Surf - ECNL G2013/14",
+          "weight": 8
+        },
+        {
+          "winner": "MVLA ECNL G2013/14",
+          "loser": "Santa Rosa United ECNL G2013/14",
+          "weight": 7
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2013/14",
+          "loser": "COSC ECNL G2013/14",
+          "weight": 6
+        },
+        {
+          "winner": "MVLA ECNL G2013/14",
+          "loser": "Marin FC ECNL G2013/14",
+          "weight": 6
+        },
+        {
+          "winner": "San Juan SC ECNL G2013/14",
+          "loser": "COSC ECNL G2013/14",
+          "weight": 6
+        },
+        {
+          "winner": "Mustang SC ECNL G2013/14",
+          "loser": "Davis Legacy ECNL G2013/14",
+          "weight": 5
+        },
+        {
+          "winner": "Placer United ECNL G2013/14",
+          "loser": "Pleasanton RAGE ECNL G2013/14",
+          "weight": 5
+        },
+        {
+          "winner": "San Juan SC ECNL G2013/14",
+          "loser": "Force (CA) ECNL G2013/14",
+          "weight": 5
+        },
+        {
+          "winner": "San Juan SC ECNL G2013/14",
+          "loser": "Pleasanton RAGE ECNL G2013/14",
+          "weight": 5
+        },
+        {
+          "winner": "San Juan SC ECNL G2013/14",
+          "loser": "Stanislaus Surf - ECNL G2013/14",
+          "weight": 5
+        },
+        {
+          "winner": "Davis Legacy ECNL G2013/14",
+          "loser": "Pleasanton RAGE ECNL G2013/14",
+          "weight": 4
+        },
+        {
+          "winner": "Marin FC ECNL G2013/14",
+          "loser": "Stanislaus Surf - ECNL G2013/14",
+          "weight": 4
+        },
+        {
+          "winner": "Mustang SC ECNL G2013/14",
+          "loser": "Stanislaus Surf - ECNL G2013/14",
+          "weight": 4
+        },
+        {
+          "winner": "Placer United ECNL G2013/14",
+          "loser": "Santa Rosa United ECNL G2013/14",
+          "weight": 4
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2013/14",
+          "loser": "COSC ECNL G2013/14",
+          "weight": 4
+        },
+        {
+          "winner": "San Juan SC ECNL G2013/14",
+          "loser": "Bay Area Surf - ECNL G2013/14",
+          "weight": 4
+        },
+        {
+          "winner": "Santa Rosa United ECNL G2013/14",
+          "loser": "Force (CA) ECNL G2013/14",
+          "weight": 4
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2013/14",
+          "loser": "Stanislaus Surf - ECNL G2013/14",
+          "weight": 3
+        },
+        {
+          "winner": "COSC ECNL G2013/14",
+          "loser": "Stanislaus Surf - ECNL G2013/14",
+          "weight": 3
+        },
+        {
+          "winner": "Davis Legacy ECNL G2013/14",
+          "loser": "Placer United ECNL G2013/14",
+          "weight": 3
+        },
+        {
+          "winner": "MVLA ECNL G2013/14",
+          "loser": "COSC ECNL G2013/14",
+          "weight": 3
+        },
+        {
+          "winner": "Marin FC ECNL G2013/14",
+          "loser": "Force (CA) ECNL G2013/14",
+          "weight": 3
+        },
+        {
+          "winner": "Mustang SC ECNL G2013/14",
+          "loser": "Force (CA) ECNL G2013/14",
+          "weight": 3
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2013/14",
+          "loser": "Stanislaus Surf - ECNL G2013/14",
+          "weight": 3
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2013/14",
+          "loser": "Marin FC ECNL G2013/14",
+          "weight": 2
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2013/14",
+          "loser": "Santa Rosa United ECNL G2013/14",
+          "weight": 2
+        },
+        {
+          "winner": "Davis Legacy ECNL G2013/14",
+          "loser": "Marin FC ECNL G2013/14",
+          "weight": 2
+        },
+        {
+          "winner": "Davis Legacy ECNL G2013/14",
+          "loser": "Santa Rosa United ECNL G2013/14",
+          "weight": 2
+        },
+        {
+          "winner": "Marin FC ECNL G2013/14",
+          "loser": "COSC ECNL G2013/14",
+          "weight": 2
+        },
+        {
+          "winner": "Mustang SC ECNL G2013/14",
+          "loser": "COSC ECNL G2013/14",
+          "weight": 2
+        },
+        {
+          "winner": "Mustang SC ECNL G2013/14",
+          "loser": "Marin FC ECNL G2013/14",
+          "weight": 2
+        },
+        {
+          "winner": "San Juan SC ECNL G2013/14",
+          "loser": "Marin FC ECNL G2013/14",
+          "weight": 2
+        },
+        {
+          "winner": "San Juan SC ECNL G2013/14",
+          "loser": "Placer United ECNL G2013/14",
+          "weight": 2
+        },
+        {
+          "winner": "Santa Rosa United ECNL G2013/14",
+          "loser": "COSC ECNL G2013/14",
+          "weight": 2
+        },
+        {
+          "winner": "Santa Rosa United ECNL G2013/14",
+          "loser": "Stanislaus Surf - ECNL G2013/14",
+          "weight": 2
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2013/14",
+          "loser": "Davis Legacy ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2013/14",
+          "loser": "Pleasanton RAGE ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "Davis Legacy ECNL G2013/14",
+          "loser": "Stanislaus Surf - ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "Force (CA) ECNL G2013/14",
+          "loser": "Pleasanton RAGE ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "Force (CA) ECNL G2013/14",
+          "loser": "Stanislaus Surf - ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "MVLA ECNL G2013/14",
+          "loser": "Bay Area Surf - ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "Marin FC ECNL G2013/14",
+          "loser": "Santa Rosa United ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2013/14",
+          "loser": "Bay Area Surf - ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2013/14",
+          "loser": "MVLA ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2013/14",
+          "loser": "Placer United ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2013/14",
+          "loser": "Pleasanton RAGE ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2013/14",
+          "loser": "Santa Rosa United ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "Placer United ECNL G2013/14",
+          "loser": "Force (CA) ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "Placer United ECNL G2013/14",
+          "loser": "Marin FC ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "San Juan SC ECNL G2013/14",
+          "loser": "Davis Legacy ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "San Juan SC ECNL G2013/14",
+          "loser": "MVLA ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "Santa Rosa United ECNL G2013/14",
+          "loser": "Pleasanton RAGE ECNL G2013/14",
+          "weight": 1
+        }
+      ],
+      "arrows": [
+        {
+          "winner": "Pleasanton RAGE ECNL G2013/14",
+          "loser": "COSC ECNL G2013/14",
+          "weight": 4
+        },
+        {
+          "winner": "Santa Rosa United ECNL G2013/14",
+          "loser": "Force (CA) ECNL G2013/14",
+          "weight": 4
+        },
+        {
+          "winner": "COSC ECNL G2013/14",
+          "loser": "Stanislaus Surf - ECNL G2013/14",
+          "weight": 3
+        },
+        {
+          "winner": "Davis Legacy ECNL G2013/14",
+          "loser": "Placer United ECNL G2013/14",
+          "weight": 3
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2013/14",
+          "loser": "Davis Legacy ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "Force (CA) ECNL G2013/14",
+          "loser": "Pleasanton RAGE ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "MVLA ECNL G2013/14",
+          "loser": "Bay Area Surf - ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "Marin FC ECNL G2013/14",
+          "loser": "Santa Rosa United ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2013/14",
+          "loser": "MVLA ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "Placer United ECNL G2013/14",
+          "loser": "Marin FC ECNL G2013/14",
+          "weight": 1
+        },
+        {
+          "winner": "San Juan SC ECNL G2013/14",
+          "loser": "MVLA ECNL G2013/14",
+          "weight": 1
+        }
+      ],
+      "games_list": [
+        {
+          "date": "2026-08-22",
+          "home": "Davis Legacy ECNL G2013/14",
+          "away": "Mustang SC ECNL G2013/14",
+          "home_score": 1,
+          "away_score": 4
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Force (CA) ECNL G2013/14",
+          "away": "Marin FC ECNL G2013/14",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-22",
+          "home": "MVLA ECNL G2013/14",
+          "away": "Stanislaus Surf - ECNL G2013/14",
+          "home_score": 6,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Santa Rosa United ECNL G2013/14",
+          "away": "COSC ECNL G2013/14",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-23",
+          "home": "Placer United ECNL G2013/14",
+          "away": "San Juan SC ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-29",
+          "home": "COSC ECNL G2013/14",
+          "away": "Stanislaus Surf - ECNL G2013/14",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Davis Legacy ECNL G2013/14",
+          "away": "MVLA ECNL G2013/14",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Marin FC ECNL G2013/14",
+          "away": "Bay Area Surf - ECNL G2013/14",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Mustang SC ECNL G2013/14",
+          "away": "Force (CA) ECNL G2013/14",
+          "home_score": 4,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Placer United ECNL G2013/14",
+          "away": "Santa Rosa United ECNL G2013/14",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Pleasanton RAGE ECNL G2013/14",
+          "away": "San Juan SC ECNL G2013/14",
+          "home_score": 0,
+          "away_score": 5
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Bay Area Surf - ECNL G2013/14",
+          "away": "Santa Rosa United ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Davis Legacy ECNL G2013/14",
+          "away": "Pleasanton RAGE ECNL G2013/14",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Force (CA) ECNL G2013/14",
+          "away": "Placer United ECNL G2013/14",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Marin FC ECNL G2013/14",
+          "away": "COSC ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Mustang SC ECNL G2013/14",
+          "away": "MVLA ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-30",
+          "home": "San Juan SC ECNL G2013/14",
+          "away": "Stanislaus Surf - ECNL G2013/14",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Davis Legacy ECNL G2013/14",
+          "away": "Placer United ECNL G2013/14",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-12",
+          "home": "MVLA ECNL G2013/14",
+          "away": "Marin FC ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Mustang SC ECNL G2013/14",
+          "away": "Bay Area Surf - ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Pleasanton RAGE ECNL G2013/14",
+          "away": "Stanislaus Surf - ECNL G2013/14",
+          "home_score": 4,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-12",
+          "home": "San Juan SC ECNL G2013/14",
+          "away": "Santa Rosa United ECNL G2013/14",
+          "home_score": 8,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Davis Legacy ECNL G2013/14",
+          "away": "COSC ECNL G2013/14",
+          "home_score": 6,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Force (CA) ECNL G2013/14",
+          "away": "MVLA ECNL G2013/14",
+          "home_score": 1,
+          "away_score": 6
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Marin FC ECNL G2013/14",
+          "away": "Mustang SC ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-19",
+          "home": "San Juan SC ECNL G2013/14",
+          "away": "Bay Area Surf - ECNL G2013/14",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Santa Rosa United ECNL G2013/14",
+          "away": "Pleasanton RAGE ECNL G2013/14",
+          "home_score": 5,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Stanislaus Surf - ECNL G2013/14",
+          "away": "Placer United ECNL G2013/14",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Bay Area Surf - ECNL G2013/14",
+          "away": "Stanislaus Surf - ECNL G2013/14",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-20",
+          "home": "COSC ECNL G2013/14",
+          "away": "MVLA ECNL G2013/14",
+          "home_score": 1,
+          "away_score": 4
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Davis Legacy ECNL G2013/14",
+          "away": "Santa Rosa United ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Placer United ECNL G2013/14",
+          "away": "Mustang SC ECNL G2013/14",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Pleasanton RAGE ECNL G2013/14",
+          "away": "Marin FC ECNL G2013/14",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-20",
+          "home": "San Juan SC ECNL G2013/14",
+          "away": "Force (CA) ECNL G2013/14",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-26",
+          "home": "COSC ECNL G2013/14",
+          "away": "San Juan SC ECNL G2013/14",
+          "home_score": 1,
+          "away_score": 7
+        },
+        {
+          "date": "2026-09-26",
+          "home": "MVLA ECNL G2013/14",
+          "away": "Santa Rosa United ECNL G2013/14",
+          "home_score": 7,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Marin FC ECNL G2013/14",
+          "away": "Davis Legacy ECNL G2013/14",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Mustang SC ECNL G2013/14",
+          "away": "Stanislaus Surf - ECNL G2013/14",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Placer United ECNL G2013/14",
+          "away": "Pleasanton RAGE ECNL G2013/14",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Pleasanton RAGE ECNL G2013/14",
+          "away": "COSC ECNL G2013/14",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-27",
+          "home": "San Juan SC ECNL G2013/14",
+          "away": "MVLA ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Santa Rosa United ECNL G2013/14",
+          "away": "Mustang SC ECNL G2013/14",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Stanislaus Surf - ECNL G2013/14",
+          "away": "Marin FC ECNL G2013/14",
+          "home_score": 0,
+          "away_score": 4
+        },
+        {
+          "date": "2026-10-03",
+          "home": "COSC ECNL G2013/14",
+          "away": "Placer United ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Davis Legacy ECNL G2013/14",
+          "away": "Bay Area Surf - ECNL G2013/14",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Force (CA) ECNL G2013/14",
+          "away": "Stanislaus Surf - ECNL G2013/14",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-03",
+          "home": "MVLA ECNL G2013/14",
+          "away": "Pleasanton RAGE ECNL G2013/14",
+          "home_score": 8,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Marin FC ECNL G2013/14",
+          "away": "Santa Rosa United ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Bay Area Surf - ECNL G2013/14",
+          "away": "COSC ECNL G2013/14",
+          "home_score": 6,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Davis Legacy ECNL G2013/14",
+          "away": "Stanislaus Surf - ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Placer United ECNL G2013/14",
+          "away": "MVLA ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Pleasanton RAGE ECNL G2013/14",
+          "away": "Mustang SC ECNL G2013/14",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-17",
+          "home": "San Juan SC ECNL G2013/14",
+          "away": "Marin FC ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Santa Rosa United ECNL G2013/14",
+          "away": "Force (CA) ECNL G2013/14",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Bay Area Surf - ECNL G2013/14",
+          "away": "MVLA ECNL G2013/14",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Davis Legacy ECNL G2013/14",
+          "away": "San Juan SC ECNL G2013/14",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Marin FC ECNL G2013/14",
+          "away": "Placer United ECNL G2013/14",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Mustang SC ECNL G2013/14",
+          "away": "COSC ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Pleasanton RAGE ECNL G2013/14",
+          "away": "Force (CA) ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Santa Rosa United ECNL G2013/14",
+          "away": "Stanislaus Surf - ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-25",
+          "home": "COSC ECNL G2013/14",
+          "away": "Santa Rosa United ECNL G2013/14",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Marin FC ECNL G2013/14",
+          "away": "Force (CA) ECNL G2013/14",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Mustang SC ECNL G2013/14",
+          "away": "Davis Legacy ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Pleasanton RAGE ECNL G2013/14",
+          "away": "Bay Area Surf - ECNL G2013/14",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-25",
+          "home": "San Juan SC ECNL G2013/14",
+          "away": "Placer United ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Stanislaus Surf - ECNL G2013/14",
+          "away": "MVLA ECNL G2013/14",
+          "home_score": 1,
+          "away_score": 4
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Force (CA) ECNL G2013/14",
+          "away": "COSC ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Marin FC ECNL G2013/14",
+          "away": "MVLA ECNL G2013/14",
+          "home_score": 0,
+          "away_score": 5
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Placer United ECNL G2013/14",
+          "away": "Davis Legacy ECNL G2013/14",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Santa Rosa United ECNL G2013/14",
+          "away": "San Juan SC ECNL G2013/14",
+          "home_score": 0,
+          "away_score": 4
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Stanislaus Surf - ECNL G2013/14",
+          "away": "Pleasanton RAGE ECNL G2013/14",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Bay Area Surf - ECNL G2013/14",
+          "away": "San Juan SC ECNL G2013/14",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "COSC ECNL G2013/14",
+          "away": "Davis Legacy ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 6
+        },
+        {
+          "date": "2026-11-07",
+          "home": "MVLA ECNL G2013/14",
+          "away": "Force (CA) ECNL G2013/14",
+          "home_score": 6,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Mustang SC ECNL G2013/14",
+          "away": "Marin FC ECNL G2013/14",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Placer United ECNL G2013/14",
+          "away": "Stanislaus Surf - ECNL G2013/14",
+          "home_score": 9,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Pleasanton RAGE ECNL G2013/14",
+          "away": "Santa Rosa United ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-08",
+          "home": "Bay Area Surf - ECNL G2013/14",
+          "away": "Placer United ECNL G2013/14",
+          "home_score": 2,
+          "away_score": 1
+        }
+      ]
+    },
+    {
+      "id": "norcal-gu15",
+      "title": "ECNL Girls NorCal 2026-27 — GU15",
+      "season": "2026-27",
+      "gender": "Girls",
+      "age": "U15",
+      "type": "League",
+      "competition": "ECNL NorCal",
+      "games": 81,
+      "draws": 12,
+      "teams": 12,
+      "links": 55,
+      "loops_resolved": 3,
+      "loops": [
+        {
+          "cycle": [
+            "COSC ECNL G2011/12",
+            "Davis Legacy ECNL G2011/12"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "COSC ECNL G2011/12",
+              "loser": "Davis Legacy ECNL G2011/12"
+            },
+            {
+              "winner": "Davis Legacy ECNL G2011/12",
+              "loser": "COSC ECNL G2011/12"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "Pleasanton RAGE ECNL G2011/12",
+            "Santa Rosa United ECNL G2011/12"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "Pleasanton RAGE ECNL G2011/12",
+              "loser": "Santa Rosa United ECNL G2011/12"
+            },
+            {
+              "winner": "Santa Rosa United ECNL G2011/12",
+              "loser": "Pleasanton RAGE ECNL G2011/12"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "Davis Legacy ECNL G2011/12",
+            "Pleasanton RAGE ECNL G2011/12",
+            "Stanislaus Surf - ECNL G2011/12"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "Stanislaus Surf - ECNL G2011/12",
+              "loser": "Davis Legacy ECNL G2011/12"
+            }
+          ]
+        }
+      ],
+      "rankings": [
+        {
+          "rank": 1,
+          "team": "Mustang SC ECNL G2011/12",
+          "short": "MUSTANG",
+          "bracket_team": false,
+          "rating": 6.77,
+          "paths_out": 1235,
+          "paths_in": 0,
+          "w": 10,
+          "l": 0,
+          "d": 4
+        },
+        {
+          "rank": 2,
+          "team": "Bay Area Surf - ECNL G2011/12",
+          "short": "BAY SURF",
+          "bracket_team": false,
+          "rating": 5.39,
+          "paths_out": 691,
+          "paths_in": 2,
+          "w": 10,
+          "l": 1,
+          "d": 1
+        },
+        {
+          "rank": 3,
+          "team": "COSC ECNL G2011/12",
+          "short": "COSC",
+          "bracket_team": false,
+          "rating": 2.63,
+          "paths_out": 217,
+          "paths_in": 6,
+          "w": 9,
+          "l": 3,
+          "d": 2
+        },
+        {
+          "rank": 4,
+          "team": "MVLA ECNL G2011/12",
+          "short": "MVLA",
+          "bracket_team": false,
+          "rating": 2.33,
+          "paths_out": 182,
+          "paths_in": 3,
+          "w": 10,
+          "l": 1,
+          "d": 3
+        },
+        {
+          "rank": 5,
+          "team": "Placer United ECNL G2011/12",
+          "short": "PLACER",
+          "bracket_team": false,
+          "rating": 1.83,
+          "paths_out": 151,
+          "paths_in": 19,
+          "w": 9,
+          "l": 3,
+          "d": 2
+        },
+        {
+          "rank": 6,
+          "team": "San Juan SC ECNL G2011/12",
+          "short": "SAN JUAN",
+          "bracket_team": false,
+          "rating": 0.66,
+          "paths_out": 77,
+          "paths_in": 35,
+          "w": 7,
+          "l": 6,
+          "d": 1
+        },
+        {
+          "rank": 7,
+          "team": "Marin FC ECNL G2011/12",
+          "short": "MARIN",
+          "bracket_team": false,
+          "rating": -0.98,
+          "paths_out": 20,
+          "paths_in": 84,
+          "w": 3,
+          "l": 7,
+          "d": 4
+        },
+        {
+          "rank": 8,
+          "team": "Force (CA) ECNL G2011/12",
+          "short": "FORCE CA",
+          "bracket_team": false,
+          "rating": -2.11,
+          "paths_out": 15,
+          "paths_in": 173,
+          "w": 3,
+          "l": 8,
+          "d": 1
+        },
+        {
+          "rank": 9,
+          "team": "Santa Rosa United ECNL G2011/12",
+          "short": "SANTA ROSA",
+          "bracket_team": false,
+          "rating": -3.15,
+          "paths_out": 10,
+          "paths_in": 281,
+          "w": 3,
+          "l": 10,
+          "d": 1
+        },
+        {
+          "rank": 10,
+          "team": "Davis Legacy ECNL G2011/12",
+          "short": "DAVIS",
+          "bracket_team": false,
+          "rating": -3.71,
+          "paths_out": 6,
+          "paths_in": 354,
+          "w": 2,
+          "l": 8,
+          "d": 3
+        },
+        {
+          "rank": 11,
+          "team": "Pleasanton RAGE ECNL G2011/12",
+          "short": "RAGE",
+          "bracket_team": false,
+          "rating": -5.5,
+          "paths_out": 1,
+          "paths_in": 721,
+          "w": 2,
+          "l": 10,
+          "d": 1
+        },
+        {
+          "rank": 12,
+          "team": "Stanislaus Surf - ECNL G2011/12",
+          "short": "STANISLAUS",
+          "bracket_team": false,
+          "rating": -6.98,
+          "paths_out": 0,
+          "paths_in": 1360,
+          "w": 1,
+          "l": 12,
+          "d": 1
+        }
+      ],
+      "beatwins": [
+        {
+          "winner": "MVLA ECNL G2011/12",
+          "loser": "Stanislaus Surf - ECNL G2011/12",
+          "weight": 17
+        },
+        {
+          "winner": "Mustang SC ECNL G2011/12",
+          "loser": "Santa Rosa United ECNL G2011/12",
+          "weight": 12
+        },
+        {
+          "winner": "MVLA ECNL G2011/12",
+          "loser": "Pleasanton RAGE ECNL G2011/12",
+          "weight": 10
+        },
+        {
+          "winner": "COSC ECNL G2011/12",
+          "loser": "Santa Rosa United ECNL G2011/12",
+          "weight": 9
+        },
+        {
+          "winner": "MVLA ECNL G2011/12",
+          "loser": "Marin FC ECNL G2011/12",
+          "weight": 9
+        },
+        {
+          "winner": "Mustang SC ECNL G2011/12",
+          "loser": "Placer United ECNL G2011/12",
+          "weight": 8
+        },
+        {
+          "winner": "San Juan SC ECNL G2011/12",
+          "loser": "Santa Rosa United ECNL G2011/12",
+          "weight": 8
+        },
+        {
+          "winner": "Mustang SC ECNL G2011/12",
+          "loser": "Pleasanton RAGE ECNL G2011/12",
+          "weight": 7
+        },
+        {
+          "winner": "San Juan SC ECNL G2011/12",
+          "loser": "Pleasanton RAGE ECNL G2011/12",
+          "weight": 7
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2011/12",
+          "loser": "San Juan SC ECNL G2011/12",
+          "weight": 6
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2011/12",
+          "loser": "Santa Rosa United ECNL G2011/12",
+          "weight": 6
+        },
+        {
+          "winner": "MVLA ECNL G2011/12",
+          "loser": "Force (CA) ECNL G2011/12",
+          "weight": 6
+        },
+        {
+          "winner": "MVLA ECNL G2011/12",
+          "loser": "Santa Rosa United ECNL G2011/12",
+          "weight": 6
+        },
+        {
+          "winner": "Placer United ECNL G2011/12",
+          "loser": "Pleasanton RAGE ECNL G2011/12",
+          "weight": 6
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2011/12",
+          "loser": "Pleasanton RAGE ECNL G2011/12",
+          "weight": 5
+        },
+        {
+          "winner": "COSC ECNL G2011/12",
+          "loser": "Force (CA) ECNL G2011/12",
+          "weight": 5
+        },
+        {
+          "winner": "Davis Legacy ECNL G2011/12",
+          "loser": "Pleasanton RAGE ECNL G2011/12",
+          "weight": 5
+        },
+        {
+          "winner": "Mustang SC ECNL G2011/12",
+          "loser": "Force (CA) ECNL G2011/12",
+          "weight": 5
+        },
+        {
+          "winner": "Mustang SC ECNL G2011/12",
+          "loser": "Marin FC ECNL G2011/12",
+          "weight": 5
+        },
+        {
+          "winner": "Mustang SC ECNL G2011/12",
+          "loser": "Stanislaus Surf - ECNL G2011/12",
+          "weight": 5
+        },
+        {
+          "winner": "San Juan SC ECNL G2011/12",
+          "loser": "Force (CA) ECNL G2011/12",
+          "weight": 5
+        },
+        {
+          "winner": "MVLA ECNL G2011/12",
+          "loser": "Davis Legacy ECNL G2011/12",
+          "weight": 4
+        },
+        {
+          "winner": "Placer United ECNL G2011/12",
+          "loser": "Davis Legacy ECNL G2011/12",
+          "weight": 4
+        },
+        {
+          "winner": "Placer United ECNL G2011/12",
+          "loser": "Force (CA) ECNL G2011/12",
+          "weight": 4
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2011/12",
+          "loser": "COSC ECNL G2011/12",
+          "weight": 3
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2011/12",
+          "loser": "Stanislaus Surf - ECNL G2011/12",
+          "weight": 3
+        },
+        {
+          "winner": "Placer United ECNL G2011/12",
+          "loser": "San Juan SC ECNL G2011/12",
+          "weight": 3
+        },
+        {
+          "winner": "Placer United ECNL G2011/12",
+          "loser": "Stanislaus Surf - ECNL G2011/12",
+          "weight": 3
+        },
+        {
+          "winner": "San Juan SC ECNL G2011/12",
+          "loser": "Stanislaus Surf - ECNL G2011/12",
+          "weight": 3
+        },
+        {
+          "winner": "Santa Rosa United ECNL G2011/12",
+          "loser": "Davis Legacy ECNL G2011/12",
+          "weight": 3
+        },
+        {
+          "winner": "COSC ECNL G2011/12",
+          "loser": "Marin FC ECNL G2011/12",
+          "weight": 2
+        },
+        {
+          "winner": "COSC ECNL G2011/12",
+          "loser": "Placer United ECNL G2011/12",
+          "weight": 2
+        },
+        {
+          "winner": "Force (CA) ECNL G2011/12",
+          "loser": "Pleasanton RAGE ECNL G2011/12",
+          "weight": 2
+        },
+        {
+          "winner": "Marin FC ECNL G2011/12",
+          "loser": "Pleasanton RAGE ECNL G2011/12",
+          "weight": 2
+        },
+        {
+          "winner": "Mustang SC ECNL G2011/12",
+          "loser": "Bay Area Surf - ECNL G2011/12",
+          "weight": 2
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2011/12",
+          "loser": "Davis Legacy ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2011/12",
+          "loser": "MVLA ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2011/12",
+          "loser": "Marin FC ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2011/12",
+          "loser": "Placer United ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "COSC ECNL G2011/12",
+          "loser": "Pleasanton RAGE ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "COSC ECNL G2011/12",
+          "loser": "Stanislaus Surf - ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "Force (CA) ECNL G2011/12",
+          "loser": "Santa Rosa United ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "Force (CA) ECNL G2011/12",
+          "loser": "Stanislaus Surf - ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "MVLA ECNL G2011/12",
+          "loser": "San Juan SC ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "Marin FC ECNL G2011/12",
+          "loser": "Force (CA) ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "Marin FC ECNL G2011/12",
+          "loser": "Stanislaus Surf - ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2011/12",
+          "loser": "COSC ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2011/12",
+          "loser": "Davis Legacy ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2011/12",
+          "loser": "San Juan SC ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "Placer United ECNL G2011/12",
+          "loser": "Marin FC ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "Placer United ECNL G2011/12",
+          "loser": "Santa Rosa United ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2011/12",
+          "loser": "Stanislaus Surf - ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "San Juan SC ECNL G2011/12",
+          "loser": "Davis Legacy ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "San Juan SC ECNL G2011/12",
+          "loser": "Marin FC ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "Santa Rosa United ECNL G2011/12",
+          "loser": "Stanislaus Surf - ECNL G2011/12",
+          "weight": 1
+        }
+      ],
+      "arrows": [
+        {
+          "winner": "Davis Legacy ECNL G2011/12",
+          "loser": "Pleasanton RAGE ECNL G2011/12",
+          "weight": 5
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2011/12",
+          "loser": "COSC ECNL G2011/12",
+          "weight": 3
+        },
+        {
+          "winner": "Placer United ECNL G2011/12",
+          "loser": "San Juan SC ECNL G2011/12",
+          "weight": 3
+        },
+        {
+          "winner": "Santa Rosa United ECNL G2011/12",
+          "loser": "Davis Legacy ECNL G2011/12",
+          "weight": 3
+        },
+        {
+          "winner": "COSC ECNL G2011/12",
+          "loser": "Placer United ECNL G2011/12",
+          "weight": 2
+        },
+        {
+          "winner": "Mustang SC ECNL G2011/12",
+          "loser": "Bay Area Surf - ECNL G2011/12",
+          "weight": 2
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2011/12",
+          "loser": "MVLA ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "Force (CA) ECNL G2011/12",
+          "loser": "Santa Rosa United ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "MVLA ECNL G2011/12",
+          "loser": "San Juan SC ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "Marin FC ECNL G2011/12",
+          "loser": "Force (CA) ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2011/12",
+          "loser": "Stanislaus Surf - ECNL G2011/12",
+          "weight": 1
+        },
+        {
+          "winner": "San Juan SC ECNL G2011/12",
+          "loser": "Marin FC ECNL G2011/12",
+          "weight": 1
+        }
+      ],
+      "games_list": [
+        {
+          "date": "2026-08-22",
+          "home": "Davis Legacy ECNL G2011/12",
+          "away": "Mustang SC ECNL G2011/12",
+          "home_score": 2,
+          "away_score": 3
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Force (CA) ECNL G2011/12",
+          "away": "Marin FC ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-22",
+          "home": "MVLA ECNL G2011/12",
+          "away": "Stanislaus Surf - ECNL G2011/12",
+          "home_score": 10,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Placer United ECNL G2011/12",
+          "away": "San Juan SC ECNL G2011/12",
+          "home_score": 3,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Santa Rosa United ECNL G2011/12",
+          "away": "COSC ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 7
+        },
+        {
+          "date": "2026-08-29",
+          "home": "COSC ECNL G2011/12",
+          "away": "Stanislaus Surf - ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Davis Legacy ECNL G2011/12",
+          "away": "MVLA ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 4
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Marin FC ECNL G2011/12",
+          "away": "Bay Area Surf - ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Mustang SC ECNL G2011/12",
+          "away": "Force (CA) ECNL G2011/12",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Placer United ECNL G2011/12",
+          "away": "Santa Rosa United ECNL G2011/12",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Pleasanton RAGE ECNL G2011/12",
+          "away": "San Juan SC ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 7
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Bay Area Surf - ECNL G2011/12",
+          "away": "Santa Rosa United ECNL G2011/12",
+          "home_score": 7,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Davis Legacy ECNL G2011/12",
+          "away": "Pleasanton RAGE ECNL G2011/12",
+          "home_score": 7,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Force (CA) ECNL G2011/12",
+          "away": "Placer United ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 4
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Marin FC ECNL G2011/12",
+          "away": "COSC ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Mustang SC ECNL G2011/12",
+          "away": "MVLA ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-30",
+          "home": "San Juan SC ECNL G2011/12",
+          "away": "Stanislaus Surf - ECNL G2011/12",
+          "home_score": 4,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-12",
+          "home": "COSC ECNL G2011/12",
+          "away": "Force (CA) ECNL G2011/12",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Davis Legacy ECNL G2011/12",
+          "away": "Placer United ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-12",
+          "home": "MVLA ECNL G2011/12",
+          "away": "Marin FC ECNL G2011/12",
+          "home_score": 9,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Mustang SC ECNL G2011/12",
+          "away": "Bay Area Surf - ECNL G2011/12",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Pleasanton RAGE ECNL G2011/12",
+          "away": "Stanislaus Surf - ECNL G2011/12",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-12",
+          "home": "San Juan SC ECNL G2011/12",
+          "away": "Santa Rosa United ECNL G2011/12",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Davis Legacy ECNL G2011/12",
+          "away": "COSC ECNL G2011/12",
+          "home_score": 4,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Force (CA) ECNL G2011/12",
+          "away": "MVLA ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Marin FC ECNL G2011/12",
+          "away": "Mustang SC ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-19",
+          "home": "San Juan SC ECNL G2011/12",
+          "away": "Bay Area Surf - ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Santa Rosa United ECNL G2011/12",
+          "away": "Pleasanton RAGE ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Stanislaus Surf - ECNL G2011/12",
+          "away": "Placer United ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Bay Area Surf - ECNL G2011/12",
+          "away": "Stanislaus Surf - ECNL G2011/12",
+          "home_score": 4,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-20",
+          "home": "COSC ECNL G2011/12",
+          "away": "MVLA ECNL G2011/12",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Davis Legacy ECNL G2011/12",
+          "away": "Santa Rosa United ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Placer United ECNL G2011/12",
+          "away": "Mustang SC ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 8
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Pleasanton RAGE ECNL G2011/12",
+          "away": "Marin FC ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-20",
+          "home": "San Juan SC ECNL G2011/12",
+          "away": "Force (CA) ECNL G2011/12",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-26",
+          "home": "COSC ECNL G2011/12",
+          "away": "San Juan SC ECNL G2011/12",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-26",
+          "home": "MVLA ECNL G2011/12",
+          "away": "Santa Rosa United ECNL G2011/12",
+          "home_score": 6,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Marin FC ECNL G2011/12",
+          "away": "Davis Legacy ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Mustang SC ECNL G2011/12",
+          "away": "Stanislaus Surf - ECNL G2011/12",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Placer United ECNL G2011/12",
+          "away": "Pleasanton RAGE ECNL G2011/12",
+          "home_score": 7,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Pleasanton RAGE ECNL G2011/12",
+          "away": "COSC ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-27",
+          "home": "San Juan SC ECNL G2011/12",
+          "away": "MVLA ECNL G2011/12",
+          "home_score": 2,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Santa Rosa United ECNL G2011/12",
+          "away": "Mustang SC ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 12
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Stanislaus Surf - ECNL G2011/12",
+          "away": "Marin FC ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-03",
+          "home": "COSC ECNL G2011/12",
+          "away": "Placer United ECNL G2011/12",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Davis Legacy ECNL G2011/12",
+          "away": "Bay Area Surf - ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Force (CA) ECNL G2011/12",
+          "away": "Stanislaus Surf - ECNL G2011/12",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-03",
+          "home": "MVLA ECNL G2011/12",
+          "away": "Pleasanton RAGE ECNL G2011/12",
+          "home_score": 10,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Marin FC ECNL G2011/12",
+          "away": "Santa Rosa United ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-03",
+          "home": "San Juan SC ECNL G2011/12",
+          "away": "Mustang SC ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Bay Area Surf - ECNL G2011/12",
+          "away": "COSC ECNL G2011/12",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Davis Legacy ECNL G2011/12",
+          "away": "Stanislaus Surf - ECNL G2011/12",
+          "home_score": 2,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Placer United ECNL G2011/12",
+          "away": "MVLA ECNL G2011/12",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Pleasanton RAGE ECNL G2011/12",
+          "away": "Mustang SC ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 7
+        },
+        {
+          "date": "2026-10-17",
+          "home": "San Juan SC ECNL G2011/12",
+          "away": "Marin FC ECNL G2011/12",
+          "home_score": 3,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Santa Rosa United ECNL G2011/12",
+          "away": "Force (CA) ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Bay Area Surf - ECNL G2011/12",
+          "away": "MVLA ECNL G2011/12",
+          "home_score": 3,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Davis Legacy ECNL G2011/12",
+          "away": "San Juan SC ECNL G2011/12",
+          "home_score": 2,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Marin FC ECNL G2011/12",
+          "away": "Placer United ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Mustang SC ECNL G2011/12",
+          "away": "COSC ECNL G2011/12",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Pleasanton RAGE ECNL G2011/12",
+          "away": "Force (CA) ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Santa Rosa United ECNL G2011/12",
+          "away": "Stanislaus Surf - ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-25",
+          "home": "COSC ECNL G2011/12",
+          "away": "Santa Rosa United ECNL G2011/12",
+          "home_score": 4,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Marin FC ECNL G2011/12",
+          "away": "Force (CA) ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Mustang SC ECNL G2011/12",
+          "away": "Davis Legacy ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Pleasanton RAGE ECNL G2011/12",
+          "away": "Bay Area Surf - ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 5
+        },
+        {
+          "date": "2026-10-25",
+          "home": "San Juan SC ECNL G2011/12",
+          "away": "Placer United ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Stanislaus Surf - ECNL G2011/12",
+          "away": "MVLA ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 7
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Bay Area Surf - ECNL G2011/12",
+          "away": "Mustang SC ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Force (CA) ECNL G2011/12",
+          "away": "COSC ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Marin FC ECNL G2011/12",
+          "away": "MVLA ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Placer United ECNL G2011/12",
+          "away": "Davis Legacy ECNL G2011/12",
+          "home_score": 5,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Santa Rosa United ECNL G2011/12",
+          "away": "San Juan SC ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 5
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Stanislaus Surf - ECNL G2011/12",
+          "away": "Pleasanton RAGE ECNL G2011/12",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Bay Area Surf - ECNL G2011/12",
+          "away": "San Juan SC ECNL G2011/12",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "COSC ECNL G2011/12",
+          "away": "Davis Legacy ECNL G2011/12",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "MVLA ECNL G2011/12",
+          "away": "Force (CA) ECNL G2011/12",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Mustang SC ECNL G2011/12",
+          "away": "Marin FC ECNL G2011/12",
+          "home_score": 6,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Placer United ECNL G2011/12",
+          "away": "Stanislaus Surf - ECNL G2011/12",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Pleasanton RAGE ECNL G2011/12",
+          "away": "Santa Rosa United ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-08",
+          "home": "Bay Area Surf - ECNL G2011/12",
+          "away": "Placer United ECNL G2011/12",
+          "home_score": 1,
+          "away_score": 0
+        }
+      ]
+    },
+    {
+      "id": "norcal-gu16",
+      "title": "ECNL Girls NorCal 2026-27 — GU16",
+      "season": "2026-27",
+      "gender": "Girls",
+      "age": "U16",
+      "type": "League",
+      "competition": "ECNL NorCal",
+      "games": 80,
+      "draws": 13,
+      "teams": 12,
+      "links": 47,
+      "loops_resolved": 7,
+      "loops": [
+        {
+          "cycle": [
+            "Bay Area Surf - ECNL G2010/11",
+            "Mustang SC ECNL G2010/11"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "Bay Area Surf - ECNL G2010/11",
+              "loser": "Mustang SC ECNL G2010/11"
+            },
+            {
+              "winner": "Mustang SC ECNL G2010/11",
+              "loser": "Bay Area Surf - ECNL G2010/11"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "COSC ECNL G2010/11",
+            "Santa Rosa United ECNL G2010/11"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "Santa Rosa United ECNL G2010/11",
+              "loser": "COSC ECNL G2010/11"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "Pleasanton RAGE ECNL G2010/11",
+            "Stanislaus Surf - ECNL G2010/11"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "Pleasanton RAGE ECNL G2010/11",
+              "loser": "Stanislaus Surf - ECNL G2010/11"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "San Juan SC ECNL G2010/11",
+            "Santa Rosa United ECNL G2010/11"
+          ],
+          "weight": 2,
+          "broken": [
+            {
+              "winner": "San Juan SC ECNL G2010/11",
+              "loser": "Santa Rosa United ECNL G2010/11"
+            },
+            {
+              "winner": "Santa Rosa United ECNL G2010/11",
+              "loser": "San Juan SC ECNL G2010/11"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "Bay Area Surf - ECNL G2010/11",
+            "Davis Legacy ECNL G2010/11",
+            "Marin FC ECNL G2010/11"
+          ],
+          "weight": 2,
+          "broken": [
+            {
+              "winner": "Davis Legacy ECNL G2010/11",
+              "loser": "Marin FC ECNL G2010/11"
+            },
+            {
+              "winner": "Marin FC ECNL G2010/11",
+              "loser": "Bay Area Surf - ECNL G2010/11"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "COSC ECNL G2010/11",
+            "San Juan SC ECNL G2010/11",
+            "Marin FC ECNL G2010/11"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "COSC ECNL G2010/11",
+              "loser": "San Juan SC ECNL G2010/11"
+            },
+            {
+              "winner": "San Juan SC ECNL G2010/11",
+              "loser": "Marin FC ECNL G2010/11"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "Davis Legacy ECNL G2010/11",
+            "Stanislaus Surf - ECNL G2010/11",
+            "Pleasanton RAGE ECNL G2010/11"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "Stanislaus Surf - ECNL G2010/11",
+              "loser": "Pleasanton RAGE ECNL G2010/11"
+            },
+            {
+              "winner": "Pleasanton RAGE ECNL G2010/11",
+              "loser": "Davis Legacy ECNL G2010/11"
+            }
+          ]
+        }
+      ],
+      "rankings": [
+        {
+          "rank": 1,
+          "team": "Mustang SC ECNL G2010/11",
+          "short": "MUSTANG",
+          "bracket_team": false,
+          "rating": 6.72,
+          "paths_out": 383,
+          "paths_in": 0,
+          "w": 11,
+          "l": 1,
+          "d": 2
+        },
+        {
+          "rank": 2,
+          "team": "Bay Area Surf - ECNL G2010/11",
+          "short": "BAY SURF",
+          "bracket_team": false,
+          "rating": 5.88,
+          "paths_out": 267,
+          "paths_in": 0,
+          "w": 8,
+          "l": 2,
+          "d": 2
+        },
+        {
+          "rank": 3,
+          "team": "MVLA ECNL G2010/11",
+          "short": "MVLA",
+          "bracket_team": false,
+          "rating": 4.79,
+          "paths_out": 174,
+          "paths_in": 2,
+          "w": 11,
+          "l": 2,
+          "d": 1
+        },
+        {
+          "rank": 4,
+          "team": "Force (CA) ECNL G2010/11",
+          "short": "FORCE CA",
+          "bracket_team": false,
+          "rating": 2.14,
+          "paths_out": 60,
+          "paths_in": 9,
+          "w": 6,
+          "l": 3,
+          "d": 2
+        },
+        {
+          "rank": 5,
+          "team": "Davis Legacy ECNL G2010/11",
+          "short": "DAVIS",
+          "bracket_team": false,
+          "rating": 1.87,
+          "paths_out": 46,
+          "paths_in": 3,
+          "w": 8,
+          "l": 3,
+          "d": 2
+        },
+        {
+          "rank": 6,
+          "team": "Pleasanton RAGE ECNL G2010/11",
+          "short": "RAGE",
+          "bracket_team": false,
+          "rating": 1.61,
+          "paths_out": 42,
+          "paths_in": 6,
+          "w": 7,
+          "l": 3,
+          "d": 3
+        },
+        {
+          "rank": 7,
+          "team": "Marin FC ECNL G2010/11",
+          "short": "MARIN",
+          "bracket_team": false,
+          "rating": -0.51,
+          "paths_out": 20,
+          "paths_in": 30,
+          "w": 4,
+          "l": 8,
+          "d": 2
+        },
+        {
+          "rank": 8,
+          "team": "Placer United ECNL G2010/11",
+          "short": "PLACER",
+          "bracket_team": false,
+          "rating": -1.05,
+          "paths_out": 6,
+          "paths_in": 28,
+          "w": 2,
+          "l": 6,
+          "d": 6
+        },
+        {
+          "rank": 9,
+          "team": "San Juan SC ECNL G2010/11",
+          "short": "SAN JUAN",
+          "bracket_team": false,
+          "rating": -1.1,
+          "paths_out": 8,
+          "paths_in": 31,
+          "w": 3,
+          "l": 7,
+          "d": 4
+        },
+        {
+          "rank": 10,
+          "team": "Stanislaus Surf - ECNL G2010/11",
+          "short": "STANISLAUS",
+          "bracket_team": false,
+          "rating": -3.44,
+          "paths_out": 6,
+          "paths_in": 104,
+          "w": 3,
+          "l": 9,
+          "d": 2
+        },
+        {
+          "rank": 11,
+          "team": "COSC ECNL G2010/11",
+          "short": "COSC",
+          "bracket_team": false,
+          "rating": -5.43,
+          "paths_out": 1,
+          "paths_in": 223,
+          "w": 2,
+          "l": 12,
+          "d": 0
+        },
+        {
+          "rank": 12,
+          "team": "Santa Rosa United ECNL G2010/11",
+          "short": "SANTA ROSA",
+          "bracket_team": false,
+          "rating": -7.02,
+          "paths_out": 0,
+          "paths_in": 440,
+          "w": 2,
+          "l": 11,
+          "d": 0
+        }
+      ],
+      "beatwins": [
+        {
+          "winner": "Davis Legacy ECNL G2010/11",
+          "loser": "COSC ECNL G2010/11",
+          "weight": 10
+        },
+        {
+          "winner": "Mustang SC ECNL G2010/11",
+          "loser": "Santa Rosa United ECNL G2010/11",
+          "weight": 9
+        },
+        {
+          "winner": "Force (CA) ECNL G2010/11",
+          "loser": "Stanislaus Surf - ECNL G2010/11",
+          "weight": 7
+        },
+        {
+          "winner": "MVLA ECNL G2010/11",
+          "loser": "Stanislaus Surf - ECNL G2010/11",
+          "weight": 7
+        },
+        {
+          "winner": "Marin FC ECNL G2010/11",
+          "loser": "Santa Rosa United ECNL G2010/11",
+          "weight": 7
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2010/11",
+          "loser": "COSC ECNL G2010/11",
+          "weight": 6
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2010/11",
+          "loser": "Stanislaus Surf - ECNL G2010/11",
+          "weight": 6
+        },
+        {
+          "winner": "Davis Legacy ECNL G2010/11",
+          "loser": "Placer United ECNL G2010/11",
+          "weight": 6
+        },
+        {
+          "winner": "Force (CA) ECNL G2010/11",
+          "loser": "COSC ECNL G2010/11",
+          "weight": 6
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2010/11",
+          "loser": "Santa Rosa United ECNL G2010/11",
+          "weight": 6
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2010/11",
+          "loser": "San Juan SC ECNL G2010/11",
+          "weight": 5
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2010/11",
+          "loser": "Santa Rosa United ECNL G2010/11",
+          "weight": 5
+        },
+        {
+          "winner": "MVLA ECNL G2010/11",
+          "loser": "COSC ECNL G2010/11",
+          "weight": 5
+        },
+        {
+          "winner": "MVLA ECNL G2010/11",
+          "loser": "Force (CA) ECNL G2010/11",
+          "weight": 5
+        },
+        {
+          "winner": "Davis Legacy ECNL G2010/11",
+          "loser": "Santa Rosa United ECNL G2010/11",
+          "weight": 4
+        },
+        {
+          "winner": "Davis Legacy ECNL G2010/11",
+          "loser": "Stanislaus Surf - ECNL G2010/11",
+          "weight": 4
+        },
+        {
+          "winner": "MVLA ECNL G2010/11",
+          "loser": "Marin FC ECNL G2010/11",
+          "weight": 4
+        },
+        {
+          "winner": "MVLA ECNL G2010/11",
+          "loser": "Santa Rosa United ECNL G2010/11",
+          "weight": 4
+        },
+        {
+          "winner": "Marin FC ECNL G2010/11",
+          "loser": "COSC ECNL G2010/11",
+          "weight": 4
+        },
+        {
+          "winner": "Mustang SC ECNL G2010/11",
+          "loser": "COSC ECNL G2010/11",
+          "weight": 4
+        },
+        {
+          "winner": "Mustang SC ECNL G2010/11",
+          "loser": "Marin FC ECNL G2010/11",
+          "weight": 4
+        },
+        {
+          "winner": "Placer United ECNL G2010/11",
+          "loser": "Santa Rosa United ECNL G2010/11",
+          "weight": 4
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2010/11",
+          "loser": "COSC ECNL G2010/11",
+          "weight": 4
+        },
+        {
+          "winner": "Stanislaus Surf - ECNL G2010/11",
+          "loser": "Santa Rosa United ECNL G2010/11",
+          "weight": 4
+        },
+        {
+          "winner": "Force (CA) ECNL G2010/11",
+          "loser": "Marin FC ECNL G2010/11",
+          "weight": 3
+        },
+        {
+          "winner": "MVLA ECNL G2010/11",
+          "loser": "Placer United ECNL G2010/11",
+          "weight": 3
+        },
+        {
+          "winner": "Mustang SC ECNL G2010/11",
+          "loser": "Placer United ECNL G2010/11",
+          "weight": 3
+        },
+        {
+          "winner": "Mustang SC ECNL G2010/11",
+          "loser": "Pleasanton RAGE ECNL G2010/11",
+          "weight": 3
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2010/11",
+          "loser": "Davis Legacy ECNL G2010/11",
+          "weight": 2
+        },
+        {
+          "winner": "Force (CA) ECNL G2010/11",
+          "loser": "San Juan SC ECNL G2010/11",
+          "weight": 2
+        },
+        {
+          "winner": "MVLA ECNL G2010/11",
+          "loser": "San Juan SC ECNL G2010/11",
+          "weight": 2
+        },
+        {
+          "winner": "Marin FC ECNL G2010/11",
+          "loser": "Stanislaus Surf - ECNL G2010/11",
+          "weight": 2
+        },
+        {
+          "winner": "Mustang SC ECNL G2010/11",
+          "loser": "Force (CA) ECNL G2010/11",
+          "weight": 2
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2010/11",
+          "loser": "Marin FC ECNL G2010/11",
+          "weight": 2
+        },
+        {
+          "winner": "San Juan SC ECNL G2010/11",
+          "loser": "Stanislaus Surf - ECNL G2010/11",
+          "weight": 2
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2010/11",
+          "loser": "MVLA ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2010/11",
+          "loser": "Placer United ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "COSC ECNL G2010/11",
+          "loser": "Santa Rosa United ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "Davis Legacy ECNL G2010/11",
+          "loser": "San Juan SC ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "Force (CA) ECNL G2010/11",
+          "loser": "Placer United ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "MVLA ECNL G2010/11",
+          "loser": "Pleasanton RAGE ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2010/11",
+          "loser": "Davis Legacy ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2010/11",
+          "loser": "MVLA ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2010/11",
+          "loser": "Stanislaus Surf - ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "Placer United ECNL G2010/11",
+          "loser": "COSC ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2010/11",
+          "loser": "San Juan SC ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "Stanislaus Surf - ECNL G2010/11",
+          "loser": "COSC ECNL G2010/11",
+          "weight": 1
+        }
+      ],
+      "arrows": [
+        {
+          "winner": "Davis Legacy ECNL G2010/11",
+          "loser": "Placer United ECNL G2010/11",
+          "weight": 6
+        },
+        {
+          "winner": "MVLA ECNL G2010/11",
+          "loser": "Force (CA) ECNL G2010/11",
+          "weight": 5
+        },
+        {
+          "winner": "Force (CA) ECNL G2010/11",
+          "loser": "Marin FC ECNL G2010/11",
+          "weight": 3
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2010/11",
+          "loser": "Davis Legacy ECNL G2010/11",
+          "weight": 2
+        },
+        {
+          "winner": "Force (CA) ECNL G2010/11",
+          "loser": "San Juan SC ECNL G2010/11",
+          "weight": 2
+        },
+        {
+          "winner": "Marin FC ECNL G2010/11",
+          "loser": "Stanislaus Surf - ECNL G2010/11",
+          "weight": 2
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2010/11",
+          "loser": "Marin FC ECNL G2010/11",
+          "weight": 2
+        },
+        {
+          "winner": "San Juan SC ECNL G2010/11",
+          "loser": "Stanislaus Surf - ECNL G2010/11",
+          "weight": 2
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2010/11",
+          "loser": "MVLA ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "COSC ECNL G2010/11",
+          "loser": "Santa Rosa United ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "Davis Legacy ECNL G2010/11",
+          "loser": "San Juan SC ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "Force (CA) ECNL G2010/11",
+          "loser": "Placer United ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "MVLA ECNL G2010/11",
+          "loser": "Pleasanton RAGE ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2010/11",
+          "loser": "Davis Legacy ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2010/11",
+          "loser": "MVLA ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "Placer United ECNL G2010/11",
+          "loser": "COSC ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2010/11",
+          "loser": "San Juan SC ECNL G2010/11",
+          "weight": 1
+        },
+        {
+          "winner": "Stanislaus Surf - ECNL G2010/11",
+          "loser": "COSC ECNL G2010/11",
+          "weight": 1
+        }
+      ],
+      "games_list": [
+        {
+          "date": "2026-08-22",
+          "home": "Davis Legacy ECNL G2010/11",
+          "away": "Mustang SC ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Force (CA) ECNL G2010/11",
+          "away": "Marin FC ECNL G2010/11",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-22",
+          "home": "MVLA ECNL G2010/11",
+          "away": "Stanislaus Surf - ECNL G2010/11",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Santa Rosa United ECNL G2010/11",
+          "away": "COSC ECNL G2010/11",
+          "home_score": 3,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-23",
+          "home": "Placer United ECNL G2010/11",
+          "away": "San Juan SC ECNL G2010/11",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-29",
+          "home": "COSC ECNL G2010/11",
+          "away": "Stanislaus Surf - ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Davis Legacy ECNL G2010/11",
+          "away": "MVLA ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Marin FC ECNL G2010/11",
+          "away": "Bay Area Surf - ECNL G2010/11",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Mustang SC ECNL G2010/11",
+          "away": "Force (CA) ECNL G2010/11",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Placer United ECNL G2010/11",
+          "away": "Santa Rosa United ECNL G2010/11",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Pleasanton RAGE ECNL G2010/11",
+          "away": "San Juan SC ECNL G2010/11",
+          "home_score": 3,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Bay Area Surf - ECNL G2010/11",
+          "away": "Santa Rosa United ECNL G2010/11",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Davis Legacy ECNL G2010/11",
+          "away": "Pleasanton RAGE ECNL G2010/11",
+          "home_score": 2,
+          "away_score": 3
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Force (CA) ECNL G2010/11",
+          "away": "Placer United ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Marin FC ECNL G2010/11",
+          "away": "COSC ECNL G2010/11",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Mustang SC ECNL G2010/11",
+          "away": "MVLA ECNL G2010/11",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-30",
+          "home": "San Juan SC ECNL G2010/11",
+          "away": "Stanislaus Surf - ECNL G2010/11",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-12",
+          "home": "COSC ECNL G2010/11",
+          "away": "Force (CA) ECNL G2010/11",
+          "home_score": 2,
+          "away_score": 4
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Davis Legacy ECNL G2010/11",
+          "away": "Placer United ECNL G2010/11",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-12",
+          "home": "MVLA ECNL G2010/11",
+          "away": "Marin FC ECNL G2010/11",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Mustang SC ECNL G2010/11",
+          "away": "Bay Area Surf - ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Pleasanton RAGE ECNL G2010/11",
+          "away": "Stanislaus Surf - ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-12",
+          "home": "San Juan SC ECNL G2010/11",
+          "away": "Santa Rosa United ECNL G2010/11",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Davis Legacy ECNL G2010/11",
+          "away": "COSC ECNL G2010/11",
+          "home_score": 7,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Force (CA) ECNL G2010/11",
+          "away": "MVLA ECNL G2010/11",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Marin FC ECNL G2010/11",
+          "away": "Mustang SC ECNL G2010/11",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-19",
+          "home": "San Juan SC ECNL G2010/11",
+          "away": "Bay Area Surf - ECNL G2010/11",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Santa Rosa United ECNL G2010/11",
+          "away": "Pleasanton RAGE ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Stanislaus Surf - ECNL G2010/11",
+          "away": "Placer United ECNL G2010/11",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Bay Area Surf - ECNL G2010/11",
+          "away": "Stanislaus Surf - ECNL G2010/11",
+          "home_score": 6,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-20",
+          "home": "COSC ECNL G2010/11",
+          "away": "MVLA ECNL G2010/11",
+          "home_score": 0,
+          "away_score": 5
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Davis Legacy ECNL G2010/11",
+          "away": "Santa Rosa United ECNL G2010/11",
+          "home_score": 5,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Placer United ECNL G2010/11",
+          "away": "Mustang SC ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 4
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Pleasanton RAGE ECNL G2010/11",
+          "away": "Marin FC ECNL G2010/11",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-20",
+          "home": "San Juan SC ECNL G2010/11",
+          "away": "Force (CA) ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-26",
+          "home": "COSC ECNL G2010/11",
+          "away": "San Juan SC ECNL G2010/11",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-26",
+          "home": "MVLA ECNL G2010/11",
+          "away": "Santa Rosa United ECNL G2010/11",
+          "home_score": 5,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Marin FC ECNL G2010/11",
+          "away": "Davis Legacy ECNL G2010/11",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Mustang SC ECNL G2010/11",
+          "away": "Stanislaus Surf - ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Placer United ECNL G2010/11",
+          "away": "Pleasanton RAGE ECNL G2010/11",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Pleasanton RAGE ECNL G2010/11",
+          "away": "COSC ECNL G2010/11",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-27",
+          "home": "San Juan SC ECNL G2010/11",
+          "away": "MVLA ECNL G2010/11",
+          "home_score": 2,
+          "away_score": 4
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Santa Rosa United ECNL G2010/11",
+          "away": "Mustang SC ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 10
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Stanislaus Surf - ECNL G2010/11",
+          "away": "Marin FC ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-03",
+          "home": "COSC ECNL G2010/11",
+          "away": "Placer United ECNL G2010/11",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Davis Legacy ECNL G2010/11",
+          "away": "Bay Area Surf - ECNL G2010/11",
+          "home_score": 2,
+          "away_score": 6
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Force (CA) ECNL G2010/11",
+          "away": "Stanislaus Surf - ECNL G2010/11",
+          "home_score": 7,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-03",
+          "home": "MVLA ECNL G2010/11",
+          "away": "Pleasanton RAGE ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Marin FC ECNL G2010/11",
+          "away": "Santa Rosa United ECNL G2010/11",
+          "home_score": 7,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-03",
+          "home": "San Juan SC ECNL G2010/11",
+          "away": "Mustang SC ECNL G2010/11",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Bay Area Surf - ECNL G2010/11",
+          "away": "COSC ECNL G2010/11",
+          "home_score": 6,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Davis Legacy ECNL G2010/11",
+          "away": "Stanislaus Surf - ECNL G2010/11",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Placer United ECNL G2010/11",
+          "away": "MVLA ECNL G2010/11",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Pleasanton RAGE ECNL G2010/11",
+          "away": "Mustang SC ECNL G2010/11",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-17",
+          "home": "San Juan SC ECNL G2010/11",
+          "away": "Marin FC ECNL G2010/11",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Bay Area Surf - ECNL G2010/11",
+          "away": "MVLA ECNL G2010/11",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Davis Legacy ECNL G2010/11",
+          "away": "San Juan SC ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Marin FC ECNL G2010/11",
+          "away": "Placer United ECNL G2010/11",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Mustang SC ECNL G2010/11",
+          "away": "COSC ECNL G2010/11",
+          "home_score": 5,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Pleasanton RAGE ECNL G2010/11",
+          "away": "Force (CA) ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Santa Rosa United ECNL G2010/11",
+          "away": "Stanislaus Surf - ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 5
+        },
+        {
+          "date": "2026-10-25",
+          "home": "COSC ECNL G2010/11",
+          "away": "Santa Rosa United ECNL G2010/11",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Marin FC ECNL G2010/11",
+          "away": "Force (CA) ECNL G2010/11",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Mustang SC ECNL G2010/11",
+          "away": "Davis Legacy ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Pleasanton RAGE ECNL G2010/11",
+          "away": "Bay Area Surf - ECNL G2010/11",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-25",
+          "home": "San Juan SC ECNL G2010/11",
+          "away": "Placer United ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Stanislaus Surf - ECNL G2010/11",
+          "away": "MVLA ECNL G2010/11",
+          "home_score": 0,
+          "away_score": 5
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Bay Area Surf - ECNL G2010/11",
+          "away": "Mustang SC ECNL G2010/11",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Force (CA) ECNL G2010/11",
+          "away": "COSC ECNL G2010/11",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Marin FC ECNL G2010/11",
+          "away": "MVLA ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Placer United ECNL G2010/11",
+          "away": "Davis Legacy ECNL G2010/11",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Santa Rosa United ECNL G2010/11",
+          "away": "San Juan SC ECNL G2010/11",
+          "home_score": 4,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Stanislaus Surf - ECNL G2010/11",
+          "away": "Pleasanton RAGE ECNL G2010/11",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Bay Area Surf - ECNL G2010/11",
+          "away": "San Juan SC ECNL G2010/11",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "COSC ECNL G2010/11",
+          "away": "Davis Legacy ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 4
+        },
+        {
+          "date": "2026-11-07",
+          "home": "MVLA ECNL G2010/11",
+          "away": "Force (CA) ECNL G2010/11",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Mustang SC ECNL G2010/11",
+          "away": "Marin FC ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Placer United ECNL G2010/11",
+          "away": "Stanislaus Surf - ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Pleasanton RAGE ECNL G2010/11",
+          "away": "Santa Rosa United ECNL G2010/11",
+          "home_score": 5,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-08",
+          "home": "Bay Area Surf - ECNL G2010/11",
+          "away": "Placer United ECNL G2010/11",
+          "home_score": 1,
+          "away_score": 0
+        }
+      ]
+    },
+    {
+      "id": "norcal-gu17",
+      "title": "ECNL Girls NorCal 2026-27 — GU17",
+      "season": "2026-27",
+      "gender": "Girls",
+      "age": "U17",
+      "type": "League",
+      "competition": "ECNL NorCal",
+      "games": 79,
+      "draws": 6,
+      "teams": 12,
+      "links": 56,
+      "loops_resolved": 4,
+      "loops": [
+        {
+          "cycle": [
+            "Bay Area Surf - ECNL G2009/10",
+            "Mustang SC ECNL G2009/10"
+          ],
+          "weight": 2,
+          "broken": [
+            {
+              "winner": "Bay Area Surf - ECNL G2009/10",
+              "loser": "Mustang SC ECNL G2009/10"
+            },
+            {
+              "winner": "Mustang SC ECNL G2009/10",
+              "loser": "Bay Area Surf - ECNL G2009/10"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "Bay Area Surf - ECNL G2009/10",
+            "San Juan SC ECNL G2009/10"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "San Juan SC ECNL G2009/10",
+              "loser": "Bay Area Surf - ECNL G2009/10"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "COSC ECNL G2009/10",
+            "Davis Legacy ECNL G2009/10"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "Davis Legacy ECNL G2009/10",
+              "loser": "COSC ECNL G2009/10"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "Force (CA) ECNL G2009/10",
+            "MVLA ECNL G2009/10"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "Force (CA) ECNL G2009/10",
+              "loser": "MVLA ECNL G2009/10"
+            },
+            {
+              "winner": "MVLA ECNL G2009/10",
+              "loser": "Force (CA) ECNL G2009/10"
+            }
+          ]
+        }
+      ],
+      "rankings": [
+        {
+          "rank": 1,
+          "team": "MVLA ECNL G2009/10",
+          "short": "MVLA",
+          "bracket_team": false,
+          "rating": 7.25,
+          "paths_out": 2533,
+          "paths_in": 0,
+          "w": 12,
+          "l": 1,
+          "d": 0
+        },
+        {
+          "rank": 2,
+          "team": "Bay Area Surf - ECNL G2009/10",
+          "short": "BAY SURF",
+          "bracket_team": false,
+          "rating": 5.36,
+          "paths_out": 1113,
+          "paths_in": 2,
+          "w": 9,
+          "l": 3,
+          "d": 0
+        },
+        {
+          "rank": 3,
+          "team": "Force (CA) ECNL G2009/10",
+          "short": "FORCE CA",
+          "bracket_team": false,
+          "rating": 5.02,
+          "paths_out": 968,
+          "paths_in": 0,
+          "w": 9,
+          "l": 1,
+          "d": 2
+        },
+        {
+          "rank": 4,
+          "team": "Placer United ECNL G2009/10",
+          "short": "PLACER",
+          "bracket_team": false,
+          "rating": 4.04,
+          "paths_out": 659,
+          "paths_in": 7,
+          "w": 9,
+          "l": 3,
+          "d": 2
+        },
+        {
+          "rank": 5,
+          "team": "Mustang SC ECNL G2009/10",
+          "short": "MUSTANG",
+          "bracket_team": false,
+          "rating": 2.16,
+          "paths_out": 274,
+          "paths_in": 9,
+          "w": 9,
+          "l": 3,
+          "d": 1
+        },
+        {
+          "rank": 6,
+          "team": "San Juan SC ECNL G2009/10",
+          "short": "SAN JUAN",
+          "bracket_team": false,
+          "rating": 1.59,
+          "paths_out": 196,
+          "paths_in": 15,
+          "w": 7,
+          "l": 4,
+          "d": 2
+        },
+        {
+          "rank": 7,
+          "team": "Pleasanton RAGE ECNL G2009/10",
+          "short": "RAGE",
+          "bracket_team": false,
+          "rating": 0.72,
+          "paths_out": 125,
+          "paths_in": 50,
+          "w": 6,
+          "l": 5,
+          "d": 2
+        },
+        {
+          "rank": 8,
+          "team": "COSC ECNL G2009/10",
+          "short": "COSC",
+          "bracket_team": false,
+          "rating": -0.22,
+          "paths_out": 61,
+          "paths_in": 83,
+          "w": 5,
+          "l": 7,
+          "d": 2
+        },
+        {
+          "rank": 9,
+          "team": "Davis Legacy ECNL G2009/10",
+          "short": "DAVIS",
+          "bracket_team": false,
+          "rating": -1.44,
+          "paths_out": 29,
+          "paths_in": 190,
+          "w": 4,
+          "l": 9,
+          "d": 0
+        },
+        {
+          "rank": 10,
+          "team": "Marin FC ECNL G2009/10",
+          "short": "MARIN",
+          "bracket_team": false,
+          "rating": -3.05,
+          "paths_out": 11,
+          "paths_in": 433,
+          "w": 2,
+          "l": 12,
+          "d": 0
+        },
+        {
+          "rank": 11,
+          "team": "Stanislaus Surf - ECNL G2009/10",
+          "short": "STANISLAUS",
+          "bracket_team": false,
+          "rating": -4.67,
+          "paths_out": 5,
+          "paths_in": 848,
+          "w": 1,
+          "l": 12,
+          "d": 1
+        },
+        {
+          "rank": 12,
+          "team": "Santa Rosa United ECNL G2009/10",
+          "short": "SANTA ROSA",
+          "bracket_team": false,
+          "rating": -6.38,
+          "paths_out": 0,
+          "paths_in": 1693,
+          "w": 0,
+          "l": 13,
+          "d": 0
+        }
+      ],
+      "beatwins": [
+        {
+          "winner": "MVLA ECNL G2009/10",
+          "loser": "Marin FC ECNL G2009/10",
+          "weight": 20
+        },
+        {
+          "winner": "MVLA ECNL G2009/10",
+          "loser": "Stanislaus Surf - ECNL G2009/10",
+          "weight": 17
+        },
+        {
+          "winner": "Mustang SC ECNL G2009/10",
+          "loser": "Marin FC ECNL G2009/10",
+          "weight": 14
+        },
+        {
+          "winner": "Force (CA) ECNL G2009/10",
+          "loser": "Marin FC ECNL G2009/10",
+          "weight": 13
+        },
+        {
+          "winner": "San Juan SC ECNL G2009/10",
+          "loser": "Santa Rosa United ECNL G2009/10",
+          "weight": 11
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2009/10",
+          "loser": "Marin FC ECNL G2009/10",
+          "weight": 9
+        },
+        {
+          "winner": "MVLA ECNL G2009/10",
+          "loser": "COSC ECNL G2009/10",
+          "weight": 9
+        },
+        {
+          "winner": "Mustang SC ECNL G2009/10",
+          "loser": "Davis Legacy ECNL G2009/10",
+          "weight": 9
+        },
+        {
+          "winner": "Mustang SC ECNL G2009/10",
+          "loser": "Santa Rosa United ECNL G2009/10",
+          "weight": 9
+        },
+        {
+          "winner": "COSC ECNL G2009/10",
+          "loser": "Santa Rosa United ECNL G2009/10",
+          "weight": 8
+        },
+        {
+          "winner": "Force (CA) ECNL G2009/10",
+          "loser": "COSC ECNL G2009/10",
+          "weight": 8
+        },
+        {
+          "winner": "Force (CA) ECNL G2009/10",
+          "loser": "Stanislaus Surf - ECNL G2009/10",
+          "weight": 7
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2009/10",
+          "loser": "Stanislaus Surf - ECNL G2009/10",
+          "weight": 7
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2009/10",
+          "loser": "Stanislaus Surf - ECNL G2009/10",
+          "weight": 6
+        },
+        {
+          "winner": "Davis Legacy ECNL G2009/10",
+          "loser": "Santa Rosa United ECNL G2009/10",
+          "weight": 6
+        },
+        {
+          "winner": "Placer United ECNL G2009/10",
+          "loser": "Marin FC ECNL G2009/10",
+          "weight": 6
+        },
+        {
+          "winner": "Placer United ECNL G2009/10",
+          "loser": "Stanislaus Surf - ECNL G2009/10",
+          "weight": 6
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2009/10",
+          "loser": "Davis Legacy ECNL G2009/10",
+          "weight": 5
+        },
+        {
+          "winner": "Force (CA) ECNL G2009/10",
+          "loser": "Santa Rosa United ECNL G2009/10",
+          "weight": 5
+        },
+        {
+          "winner": "MVLA ECNL G2009/10",
+          "loser": "Pleasanton RAGE ECNL G2009/10",
+          "weight": 5
+        },
+        {
+          "winner": "Mustang SC ECNL G2009/10",
+          "loser": "Pleasanton RAGE ECNL G2009/10",
+          "weight": 5
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2009/10",
+          "loser": "Santa Rosa United ECNL G2009/10",
+          "weight": 5
+        },
+        {
+          "winner": "San Juan SC ECNL G2009/10",
+          "loser": "Marin FC ECNL G2009/10",
+          "weight": 5
+        },
+        {
+          "winner": "San Juan SC ECNL G2009/10",
+          "loser": "Pleasanton RAGE ECNL G2009/10",
+          "weight": 5
+        },
+        {
+          "winner": "Stanislaus Surf - ECNL G2009/10",
+          "loser": "Santa Rosa United ECNL G2009/10",
+          "weight": 5
+        },
+        {
+          "winner": "COSC ECNL G2009/10",
+          "loser": "Stanislaus Surf - ECNL G2009/10",
+          "weight": 4
+        },
+        {
+          "winner": "Davis Legacy ECNL G2009/10",
+          "loser": "Stanislaus Surf - ECNL G2009/10",
+          "weight": 4
+        },
+        {
+          "winner": "Marin FC ECNL G2009/10",
+          "loser": "Santa Rosa United ECNL G2009/10",
+          "weight": 4
+        },
+        {
+          "winner": "Mustang SC ECNL G2009/10",
+          "loser": "Stanislaus Surf - ECNL G2009/10",
+          "weight": 4
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2009/10",
+          "loser": "Marin FC ECNL G2009/10",
+          "weight": 4
+        },
+        {
+          "winner": "COSC ECNL G2009/10",
+          "loser": "Marin FC ECNL G2009/10",
+          "weight": 3
+        },
+        {
+          "winner": "Davis Legacy ECNL G2009/10",
+          "loser": "Marin FC ECNL G2009/10",
+          "weight": 3
+        },
+        {
+          "winner": "MVLA ECNL G2009/10",
+          "loser": "San Juan SC ECNL G2009/10",
+          "weight": 3
+        },
+        {
+          "winner": "Placer United ECNL G2009/10",
+          "loser": "Davis Legacy ECNL G2009/10",
+          "weight": 3
+        },
+        {
+          "winner": "San Juan SC ECNL G2009/10",
+          "loser": "Davis Legacy ECNL G2009/10",
+          "weight": 3
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2009/10",
+          "loser": "Placer United ECNL G2009/10",
+          "weight": 2
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2009/10",
+          "loser": "Santa Rosa United ECNL G2009/10",
+          "weight": 2
+        },
+        {
+          "winner": "Force (CA) ECNL G2009/10",
+          "loser": "Placer United ECNL G2009/10",
+          "weight": 2
+        },
+        {
+          "winner": "MVLA ECNL G2009/10",
+          "loser": "Bay Area Surf - ECNL G2009/10",
+          "weight": 2
+        },
+        {
+          "winner": "MVLA ECNL G2009/10",
+          "loser": "Davis Legacy ECNL G2009/10",
+          "weight": 2
+        },
+        {
+          "winner": "Marin FC ECNL G2009/10",
+          "loser": "Stanislaus Surf - ECNL G2009/10",
+          "weight": 2
+        },
+        {
+          "winner": "Mustang SC ECNL G2009/10",
+          "loser": "COSC ECNL G2009/10",
+          "weight": 2
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2009/10",
+          "loser": "COSC ECNL G2009/10",
+          "weight": 2
+        },
+        {
+          "winner": "San Juan SC ECNL G2009/10",
+          "loser": "Stanislaus Surf - ECNL G2009/10",
+          "weight": 2
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2009/10",
+          "loser": "COSC ECNL G2009/10",
+          "weight": 1
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2009/10",
+          "loser": "Pleasanton RAGE ECNL G2009/10",
+          "weight": 1
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2009/10",
+          "loser": "San Juan SC ECNL G2009/10",
+          "weight": 1
+        },
+        {
+          "winner": "COSC ECNL G2009/10",
+          "loser": "Davis Legacy ECNL G2009/10",
+          "weight": 1
+        },
+        {
+          "winner": "Force (CA) ECNL G2009/10",
+          "loser": "San Juan SC ECNL G2009/10",
+          "weight": 1
+        },
+        {
+          "winner": "MVLA ECNL G2009/10",
+          "loser": "Mustang SC ECNL G2009/10",
+          "weight": 1
+        },
+        {
+          "winner": "MVLA ECNL G2009/10",
+          "loser": "Placer United ECNL G2009/10",
+          "weight": 1
+        },
+        {
+          "winner": "Placer United ECNL G2009/10",
+          "loser": "Mustang SC ECNL G2009/10",
+          "weight": 1
+        },
+        {
+          "winner": "Placer United ECNL G2009/10",
+          "loser": "Pleasanton RAGE ECNL G2009/10",
+          "weight": 1
+        },
+        {
+          "winner": "Placer United ECNL G2009/10",
+          "loser": "San Juan SC ECNL G2009/10",
+          "weight": 1
+        },
+        {
+          "winner": "Placer United ECNL G2009/10",
+          "loser": "Santa Rosa United ECNL G2009/10",
+          "weight": 1
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2009/10",
+          "loser": "Davis Legacy ECNL G2009/10",
+          "weight": 1
+        }
+      ],
+      "arrows": [
+        {
+          "winner": "Mustang SC ECNL G2009/10",
+          "loser": "Pleasanton RAGE ECNL G2009/10",
+          "weight": 5
+        },
+        {
+          "winner": "San Juan SC ECNL G2009/10",
+          "loser": "Pleasanton RAGE ECNL G2009/10",
+          "weight": 5
+        },
+        {
+          "winner": "Stanislaus Surf - ECNL G2009/10",
+          "loser": "Santa Rosa United ECNL G2009/10",
+          "weight": 5
+        },
+        {
+          "winner": "Davis Legacy ECNL G2009/10",
+          "loser": "Marin FC ECNL G2009/10",
+          "weight": 3
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2009/10",
+          "loser": "Placer United ECNL G2009/10",
+          "weight": 2
+        },
+        {
+          "winner": "Force (CA) ECNL G2009/10",
+          "loser": "Placer United ECNL G2009/10",
+          "weight": 2
+        },
+        {
+          "winner": "MVLA ECNL G2009/10",
+          "loser": "Bay Area Surf - ECNL G2009/10",
+          "weight": 2
+        },
+        {
+          "winner": "Marin FC ECNL G2009/10",
+          "loser": "Stanislaus Surf - ECNL G2009/10",
+          "weight": 2
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2009/10",
+          "loser": "COSC ECNL G2009/10",
+          "weight": 2
+        },
+        {
+          "winner": "COSC ECNL G2009/10",
+          "loser": "Davis Legacy ECNL G2009/10",
+          "weight": 1
+        },
+        {
+          "winner": "Placer United ECNL G2009/10",
+          "loser": "Mustang SC ECNL G2009/10",
+          "weight": 1
+        },
+        {
+          "winner": "Placer United ECNL G2009/10",
+          "loser": "San Juan SC ECNL G2009/10",
+          "weight": 1
+        }
+      ],
+      "games_list": [
+        {
+          "date": "2026-08-22",
+          "home": "Davis Legacy ECNL G2009/10",
+          "away": "Mustang SC ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 4
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Force (CA) ECNL G2009/10",
+          "away": "Marin FC ECNL G2009/10",
+          "home_score": 6,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-22",
+          "home": "MVLA ECNL G2009/10",
+          "away": "Stanislaus Surf - ECNL G2009/10",
+          "home_score": 7,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Placer United ECNL G2009/10",
+          "away": "San Juan SC ECNL G2009/10",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Santa Rosa United ECNL G2009/10",
+          "away": "COSC ECNL G2009/10",
+          "home_score": 2,
+          "away_score": 5
+        },
+        {
+          "date": "2026-08-29",
+          "home": "COSC ECNL G2009/10",
+          "away": "Stanislaus Surf - ECNL G2009/10",
+          "home_score": 7,
+          "away_score": 3
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Davis Legacy ECNL G2009/10",
+          "away": "MVLA ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Marin FC ECNL G2009/10",
+          "away": "Bay Area Surf - ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 9
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Mustang SC ECNL G2009/10",
+          "away": "Force (CA) ECNL G2009/10",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Placer United ECNL G2009/10",
+          "away": "Santa Rosa United ECNL G2009/10",
+          "home_score": 4,
+          "away_score": 3
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Pleasanton RAGE ECNL G2009/10",
+          "away": "San Juan SC ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 5
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Bay Area Surf - ECNL G2009/10",
+          "away": "Santa Rosa United ECNL G2009/10",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Davis Legacy ECNL G2009/10",
+          "away": "Pleasanton RAGE ECNL G2009/10",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Force (CA) ECNL G2009/10",
+          "away": "Placer United ECNL G2009/10",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Marin FC ECNL G2009/10",
+          "away": "COSC ECNL G2009/10",
+          "home_score": 2,
+          "away_score": 5
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Mustang SC ECNL G2009/10",
+          "away": "MVLA ECNL G2009/10",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-30",
+          "home": "San Juan SC ECNL G2009/10",
+          "away": "Stanislaus Surf - ECNL G2009/10",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-12",
+          "home": "COSC ECNL G2009/10",
+          "away": "Force (CA) ECNL G2009/10",
+          "home_score": 1,
+          "away_score": 7
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Davis Legacy ECNL G2009/10",
+          "away": "Placer United ECNL G2009/10",
+          "home_score": 2,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-12",
+          "home": "MVLA ECNL G2009/10",
+          "away": "Marin FC ECNL G2009/10",
+          "home_score": 11,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Mustang SC ECNL G2009/10",
+          "away": "Bay Area Surf - ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Pleasanton RAGE ECNL G2009/10",
+          "away": "Stanislaus Surf - ECNL G2009/10",
+          "home_score": 8,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-12",
+          "home": "San Juan SC ECNL G2009/10",
+          "away": "Santa Rosa United ECNL G2009/10",
+          "home_score": 6,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Davis Legacy ECNL G2009/10",
+          "away": "COSC ECNL G2009/10",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Force (CA) ECNL G2009/10",
+          "away": "MVLA ECNL G2009/10",
+          "home_score": 3,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Marin FC ECNL G2009/10",
+          "away": "Mustang SC ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 8
+        },
+        {
+          "date": "2026-09-19",
+          "home": "San Juan SC ECNL G2009/10",
+          "away": "Bay Area Surf - ECNL G2009/10",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Santa Rosa United ECNL G2009/10",
+          "away": "Pleasanton RAGE ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Stanislaus Surf - ECNL G2009/10",
+          "away": "Placer United ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Bay Area Surf - ECNL G2009/10",
+          "away": "Stanislaus Surf - ECNL G2009/10",
+          "home_score": 6,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-20",
+          "home": "COSC ECNL G2009/10",
+          "away": "MVLA ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 9
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Davis Legacy ECNL G2009/10",
+          "away": "Santa Rosa United ECNL G2009/10",
+          "home_score": 6,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Placer United ECNL G2009/10",
+          "away": "Mustang SC ECNL G2009/10",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Pleasanton RAGE ECNL G2009/10",
+          "away": "Marin FC ECNL G2009/10",
+          "home_score": 5,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-20",
+          "home": "San Juan SC ECNL G2009/10",
+          "away": "Force (CA) ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-26",
+          "home": "COSC ECNL G2009/10",
+          "away": "San Juan SC ECNL G2009/10",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Marin FC ECNL G2009/10",
+          "away": "Davis Legacy ECNL G2009/10",
+          "home_score": 1,
+          "away_score": 4
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Mustang SC ECNL G2009/10",
+          "away": "Stanislaus Surf - ECNL G2009/10",
+          "home_score": 5,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Placer United ECNL G2009/10",
+          "away": "Pleasanton RAGE ECNL G2009/10",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Pleasanton RAGE ECNL G2009/10",
+          "away": "COSC ECNL G2009/10",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-27",
+          "home": "San Juan SC ECNL G2009/10",
+          "away": "MVLA ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Santa Rosa United ECNL G2009/10",
+          "away": "Mustang SC ECNL G2009/10",
+          "home_score": 1,
+          "away_score": 10
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Stanislaus Surf - ECNL G2009/10",
+          "away": "Marin FC ECNL G2009/10",
+          "home_score": 2,
+          "away_score": 4
+        },
+        {
+          "date": "2026-10-03",
+          "home": "COSC ECNL G2009/10",
+          "away": "Placer United ECNL G2009/10",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Davis Legacy ECNL G2009/10",
+          "away": "Bay Area Surf - ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 5
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Force (CA) ECNL G2009/10",
+          "away": "Stanislaus Surf - ECNL G2009/10",
+          "home_score": 7,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Marin FC ECNL G2009/10",
+          "away": "Santa Rosa United ECNL G2009/10",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-04",
+          "home": "MVLA ECNL G2009/10",
+          "away": "Pleasanton RAGE ECNL G2009/10",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Davis Legacy ECNL G2009/10",
+          "away": "Stanislaus Surf - ECNL G2009/10",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Placer United ECNL G2009/10",
+          "away": "MVLA ECNL G2009/10",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Pleasanton RAGE ECNL G2009/10",
+          "away": "Mustang SC ECNL G2009/10",
+          "home_score": 1,
+          "away_score": 6
+        },
+        {
+          "date": "2026-10-17",
+          "home": "San Juan SC ECNL G2009/10",
+          "away": "Marin FC ECNL G2009/10",
+          "home_score": 6,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Santa Rosa United ECNL G2009/10",
+          "away": "Force (CA) ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 5
+        },
+        {
+          "date": "2026-10-18",
+          "home": "Bay Area Surf - ECNL G2009/10",
+          "away": "COSC ECNL G2009/10",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Bay Area Surf - ECNL G2009/10",
+          "away": "MVLA ECNL G2009/10",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Davis Legacy ECNL G2009/10",
+          "away": "San Juan SC ECNL G2009/10",
+          "home_score": 2,
+          "away_score": 5
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Marin FC ECNL G2009/10",
+          "away": "Placer United ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 6
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Mustang SC ECNL G2009/10",
+          "away": "COSC ECNL G2009/10",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Pleasanton RAGE ECNL G2009/10",
+          "away": "Force (CA) ECNL G2009/10",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Santa Rosa United ECNL G2009/10",
+          "away": "Stanislaus Surf - ECNL G2009/10",
+          "home_score": 2,
+          "away_score": 7
+        },
+        {
+          "date": "2026-10-25",
+          "home": "COSC ECNL G2009/10",
+          "away": "Santa Rosa United ECNL G2009/10",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Marin FC ECNL G2009/10",
+          "away": "Force (CA) ECNL G2009/10",
+          "home_score": 1,
+          "away_score": 8
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Mustang SC ECNL G2009/10",
+          "away": "Davis Legacy ECNL G2009/10",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Pleasanton RAGE ECNL G2009/10",
+          "away": "Bay Area Surf - ECNL G2009/10",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-25",
+          "home": "San Juan SC ECNL G2009/10",
+          "away": "Placer United ECNL G2009/10",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Stanislaus Surf - ECNL G2009/10",
+          "away": "MVLA ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 10
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Bay Area Surf - ECNL G2009/10",
+          "away": "Mustang SC ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Force (CA) ECNL G2009/10",
+          "away": "COSC ECNL G2009/10",
+          "home_score": 4,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Marin FC ECNL G2009/10",
+          "away": "MVLA ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 9
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Placer United ECNL G2009/10",
+          "away": "Davis Legacy ECNL G2009/10",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Santa Rosa United ECNL G2009/10",
+          "away": "San Juan SC ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 5
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Stanislaus Surf - ECNL G2009/10",
+          "away": "Pleasanton RAGE ECNL G2009/10",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Bay Area Surf - ECNL G2009/10",
+          "away": "San Juan SC ECNL G2009/10",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "COSC ECNL G2009/10",
+          "away": "Davis Legacy ECNL G2009/10",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "MVLA ECNL G2009/10",
+          "away": "Force (CA) ECNL G2009/10",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Mustang SC ECNL G2009/10",
+          "away": "Marin FC ECNL G2009/10",
+          "home_score": 6,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Placer United ECNL G2009/10",
+          "away": "Stanislaus Surf - ECNL G2009/10",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Pleasanton RAGE ECNL G2009/10",
+          "away": "Santa Rosa United ECNL G2009/10",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-08",
+          "home": "Bay Area Surf - ECNL G2009/10",
+          "away": "Placer United ECNL G2009/10",
+          "home_score": 2,
+          "away_score": 0
+        }
+      ]
+    },
+    {
+      "id": "norcal-gu18-19",
+      "title": "ECNL Girls NorCal 2026-27 — GU18/19",
+      "season": "2026-27",
+      "gender": "Girls",
+      "age": "U18/19",
+      "type": "League",
+      "competition": "ECNL NorCal",
+      "games": 81,
+      "draws": 10,
+      "teams": 12,
+      "links": 53,
+      "loops_resolved": 7,
+      "loops": [
+        {
+          "cycle": [
+            "Bay Area Surf - ECNL G2008/09",
+            "San Juan SC ECNL G2008/09"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "Bay Area Surf - ECNL G2008/09",
+              "loser": "San Juan SC ECNL G2008/09"
+            },
+            {
+              "winner": "San Juan SC ECNL G2008/09",
+              "loser": "Bay Area Surf - ECNL G2008/09"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "Davis Legacy ECNL G2008/09",
+            "Mustang SC ECNL G2008/09"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "Davis Legacy ECNL G2008/09",
+              "loser": "Mustang SC ECNL G2008/09"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "Force (CA) ECNL G2008/09",
+            "Marin FC ECNL G2008/09"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "Marin FC ECNL G2008/09",
+              "loser": "Force (CA) ECNL G2008/09"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "Pleasanton RAGE ECNL G2008/09",
+            "Stanislaus Surf - ECNL G2008/09"
+          ],
+          "weight": 4,
+          "broken": [
+            {
+              "winner": "Pleasanton RAGE ECNL G2008/09",
+              "loser": "Stanislaus Surf - ECNL G2008/09"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "Davis Legacy ECNL G2008/09",
+            "Placer United ECNL G2008/09",
+            "Mustang SC ECNL G2008/09"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "Davis Legacy ECNL G2008/09",
+              "loser": "Placer United ECNL G2008/09"
+            },
+            {
+              "winner": "Mustang SC ECNL G2008/09",
+              "loser": "Davis Legacy ECNL G2008/09"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "Marin FC ECNL G2008/09",
+            "Mustang SC ECNL G2008/09",
+            "Pleasanton RAGE ECNL G2008/09"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "Pleasanton RAGE ECNL G2008/09",
+              "loser": "Marin FC ECNL G2008/09"
+            }
+          ]
+        },
+        {
+          "cycle": [
+            "Mustang SC ECNL G2008/09",
+            "Pleasanton RAGE ECNL G2008/09",
+            "Placer United ECNL G2008/09"
+          ],
+          "weight": 1,
+          "broken": [
+            {
+              "winner": "Pleasanton RAGE ECNL G2008/09",
+              "loser": "Placer United ECNL G2008/09"
+            },
+            {
+              "winner": "Placer United ECNL G2008/09",
+              "loser": "Mustang SC ECNL G2008/09"
+            }
+          ]
+        }
+      ],
+      "rankings": [
+        {
+          "rank": 1,
+          "team": "MVLA ECNL G2008/09",
+          "short": "MVLA",
+          "bracket_team": false,
+          "rating": 6.7,
+          "paths_out": 773,
+          "paths_in": 0,
+          "w": 13,
+          "l": 0,
+          "d": 1
+        },
+        {
+          "rank": 2,
+          "team": "San Juan SC ECNL G2008/09",
+          "short": "SAN JUAN",
+          "bracket_team": false,
+          "rating": 3.73,
+          "paths_out": 227,
+          "paths_in": 1,
+          "w": 11,
+          "l": 2,
+          "d": 1
+        },
+        {
+          "rank": 3,
+          "team": "Bay Area Surf - ECNL G2008/09",
+          "short": "BAY SURF",
+          "bracket_team": false,
+          "rating": 3.09,
+          "paths_out": 171,
+          "paths_in": 1,
+          "w": 8,
+          "l": 2,
+          "d": 2
+        },
+        {
+          "rank": 4,
+          "team": "Force (CA) ECNL G2008/09",
+          "short": "FORCE CA",
+          "bracket_team": false,
+          "rating": 2.88,
+          "paths_out": 156,
+          "paths_in": 2,
+          "w": 8,
+          "l": 2,
+          "d": 2
+        },
+        {
+          "rank": 5,
+          "team": "Davis Legacy ECNL G2008/09",
+          "short": "DAVIS",
+          "bracket_team": false,
+          "rating": 1.18,
+          "paths_out": 61,
+          "paths_in": 10,
+          "w": 7,
+          "l": 4,
+          "d": 2
+        },
+        {
+          "rank": 6,
+          "team": "Marin FC ECNL G2008/09",
+          "short": "MARIN",
+          "bracket_team": false,
+          "rating": 1.12,
+          "paths_out": 65,
+          "paths_in": 17,
+          "w": 7,
+          "l": 6,
+          "d": 1
+        },
+        {
+          "rank": 7,
+          "team": "Stanislaus Surf - ECNL G2008/09",
+          "short": "STANISLAUS",
+          "bracket_team": false,
+          "rating": -0.45,
+          "paths_out": 33,
+          "paths_in": 51,
+          "w": 4,
+          "l": 7,
+          "d": 3
+        },
+        {
+          "rank": 8,
+          "team": "Mustang SC ECNL G2008/09",
+          "short": "MUSTANG",
+          "bracket_team": false,
+          "rating": -1.57,
+          "paths_out": 15,
+          "paths_in": 86,
+          "w": 4,
+          "l": 10,
+          "d": 0
+        },
+        {
+          "rank": 9,
+          "team": "Placer United ECNL G2008/09",
+          "short": "PLACER",
+          "bracket_team": false,
+          "rating": -1.77,
+          "paths_out": 3,
+          "paths_in": 85,
+          "w": 3,
+          "l": 8,
+          "d": 3
+        },
+        {
+          "rank": 10,
+          "team": "Pleasanton RAGE ECNL G2008/09",
+          "short": "RAGE",
+          "bracket_team": false,
+          "rating": -3,
+          "paths_out": 5,
+          "paths_in": 168,
+          "w": 5,
+          "l": 7,
+          "d": 1
+        },
+        {
+          "rank": 11,
+          "team": "COSC ECNL G2008/09",
+          "short": "COSC",
+          "bracket_team": false,
+          "rating": -5.22,
+          "paths_out": 1,
+          "paths_in": 416,
+          "w": 1,
+          "l": 11,
+          "d": 2
+        },
+        {
+          "rank": 12,
+          "team": "Santa Rosa United ECNL G2008/09",
+          "short": "SANTA ROSA",
+          "bracket_team": false,
+          "rating": -7.03,
+          "paths_out": 0,
+          "paths_in": 899,
+          "w": 0,
+          "l": 12,
+          "d": 2
+        }
+      ],
+      "beatwins": [
+        {
+          "winner": "San Juan SC ECNL G2008/09",
+          "loser": "Santa Rosa United ECNL G2008/09",
+          "weight": 20
+        },
+        {
+          "winner": "Force (CA) ECNL G2008/09",
+          "loser": "COSC ECNL G2008/09",
+          "weight": 13
+        },
+        {
+          "winner": "Davis Legacy ECNL G2008/09",
+          "loser": "COSC ECNL G2008/09",
+          "weight": 9
+        },
+        {
+          "winner": "Davis Legacy ECNL G2008/09",
+          "loser": "Santa Rosa United ECNL G2008/09",
+          "weight": 9
+        },
+        {
+          "winner": "San Juan SC ECNL G2008/09",
+          "loser": "Stanislaus Surf - ECNL G2008/09",
+          "weight": 9
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2008/09",
+          "loser": "COSC ECNL G2008/09",
+          "weight": 7
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2008/09",
+          "loser": "Pleasanton RAGE ECNL G2008/09",
+          "weight": 6
+        },
+        {
+          "winner": "Mustang SC ECNL G2008/09",
+          "loser": "Santa Rosa United ECNL G2008/09",
+          "weight": 6
+        },
+        {
+          "winner": "Stanislaus Surf - ECNL G2008/09",
+          "loser": "Santa Rosa United ECNL G2008/09",
+          "weight": 6
+        },
+        {
+          "winner": "Force (CA) ECNL G2008/09",
+          "loser": "Marin FC ECNL G2008/09",
+          "weight": 5
+        },
+        {
+          "winner": "Force (CA) ECNL G2008/09",
+          "loser": "Santa Rosa United ECNL G2008/09",
+          "weight": 5
+        },
+        {
+          "winner": "MVLA ECNL G2008/09",
+          "loser": "COSC ECNL G2008/09",
+          "weight": 5
+        },
+        {
+          "winner": "MVLA ECNL G2008/09",
+          "loser": "Santa Rosa United ECNL G2008/09",
+          "weight": 5
+        },
+        {
+          "winner": "MVLA ECNL G2008/09",
+          "loser": "Stanislaus Surf - ECNL G2008/09",
+          "weight": 5
+        },
+        {
+          "winner": "San Juan SC ECNL G2008/09",
+          "loser": "COSC ECNL G2008/09",
+          "weight": 5
+        },
+        {
+          "winner": "MVLA ECNL G2008/09",
+          "loser": "Marin FC ECNL G2008/09",
+          "weight": 4
+        },
+        {
+          "winner": "MVLA ECNL G2008/09",
+          "loser": "Mustang SC ECNL G2008/09",
+          "weight": 4
+        },
+        {
+          "winner": "Marin FC ECNL G2008/09",
+          "loser": "Santa Rosa United ECNL G2008/09",
+          "weight": 4
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2008/09",
+          "loser": "Davis Legacy ECNL G2008/09",
+          "weight": 3
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2008/09",
+          "loser": "Mustang SC ECNL G2008/09",
+          "weight": 3
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2008/09",
+          "loser": "Santa Rosa United ECNL G2008/09",
+          "weight": 3
+        },
+        {
+          "winner": "Force (CA) ECNL G2008/09",
+          "loser": "Mustang SC ECNL G2008/09",
+          "weight": 3
+        },
+        {
+          "winner": "Force (CA) ECNL G2008/09",
+          "loser": "Placer United ECNL G2008/09",
+          "weight": 3
+        },
+        {
+          "winner": "Force (CA) ECNL G2008/09",
+          "loser": "Stanislaus Surf - ECNL G2008/09",
+          "weight": 3
+        },
+        {
+          "winner": "MVLA ECNL G2008/09",
+          "loser": "Davis Legacy ECNL G2008/09",
+          "weight": 3
+        },
+        {
+          "winner": "MVLA ECNL G2008/09",
+          "loser": "Placer United ECNL G2008/09",
+          "weight": 3
+        },
+        {
+          "winner": "MVLA ECNL G2008/09",
+          "loser": "Pleasanton RAGE ECNL G2008/09",
+          "weight": 3
+        },
+        {
+          "winner": "Marin FC ECNL G2008/09",
+          "loser": "Placer United ECNL G2008/09",
+          "weight": 3
+        },
+        {
+          "winner": "San Juan SC ECNL G2008/09",
+          "loser": "Placer United ECNL G2008/09",
+          "weight": 3
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2008/09",
+          "loser": "Marin FC ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "Davis Legacy ECNL G2008/09",
+          "loser": "Pleasanton RAGE ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "Davis Legacy ECNL G2008/09",
+          "loser": "Stanislaus Surf - ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "Force (CA) ECNL G2008/09",
+          "loser": "Pleasanton RAGE ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "MVLA ECNL G2008/09",
+          "loser": "Force (CA) ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "Marin FC ECNL G2008/09",
+          "loser": "COSC ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "Marin FC ECNL G2008/09",
+          "loser": "Mustang SC ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "Marin FC ECNL G2008/09",
+          "loser": "Stanislaus Surf - ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "Mustang SC ECNL G2008/09",
+          "loser": "COSC ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2008/09",
+          "loser": "COSC ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2008/09",
+          "loser": "Santa Rosa United ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "San Juan SC ECNL G2008/09",
+          "loser": "Davis Legacy ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "San Juan SC ECNL G2008/09",
+          "loser": "Marin FC ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "San Juan SC ECNL G2008/09",
+          "loser": "Pleasanton RAGE ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "Stanislaus Surf - ECNL G2008/09",
+          "loser": "Placer United ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "COSC ECNL G2008/09",
+          "loser": "Santa Rosa United ECNL G2008/09",
+          "weight": 1
+        },
+        {
+          "winner": "MVLA ECNL G2008/09",
+          "loser": "Bay Area Surf - ECNL G2008/09",
+          "weight": 1
+        },
+        {
+          "winner": "MVLA ECNL G2008/09",
+          "loser": "San Juan SC ECNL G2008/09",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2008/09",
+          "loser": "Pleasanton RAGE ECNL G2008/09",
+          "weight": 1
+        },
+        {
+          "winner": "Placer United ECNL G2008/09",
+          "loser": "COSC ECNL G2008/09",
+          "weight": 1
+        },
+        {
+          "winner": "Placer United ECNL G2008/09",
+          "loser": "Santa Rosa United ECNL G2008/09",
+          "weight": 1
+        },
+        {
+          "winner": "San Juan SC ECNL G2008/09",
+          "loser": "Mustang SC ECNL G2008/09",
+          "weight": 1
+        },
+        {
+          "winner": "Stanislaus Surf - ECNL G2008/09",
+          "loser": "Mustang SC ECNL G2008/09",
+          "weight": 1
+        },
+        {
+          "winner": "Stanislaus Surf - ECNL G2008/09",
+          "loser": "Pleasanton RAGE ECNL G2008/09",
+          "weight": 1
+        }
+      ],
+      "arrows": [
+        {
+          "winner": "Force (CA) ECNL G2008/09",
+          "loser": "Marin FC ECNL G2008/09",
+          "weight": 5
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2008/09",
+          "loser": "Davis Legacy ECNL G2008/09",
+          "weight": 3
+        },
+        {
+          "winner": "Bay Area Surf - ECNL G2008/09",
+          "loser": "Marin FC ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "Davis Legacy ECNL G2008/09",
+          "loser": "Stanislaus Surf - ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "MVLA ECNL G2008/09",
+          "loser": "Force (CA) ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "Marin FC ECNL G2008/09",
+          "loser": "Stanislaus Surf - ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "Pleasanton RAGE ECNL G2008/09",
+          "loser": "COSC ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "San Juan SC ECNL G2008/09",
+          "loser": "Davis Legacy ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "San Juan SC ECNL G2008/09",
+          "loser": "Marin FC ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "Stanislaus Surf - ECNL G2008/09",
+          "loser": "Placer United ECNL G2008/09",
+          "weight": 2
+        },
+        {
+          "winner": "COSC ECNL G2008/09",
+          "loser": "Santa Rosa United ECNL G2008/09",
+          "weight": 1
+        },
+        {
+          "winner": "MVLA ECNL G2008/09",
+          "loser": "Bay Area Surf - ECNL G2008/09",
+          "weight": 1
+        },
+        {
+          "winner": "MVLA ECNL G2008/09",
+          "loser": "San Juan SC ECNL G2008/09",
+          "weight": 1
+        },
+        {
+          "winner": "Mustang SC ECNL G2008/09",
+          "loser": "Pleasanton RAGE ECNL G2008/09",
+          "weight": 1
+        },
+        {
+          "winner": "Placer United ECNL G2008/09",
+          "loser": "COSC ECNL G2008/09",
+          "weight": 1
+        },
+        {
+          "winner": "Stanislaus Surf - ECNL G2008/09",
+          "loser": "Mustang SC ECNL G2008/09",
+          "weight": 1
+        }
+      ],
+      "games_list": [
+        {
+          "date": "2026-08-22",
+          "home": "Davis Legacy ECNL G2008/09",
+          "away": "Mustang SC ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Force (CA) ECNL G2008/09",
+          "away": "Marin FC ECNL G2008/09",
+          "home_score": 6,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-22",
+          "home": "MVLA ECNL G2008/09",
+          "away": "Stanislaus Surf - ECNL G2008/09",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Placer United ECNL G2008/09",
+          "away": "San Juan SC ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-22",
+          "home": "Santa Rosa United ECNL G2008/09",
+          "away": "COSC ECNL G2008/09",
+          "home_score": 2,
+          "away_score": 3
+        },
+        {
+          "date": "2026-08-29",
+          "home": "COSC ECNL G2008/09",
+          "away": "Stanislaus Surf - ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Davis Legacy ECNL G2008/09",
+          "away": "MVLA ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Marin FC ECNL G2008/09",
+          "away": "Bay Area Surf - ECNL G2008/09",
+          "home_score": 2,
+          "away_score": 4
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Mustang SC ECNL G2008/09",
+          "away": "Force (CA) ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Placer United ECNL G2008/09",
+          "away": "Santa Rosa United ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-29",
+          "home": "Pleasanton RAGE ECNL G2008/09",
+          "away": "San Juan SC ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Bay Area Surf - ECNL G2008/09",
+          "away": "Santa Rosa United ECNL G2008/09",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Davis Legacy ECNL G2008/09",
+          "away": "Pleasanton RAGE ECNL G2008/09",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Force (CA) ECNL G2008/09",
+          "away": "Placer United ECNL G2008/09",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-08-30",
+          "home": "Marin FC ECNL G2008/09",
+          "away": "COSC ECNL G2008/09",
+          "home_score": 4,
+          "away_score": 2
+        },
+        {
+          "date": "2026-08-30",
+          "home": "San Juan SC ECNL G2008/09",
+          "away": "Stanislaus Surf - ECNL G2008/09",
+          "home_score": 9,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-12",
+          "home": "COSC ECNL G2008/09",
+          "away": "Force (CA) ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 5
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Davis Legacy ECNL G2008/09",
+          "away": "Placer United ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-12",
+          "home": "MVLA ECNL G2008/09",
+          "away": "Marin FC ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Mustang SC ECNL G2008/09",
+          "away": "Bay Area Surf - ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-12",
+          "home": "Pleasanton RAGE ECNL G2008/09",
+          "away": "Stanislaus Surf - ECNL G2008/09",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-12",
+          "home": "San Juan SC ECNL G2008/09",
+          "away": "Santa Rosa United ECNL G2008/09",
+          "home_score": 11,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Davis Legacy ECNL G2008/09",
+          "away": "COSC ECNL G2008/09",
+          "home_score": 6,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Force (CA) ECNL G2008/09",
+          "away": "MVLA ECNL G2008/09",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Marin FC ECNL G2008/09",
+          "away": "Mustang SC ECNL G2008/09",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-19",
+          "home": "San Juan SC ECNL G2008/09",
+          "away": "Bay Area Surf - ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Santa Rosa United ECNL G2008/09",
+          "away": "Pleasanton RAGE ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-19",
+          "home": "Stanislaus Surf - ECNL G2008/09",
+          "away": "Placer United ECNL G2008/09",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Bay Area Surf - ECNL G2008/09",
+          "away": "Stanislaus Surf - ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-20",
+          "home": "COSC ECNL G2008/09",
+          "away": "MVLA ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 6
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Davis Legacy ECNL G2008/09",
+          "away": "Santa Rosa United ECNL G2008/09",
+          "home_score": 9,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Placer United ECNL G2008/09",
+          "away": "Mustang SC ECNL G2008/09",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-20",
+          "home": "Pleasanton RAGE ECNL G2008/09",
+          "away": "Marin FC ECNL G2008/09",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-20",
+          "home": "San Juan SC ECNL G2008/09",
+          "away": "Force (CA) ECNL G2008/09",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-26",
+          "home": "COSC ECNL G2008/09",
+          "away": "San Juan SC ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 6
+        },
+        {
+          "date": "2026-09-26",
+          "home": "MVLA ECNL G2008/09",
+          "away": "Santa Rosa United ECNL G2008/09",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Marin FC ECNL G2008/09",
+          "away": "Davis Legacy ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 0
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Mustang SC ECNL G2008/09",
+          "away": "Stanislaus Surf - ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-26",
+          "home": "Placer United ECNL G2008/09",
+          "away": "Pleasanton RAGE ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Pleasanton RAGE ECNL G2008/09",
+          "away": "COSC ECNL G2008/09",
+          "home_score": 4,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-27",
+          "home": "San Juan SC ECNL G2008/09",
+          "away": "MVLA ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Santa Rosa United ECNL G2008/09",
+          "away": "Mustang SC ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 7
+        },
+        {
+          "date": "2026-09-27",
+          "home": "Stanislaus Surf - ECNL G2008/09",
+          "away": "Marin FC ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-03",
+          "home": "COSC ECNL G2008/09",
+          "away": "Placer United ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Davis Legacy ECNL G2008/09",
+          "away": "Bay Area Surf - ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Force (CA) ECNL G2008/09",
+          "away": "Stanislaus Surf - ECNL G2008/09",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-03",
+          "home": "MVLA ECNL G2008/09",
+          "away": "Pleasanton RAGE ECNL G2008/09",
+          "home_score": 3,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-03",
+          "home": "Marin FC ECNL G2008/09",
+          "away": "Santa Rosa United ECNL G2008/09",
+          "home_score": 4,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-03",
+          "home": "San Juan SC ECNL G2008/09",
+          "away": "Mustang SC ECNL G2008/09",
+          "home_score": 3,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-10",
+          "home": "Mustang SC ECNL G2008/09",
+          "away": "MVLA ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 4
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Bay Area Surf - ECNL G2008/09",
+          "away": "COSC ECNL G2008/09",
+          "home_score": 8,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Davis Legacy ECNL G2008/09",
+          "away": "Stanislaus Surf - ECNL G2008/09",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Placer United ECNL G2008/09",
+          "away": "MVLA ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 4
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Pleasanton RAGE ECNL G2008/09",
+          "away": "Mustang SC ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-17",
+          "home": "San Juan SC ECNL G2008/09",
+          "away": "Marin FC ECNL G2008/09",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-17",
+          "home": "Santa Rosa United ECNL G2008/09",
+          "away": "Force (CA) ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 5
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Bay Area Surf - ECNL G2008/09",
+          "away": "MVLA ECNL G2008/09",
+          "home_score": 4,
+          "away_score": 5
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Davis Legacy ECNL G2008/09",
+          "away": "San Juan SC ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Marin FC ECNL G2008/09",
+          "away": "Placer United ECNL G2008/09",
+          "home_score": 4,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Mustang SC ECNL G2008/09",
+          "away": "COSC ECNL G2008/09",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Pleasanton RAGE ECNL G2008/09",
+          "away": "Force (CA) ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-24",
+          "home": "Santa Rosa United ECNL G2008/09",
+          "away": "Stanislaus Surf - ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 7
+        },
+        {
+          "date": "2026-10-25",
+          "home": "COSC ECNL G2008/09",
+          "away": "Santa Rosa United ECNL G2008/09",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Marin FC ECNL G2008/09",
+          "away": "Force (CA) ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Mustang SC ECNL G2008/09",
+          "away": "Davis Legacy ECNL G2008/09",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Pleasanton RAGE ECNL G2008/09",
+          "away": "Bay Area Surf - ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 6
+        },
+        {
+          "date": "2026-10-25",
+          "home": "San Juan SC ECNL G2008/09",
+          "away": "Placer United ECNL G2008/09",
+          "home_score": 2,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-25",
+          "home": "Stanislaus Surf - ECNL G2008/09",
+          "away": "MVLA ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Bay Area Surf - ECNL G2008/09",
+          "away": "Mustang SC ECNL G2008/09",
+          "home_score": 2,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Force (CA) ECNL G2008/09",
+          "away": "COSC ECNL G2008/09",
+          "home_score": 8,
+          "away_score": 0
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Marin FC ECNL G2008/09",
+          "away": "MVLA ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Placer United ECNL G2008/09",
+          "away": "Davis Legacy ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Santa Rosa United ECNL G2008/09",
+          "away": "San Juan SC ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 10
+        },
+        {
+          "date": "2026-10-31",
+          "home": "Stanislaus Surf - ECNL G2008/09",
+          "away": "Pleasanton RAGE ECNL G2008/09",
+          "home_score": 5,
+          "away_score": 0
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Bay Area Surf - ECNL G2008/09",
+          "away": "San Juan SC ECNL G2008/09",
+          "home_score": 1,
+          "away_score": 2
+        },
+        {
+          "date": "2026-11-07",
+          "home": "COSC ECNL G2008/09",
+          "away": "Davis Legacy ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 3
+        },
+        {
+          "date": "2026-11-07",
+          "home": "MVLA ECNL G2008/09",
+          "away": "Force (CA) ECNL G2008/09",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Mustang SC ECNL G2008/09",
+          "away": "Marin FC ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Placer United ECNL G2008/09",
+          "away": "Stanislaus Surf - ECNL G2008/09",
+          "home_score": 2,
+          "away_score": 2
+        },
+        {
+          "date": "2026-11-07",
+          "home": "Pleasanton RAGE ECNL G2008/09",
+          "away": "Santa Rosa United ECNL G2008/09",
+          "home_score": 3,
+          "away_score": 1
+        },
+        {
+          "date": "2026-11-08",
+          "home": "Bay Area Surf - ECNL G2008/09",
+          "away": "Placer United ECNL G2008/09",
+          "home_score": 0,
+          "away_score": 0
+        }
+      ]
     }
   ]
 }
