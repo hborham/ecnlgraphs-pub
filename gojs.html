@@ -17,7 +17,10 @@
   table.scores td { padding: 5px 8px; border-bottom: 1px solid #f0f0f0; }
   table.scores tr:nth-child(even) td { background: #fafafa; }
   footer { color: #999; font-size: 13px; margin-top: 32px; }
-  .legend { color: #555; font-size: 13px; margin: -20px 0 32px; }
+  .legend { color: #555; font-size: 13px; margin: -20px 0 20px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; padding: 12px 14px; background: #f5f5f5; border: 1px solid #ddd; }
+  .controls label { font-size: 12px; color: #666; display: block; margin-bottom: 4px; }
+  .controls select { font-size: 14px; padding: 6px 8px; min-width: 160px; }
   .loops-note { color: #8a6d00; font-size: 13px; margin: -4px 0 12px; }
   .details { border: 1px solid #ddd; background: #fbfbfb; padding: 12px 14px; margin-top: 12px; font-size: 13px; }
   .details .d-head { font-size: 15px; margin-bottom: 4px; }
@@ -38,7 +41,13 @@
 <h1>U14 Girls BeatGraphs</h1>
 <p class="sub">Weighted Method (beatgraphs.com), rendered live with GoJS &middot; rebuilt weekly</p>
 <p class="legend"><b>BeatWin</b> = direct win, arrow weighted by goal difference &middot; <b>BeatPath</b> = chain of BeatWins &middot; <b>Broken BeatLoop</b> = a win cycle resolved by removing its weakest link &middot; Draws create no link. Hover or tap a team for its results.</p>
-<div id="leagues"></div>
+<div class="controls" id="controls">
+  <div><label for="sel-season">Season</label><select id="sel-season"></select></div>
+  <div><label for="sel-gender">Gender</label><select id="sel-gender"></select></div>
+  <div><label for="sel-age">Age</label><select id="sel-age"></select></div>
+  <div><label for="sel-league">League</label><select id="sel-league"></select></div>
+</div>
+<div id="view"></div>
 <footer>Data: beatgraphs.com Weighted Method &middot; <a href="https://github.com/hborham/ecnlgraphs">hborham/ecnlgraphs</a></footer>
 
 <script>
@@ -191,6 +200,7 @@ function makeDiagram(div, league, logos, panel) {
   diagram.addDiagramListener('MouseLeave', () => clearTeam(diagram));
   diagram.addDiagramListener('BackgroundSingleClicked', () => { diagram._pinned = null; clearTeam(diagram); });
   setHighlight(diagram, null);
+  return diagram;
 }
 
 function scoresTable(league) {
@@ -200,21 +210,97 @@ function scoresTable(league) {
   return `<h3>Game Scores</h3><table class="scores"><tr><th>Date</th><th>Home</th><th>Score</th><th>Away</th></tr>${rows}</table>`;
 }
 
+function uniq(values) {
+  const seen = new Set(), out = [];
+  for (const v of values) { if (!seen.has(v)) { seen.add(v); out.push(v); } }
+  return out;
+}
+// Resolve a selection against the data: each level falls back to the first
+// available value when the requested one does not exist.
+function resolveSelection(leagues, want) {
+  const seasons = uniq(leagues.map(l => l.season));
+  const season = seasons.includes(want.season) ? want.season : seasons[0];
+  const genders = uniq(leagues.filter(l => l.season === season).map(l => l.gender));
+  const gender = genders.includes(want.gender) ? want.gender : genders[0];
+  const ages = uniq(leagues.filter(l => l.season === season && l.gender === gender).map(l => l.age));
+  const age = ages.includes(want.age) ? want.age : ages[0];
+  const matches = leagues.filter(l => l.season === season && l.gender === gender && l.age === age);
+  const league = matches.find(l => l.id === want.league) || matches[0];
+  return { season, gender, age, league, seasons, genders, ages, matches };
+}
+function leagueOptions(matches) {
+  const counts = {};
+  matches.forEach(l => { counts[l.league] = (counts[l.league] || 0) + 1; });
+  return matches.map(l => ({
+    value: l.id,
+    label: counts[l.league] > 1 ? l.league + ' — ' + l.title : l.league
+  }));
+}
+
+let ALL = [];
+let currentDiagram = null;
+let renderSeq = 0;
+
+function fillSelect(el, options, current) {
+  el.innerHTML = '';
+  options.forEach(o => {
+    const opt = document.createElement('option');
+    opt.value = o.value; opt.textContent = o.label;
+    el.appendChild(opt);
+  });
+  el.value = current;
+}
+function readParams() {
+  const p = new URLSearchParams(location.search);
+  return { season: p.get('season') || '', gender: p.get('gender') || '', age: p.get('age') || '', league: p.get('league') || '' };
+}
+function syncURL(sel) {
+  try {
+    const p = new URLSearchParams();
+    p.set('season', sel.season); p.set('gender', sel.gender); p.set('age', sel.age); p.set('league', sel.league.id);
+    history.replaceState(null, '', '?' + p.toString());
+  } catch (e) { /* file:// or restricted contexts: URL sharing unavailable */ }
+}
+
+async function renderSelected() {
+  const seq = ++renderSeq;
+  const want = {
+    season: document.getElementById('sel-season').value,
+    gender: document.getElementById('sel-gender').value,
+    age: document.getElementById('sel-age').value,
+    league: document.getElementById('sel-league').value
+  };
+  const sel = resolveSelection(ALL, want);
+  fillSelect(document.getElementById('sel-season'), sel.seasons.map(v => ({ value: v, label: v })), sel.season);
+  fillSelect(document.getElementById('sel-gender'), sel.genders.map(v => ({ value: v, label: v })), sel.gender);
+  fillSelect(document.getElementById('sel-age'), sel.ages.map(v => ({ value: v, label: v })), sel.age);
+  fillSelect(document.getElementById('sel-league'), leagueOptions(sel.matches), sel.league.id);
+  syncURL(sel);
+  // Tear down the previous diagram, then render only the selected league.
+  if (currentDiagram) { currentDiagram.div = null; currentDiagram = null; }
+  const view = document.getElementById('view');
+  const league = sel.league;
+  view.innerHTML = `<section><h2>${league.title}</h2>` +
+    (league.loops_resolved > 0 ? `<p class="loops-note">${league.loops_resolved} BeatLoop${league.loops_resolved === 1 ? '' : 's'} resolved &mdash; hover a team in the loop to see which link broke.</p>` : '') +
+    `<div class="diagram" id="d-${league.id}"></div><div class="details">${PLACEHOLDER}</div></section>`;
+  const logos = {};
+  await Promise.all(league.rankings.map(async (r, i) => { logos[r.team] = await logoURI(r.team, i); }));
+  if (seq !== renderSeq) return; // a newer selection superseded this one
+  currentDiagram = makeDiagram(view.querySelector('.diagram'), league, logos, view.querySelector('.details'));
+  view.querySelector('section').insertAdjacentHTML('beforeend', scoresTable(league));
+}
+
 async function main() {
   const data = await (await fetch('data.json')).json();
-  const root = document.getElementById('leagues');
-  for (const league of data.leagues) {
-    const sec = document.createElement('section');
-    sec.innerHTML = `<h2>${league.title}</h2>` +
-      (league.loops_resolved > 0 ? `<p class="loops-note">${league.loops_resolved} BeatLoop${league.loops_resolved === 1 ? '' : 's'} resolved &mdash; hover a team in the loop to see which link broke.</p>` : '') +
-      `<div class="diagram" id="d-${league.id}"></div><div class="details">${PLACEHOLDER}</div>`;
-    root.appendChild(sec);
-    // preload logos
-    const logos = {};
-    await Promise.all(league.rankings.map(async (r, i) => { logos[r.team] = await logoURI(r.team, i); }));
-    makeDiagram(sec.querySelector('.diagram'), league, logos, sec.querySelector('.details'));
-    sec.insertAdjacentHTML('beforeend', scoresTable(league));
-  }
+  ALL = data.leagues;
+  const sel = resolveSelection(ALL, readParams());
+  fillSelect(document.getElementById('sel-season'), sel.seasons.map(v => ({ value: v, label: v })), sel.season);
+  fillSelect(document.getElementById('sel-gender'), sel.genders.map(v => ({ value: v, label: v })), sel.gender);
+  fillSelect(document.getElementById('sel-age'), sel.ages.map(v => ({ value: v, label: v })), sel.age);
+  fillSelect(document.getElementById('sel-league'), leagueOptions(sel.matches), sel.league.id);
+  ['sel-season', 'sel-gender', 'sel-age', 'sel-league'].forEach(id =>
+    document.getElementById(id).addEventListener('change', renderSelected));
+  renderSelected();
 }
 main();
 </script>

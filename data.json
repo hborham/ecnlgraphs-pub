@@ -7,6 +7,10 @@
     {
       "id": "norcal",
       "title": "ECNL Girls NorCal 2026-27 — GU14",
+      "season": "2026-27",
+      "gender": "Girls",
+      "age": "U14",
+      "league": "ECNL NorCal",
       "games": 79,
       "draws": 12,
       "teams": 12,
@@ -1064,6 +1068,10 @@
     {
       "id": "texas",
       "title": "ECNL Girls Texas 2026-27 — GU14",
+      "season": "2026-27",
+      "gender": "Girls",
+      "age": "U14",
+      "league": "ECNL Texas",
       "games": 72,
       "draws": 11,
       "teams": 16,
@@ -2090,6 +2098,10 @@
     {
       "id": "southwest",
       "title": "ECNL Girls Southwest 2026-27 — GU14",
+      "season": "2026-27",
+      "gender": "Girls",
+      "age": "U14",
+      "league": "ECNL Southwest",
       "games": 53,
       "draws": 8,
       "teams": 17,
@@ -2941,6 +2953,10 @@
     {
       "id": "surfcup",
       "title": "Surf Cup Youngers 2026 — Girls-U14 (all flights)",
+      "season": "2026",
+      "gender": "Girls",
+      "age": "U14",
+      "league": "Surf Cup Youngers",
       "games": 80,
       "draws": 16,
       "teams": 62,
