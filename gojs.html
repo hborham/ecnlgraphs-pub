@@ -72,10 +72,10 @@ const PALETTE = ["#1f77b4","#ff7f0e","#2ca02c","#d62728","#9467bd","#8c564b","#e
 
 async function logoURI(team, idx) {
   try {
-    const r = await fetch('logos/' + slug(team) + '.jpg.b64');
+    const r = await fetch('logos/' + slug(team) + '.png.b64');
     if (!r.ok) throw 0;
     const b64 = (await r.text()).trim();
-    return 'data:image/jpeg;base64,' + b64;
+    return 'data:image/png;base64,' + b64;
   } catch (e) {
     return placeholderURI(team, PALETTE[idx % PALETTE.length]);
   }
