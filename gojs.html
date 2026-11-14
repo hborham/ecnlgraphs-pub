@@ -54,10 +54,6 @@
 <script>
 const $ = go.GraphObject.make;
 
-// slugify matches the Go LogoSlug: lowercase, non-alnum -> hyphen
-function slug(t) {
-  return t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-}
 function initials(name) {
   const words = name.split(/\s+/).filter(w => /^[a-z]/i.test(w));
   return (words.slice(0, 2).map(w => w[0].toUpperCase()).join('') || '?');
@@ -70,9 +66,9 @@ function placeholderURI(name, color) {
 }
 const PALETTE = ["#1f77b4","#ff7f0e","#2ca02c","#d62728","#9467bd","#8c564b","#e377c2","#7f7f7f","#bcbd22","#17becf"];
 
-async function logoURI(team, idx) {
+async function logoURI(logo, team, idx) {
   try {
-    const r = await fetch('logos/' + slug(team) + '.png.b64');
+    const r = await fetch('logos/' + logo + '.png.b64');
     if (!r.ok) throw 0;
     const b64 = (await r.text()).trim();
     return 'data:image/png;base64,' + b64;
@@ -325,7 +321,7 @@ async function renderSelected() {
     (league.loops_resolved > 0 ? `<p class="loops-note">${league.loops_resolved} BeatLoop${league.loops_resolved === 1 ? '' : 's'} resolved &mdash; hover a team in the loop to see which link broke.</p>` : '') +
     `<div class="diagram" id="d-${league.id}"></div><div class="details">${PLACEHOLDER}</div></section>`;
   const logos = {};
-  await Promise.all(league.rankings.map(async (r, i) => { logos[r.team] = await logoURI(r.team, i); }));
+  await Promise.all(league.rankings.map(async (r, i) => { logos[r.team] = await logoURI(r.logo, r.team, i); }));
   if (seq !== renderSeq) return; // a newer selection superseded this one
   currentDiagram = makeDiagram(view.querySelector('.diagram'), league, logos, view.querySelector('.details'));
   view.querySelector('section').insertAdjacentHTML('beforeend', scoresTable(league));

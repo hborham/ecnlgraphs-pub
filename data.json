@@ -116,6 +116,7 @@
         {
           "rank": 1,
           "team": "Mustang SC ECNL G2012/13",
+          "logo": "mustang-sc",
           "short": "MUSTANG",
           "bracket_team": false,
           "rating": 6.57,
@@ -128,6 +129,7 @@
         {
           "rank": 2,
           "team": "San Juan SC ECNL G2012/13",
+          "logo": "san-juan-sc",
           "short": "SAN JUAN",
           "bracket_team": false,
           "rating": 5.91,
@@ -140,6 +142,7 @@
         {
           "rank": 3,
           "team": "Bay Area Surf - ECNL G2012/13",
+          "logo": "bay-area-surf",
           "short": "BAY SURF",
           "bracket_team": false,
           "rating": 3.56,
@@ -152,6 +155,7 @@
         {
           "rank": 4,
           "team": "MVLA ECNL G2012/13",
+          "logo": "mvla",
           "short": "MVLA",
           "bracket_team": false,
           "rating": 1.86,
@@ -164,6 +168,7 @@
         {
           "rank": 5,
           "team": "Placer United ECNL G2012/13",
+          "logo": "placer-united",
           "short": "PLACER",
           "bracket_team": false,
           "rating": 1.73,
@@ -176,6 +181,7 @@
         {
           "rank": 6,
           "team": "Stanislaus Surf - ECNL G2012/13",
+          "logo": "stanislaus-surf",
           "short": "STANISLAUS",
           "bracket_team": false,
           "rating": -0.38,
@@ -188,6 +194,7 @@
         {
           "rank": 7,
           "team": "Marin FC ECNL G2012/13",
+          "logo": "marin-fc",
           "short": "MARIN",
           "bracket_team": false,
           "rating": -0.42,
@@ -200,6 +207,7 @@
         {
           "rank": 8,
           "team": "Santa Rosa United ECNL G2012/13",
+          "logo": "santa-rosa-united",
           "short": "SANTA ROSA",
           "bracket_team": false,
           "rating": -0.83,
@@ -212,6 +220,7 @@
         {
           "rank": 9,
           "team": "COSC ECNL G2012/13",
+          "logo": "cosc",
           "short": "COSC",
           "bracket_team": false,
           "rating": -2.63,
@@ -224,6 +233,7 @@
         {
           "rank": 10,
           "team": "Davis Legacy ECNL G2012/13",
+          "logo": "davis-legacy",
           "short": "DAVIS",
           "bracket_team": false,
           "rating": -4.36,
@@ -236,6 +246,7 @@
         {
           "rank": 11,
           "team": "Pleasanton RAGE ECNL G2012/13",
+          "logo": "pleasanton-rage",
           "short": "RAGE",
           "bracket_team": false,
           "rating": -6.07,
@@ -248,6 +259,7 @@
         {
           "rank": 12,
           "team": "Force (CA) ECNL G2012/13",
+          "logo": "force-ca",
           "short": "FORCE CA",
           "bracket_team": false,
           "rating": -7.13,
@@ -1175,6 +1187,7 @@
         {
           "rank": 1,
           "team": "FC Dallas Youth ECNL G2012/13",
+          "logo": "fc-dallas-youth",
           "short": "FC Dallas Youth",
           "bracket_team": false,
           "rating": 6.65,
@@ -1187,6 +1200,7 @@
         {
           "rank": 2,
           "team": "Sting Royal ECNL G2012/13",
+          "logo": "sting",
           "short": "Sting Royal",
           "bracket_team": false,
           "rating": 5.49,
@@ -1199,6 +1213,7 @@
         {
           "rank": 3,
           "team": "SOLAR SC ECNL G2012/13",
+          "logo": "solar-sc",
           "short": "SOLAR SC",
           "bracket_team": false,
           "rating": 4.7,
@@ -1211,6 +1226,7 @@
         {
           "rank": 4,
           "team": "Sting Black ECNL G2012/13",
+          "logo": "sting",
           "short": "Sting Black",
           "bracket_team": false,
           "rating": 4.47,
@@ -1223,6 +1239,7 @@
         {
           "rank": 5,
           "team": "OK Energy FC ECNL G2012/13",
+          "logo": "ok-energy-fc",
           "short": "OK Energy FC",
           "bracket_team": false,
           "rating": 3.17,
@@ -1235,6 +1252,7 @@
         {
           "rank": 6,
           "team": "DKSC ECNL G2012/13",
+          "logo": "dksc",
           "short": "DKSC",
           "bracket_team": false,
           "rating": 2.33,
@@ -1247,6 +1265,7 @@
         {
           "rank": 7,
           "team": "Real Colorado National ECNL G2012/13",
+          "logo": "real-colorado",
           "short": "Real Colorado National",
           "bracket_team": false,
           "rating": 1.82,
@@ -1259,6 +1278,7 @@
         {
           "rank": 8,
           "team": "FC Westlake ECNL G2012/13",
+          "logo": "fc-westlake",
           "short": "FC Westlake",
           "bracket_team": false,
           "rating": 0.39,
@@ -1271,6 +1291,7 @@
         {
           "rank": 9,
           "team": "Colorado Rush ECNL G2012/13",
+          "logo": "colorado-rush",
           "short": "CO RUSH",
           "bracket_team": false,
           "rating": -1.01,
@@ -1283,6 +1304,7 @@
         {
           "rank": 10,
           "team": "Challenge SC ECNL G2012/13",
+          "logo": "challenge-sc",
           "short": "Challenge SC",
           "bracket_team": false,
           "rating": -1.7,
@@ -1295,6 +1317,7 @@
         {
           "rank": 11,
           "team": "Albion Hurricanes FC ECNL G2012/13",
+          "logo": "albion-hurricanes-fc",
           "short": "Albion Hurricanes FC",
           "bracket_team": false,
           "rating": -2.03,
@@ -1307,6 +1330,7 @@
         {
           "rank": 12,
           "team": "Dallas Texans ECNL G2012/13",
+          "logo": "dallas-texans",
           "short": "Dallas Texans",
           "bracket_team": false,
           "rating": -2.41,
@@ -1319,6 +1343,7 @@
         {
           "rank": 13,
           "team": "Colorado Storm ECNL G2012/13",
+          "logo": "colorado-storm",
           "short": "CO STORM",
           "bracket_team": false,
           "rating": -2.83,
@@ -1331,6 +1356,7 @@
         {
           "rank": 14,
           "team": "West Side Alliance ECNL G2012/13",
+          "logo": "west-side-alliance",
           "short": "West Side Alliance",
           "bracket_team": false,
           "rating": -2.91,
@@ -1343,6 +1369,7 @@
         {
           "rank": 15,
           "team": "Lonestar ATX Red ECNL G2012/13",
+          "logo": "lonestar-atx-red",
           "short": "Lonestar ATX Red",
           "bracket_team": false,
           "rating": -5.77,
@@ -1355,6 +1382,7 @@
         {
           "rank": 16,
           "team": "Real Colorado Athletico ECNL G2012/13",
+          "logo": "real-colorado",
           "short": "Real Colorado Athletic",
           "bracket_team": false,
           "rating": -7.07,
@@ -2344,6 +2372,7 @@
         {
           "rank": 1,
           "team": "Slammers FC HB Koge ECNL G2012/13",
+          "logo": "slammers-fc",
           "short": "Slammers FC HB Koge",
           "bracket_team": false,
           "rating": 6.98,
@@ -2356,6 +2385,7 @@
         {
           "rank": 2,
           "team": "So Cal Blues ECNL G2012/13",
+          "logo": "so-cal-blues",
           "short": "SO CAL BLUES",
           "bracket_team": false,
           "rating": 5.06,
@@ -2368,6 +2398,7 @@
         {
           "rank": 3,
           "team": "Beach Futbol Club ECNL G2012/13",
+          "logo": "beach-futbol-club",
           "short": "BEACH",
           "bracket_team": false,
           "rating": 4.41,
@@ -2380,6 +2411,7 @@
         {
           "rank": 4,
           "team": "Legends FC (CA) ECNL G2012/13",
+          "logo": "legends-fc-ca",
           "short": "LEGENDS CA",
           "bracket_team": false,
           "rating": 3.57,
@@ -2392,6 +2424,7 @@
         {
           "rank": 5,
           "team": "San Diego Surf Soccer Club ECNL G2012/13",
+          "logo": "san-diego-surf-soccer-club",
           "short": "SD SURF",
           "bracket_team": false,
           "rating": 2.66,
@@ -2404,6 +2437,7 @@
         {
           "rank": 6,
           "team": "LAFC So Cal ECNL G2012/13",
+          "logo": "lafc-so-cal",
           "short": "LAFC SO CAL",
           "bracket_team": false,
           "rating": 2.3,
@@ -2416,6 +2450,7 @@
         {
           "rank": 7,
           "team": "Slammers FC ECNL G2012/13",
+          "logo": "slammers-fc",
           "short": "Slammers FC",
           "bracket_team": false,
           "rating": 2.17,
@@ -2428,6 +2463,7 @@
         {
           "rank": 8,
           "team": "Pateadores ECNL G2012/13",
+          "logo": "pateadores",
           "short": "PATEADORES",
           "bracket_team": false,
           "rating": 1.14,
@@ -2440,6 +2476,7 @@
         {
           "rank": 9,
           "team": "Eagles SC ECNL G2012/13",
+          "logo": "eagles-sc",
           "short": "EAGLES SC",
           "bracket_team": false,
           "rating": -0.79,
@@ -2452,6 +2489,7 @@
         {
           "rank": 10,
           "team": "Arizona Arsenal ECNL G2012/13",
+          "logo": "arizona-arsenal",
           "short": "AZ ARSENAL",
           "bracket_team": false,
           "rating": -1.3,
@@ -2464,6 +2502,7 @@
         {
           "rank": 11,
           "team": "Rebels SC ECNL G2012/13",
+          "logo": "rebels-sc",
           "short": "REBELS SC",
           "bracket_team": false,
           "rating": -1.61,
@@ -2476,6 +2515,7 @@
         {
           "rank": 12,
           "team": "Utah Royals FC-AZ ECNL G2012/13",
+          "logo": "utah-royals-fc-az",
           "short": "UT ROYALS AZ",
           "bracket_team": false,
           "rating": -2.04,
@@ -2488,6 +2528,7 @@
         {
           "rank": 13,
           "team": "LA Breakers ECNL G2012/2013",
+          "logo": "la-breakers",
           "short": "LA BREAKERS",
           "bracket_team": false,
           "rating": -2.43,
@@ -2500,6 +2541,7 @@
         {
           "rank": 14,
           "team": "Phoenix Rising FC ECNL G2012/13",
+          "logo": "phoenix-rising-fc",
           "short": "PHX RISING",
           "bracket_team": false,
           "rating": -4.96,
@@ -2512,6 +2554,7 @@
         {
           "rank": 15,
           "team": "LV Heat Surf ECNL G2012/13",
+          "logo": "lv-heat-surf",
           "short": "LV Heat Surf",
           "bracket_team": false,
           "rating": -6.06,
@@ -2524,6 +2567,7 @@
         {
           "rank": 16,
           "team": "Legends FC - Del Mar ECNL G2012/13",
+          "logo": "legends-fc-del-mar",
           "short": "LEGENDS DM",
           "bracket_team": false,
           "rating": -6.53,
@@ -2536,6 +2580,7 @@
         {
           "rank": 17,
           "team": "Sporting California USA ECNL G2012/13",
+          "logo": "sporting-california-usa",
           "short": "SPORTING CA",
           "bracket_team": false,
           "rating": -6.77,
@@ -3252,6 +3297,7 @@
         {
           "rank": 1,
           "team": "Eagles SC ECNL G2012/13",
+          "logo": "eagles-sc",
           "short": "EAGLES SC",
           "bracket_team": true,
           "rating": 6.4,
@@ -3264,6 +3310,7 @@
         {
           "rank": 2,
           "team": "Express SC GU14 Elite Shuttleworth",
+          "logo": "express-sc",
           "short": "Express SC Elite Shutt",
           "bracket_team": false,
           "rating": 6.4,
@@ -3276,6 +3323,7 @@
         {
           "rank": 3,
           "team": "LAFC So Cal ECNL G2012/13",
+          "logo": "lafc-so-cal",
           "short": "LAFC SO CAL",
           "bracket_team": true,
           "rating": 6.18,
@@ -3288,6 +3336,7 @@
         {
           "rank": 4,
           "team": "Team-4",
+          "logo": "team-4",
           "short": "Team-4",
           "bracket_team": false,
           "rating": 5.37,
@@ -3300,6 +3349,7 @@
         {
           "rank": 5,
           "team": "La Jolla Impact GU14 Blue - McManus",
+          "logo": "la-jolla-impact",
           "short": "La Jolla Impact Blue -",
           "bracket_team": false,
           "rating": 5.01,
@@ -3312,6 +3362,7 @@
         {
           "rank": 6,
           "team": "Sporting San Diego GU14Black Adamos",
+          "logo": "sporting-san-diego",
           "short": "Sporting San DiegoBlac",
           "bracket_team": false,
           "rating": 4.1,
@@ -3324,6 +3375,7 @@
         {
           "rank": 7,
           "team": "Avalanche ECNL G2012/13",
+          "logo": "avalanche",
           "short": "AVALANCHE",
           "bracket_team": true,
           "rating": 3.51,
@@ -3336,6 +3388,7 @@
         {
           "rank": 8,
           "team": "Rangers FC, Girls Academy U14, Allgeirer",
+          "logo": "rangers-fc",
           "short": "Rangers FC, Girls Acad",
           "bracket_team": false,
           "rating": 3.51,
@@ -3348,6 +3401,7 @@
         {
           "rank": 9,
           "team": "Slammers FC ECNL G2012/13",
+          "logo": "slammers-fc",
           "short": "Slammers FC",
           "bracket_team": false,
           "rating": 3.51,
@@ -3360,6 +3414,7 @@
         {
           "rank": 10,
           "team": "Tudela FC Los Angeles Black",
+          "logo": "tudela-fc-los-angeles-black",
           "short": "Tudela FC Los Angeles ",
           "bracket_team": false,
           "rating": 3.51,
@@ -3372,6 +3427,7 @@
         {
           "rank": 11,
           "team": "City SC Carlsbad G13 GA White- Williams",
+          "logo": "city-sc-carlsbad",
           "short": "City SC Carlsbad G13 G",
           "bracket_team": false,
           "rating": 3.17,
@@ -3384,6 +3440,7 @@
         {
           "rank": 12,
           "team": "Seattle United ECNL GU14",
+          "logo": "seattle-united",
           "short": "Seattle United",
           "bracket_team": false,
           "rating": 3.17,
@@ -3396,6 +3453,7 @@
         {
           "rank": 13,
           "team": "XF ECNL, GU14",
+          "logo": "xf",
           "short": "XF,",
           "bracket_team": false,
           "rating": 3.17,
@@ -3408,6 +3466,7 @@
         {
           "rank": 14,
           "team": "LA Surf U14 GA",
+          "logo": "la-surf",
           "short": "LA Surf GA",
           "bracket_team": false,
           "rating": 2.78,
@@ -3420,6 +3479,7 @@
         {
           "rank": 15,
           "team": "Hawaii Rush 13G, Matas",
+          "logo": "hawaii-rush",
           "short": "Hawaii Rush 13G, Matas",
           "bracket_team": false,
           "rating": 2.36,
@@ -3432,6 +3492,7 @@
         {
           "rank": 16,
           "team": "Oregon Surf ECNL G2012/13",
+          "logo": "oregon-surf",
           "short": "OREGON SURF",
           "bracket_team": true,
           "rating": 2.36,
@@ -3444,6 +3505,7 @@
         {
           "rank": 17,
           "team": "SC Sporting GU14 GA Red - Gomez",
+          "logo": "sc-sporting",
           "short": "SC Sporting GA Red - G",
           "bracket_team": false,
           "rating": 2.36,
@@ -3456,6 +3518,7 @@
         {
           "rank": 18,
           "team": "SoCal Reds GA U14 Flores",
+          "logo": "socal-reds",
           "short": "SoCal Reds GA Flores",
           "bracket_team": false,
           "rating": 2.36,
@@ -3468,6 +3531,7 @@
         {
           "rank": 19,
           "team": "Rebels SC ECNL G2012/13",
+          "logo": "rebels-sc",
           "short": "REBELS SC",
           "bracket_team": true,
           "rating": 1.88,
@@ -3480,6 +3544,7 @@
         {
           "rank": 20,
           "team": "Sporting California USA ECNL G2012/13",
+          "logo": "sporting-california-usa",
           "short": "SPORTING CA",
           "bracket_team": true,
           "rating": 1.88,
@@ -3492,6 +3557,7 @@
         {
           "rank": 21,
           "team": "Lamorinda U14GA",
+          "logo": "lamorinda",
           "short": "LamorindaA",
           "bracket_team": false,
           "rating": 1.34,
@@ -3504,6 +3570,7 @@
         {
           "rank": 22,
           "team": "SC Blues GU14 DPL",
+          "logo": "sc-blues",
           "short": "SC Blues DPL",
           "bracket_team": false,
           "rating": 1.34,
@@ -3516,6 +3583,7 @@
         {
           "rank": 23,
           "team": "Team-1",
+          "logo": "team-1",
           "short": "Team-1",
           "bracket_team": false,
           "rating": 1.34,
@@ -3528,6 +3596,7 @@
         {
           "rank": 24,
           "team": "COSC ECNL G2012/13",
+          "logo": "cosc",
           "short": "COSC",
           "bracket_team": true,
           "rating": 0.72,
@@ -3540,6 +3609,7 @@
         {
           "rank": 25,
           "team": "FRAM GA U14",
+          "logo": "fram",
           "short": "FRAM GA",
           "bracket_team": false,
           "rating": 0.72,
@@ -3552,6 +3622,7 @@
         {
           "rank": 26,
           "team": "LV Heat Surf ECNL G2012/13",
+          "logo": "lv-heat-surf",
           "short": "LV Heat Surf",
           "bracket_team": false,
           "rating": 0.72,
@@ -3564,6 +3635,7 @@
         {
           "rank": 27,
           "team": "Legends FC San Diego ECNL U14 Williams",
+          "logo": "legends-fc-san-diego",
           "short": "Legends FC San Diego W",
           "bracket_team": false,
           "rating": 0.72,
@@ -3576,6 +3648,7 @@
         {
           "rank": 28,
           "team": "PacNW U14 ECNL",
+          "logo": "pacnw",
           "short": "PacNW",
           "bracket_team": false,
           "rating": 0.72,
@@ -3588,6 +3661,7 @@
         {
           "rank": 29,
           "team": "Sporting San Diego GU14 White Sandoval",
+          "logo": "sporting-san-diego",
           "short": "Sporting San Diego Whi",
           "bracket_team": false,
           "rating": 0.72,
@@ -3600,6 +3674,7 @@
         {
           "rank": 30,
           "team": "LA Breakers ECNL G2012/2013",
+          "logo": "la-breakers",
           "short": "LA BREAKERS",
           "bracket_team": true,
           "rating": 0,
@@ -3612,6 +3687,7 @@
         {
           "rank": 31,
           "team": "Legends sb gu14 Gold",
+          "logo": "legends-sb",
           "short": "Legends sb gu14 Gold",
           "bracket_team": false,
           "rating": 0,
@@ -3624,6 +3700,7 @@
         {
           "rank": 32,
           "team": "Utah Royals FC-AZ ECNL G2012/13",
+          "logo": "utah-royals-fc-az",
           "short": "UT ROYALS AZ",
           "bracket_team": true,
           "rating": 0,
@@ -3636,6 +3713,7 @@
         {
           "rank": 33,
           "team": "Rage 2013 ECNL",
+          "logo": "rage",
           "short": "Rage 2013",
           "bracket_team": false,
           "rating": -0.72,
@@ -3648,6 +3726,7 @@
         {
           "rank": 34,
           "team": "Rangers GA 2013, Allgeirer",
+          "logo": "rangers-fc",
           "short": "Rangers GA 2013, Allge",
           "bracket_team": false,
           "rating": -0.72,
@@ -3660,6 +3739,7 @@
         {
           "rank": 35,
           "team": "Surf Hawaii 12/13G Academy I -U14G",
+          "logo": "surf-hawaii",
           "short": "Surf Hawaii 12/13G Aca",
           "bracket_team": false,
           "rating": -0.72,
@@ -3672,6 +3752,7 @@
         {
           "rank": 36,
           "team": "Beach FC N1 G2012/13 SB I.Lopez",
+          "logo": "beach-fc-n1",
           "short": "Beach FC N1 G2012/13 S",
           "bracket_team": false,
           "rating": -1.34,
@@ -3684,6 +3765,7 @@
         {
           "rank": 37,
           "team": "Legends FC GU14",
+          "logo": "legends-fc",
           "short": "Legends FC",
           "bracket_team": false,
           "rating": -1.34,
@@ -3696,6 +3778,7 @@
         {
           "rank": 38,
           "team": "Placer United ECNL G2012/13",
+          "logo": "placer-united",
           "short": "PLACER",
           "bracket_team": true,
           "rating": -1.34,
@@ -3708,6 +3791,7 @@
         {
           "rank": 39,
           "team": "South Valley Surf U14 N1",
+          "logo": "south-valley-surf",
           "short": "South Valley Surf N1",
           "bracket_team": false,
           "rating": -1.34,
@@ -3720,6 +3804,7 @@
         {
           "rank": 40,
           "team": "Surf Hawaii 13G Academy III - U14G",
+          "logo": "surf-hawaii",
           "short": "Surf Hawaii 13G Academ",
           "bracket_team": false,
           "rating": -1.34,
@@ -3732,6 +3817,7 @@
         {
           "rank": 41,
           "team": "Clovis Crossfire U14G GA",
+          "logo": "clovis-crossfire",
           "short": "Clovis Crossfire GA",
           "bracket_team": false,
           "rating": -1.88,
@@ -3744,6 +3830,7 @@
         {
           "rank": 42,
           "team": "Force U14G, Porras",
+          "logo": "force",
           "short": "Force, Porras",
           "bracket_team": false,
           "rating": -1.88,
@@ -3756,6 +3843,7 @@
         {
           "rank": 43,
           "team": "Inferno SC, Copa 2013G, Welch",
+          "logo": "inferno-sc",
           "short": "Inferno SC, Copa 2013G",
           "bracket_team": false,
           "rating": -2.36,
@@ -3768,6 +3856,7 @@
         {
           "rank": 44,
           "team": "Mustang SC ECNL G2012/13",
+          "logo": "mustang-sc",
           "short": "MUSTANG",
           "bracket_team": true,
           "rating": -2.36,
@@ -3780,6 +3869,7 @@
         {
           "rank": 45,
           "team": "Pateadores ECNL G2012/13",
+          "logo": "pateadores",
           "short": "PATEADORES",
           "bracket_team": true,
           "rating": -2.36,
@@ -3792,6 +3882,7 @@
         {
           "rank": 46,
           "team": "Real Colorado Athletico ECNL G2012/13",
+          "logo": "real-colorado",
           "short": "Real Colorado Athletic",
           "bracket_team": false,
           "rating": -2.36,
@@ -3804,6 +3895,7 @@
         {
           "rank": 47,
           "team": "Seattle Celtic G12 GA",
+          "logo": "seattle-celtic",
           "short": "Seattle Celtic G12 GA",
           "bracket_team": false,
           "rating": -2.36,
@@ -3816,6 +3908,7 @@
         {
           "rank": 48,
           "team": "Surf Academy Select U14G South",
+          "logo": "surf-academy-select",
           "short": "Surf Academy Select So",
           "bracket_team": false,
           "rating": -2.36,
@@ -3828,6 +3921,7 @@
         {
           "rank": 49,
           "team": "Surf Hawaii 13G Academy II - U14G",
+          "logo": "surf-hawaii",
           "short": "Surf Hawaii 13G Academ",
           "bracket_team": false,
           "rating": -2.36,
@@ -3840,6 +3934,7 @@
         {
           "rank": 50,
           "team": "SRU U14G Gold-ECNL",
+          "logo": "sru",
           "short": "SRU Gold-ECNL",
           "bracket_team": false,
           "rating": -2.78,
@@ -3852,6 +3947,7 @@
         {
           "rank": 51,
           "team": "South Valley Surf U14 GA",
+          "logo": "south-valley-surf",
           "short": "South Valley Surf GA",
           "bracket_team": false,
           "rating": -2.78,
@@ -3864,6 +3960,7 @@
         {
           "rank": 52,
           "team": "Team-8",
+          "logo": "team-8",
           "short": "Team-8",
           "bracket_team": false,
           "rating": -2.78,
@@ -3876,6 +3973,7 @@
         {
           "rank": 53,
           "team": "Leahi 12/13 Premier West Green - U14G",
+          "logo": "leahi",
           "short": "Leahi 12/13 Premier We",
           "bracket_team": false,
           "rating": -3.17,
@@ -3888,6 +3986,7 @@
         {
           "rank": 54,
           "team": "SDSC GA 12/13",
+          "logo": "sdsc",
           "short": "SDSC GA 12/13",
           "bracket_team": false,
           "rating": -3.17,
@@ -3900,6 +3999,7 @@
         {
           "rank": 55,
           "team": "1974 Newark FC 2012/2013 GA",
+          "logo": "1974-newark-fc",
           "short": "1974 Newark FC 2012/20",
           "bracket_team": false,
           "rating": -3.51,
@@ -3912,6 +4012,7 @@
         {
           "rank": 56,
           "team": "Lamorinda U14GA - Pinto",
+          "logo": "lamorinda",
           "short": "LamorindaA - Pinto",
           "bracket_team": false,
           "rating": -3.51,
@@ -3924,6 +4025,7 @@
         {
           "rank": 57,
           "team": "Palo Alto SC U14 GA - 2012/2013",
+          "logo": "palo-alto-sc",
           "short": "Palo Alto SC GA - 2012",
           "bracket_team": false,
           "rating": -3.51,
@@ -3936,6 +4038,7 @@
         {
           "rank": 58,
           "team": "WW Surf Academy GU14 GA",
+          "logo": "ww-surf-academy",
           "short": "WW Surf Academy GA",
           "bracket_team": false,
           "rating": -4.1,
@@ -3948,6 +4051,7 @@
         {
           "rank": 59,
           "team": "CIty SC Carlsbad, GU14 GA Blue- Mattos",
+          "logo": "city-sc-carlsbad",
           "short": "CIty SC Carlsbad, GA B",
           "bracket_team": false,
           "rating": -4.81,
@@ -3960,6 +4064,7 @@
         {
           "rank": 60,
           "team": "City Sc Southwest GU14 GA",
+          "logo": "city-sc-southwest",
           "short": "City Sc Southwest GA",
           "bracket_team": false,
           "rating": -5.53,
@@ -3972,6 +4077,7 @@
         {
           "rank": 61,
           "team": "West Coast FC GA 2013",
+          "logo": "west-coast-fc",
           "short": "West Coast FC GA 2013",
           "bracket_team": false,
           "rating": -5.81,
@@ -3984,6 +4090,7 @@
         {
           "rank": 62,
           "team": "East Valley Surf U14 N1 Peacock",
+          "logo": "east-valley-surf",
           "short": "East Valley Surf N1 Pe",
           "bracket_team": false,
           "rating": -7.24,
@@ -5184,6 +5291,7 @@
         {
           "rank": 1,
           "team": "San Juan SC ECNL G2013/14",
+          "logo": "san-juan-sc",
           "short": "SAN JUAN",
           "bracket_team": false,
           "rating": 6.73,
@@ -5196,6 +5304,7 @@
         {
           "rank": 2,
           "team": "Mustang SC ECNL G2013/14",
+          "logo": "mustang-sc",
           "short": "MUSTANG",
           "bracket_team": false,
           "rating": 6.7,
@@ -5208,6 +5317,7 @@
         {
           "rank": 3,
           "team": "MVLA ECNL G2013/14",
+          "logo": "mvla",
           "short": "MVLA",
           "bracket_team": false,
           "rating": 4.29,
@@ -5220,6 +5330,7 @@
         {
           "rank": 4,
           "team": "Bay Area Surf - ECNL G2013/14",
+          "logo": "bay-area-surf",
           "short": "BAY SURF",
           "bracket_team": false,
           "rating": 3.42,
@@ -5232,6 +5343,7 @@
         {
           "rank": 5,
           "team": "Davis Legacy ECNL G2013/14",
+          "logo": "davis-legacy",
           "short": "DAVIS",
           "bracket_team": false,
           "rating": 2.56,
@@ -5244,6 +5356,7 @@
         {
           "rank": 6,
           "team": "Placer United ECNL G2013/14",
+          "logo": "placer-united",
           "short": "PLACER",
           "bracket_team": false,
           "rating": 1.37,
@@ -5256,6 +5369,7 @@
         {
           "rank": 7,
           "team": "Marin FC ECNL G2013/14",
+          "logo": "marin-fc",
           "short": "MARIN",
           "bracket_team": false,
           "rating": -0.03,
@@ -5268,6 +5382,7 @@
         {
           "rank": 8,
           "team": "Santa Rosa United ECNL G2013/14",
+          "logo": "santa-rosa-united",
           "short": "SANTA ROSA",
           "bracket_team": false,
           "rating": -1.23,
@@ -5280,6 +5395,7 @@
         {
           "rank": 9,
           "team": "Force (CA) ECNL G2013/14",
+          "logo": "force-ca",
           "short": "FORCE CA",
           "bracket_team": false,
           "rating": -2.44,
@@ -5292,6 +5408,7 @@
         {
           "rank": 10,
           "team": "Pleasanton RAGE ECNL G2013/14",
+          "logo": "pleasanton-rage",
           "short": "RAGE",
           "bracket_team": false,
           "rating": -3.8,
@@ -5304,6 +5421,7 @@
         {
           "rank": 11,
           "team": "COSC ECNL G2013/14",
+          "logo": "cosc",
           "short": "COSC",
           "bracket_team": false,
           "rating": -4.94,
@@ -5316,6 +5434,7 @@
         {
           "rank": 12,
           "team": "Stanislaus Surf - ECNL G2013/14",
+          "logo": "stanislaus-surf",
           "short": "STANISLAUS",
           "bracket_team": false,
           "rating": -7.01,
@@ -6286,6 +6405,7 @@
         {
           "rank": 1,
           "team": "Mustang SC ECNL G2011/12",
+          "logo": "mustang-sc",
           "short": "MUSTANG",
           "bracket_team": false,
           "rating": 6.77,
@@ -6298,6 +6418,7 @@
         {
           "rank": 2,
           "team": "Bay Area Surf - ECNL G2011/12",
+          "logo": "bay-area-surf",
           "short": "BAY SURF",
           "bracket_team": false,
           "rating": 5.39,
@@ -6310,6 +6431,7 @@
         {
           "rank": 3,
           "team": "COSC ECNL G2011/12",
+          "logo": "cosc",
           "short": "COSC",
           "bracket_team": false,
           "rating": 2.63,
@@ -6322,6 +6444,7 @@
         {
           "rank": 4,
           "team": "MVLA ECNL G2011/12",
+          "logo": "mvla",
           "short": "MVLA",
           "bracket_team": false,
           "rating": 2.33,
@@ -6334,6 +6457,7 @@
         {
           "rank": 5,
           "team": "Placer United ECNL G2011/12",
+          "logo": "placer-united",
           "short": "PLACER",
           "bracket_team": false,
           "rating": 1.83,
@@ -6346,6 +6470,7 @@
         {
           "rank": 6,
           "team": "San Juan SC ECNL G2011/12",
+          "logo": "san-juan-sc",
           "short": "SAN JUAN",
           "bracket_team": false,
           "rating": 0.66,
@@ -6358,6 +6483,7 @@
         {
           "rank": 7,
           "team": "Marin FC ECNL G2011/12",
+          "logo": "marin-fc",
           "short": "MARIN",
           "bracket_team": false,
           "rating": -0.98,
@@ -6370,6 +6496,7 @@
         {
           "rank": 8,
           "team": "Force (CA) ECNL G2011/12",
+          "logo": "force-ca",
           "short": "FORCE CA",
           "bracket_team": false,
           "rating": -2.11,
@@ -6382,6 +6509,7 @@
         {
           "rank": 9,
           "team": "Santa Rosa United ECNL G2011/12",
+          "logo": "santa-rosa-united",
           "short": "SANTA ROSA",
           "bracket_team": false,
           "rating": -3.15,
@@ -6394,6 +6522,7 @@
         {
           "rank": 10,
           "team": "Davis Legacy ECNL G2011/12",
+          "logo": "davis-legacy",
           "short": "DAVIS",
           "bracket_team": false,
           "rating": -3.71,
@@ -6406,6 +6535,7 @@
         {
           "rank": 11,
           "team": "Pleasanton RAGE ECNL G2011/12",
+          "logo": "pleasanton-rage",
           "short": "RAGE",
           "bracket_team": false,
           "rating": -5.5,
@@ -6418,6 +6548,7 @@
         {
           "rank": 12,
           "team": "Stanislaus Surf - ECNL G2011/12",
+          "logo": "stanislaus-surf",
           "short": "STANISLAUS",
           "bracket_team": false,
           "rating": -6.98,
@@ -7470,6 +7601,7 @@
         {
           "rank": 1,
           "team": "Mustang SC ECNL G2010/11",
+          "logo": "mustang-sc",
           "short": "MUSTANG",
           "bracket_team": false,
           "rating": 6.72,
@@ -7482,6 +7614,7 @@
         {
           "rank": 2,
           "team": "Bay Area Surf - ECNL G2010/11",
+          "logo": "bay-area-surf",
           "short": "BAY SURF",
           "bracket_team": false,
           "rating": 5.88,
@@ -7494,6 +7627,7 @@
         {
           "rank": 3,
           "team": "MVLA ECNL G2010/11",
+          "logo": "mvla",
           "short": "MVLA",
           "bracket_team": false,
           "rating": 4.79,
@@ -7506,6 +7640,7 @@
         {
           "rank": 4,
           "team": "Force (CA) ECNL G2010/11",
+          "logo": "force-ca",
           "short": "FORCE CA",
           "bracket_team": false,
           "rating": 2.14,
@@ -7518,6 +7653,7 @@
         {
           "rank": 5,
           "team": "Davis Legacy ECNL G2010/11",
+          "logo": "davis-legacy",
           "short": "DAVIS",
           "bracket_team": false,
           "rating": 1.87,
@@ -7530,6 +7666,7 @@
         {
           "rank": 6,
           "team": "Pleasanton RAGE ECNL G2010/11",
+          "logo": "pleasanton-rage",
           "short": "RAGE",
           "bracket_team": false,
           "rating": 1.61,
@@ -7542,6 +7679,7 @@
         {
           "rank": 7,
           "team": "Marin FC ECNL G2010/11",
+          "logo": "marin-fc",
           "short": "MARIN",
           "bracket_team": false,
           "rating": -0.51,
@@ -7554,6 +7692,7 @@
         {
           "rank": 8,
           "team": "Placer United ECNL G2010/11",
+          "logo": "placer-united",
           "short": "PLACER",
           "bracket_team": false,
           "rating": -1.05,
@@ -7566,6 +7705,7 @@
         {
           "rank": 9,
           "team": "San Juan SC ECNL G2010/11",
+          "logo": "san-juan-sc",
           "short": "SAN JUAN",
           "bracket_team": false,
           "rating": -1.1,
@@ -7578,6 +7718,7 @@
         {
           "rank": 10,
           "team": "Stanislaus Surf - ECNL G2010/11",
+          "logo": "stanislaus-surf",
           "short": "STANISLAUS",
           "bracket_team": false,
           "rating": -3.44,
@@ -7590,6 +7731,7 @@
         {
           "rank": 11,
           "team": "COSC ECNL G2010/11",
+          "logo": "cosc",
           "short": "COSC",
           "bracket_team": false,
           "rating": -5.43,
@@ -7602,6 +7744,7 @@
         {
           "rank": 12,
           "team": "Santa Rosa United ECNL G2010/11",
+          "logo": "santa-rosa-united",
           "short": "SANTA ROSA",
           "bracket_team": false,
           "rating": -7.02,
@@ -8583,6 +8726,7 @@
         {
           "rank": 1,
           "team": "MVLA ECNL G2009/10",
+          "logo": "mvla",
           "short": "MVLA",
           "bracket_team": false,
           "rating": 7.25,
@@ -8595,6 +8739,7 @@
         {
           "rank": 2,
           "team": "Bay Area Surf - ECNL G2009/10",
+          "logo": "bay-area-surf",
           "short": "BAY SURF",
           "bracket_team": false,
           "rating": 5.36,
@@ -8607,6 +8752,7 @@
         {
           "rank": 3,
           "team": "Force (CA) ECNL G2009/10",
+          "logo": "force-ca",
           "short": "FORCE CA",
           "bracket_team": false,
           "rating": 5.02,
@@ -8619,6 +8765,7 @@
         {
           "rank": 4,
           "team": "Placer United ECNL G2009/10",
+          "logo": "placer-united",
           "short": "PLACER",
           "bracket_team": false,
           "rating": 4.04,
@@ -8631,6 +8778,7 @@
         {
           "rank": 5,
           "team": "Mustang SC ECNL G2009/10",
+          "logo": "mustang-sc",
           "short": "MUSTANG",
           "bracket_team": false,
           "rating": 2.16,
@@ -8643,6 +8791,7 @@
         {
           "rank": 6,
           "team": "San Juan SC ECNL G2009/10",
+          "logo": "san-juan-sc",
           "short": "SAN JUAN",
           "bracket_team": false,
           "rating": 1.59,
@@ -8655,6 +8804,7 @@
         {
           "rank": 7,
           "team": "Pleasanton RAGE ECNL G2009/10",
+          "logo": "pleasanton-rage",
           "short": "RAGE",
           "bracket_team": false,
           "rating": 0.72,
@@ -8667,6 +8817,7 @@
         {
           "rank": 8,
           "team": "COSC ECNL G2009/10",
+          "logo": "cosc",
           "short": "COSC",
           "bracket_team": false,
           "rating": -0.22,
@@ -8679,6 +8830,7 @@
         {
           "rank": 9,
           "team": "Davis Legacy ECNL G2009/10",
+          "logo": "davis-legacy",
           "short": "DAVIS",
           "bracket_team": false,
           "rating": -1.44,
@@ -8691,6 +8843,7 @@
         {
           "rank": 10,
           "team": "Marin FC ECNL G2009/10",
+          "logo": "marin-fc",
           "short": "MARIN",
           "bracket_team": false,
           "rating": -3.05,
@@ -8703,6 +8856,7 @@
         {
           "rank": 11,
           "team": "Stanislaus Surf - ECNL G2009/10",
+          "logo": "stanislaus-surf",
           "short": "STANISLAUS",
           "bracket_team": false,
           "rating": -4.67,
@@ -8715,6 +8869,7 @@
         {
           "rank": 12,
           "team": "Santa Rosa United ECNL G2009/10",
+          "logo": "santa-rosa-united",
           "short": "SANTA ROSA",
           "bracket_team": false,
           "rating": -6.38,
@@ -9750,6 +9905,7 @@
         {
           "rank": 1,
           "team": "MVLA ECNL G2008/09",
+          "logo": "mvla",
           "short": "MVLA",
           "bracket_team": false,
           "rating": 6.7,
@@ -9762,6 +9918,7 @@
         {
           "rank": 2,
           "team": "San Juan SC ECNL G2008/09",
+          "logo": "san-juan-sc",
           "short": "SAN JUAN",
           "bracket_team": false,
           "rating": 3.73,
@@ -9774,6 +9931,7 @@
         {
           "rank": 3,
           "team": "Bay Area Surf - ECNL G2008/09",
+          "logo": "bay-area-surf",
           "short": "BAY SURF",
           "bracket_team": false,
           "rating": 3.09,
@@ -9786,6 +9944,7 @@
         {
           "rank": 4,
           "team": "Force (CA) ECNL G2008/09",
+          "logo": "force-ca",
           "short": "FORCE CA",
           "bracket_team": false,
           "rating": 2.88,
@@ -9798,6 +9957,7 @@
         {
           "rank": 5,
           "team": "Davis Legacy ECNL G2008/09",
+          "logo": "davis-legacy",
           "short": "DAVIS",
           "bracket_team": false,
           "rating": 1.18,
@@ -9810,6 +9970,7 @@
         {
           "rank": 6,
           "team": "Marin FC ECNL G2008/09",
+          "logo": "marin-fc",
           "short": "MARIN",
           "bracket_team": false,
           "rating": 1.12,
@@ -9822,6 +9983,7 @@
         {
           "rank": 7,
           "team": "Stanislaus Surf - ECNL G2008/09",
+          "logo": "stanislaus-surf",
           "short": "STANISLAUS",
           "bracket_team": false,
           "rating": -0.45,
@@ -9834,6 +9996,7 @@
         {
           "rank": 8,
           "team": "Mustang SC ECNL G2008/09",
+          "logo": "mustang-sc",
           "short": "MUSTANG",
           "bracket_team": false,
           "rating": -1.57,
@@ -9846,6 +10009,7 @@
         {
           "rank": 9,
           "team": "Placer United ECNL G2008/09",
+          "logo": "placer-united",
           "short": "PLACER",
           "bracket_team": false,
           "rating": -1.77,
@@ -9858,6 +10022,7 @@
         {
           "rank": 10,
           "team": "Pleasanton RAGE ECNL G2008/09",
+          "logo": "pleasanton-rage",
           "short": "RAGE",
           "bracket_team": false,
           "rating": -3,
@@ -9870,6 +10035,7 @@
         {
           "rank": 11,
           "team": "COSC ECNL G2008/09",
+          "logo": "cosc",
           "short": "COSC",
           "bracket_team": false,
           "rating": -5.22,
@@ -9882,6 +10048,7 @@
         {
           "rank": 12,
           "team": "Santa Rosa United ECNL G2008/09",
+          "logo": "santa-rosa-united",
           "short": "SANTA ROSA",
           "bracket_team": false,
           "rating": -7.03,
@@ -10867,6 +11034,7 @@
         {
           "rank": 1,
           "team": "FC Dallas Youth ECNL G2013/14",
+          "logo": "fc-dallas-youth",
           "short": "FC Dallas Youth",
           "bracket_team": false,
           "rating": 6.53,
@@ -10879,6 +11047,7 @@
         {
           "rank": 2,
           "team": "Sting Royal ECNL G2013/14",
+          "logo": "sting",
           "short": "Sting Royal",
           "bracket_team": false,
           "rating": 5.63,
@@ -10891,6 +11060,7 @@
         {
           "rank": 3,
           "team": "Real Colorado National ECNL G2013/14",
+          "logo": "real-colorado",
           "short": "Real Colorado National",
           "bracket_team": false,
           "rating": 5.23,
@@ -10903,6 +11073,7 @@
         {
           "rank": 4,
           "team": "FC Westlake ECNL G2013/14",
+          "logo": "fc-westlake",
           "short": "FC Westlake",
           "bracket_team": false,
           "rating": 2.6,
@@ -10915,6 +11086,7 @@
         {
           "rank": 5,
           "team": "SOLAR SC ECNL G2013/14",
+          "logo": "solar-sc",
           "short": "SOLAR SC",
           "bracket_team": false,
           "rating": 1.45,
@@ -10927,6 +11099,7 @@
         {
           "rank": 6,
           "team": "OK Energy FC ECNL G2013/14",
+          "logo": "ok-energy-fc",
           "short": "OK Energy FC",
           "bracket_team": false,
           "rating": 1.31,
@@ -10939,6 +11112,7 @@
         {
           "rank": 7,
           "team": "Challenge SC ECNL G2013/14",
+          "logo": "challenge-sc",
           "short": "Challenge SC",
           "bracket_team": false,
           "rating": 1.15,
@@ -10951,6 +11125,7 @@
         {
           "rank": 8,
           "team": "Sting Black ECNL G2013/14",
+          "logo": "sting",
           "short": "Sting Black",
           "bracket_team": false,
           "rating": 0.7,
@@ -10963,6 +11138,7 @@
         {
           "rank": 9,
           "team": "DKSC ECNL G2013/14",
+          "logo": "dksc",
           "short": "DKSC",
           "bracket_team": false,
           "rating": 0.05,
@@ -10975,6 +11151,7 @@
         {
           "rank": 10,
           "team": "Colorado Storm ECNL G2013/14",
+          "logo": "colorado-storm",
           "short": "CO STORM",
           "bracket_team": false,
           "rating": -0.58,
@@ -10987,6 +11164,7 @@
         {
           "rank": 11,
           "team": "Albion Hurricanes FC ECNL G2013/14",
+          "logo": "albion-hurricanes-fc",
           "short": "Albion Hurricanes FC",
           "bracket_team": false,
           "rating": -1.33,
@@ -10999,6 +11177,7 @@
         {
           "rank": 12,
           "team": "Lonestar ATX Red ECNL G2013/14",
+          "logo": "lonestar-atx-red",
           "short": "Lonestar ATX Red",
           "bracket_team": false,
           "rating": -1.9,
@@ -11011,6 +11190,7 @@
         {
           "rank": 13,
           "team": "West Side Alliance ECNL G2013/14",
+          "logo": "west-side-alliance",
           "short": "West Side Alliance",
           "bracket_team": false,
           "rating": -2.83,
@@ -11023,6 +11203,7 @@
         {
           "rank": 14,
           "team": "Real Colorado Athletico ECNL G2013/14",
+          "logo": "real-colorado",
           "short": "Real Colorado Athletic",
           "bracket_team": false,
           "rating": -4.27,
@@ -11035,6 +11216,7 @@
         {
           "rank": 15,
           "team": "Colorado Rush ECNL G2013/14",
+          "logo": "colorado-rush",
           "short": "CO RUSH",
           "bracket_team": false,
           "rating": -5.34,
@@ -11047,6 +11229,7 @@
         {
           "rank": 16,
           "team": "Dallas Texans ECNL G2013/14",
+          "logo": "dallas-texans",
           "short": "Dallas Texans",
           "bracket_team": false,
           "rating": -7.16,
@@ -12050,6 +12233,7 @@
         {
           "rank": 1,
           "team": "SOLAR SC ECNL G2011/12",
+          "logo": "solar-sc",
           "short": "SOLAR SC",
           "bracket_team": false,
           "rating": 5.9,
@@ -12062,6 +12246,7 @@
         {
           "rank": 2,
           "team": "OK Energy FC ECNL G2011/12",
+          "logo": "ok-energy-fc",
           "short": "OK Energy FC",
           "bracket_team": false,
           "rating": 5.68,
@@ -12074,6 +12259,7 @@
         {
           "rank": 3,
           "team": "Sting Royal ECNL G2011/12",
+          "logo": "sting",
           "short": "Sting Royal",
           "bracket_team": false,
           "rating": 5.54,
@@ -12086,6 +12272,7 @@
         {
           "rank": 4,
           "team": "Challenge SC ECNL G2011/12",
+          "logo": "challenge-sc",
           "short": "Challenge SC",
           "bracket_team": false,
           "rating": 4.41,
@@ -12098,6 +12285,7 @@
         {
           "rank": 5,
           "team": "Real Colorado National ECNL G2011/12",
+          "logo": "real-colorado",
           "short": "Real Colorado National",
           "bracket_team": false,
           "rating": 3.63,
@@ -12110,6 +12298,7 @@
         {
           "rank": 6,
           "team": "FC Westlake ECNL G2011/12",
+          "logo": "fc-westlake",
           "short": "FC Westlake",
           "bracket_team": false,
           "rating": 2.36,
@@ -12122,6 +12311,7 @@
         {
           "rank": 7,
           "team": "FC Dallas Youth ECNL G2011/12",
+          "logo": "fc-dallas-youth",
           "short": "FC Dallas Youth",
           "bracket_team": false,
           "rating": 1.83,
@@ -12134,6 +12324,7 @@
         {
           "rank": 8,
           "team": "Lonestar ATX Red ECNL G2011/12",
+          "logo": "lonestar-atx-red",
           "short": "Lonestar ATX Red",
           "bracket_team": false,
           "rating": 0.65,
@@ -12146,6 +12337,7 @@
         {
           "rank": 9,
           "team": "DKSC ECNL G2011/12",
+          "logo": "dksc",
           "short": "DKSC",
           "bracket_team": false,
           "rating": 0.43,
@@ -12158,6 +12350,7 @@
         {
           "rank": 10,
           "team": "Sting Black ECNL G2011/12",
+          "logo": "sting",
           "short": "Sting Black",
           "bracket_team": false,
           "rating": -0.39,
@@ -12170,6 +12363,7 @@
         {
           "rank": 11,
           "team": "Colorado Storm ECNL G2011/12",
+          "logo": "colorado-storm",
           "short": "CO STORM",
           "bracket_team": false,
           "rating": -1.91,
@@ -12182,6 +12376,7 @@
         {
           "rank": 12,
           "team": "Albion Hurricanes FC ECNL G2011/12",
+          "logo": "albion-hurricanes-fc",
           "short": "Albion Hurricanes FC",
           "bracket_team": false,
           "rating": -3.03,
@@ -12194,6 +12389,7 @@
         {
           "rank": 13,
           "team": "Dallas Texans ECNL G2011/12",
+          "logo": "dallas-texans",
           "short": "Dallas Texans",
           "bracket_team": false,
           "rating": -3.58,
@@ -12206,6 +12402,7 @@
         {
           "rank": 14,
           "team": "West Side Alliance ECNL G2011/12",
+          "logo": "west-side-alliance",
           "short": "West Side Alliance",
           "bracket_team": false,
           "rating": -4.37,
@@ -12218,6 +12415,7 @@
         {
           "rank": 15,
           "team": "Colorado Rush ECNL G2011/12",
+          "logo": "colorado-rush",
           "short": "CO RUSH",
           "bracket_team": false,
           "rating": -5.61,
@@ -12230,6 +12428,7 @@
         {
           "rank": 16,
           "team": "Real Colorado Athletico ECNL G2011/12",
+          "logo": "real-colorado",
           "short": "Real Colorado Athletic",
           "bracket_team": false,
           "rating": -7.48,
@@ -13238,6 +13437,7 @@
         {
           "rank": 1,
           "team": "FC Dallas Youth ECNL G2010/11",
+          "logo": "fc-dallas-youth",
           "short": "FC Dallas Youth",
           "bracket_team": false,
           "rating": 6.75,
@@ -13250,6 +13450,7 @@
         {
           "rank": 2,
           "team": "FC Westlake ECNL G2010/11",
+          "logo": "fc-westlake",
           "short": "FC Westlake",
           "bracket_team": false,
           "rating": 6.35,
@@ -13262,6 +13463,7 @@
         {
           "rank": 3,
           "team": "Real Colorado National ECNL G2010/11",
+          "logo": "real-colorado",
           "short": "Real Colorado National",
           "bracket_team": false,
           "rating": 3.86,
@@ -13274,6 +13476,7 @@
         {
           "rank": 4,
           "team": "Sting Royal ECNL G2010/11",
+          "logo": "sting",
           "short": "Sting Royal",
           "bracket_team": false,
           "rating": 3.76,
@@ -13286,6 +13489,7 @@
         {
           "rank": 5,
           "team": "SOLAR SC ECNL G2010/11",
+          "logo": "solar-sc",
           "short": "SOLAR SC",
           "bracket_team": false,
           "rating": 3.69,
@@ -13298,6 +13502,7 @@
         {
           "rank": 6,
           "team": "OK Energy FC ECNL G2010/11",
+          "logo": "ok-energy-fc",
           "short": "OK Energy FC",
           "bracket_team": false,
           "rating": 0.56,
@@ -13310,6 +13515,7 @@
         {
           "rank": 7,
           "team": "Colorado Storm ECNL G2010/11",
+          "logo": "colorado-storm",
           "short": "CO STORM",
           "bracket_team": false,
           "rating": 0.33,
@@ -13322,6 +13528,7 @@
         {
           "rank": 8,
           "team": "Sting Black ECNL G2010/11",
+          "logo": "sting",
           "short": "Sting Black",
           "bracket_team": false,
           "rating": 0,
@@ -13334,6 +13541,7 @@
         {
           "rank": 9,
           "team": "Dallas Texans ECNL G2010/11",
+          "logo": "dallas-texans",
           "short": "Dallas Texans",
           "bracket_team": false,
           "rating": -0.48,
@@ -13346,6 +13554,7 @@
         {
           "rank": 10,
           "team": "AHFC ECNL G2010/11",
+          "logo": "albion-hurricanes-fc",
           "short": "AHFC",
           "bracket_team": false,
           "rating": -1.92,
@@ -13358,6 +13567,7 @@
         {
           "rank": 11,
           "team": "Real Colorado Athletico ECNL G2010/11",
+          "logo": "real-colorado",
           "short": "Real Colorado Athletic",
           "bracket_team": false,
           "rating": -2.58,
@@ -13370,6 +13580,7 @@
         {
           "rank": 12,
           "team": "DKSC ECNL G2010/11",
+          "logo": "dksc",
           "short": "DKSC",
           "bracket_team": false,
           "rating": -4.04,
@@ -13382,6 +13593,7 @@
         {
           "rank": 13,
           "team": "Lonestar ATX Red ECNL G2010/11",
+          "logo": "lonestar-atx-red",
           "short": "Lonestar ATX Red",
           "bracket_team": false,
           "rating": -4.07,
@@ -13394,6 +13606,7 @@
         {
           "rank": 14,
           "team": "Colorado Rush ECNL G2010/11",
+          "logo": "colorado-rush",
           "short": "CO RUSH",
           "bracket_team": false,
           "rating": -4.98,
@@ -13406,6 +13619,7 @@
         {
           "rank": 15,
           "team": "Challenge SC ECNL G2010/11",
+          "logo": "challenge-sc",
           "short": "Challenge SC",
           "bracket_team": false,
           "rating": -5.73,
@@ -13418,6 +13632,7 @@
         {
           "rank": 16,
           "team": "West Side Alliance ECNL G2010/11",
+          "logo": "west-side-alliance",
           "short": "West Side Alliance",
           "bracket_team": false,
           "rating": -6.99,
@@ -14416,6 +14631,7 @@
         {
           "rank": 1,
           "team": "Colorado Storm ECNL G2009/10",
+          "logo": "colorado-storm",
           "short": "CO STORM",
           "bracket_team": false,
           "rating": 7.29,
@@ -14428,6 +14644,7 @@
         {
           "rank": 2,
           "team": "SOLAR SC ECNL G2009/10",
+          "logo": "solar-sc",
           "short": "SOLAR SC",
           "bracket_team": false,
           "rating": 5.93,
@@ -14440,6 +14657,7 @@
         {
           "rank": 3,
           "team": "Sting Black ECNL G2009/10",
+          "logo": "sting",
           "short": "Sting Black",
           "bracket_team": false,
           "rating": 5.11,
@@ -14452,6 +14670,7 @@
         {
           "rank": 4,
           "team": "Real Colorado National ECNL G2009/10",
+          "logo": "real-colorado",
           "short": "Real Colorado National",
           "bracket_team": false,
           "rating": 4.18,
@@ -14464,6 +14683,7 @@
         {
           "rank": 5,
           "team": "FC Westlake ECNL G2009/10",
+          "logo": "fc-westlake",
           "short": "FC Westlake",
           "bracket_team": false,
           "rating": 3.45,
@@ -14476,6 +14696,7 @@
         {
           "rank": 6,
           "team": "FC Dallas Youth ECNL G2009/10",
+          "logo": "fc-dallas-youth",
           "short": "FC Dallas Youth",
           "bracket_team": false,
           "rating": 1.91,
@@ -14488,6 +14709,7 @@
         {
           "rank": 7,
           "team": "AHFC ECNL G2009/10",
+          "logo": "albion-hurricanes-fc",
           "short": "AHFC",
           "bracket_team": false,
           "rating": 0.46,
@@ -14500,6 +14722,7 @@
         {
           "rank": 8,
           "team": "Challenge SC ECNL G2009/10",
+          "logo": "challenge-sc",
           "short": "Challenge SC",
           "bracket_team": false,
           "rating": 0.15,
@@ -14512,6 +14735,7 @@
         {
           "rank": 9,
           "team": "Sting Royal ECNL G2009/10",
+          "logo": "sting",
           "short": "Sting Royal",
           "bracket_team": false,
           "rating": 0.11,
@@ -14524,6 +14748,7 @@
         {
           "rank": 10,
           "team": "Lonestar ATX Red ECNL G2009/10",
+          "logo": "lonestar-atx-red",
           "short": "Lonestar ATX Red",
           "bracket_team": false,
           "rating": -1.78,
@@ -14536,6 +14761,7 @@
         {
           "rank": 11,
           "team": "Dallas Texans ECNL G2009/10",
+          "logo": "dallas-texans",
           "short": "Dallas Texans",
           "bracket_team": false,
           "rating": -2.5,
@@ -14548,6 +14774,7 @@
         {
           "rank": 12,
           "team": "Colorado Rush ECNL G2009/10",
+          "logo": "colorado-rush",
           "short": "CO RUSH",
           "bracket_team": false,
           "rating": -2.8,
@@ -14560,6 +14787,7 @@
         {
           "rank": 13,
           "team": "Real Colorado Athletico ECNL G2009/10",
+          "logo": "real-colorado",
           "short": "Real Colorado Athletic",
           "bracket_team": false,
           "rating": -2.86,
@@ -14572,6 +14800,7 @@
         {
           "rank": 14,
           "team": "OK Energy FC ECNL G2009/10",
+          "logo": "ok-energy-fc",
           "short": "OK Energy FC",
           "bracket_team": false,
           "rating": -3.31,
@@ -14584,6 +14813,7 @@
         {
           "rank": 15,
           "team": "West Side Alliance ECNL G2009/10",
+          "logo": "west-side-alliance",
           "short": "West Side Alliance",
           "bracket_team": false,
           "rating": -3.8,
@@ -14596,6 +14826,7 @@
         {
           "rank": 16,
           "team": "DKSC ECNL G2009/10",
+          "logo": "dksc",
           "short": "DKSC",
           "bracket_team": false,
           "rating": -6.3,
@@ -15693,6 +15924,7 @@
         {
           "rank": 1,
           "team": "Real Colorado National ECNL G2008/09",
+          "logo": "real-colorado",
           "short": "Real Colorado National",
           "bracket_team": false,
           "rating": 6.73,
@@ -15705,6 +15937,7 @@
         {
           "rank": 2,
           "team": "SOLAR SC ECNL G2008/09",
+          "logo": "solar-sc",
           "short": "SOLAR SC",
           "bracket_team": false,
           "rating": 4.9,
@@ -15717,6 +15950,7 @@
         {
           "rank": 3,
           "team": "FC Dallas Youth ECNL G2008/09",
+          "logo": "fc-dallas-youth",
           "short": "FC Dallas Youth",
           "bracket_team": false,
           "rating": 4.47,
@@ -15729,6 +15963,7 @@
         {
           "rank": 4,
           "team": "FC Westlake ECNL G2008/09",
+          "logo": "fc-westlake",
           "short": "FC Westlake",
           "bracket_team": false,
           "rating": 3.5,
@@ -15741,6 +15976,7 @@
         {
           "rank": 5,
           "team": "Challenge SC ECNL G2008/09",
+          "logo": "challenge-sc",
           "short": "Challenge SC",
           "bracket_team": false,
           "rating": 1.52,
@@ -15753,6 +15989,7 @@
         {
           "rank": 6,
           "team": "OK Energy FC ECNL G2008/09",
+          "logo": "ok-energy-fc",
           "short": "OK Energy FC",
           "bracket_team": false,
           "rating": 1.01,
@@ -15765,6 +16002,7 @@
         {
           "rank": 7,
           "team": "Sting Black ECNL G2008/09",
+          "logo": "sting",
           "short": "Sting Black",
           "bracket_team": false,
           "rating": 0.87,
@@ -15777,6 +16015,7 @@
         {
           "rank": 8,
           "team": "Colorado Storm ECNL G2008/09",
+          "logo": "colorado-storm",
           "short": "CO STORM",
           "bracket_team": false,
           "rating": 0.32,
@@ -15789,6 +16028,7 @@
         {
           "rank": 9,
           "team": "DKSC ECNL G2008/09",
+          "logo": "dksc",
           "short": "DKSC",
           "bracket_team": false,
           "rating": -0.24,
@@ -15801,6 +16041,7 @@
         {
           "rank": 10,
           "team": "Albion Hurricanes FC ECNL G2008/09",
+          "logo": "albion-hurricanes-fc",
           "short": "Albion Hurricanes FC",
           "bracket_team": false,
           "rating": -0.68,
@@ -15813,6 +16054,7 @@
         {
           "rank": 11,
           "team": "Dallas Texans ECNL G2008/09",
+          "logo": "dallas-texans",
           "short": "Dallas Texans",
           "bracket_team": false,
           "rating": -1.38,
@@ -15825,6 +16067,7 @@
         {
           "rank": 12,
           "team": "Colorado Rush ECNL G2008/09",
+          "logo": "colorado-rush",
           "short": "CO RUSH",
           "bracket_team": false,
           "rating": -2.16,
@@ -15837,6 +16080,7 @@
         {
           "rank": 13,
           "team": "Sting Royal ECNL G2008/09",
+          "logo": "sting",
           "short": "Sting Royal",
           "bracket_team": false,
           "rating": -2.43,
@@ -15849,6 +16093,7 @@
         {
           "rank": 14,
           "team": "West Side Alliance ECNL G2008/09",
+          "logo": "west-side-alliance",
           "short": "West Side Alliance",
           "bracket_team": false,
           "rating": -3.64,
@@ -15861,6 +16106,7 @@
         {
           "rank": 15,
           "team": "Lonestar ATX Red ECNL G2008/09",
+          "logo": "lonestar-atx-red",
           "short": "Lonestar ATX Red",
           "bracket_team": false,
           "rating": -5.92,
@@ -15873,6 +16119,7 @@
         {
           "rank": 16,
           "team": "Real Colorado Athletico ECNL G2008/09",
+          "logo": "real-colorado",
           "short": "Real Colorado Athletic",
           "bracket_team": false,
           "rating": -7.01,
@@ -16961,6 +17208,7 @@
         {
           "rank": 1,
           "team": "Legends FC (CA) ECNL G2013/14",
+          "logo": "legends-fc-ca",
           "short": "LEGENDS CA",
           "bracket_team": false,
           "rating": 6.88,
@@ -16973,6 +17221,7 @@
         {
           "rank": 2,
           "team": "LV Heat Surf ECNL G2013/14",
+          "logo": "lv-heat-surf",
           "short": "LV Heat Surf",
           "bracket_team": false,
           "rating": 6.51,
@@ -16985,6 +17234,7 @@
         {
           "rank": 3,
           "team": "SLAMMERS FC ECNL G2013/14",
+          "logo": "slammers-fc",
           "short": "Slammers FC",
           "bracket_team": false,
           "rating": 5.99,
@@ -16997,6 +17247,7 @@
         {
           "rank": 4,
           "team": "Slammers FC HB Koge ECNL G2013/14",
+          "logo": "slammers-fc",
           "short": "Slammers FC HB Koge",
           "bracket_team": false,
           "rating": 4.92,
@@ -17009,6 +17260,7 @@
         {
           "rank": 5,
           "team": "San Diego Surf ECNL G2013/14",
+          "logo": "san-diego-surf",
           "short": "SD SURF",
           "bracket_team": false,
           "rating": 3.69,
@@ -17021,6 +17273,7 @@
         {
           "rank": 6,
           "team": "LAFC So Cal ECNL G2013/14",
+          "logo": "lafc-so-cal",
           "short": "LAFC SO CAL",
           "bracket_team": false,
           "rating": 3.15,
@@ -17033,6 +17286,7 @@
         {
           "rank": 7,
           "team": "Beach Futbol Club (CA) ECNL G2013/14",
+          "logo": "beach-futbol-club-ca",
           "short": "BEACH",
           "bracket_team": false,
           "rating": 1.2,
@@ -17045,6 +17299,7 @@
         {
           "rank": 8,
           "team": "Eagles SC ECNL G2013/14",
+          "logo": "eagles-sc",
           "short": "EAGLES SC",
           "bracket_team": false,
           "rating": -1.2,
@@ -17057,6 +17312,7 @@
         {
           "rank": 9,
           "team": "So Cal Blues ECNL G2013/14",
+          "logo": "so-cal-blues",
           "short": "SO CAL BLUES",
           "bracket_team": false,
           "rating": -1.48,
@@ -17069,6 +17325,7 @@
         {
           "rank": 10,
           "team": "Legends FC Del Mar ECNL G2013/14",
+          "logo": "legends-fc-del-mar",
           "short": "LEGENDS DM",
           "bracket_team": false,
           "rating": -1.66,
@@ -17081,6 +17338,7 @@
         {
           "rank": 11,
           "team": "Rebels SC ECNL G2013/14",
+          "logo": "rebels-sc",
           "short": "REBELS SC",
           "bracket_team": false,
           "rating": -1.74,
@@ -17093,6 +17351,7 @@
         {
           "rank": 12,
           "team": "Pateadores ECNL G2013/14",
+          "logo": "pateadores",
           "short": "PATEADORES",
           "bracket_team": false,
           "rating": -2.22,
@@ -17105,6 +17364,7 @@
         {
           "rank": 13,
           "team": "Arizona Arsenal ECNL G2013/14",
+          "logo": "arizona-arsenal",
           "short": "AZ ARSENAL",
           "bracket_team": false,
           "rating": -2.97,
@@ -17117,6 +17377,7 @@
         {
           "rank": 14,
           "team": "Utah Royals FC-AZ ECNL G2013/14",
+          "logo": "utah-royals-fc-az",
           "short": "UT ROYALS AZ",
           "bracket_team": false,
           "rating": -3.54,
@@ -17129,6 +17390,7 @@
         {
           "rank": 15,
           "team": "Sporting California USA ECNL G2013/14",
+          "logo": "sporting-california-usa",
           "short": "SPORTING CA",
           "bracket_team": false,
           "rating": -4.31,
@@ -17141,6 +17403,7 @@
         {
           "rank": 16,
           "team": "LA Breakers FC ECNL G2013/14",
+          "logo": "la-breakers-fc",
           "short": "LA BREAKERS",
           "bracket_team": false,
           "rating": -6.23,
@@ -17153,6 +17416,7 @@
         {
           "rank": 17,
           "team": "Phoenix Rising FC ECNL G2013/14",
+          "logo": "phoenix-rising-fc",
           "short": "PHX RISING",
           "bracket_team": false,
           "rating": -6.88,
@@ -17909,6 +18173,7 @@
         {
           "rank": 1,
           "team": "Beach Futbol Club (CA) ECNL G2011/12",
+          "logo": "beach-futbol-club-ca",
           "short": "BEACH",
           "bracket_team": false,
           "rating": 6.8,
@@ -17921,6 +18186,7 @@
         {
           "rank": 2,
           "team": "SLAMMERS FC ECNL G2011/12",
+          "logo": "slammers-fc",
           "short": "Slammers FC",
           "bracket_team": false,
           "rating": 5.72,
@@ -17933,6 +18199,7 @@
         {
           "rank": 3,
           "team": "San Diego Surf ECNL G2011/12",
+          "logo": "san-diego-surf",
           "short": "SD SURF",
           "bracket_team": false,
           "rating": 4.49,
@@ -17945,6 +18212,7 @@
         {
           "rank": 4,
           "team": "Slammers FC HB Koge ECNL G2011/12",
+          "logo": "slammers-fc",
           "short": "Slammers FC HB Koge",
           "bracket_team": false,
           "rating": 3.98,
@@ -17957,6 +18225,7 @@
         {
           "rank": 5,
           "team": "Utah Royals FC-AZ ECNL G2011/12",
+          "logo": "utah-royals-fc-az",
           "short": "UT ROYALS AZ",
           "bracket_team": false,
           "rating": 2.9,
@@ -17969,6 +18238,7 @@
         {
           "rank": 6,
           "team": "So Cal Blues ECNL G2011/12",
+          "logo": "so-cal-blues",
           "short": "SO CAL BLUES",
           "bracket_team": false,
           "rating": 2.75,
@@ -17981,6 +18251,7 @@
         {
           "rank": 7,
           "team": "Rebels SC ECNL G2011/12",
+          "logo": "rebels-sc",
           "short": "REBELS SC",
           "bracket_team": false,
           "rating": 1.84,
@@ -17993,6 +18264,7 @@
         {
           "rank": 8,
           "team": "Phoenix Rising FC ECNL G2011/12",
+          "logo": "phoenix-rising-fc",
           "short": "PHX RISING",
           "bracket_team": false,
           "rating": 0.78,
@@ -18005,6 +18277,7 @@
         {
           "rank": 9,
           "team": "Legends FC (CA) ECNL G2011/12",
+          "logo": "legends-fc-ca",
           "short": "LEGENDS CA",
           "bracket_team": false,
           "rating": 0.14,
@@ -18017,6 +18290,7 @@
         {
           "rank": 10,
           "team": "Legends FC Del Mar ECNL G2011/12",
+          "logo": "legends-fc-del-mar",
           "short": "LEGENDS DM",
           "bracket_team": false,
           "rating": -2.19,
@@ -18029,6 +18303,7 @@
         {
           "rank": 11,
           "team": "LV Heat Surf ECNL G2011/12",
+          "logo": "lv-heat-surf",
           "short": "LV Heat Surf",
           "bracket_team": false,
           "rating": -2.6,
@@ -18041,6 +18316,7 @@
         {
           "rank": 12,
           "team": "Pateadores ECNL G2011/12",
+          "logo": "pateadores",
           "short": "PATEADORES",
           "bracket_team": false,
           "rating": -3.17,
@@ -18053,6 +18329,7 @@
         {
           "rank": 13,
           "team": "Arizona Arsenal ECNL G2011/12",
+          "logo": "arizona-arsenal",
           "short": "AZ ARSENAL",
           "bracket_team": false,
           "rating": -3.36,
@@ -18065,6 +18342,7 @@
         {
           "rank": 14,
           "team": "LAFC So Cal ECNL G2011/12",
+          "logo": "lafc-so-cal",
           "short": "LAFC SO CAL",
           "bracket_team": false,
           "rating": -3.98,
@@ -18077,6 +18355,7 @@
         {
           "rank": 15,
           "team": "LA Breakers FC ECNL G2011/12",
+          "logo": "la-breakers-fc",
           "short": "LA BREAKERS",
           "bracket_team": false,
           "rating": -4.58,
@@ -18089,6 +18368,7 @@
         {
           "rank": 16,
           "team": "Eagles SC ECNL G2011/12",
+          "logo": "eagles-sc",
           "short": "EAGLES SC",
           "bracket_team": false,
           "rating": -4.81,
@@ -18101,6 +18381,7 @@
         {
           "rank": 17,
           "team": "Sporting California USA ECNL G2011/12",
+          "logo": "sporting-california-usa",
           "short": "SPORTING CA",
           "bracket_team": false,
           "rating": -6.95,
@@ -18897,6 +19178,7 @@
         {
           "rank": 1,
           "team": "Slammers FC HB Koge ECNL G2010/11",
+          "logo": "slammers-fc",
           "short": "Slammers FC HB Koge",
           "bracket_team": false,
           "rating": 7.03,
@@ -18909,6 +19191,7 @@
         {
           "rank": 2,
           "team": "SLAMMERS FC ECNL G2010/11",
+          "logo": "slammers-fc",
           "short": "Slammers FC",
           "bracket_team": false,
           "rating": 6.35,
@@ -18921,6 +19204,7 @@
         {
           "rank": 3,
           "team": "Phoenix Rising FC ECNL G2010/11",
+          "logo": "phoenix-rising-fc",
           "short": "PHX RISING",
           "bracket_team": false,
           "rating": 6.26,
@@ -18933,6 +19217,7 @@
         {
           "rank": 4,
           "team": "San Diego Surf ECNL G2010/11",
+          "logo": "san-diego-surf",
           "short": "SD SURF",
           "bracket_team": false,
           "rating": 5.74,
@@ -18945,6 +19230,7 @@
         {
           "rank": 5,
           "team": "LV Heat Surf ECNL G2010/11",
+          "logo": "lv-heat-surf",
           "short": "LV Heat Surf",
           "bracket_team": false,
           "rating": 3.5,
@@ -18957,6 +19243,7 @@
         {
           "rank": 6,
           "team": "Legends FC (CA) ECNL G2010/11",
+          "logo": "legends-fc-ca",
           "short": "LEGENDS CA",
           "bracket_team": false,
           "rating": 2.48,
@@ -18969,6 +19256,7 @@
         {
           "rank": 7,
           "team": "Beach Futbol Club (CA) ECNL G2010/11",
+          "logo": "beach-futbol-club-ca",
           "short": "BEACH",
           "bracket_team": false,
           "rating": 1.93,
@@ -18981,6 +19269,7 @@
         {
           "rank": 8,
           "team": "So Cal Blues ECNL G2010/11",
+          "logo": "so-cal-blues",
           "short": "SO CAL BLUES",
           "bracket_team": false,
           "rating": 1.73,
@@ -18993,6 +19282,7 @@
         {
           "rank": 9,
           "team": "Eagles SC ECNL G2010/11",
+          "logo": "eagles-sc",
           "short": "EAGLES SC",
           "bracket_team": false,
           "rating": 0.29,
@@ -19005,6 +19295,7 @@
         {
           "rank": 10,
           "team": "Utah Royals FC-AZ ECNL G2010/11",
+          "logo": "utah-royals-fc-az",
           "short": "UT ROYALS AZ",
           "bracket_team": false,
           "rating": 0.29,
@@ -19017,6 +19308,7 @@
         {
           "rank": 11,
           "team": "LAFC So Cal ECNL G2010/11",
+          "logo": "lafc-so-cal",
           "short": "LAFC SO CAL",
           "bracket_team": false,
           "rating": -0.56,
@@ -19029,6 +19321,7 @@
         {
           "rank": 12,
           "team": "LA Breakers FC ECNL G2010/11",
+          "logo": "la-breakers-fc",
           "short": "LA BREAKERS",
           "bracket_team": false,
           "rating": -0.82,
@@ -19041,6 +19334,7 @@
         {
           "rank": 13,
           "team": "Legends FC Del Mar ECNL G2010/11",
+          "logo": "legends-fc-del-mar",
           "short": "LEGENDS DM",
           "bracket_team": false,
           "rating": -2.12,
@@ -19053,6 +19347,7 @@
         {
           "rank": 14,
           "team": "Pateadores ECNL G2010/11",
+          "logo": "pateadores",
           "short": "PATEADORES",
           "bracket_team": false,
           "rating": -3.97,
@@ -19065,6 +19360,7 @@
         {
           "rank": 15,
           "team": "Rebels SC ECNL G2010/11",
+          "logo": "rebels-sc",
           "short": "REBELS SC",
           "bracket_team": false,
           "rating": -5.57,
@@ -19077,6 +19373,7 @@
         {
           "rank": 16,
           "team": "Arizona Arsenal ECNL G2010/11",
+          "logo": "arizona-arsenal",
           "short": "AZ ARSENAL",
           "bracket_team": false,
           "rating": -6.04,
@@ -19089,6 +19386,7 @@
         {
           "rank": 17,
           "team": "Sporting California USA ECNL G2010/11",
+          "logo": "sporting-california-usa",
           "short": "SPORTING CA",
           "bracket_team": false,
           "rating": -6.71,
@@ -19823,6 +20121,7 @@
         {
           "rank": 1,
           "team": "Beach Futbol Club (CA) ECNL G2009/10",
+          "logo": "beach-futbol-club-ca",
           "short": "BEACH",
           "bracket_team": false,
           "rating": 6.96,
@@ -19835,6 +20134,7 @@
         {
           "rank": 2,
           "team": "Slammers FC HB Koge ECNL G2009/10",
+          "logo": "slammers-fc",
           "short": "Slammers FC HB Koge",
           "bracket_team": false,
           "rating": 6.5,
@@ -19847,6 +20147,7 @@
         {
           "rank": 3,
           "team": "LA Breakers FC ECNL G2009/10",
+          "logo": "la-breakers-fc",
           "short": "LA BREAKERS",
           "bracket_team": false,
           "rating": 6.12,
@@ -19859,6 +20160,7 @@
         {
           "rank": 4,
           "team": "Legends FC (CA) ECNL G2009/10",
+          "logo": "legends-fc-ca",
           "short": "LEGENDS CA",
           "bracket_team": false,
           "rating": 5.03,
@@ -19871,6 +20173,7 @@
         {
           "rank": 5,
           "team": "LV Heat Surf ECNL G2009/10",
+          "logo": "lv-heat-surf",
           "short": "LV Heat Surf",
           "bracket_team": false,
           "rating": 4.27,
@@ -19883,6 +20186,7 @@
         {
           "rank": 6,
           "team": "San Diego Surf ECNL G2009/10",
+          "logo": "san-diego-surf",
           "short": "SD SURF",
           "bracket_team": false,
           "rating": 3.64,
@@ -19895,6 +20199,7 @@
         {
           "rank": 7,
           "team": "Utah Royals FC-AZ ECNL G2009/10",
+          "logo": "utah-royals-fc-az",
           "short": "UT ROYALS AZ",
           "bracket_team": false,
           "rating": 2.48,
@@ -19907,6 +20212,7 @@
         {
           "rank": 8,
           "team": "LAFC So Cal ECNL G2009/10",
+          "logo": "lafc-so-cal",
           "short": "LAFC SO CAL",
           "bracket_team": false,
           "rating": 1.03,
@@ -19919,6 +20225,7 @@
         {
           "rank": 9,
           "team": "Legends FC Del Mar ECNL G2009/10",
+          "logo": "legends-fc-del-mar",
           "short": "LEGENDS DM",
           "bracket_team": false,
           "rating": 0.97,
@@ -19931,6 +20238,7 @@
         {
           "rank": 10,
           "team": "So Cal Blues ECNL G2009/10",
+          "logo": "so-cal-blues",
           "short": "SO CAL BLUES",
           "bracket_team": false,
           "rating": -0.41,
@@ -19943,6 +20251,7 @@
         {
           "rank": 11,
           "team": "Rebels SC ECNL G2009/10",
+          "logo": "rebels-sc",
           "short": "REBELS SC",
           "bracket_team": false,
           "rating": -1.82,
@@ -19955,6 +20264,7 @@
         {
           "rank": 12,
           "team": "Phoenix Rising FC ECNL G2009/10",
+          "logo": "phoenix-rising-fc",
           "short": "PHX RISING",
           "bracket_team": false,
           "rating": -2.48,
@@ -19967,6 +20277,7 @@
         {
           "rank": 13,
           "team": "SLAMMERS FC ECNL G2009/10",
+          "logo": "slammers-fc",
           "short": "Slammers FC",
           "bracket_team": false,
           "rating": -2.71,
@@ -19979,6 +20290,7 @@
         {
           "rank": 14,
           "team": "Eagles SC ECNL G2009/10",
+          "logo": "eagles-sc",
           "short": "EAGLES SC",
           "bracket_team": false,
           "rating": -3.21,
@@ -19991,6 +20303,7 @@
         {
           "rank": 15,
           "team": "Pateadores ECNL G2009/10",
+          "logo": "pateadores",
           "short": "PATEADORES",
           "bracket_team": false,
           "rating": -4.64,
@@ -20003,6 +20316,7 @@
         {
           "rank": 16,
           "team": "Arizona Arsenal ECNL G2009/10",
+          "logo": "arizona-arsenal",
           "short": "AZ ARSENAL",
           "bracket_team": false,
           "rating": -5.96,
@@ -20015,6 +20329,7 @@
         {
           "rank": 17,
           "team": "Sporting California USA ECNL G2009/10",
+          "logo": "sporting-california-usa",
           "short": "SPORTING CA",
           "bracket_team": false,
           "rating": -6.79,
@@ -20831,6 +21146,7 @@
         {
           "rank": 1,
           "team": "Beach Futbol Club (CA) ECNL G2008/09",
+          "logo": "beach-futbol-club-ca",
           "short": "BEACH",
           "bracket_team": false,
           "rating": 6.75,
@@ -20843,6 +21159,7 @@
         {
           "rank": 2,
           "team": "San Diego Surf ECNL G2008/09",
+          "logo": "san-diego-surf",
           "short": "SD SURF",
           "bracket_team": false,
           "rating": 6.31,
@@ -20855,6 +21172,7 @@
         {
           "rank": 3,
           "team": "LA Breakers FC ECNL G2008/09",
+          "logo": "la-breakers-fc",
           "short": "LA BREAKERS",
           "bracket_team": false,
           "rating": 5.82,
@@ -20867,6 +21185,7 @@
         {
           "rank": 4,
           "team": "Slammers FC HB Koge ECNL G2008/09",
+          "logo": "slammers-fc",
           "short": "Slammers FC HB Koge",
           "bracket_team": false,
           "rating": 4.8,
@@ -20879,6 +21198,7 @@
         {
           "rank": 5,
           "team": "Utah Royals FC AZ ECNL G2008/09",
+          "logo": "utah-royals-fc-az",
           "short": "Utah Royals FC AZ",
           "bracket_team": false,
           "rating": 4.13,
@@ -20891,6 +21211,7 @@
         {
           "rank": 6,
           "team": "LAFC So Cal ECNL G2008/09",
+          "logo": "lafc-so-cal",
           "short": "LAFC SO CAL",
           "bracket_team": false,
           "rating": 1.35,
@@ -20903,6 +21224,7 @@
         {
           "rank": 7,
           "team": "Eagles SC ECNL G2008/09",
+          "logo": "eagles-sc",
           "short": "EAGLES SC",
           "bracket_team": false,
           "rating": 0.38,
@@ -20915,6 +21237,7 @@
         {
           "rank": 8,
           "team": "Legends FC Del Mar ECNL G2008/09",
+          "logo": "legends-fc-del-mar",
           "short": "LEGENDS DM",
           "bracket_team": false,
           "rating": 0.23,
@@ -20927,6 +21250,7 @@
         {
           "rank": 9,
           "team": "Arizona Arsenal ECNL G2008/09",
+          "logo": "arizona-arsenal",
           "short": "AZ ARSENAL",
           "bracket_team": false,
           "rating": -0.86,
@@ -20939,6 +21263,7 @@
         {
           "rank": 10,
           "team": "Pateadores ECNL G2008/09",
+          "logo": "pateadores",
           "short": "PATEADORES",
           "bracket_team": false,
           "rating": -1.05,
@@ -20951,6 +21276,7 @@
         {
           "rank": 11,
           "team": "LV Heat Surf ECNL G2008/09",
+          "logo": "lv-heat-surf",
           "short": "LV Heat Surf",
           "bracket_team": false,
           "rating": -2.05,
@@ -20963,6 +21289,7 @@
         {
           "rank": 12,
           "team": "Legends FC (CA) ECNL G2008/09",
+          "logo": "legends-fc-ca",
           "short": "LEGENDS CA",
           "bracket_team": false,
           "rating": -3.76,
@@ -20975,6 +21302,7 @@
         {
           "rank": 13,
           "team": "SLAMMERS FC ECNL G2008/09",
+          "logo": "slammers-fc",
           "short": "Slammers FC",
           "bracket_team": false,
           "rating": -4.21,
@@ -20987,6 +21315,7 @@
         {
           "rank": 14,
           "team": "Rebels SC ECNL G2008/09",
+          "logo": "rebels-sc",
           "short": "REBELS SC",
           "bracket_team": false,
           "rating": -5.25,
@@ -20999,6 +21328,7 @@
         {
           "rank": 15,
           "team": "Phoenix Rising FC ECNL G2008/09",
+          "logo": "phoenix-rising-fc",
           "short": "PHX RISING",
           "bracket_team": false,
           "rating": -5.58,
@@ -21011,6 +21341,7 @@
         {
           "rank": 16,
           "team": "Sporting California USA ECNL G2008/09",
+          "logo": "sporting-california-usa",
           "short": "SPORTING CA",
           "bracket_team": false,
           "rating": -6.59,
@@ -21023,6 +21354,7 @@
         {
           "rank": 17,
           "team": "So Cal Blues ECNL G2008/09",
+          "logo": "so-cal-blues",
           "short": "SO CAL BLUES",
           "bracket_team": false,
           "rating": -6.99,
