@@ -832,9 +832,9 @@
     <div class="canvas-controls" id="canvasControls">
       <div class="gd-pills" role="group" aria-label="Minimum Goal Difference">
         <span class="gd-label">Min GD</span>
-        <button type="button" class="gd-btn active" data-gd="1">All (+1)</button>
-        <button type="button" class="gd-btn" data-gd="2">+2</button>
-        <button type="button" class="gd-btn" data-gd="3">+3</button>
+        <button type="button" class="gd-btn active" data-gd="1" title="Show every arrow">All (+1)</button>
+        <button type="button" class="gd-btn" data-gd="2" title="Show only arrows where the most decisive win was by 2 or more goals">+2</button>
+        <button type="button" class="gd-btn" data-gd="3" title="Show only arrows where the most decisive win was by 3 or more goals">+3</button>
       </div>
 
       <button type="button" class="loop-toggle" id="toggleLoopsBtn" aria-pressed="false">
@@ -1016,7 +1016,8 @@
       <p style="margin:0; font-size:13px; color:var(--text-muted); line-height:1.5;">
         <strong style="color:var(--win);">BeatWin:</strong> Direct win, arrow weighted by goal difference.<br/>
         <strong style="color:var(--path);">BeatPath:</strong> Transitive chain of BeatWins from higher-ranked teams to lower-ranked teams.<br/>
-        <strong style="color:var(--loop);">Broken BeatLoop:</strong> A win cycle resolved by removing its weakest goal-difference link. Toggle <em>Broken Loops</em> in the top bar to inspect pruned cycle edges.
+        <strong style="color:var(--loop);">Broken BeatLoop:</strong> A win cycle resolved by removing its weakest goal-difference link. Toggle <em>Broken Loops</em> in the top bar to inspect pruned cycle edges.<br/>
+        <strong>Min GD:</strong> +2 hides arrows where the teams&rsquo; most decisive game was a one-goal win; +3 keeps only arrows with a win by 3 or more. It only changes which arrows are drawn &mdash; ratings and rankings never change.
       </p>
       <p style="margin:12px 0 0; font-size:13px;"><a href="tutorial.html">Read the full tutorial: how to read a BeatGraph &rarr;</a></p>
       <button class="primary-btn" id="gotItBtn" type="button">Got It</button>
