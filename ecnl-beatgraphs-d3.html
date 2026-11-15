@@ -522,6 +522,62 @@
       display: none;
     }
 
+    /* --- Scores Table View --- */
+    #scoresView {
+      position: fixed;
+      top: 128px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+      background: var(--bg);
+      overflow-y: auto;
+      padding: 12px 12px 110px;
+      display: none;
+    }
+
+    .scores-filter {
+      margin-bottom: 10px;
+    }
+
+    .scores-filter select {
+      font-size: 14px;
+      padding: 6px 8px;
+      max-width: 100%;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    table.scores-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    table.scores-table th {
+      text-align: left;
+      padding: 6px 8px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    table.scores-table td {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    table.scores-table .team-link {
+      background: none;
+      border: none;
+      padding: 0;
+      font: inherit;
+      color: var(--accent);
+      cursor: pointer;
+      text-align: left;
+    }
+
     .rank-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -898,7 +954,7 @@
       </button>
       <button class="share-btn" id="shareUrlBtn" type="button" title="Copy shareable link">Share</button>
       <button class="share-btn" id="switchViewBtn" type="button" title="Switch to the Cytoscape interactive canvas view">Canvas view</button>
-      <button class="share-btn" id="homeViewBtn" type="button" title="Back to the ECNL Graphs home view: graph pictures and scores">Graphs</button>
+      <button class="share-btn" id="graphsViewBtn" type="button" title="Switch to the Graphs view: graph pictures and scores">Graphs</button>
       <button class="icon-btn" id="openHelpBtn" type="button" aria-label="Legend and Methodology">?</button>
     </div>
 
@@ -907,6 +963,7 @@
       <div class="segmented" role="tablist">
         <button id="tabGraph" class="active" type="button">Graph</button>
         <button id="tabRankings" type="button">Rankings</button>
+        <button id="tabScores" type="button">Scores</button>
       </div>
     </div>
 
@@ -953,6 +1010,7 @@
 
   <!-- Synchronized Rankings List View -->
   <section id="rankingsView"></section>
+  <section id="scoresView"></section>
 
   <!-- Team Inspector Bottom Sheet -->
   <aside class="bottom-sheet" id="bottomSheet">
@@ -1038,6 +1096,11 @@
       </div>
 
       <div id="loopNotice" style="font-size:11px; color:var(--loop); display:none;"></div>
+
+      <div>
+        <div class="section-label">Scores</div>
+        <div id="teamScoresTable"></div>
+      </div>
     </div>
   </aside>
 
@@ -1241,6 +1304,7 @@
         edges,
         games: league.games || 0,
         draws: league.draws || 0,
+        gamesList: games,
         empty: teams.length === 0
       };
     }
@@ -1455,7 +1519,7 @@
       appState.minGd = [1, 2, 3].includes(minGd) ? minGd : 1;
 
       appState.loops = params.get('loops') === '1';
-      appState.view = params.get('view') === 'rankings' ? 'rankings' : 'graph';
+      appState.view = ['rankings', 'scores'].includes(params.get('view')) ? params.get('view') : 'graph';
       appState.team = params.get('team') || null;
       appState.target = params.get('target') || null;
     }
@@ -1877,8 +1941,9 @@
       loadingPill.classList.remove('show');
       if (!league) {
         showDataError();
-        currentDataset = { label: appState.competition, teams: [], edges: [], games: 0, empty: true };
+        currentDataset = { label: appState.competition, teams: [], edges: [], games: 0, gamesList: [], empty: true };
         renderRankingsList();
+        renderScoresList();
         return;
       }
       const dataset = normalizeLeague(league);
@@ -1903,6 +1968,7 @@
       computeD3Layout(dataset);
       renderD3Scene();
       renderRankingsList();
+      renderScoresList();
       applyEdgeFilters(false);
 
       if (preserveTeam && appState.team && graphLayout.nodeMap.has(appState.team)) {
@@ -2274,6 +2340,7 @@
       }
 
       targetSelect.onchange = () => renderHeadToHeadComparison(node, targetSelect.value, dagEdges);
+      renderTeamScoresTable(node.id);
     }
 
     function openBottomSheet(open) {
@@ -2317,15 +2384,77 @@
       });
     }
 
+    let scoresFilter = '';
+
+    function renderScoresList() {
+      const container = document.getElementById('scoresView');
+      const teams = (currentDataset?.teams || []).slice().sort((a, b) => a.tier - b.tier);
+      if (scoresFilter && !teams.some(t => t.id === scoresFilter)) scoresFilter = '';
+      const games = (currentDataset?.gamesList || []).slice()
+        .sort((a, b) => String(a.date).localeCompare(String(b.date)));
+      const filtered = scoresFilter
+        ? games.filter(g => g.home === scoresFilter || g.away === scoresFilter)
+        : games;
+      const short = new Map(teams.map(t => [t.id, t.short]));
+      const name = id => short.get(id) || id;
+      const rows = filtered.map(g => `
+        <tr><td>${g.date}</td>
+        <td><button type="button" class="team-link" data-team="${g.home}">${name(g.home)}</button></td>
+        <td>${g.home_score}&ndash;${g.away_score}</td>
+        <td><button type="button" class="team-link" data-team="${g.away}">${name(g.away)}</button></td></tr>`).join('');
+      container.innerHTML = `
+        <div class="scores-filter"><select id="scoresTeamFilter" aria-label="Filter scores by team">
+          <option value="">All teams (${games.length} games)</option>
+          ${teams.map(t => `<option value="${t.id}"${t.id === scoresFilter ? ' selected' : ''}>${t.name}</option>`).join('')}
+        </select></div>
+        ${filtered.length ? `<table class="scores-table"><thead><tr><th>Date</th><th>Home</th><th>Score</th><th>Away</th></tr></thead><tbody>${rows}</tbody></table>`
+          : '<p style="font-size:13px; color:var(--text-muted);">No scored games yet for this selection.</p>'}`;
+      document.getElementById('scoresTeamFilter').onchange = e => {
+        scoresFilter = e.target.value;
+        renderScoresList();
+      };
+      container.querySelectorAll('.team-link').forEach(btn => {
+        btn.onclick = () => {
+          switchTab('graph');
+          selectTeam(btn.dataset.team);
+        };
+      });
+    }
+
+    function renderTeamScoresTable(teamId) {
+      const el = document.getElementById('teamScoresTable');
+      const teams = currentDataset?.teams || [];
+      const short = new Map(teams.map(t => [t.id, t.short]));
+      const games = (currentDataset?.gamesList || [])
+        .filter(g => g.home === teamId || g.away === teamId)
+        .slice().sort((a, b) => String(a.date).localeCompare(String(b.date)));
+      if (!games.length) {
+        el.innerHTML = '<span style="font-size:12px;color:var(--text-muted)">No scored games.</span>';
+        return;
+      }
+      el.innerHTML = `<table class="scores-table"><tbody>${games.map(g => {
+        const isHome = g.home === teamId;
+        const opp = isHome ? g.away : g.home;
+        const tf = isHome ? g.home_score : g.away_score;
+        const ta = isHome ? g.away_score : g.home_score;
+        const res = tf > ta ? 'W' : tf < ta ? 'L' : 'D';
+        return `<tr><td>${g.date}</td><td>${isHome ? 'vs' : 'at'} ${short.get(opp) || opp}</td><td>${tf}&ndash;${ta} ${res}</td></tr>`;
+      }).join('')}</tbody></table>`;
+    }
+
     function switchTab(tab) {
       appState.view = tab;
       const isGraph = tab === 'graph';
+      const isRankings = tab === 'rankings';
       document.getElementById('tabGraph').classList.toggle('active', isGraph);
-      document.getElementById('tabRankings').classList.toggle('active', !isGraph);
-      document.getElementById('rankingsView').style.display = isGraph ? 'none' : 'block';
+      document.getElementById('tabRankings').classList.toggle('active', isRankings);
+      document.getElementById('tabScores').classList.toggle('active', tab === 'scores');
+      document.getElementById('rankingsView').style.display = isRankings ? 'block' : 'none';
+      document.getElementById('scoresView').style.display = tab === 'scores' ? 'block' : 'none';
       document.getElementById('fabStack').style.display = isGraph ? 'flex' : 'none';
       document.getElementById('legendChip').style.display = isGraph ? 'flex' : 'none';
       document.getElementById('canvasControls').style.display = isGraph ? 'flex' : 'none';
+      if (tab === 'scores') renderScoresList();
       syncStateToUrl();
     }
 
@@ -2358,6 +2487,7 @@
 
     document.getElementById('tabGraph').onclick = () => switchTab('graph');
     document.getElementById('tabRankings').onclick = () => switchTab('rankings');
+    document.getElementById('tabScores').onclick = () => switchTab('scores');
 
     document.getElementById('teamSearch').addEventListener('input', e => {
       const q = e.target.value.trim();
@@ -2401,8 +2531,8 @@
       window.location.href = 'ecnl-beatgraphs-canvas.html' + window.location.search;
     };
 
-    document.getElementById('homeViewBtn').onclick = () => {
-      window.location.href = 'index.html' + window.location.search;
+    document.getElementById('graphsViewBtn').onclick = () => {
+      window.location.href = 'ecnl-beatgraphs-graphs.html' + window.location.search;
     };
 
     // Modals & Cascading Filter Listeners

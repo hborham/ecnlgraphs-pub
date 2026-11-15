@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ECNL Graphs</title>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 1100px; margin: 0 auto; padding: 24px; background: #fff; color: #222; }
+  h1 { font-size: 28px; margin-bottom: 4px; }
+  .sub { color: #666; margin-bottom: 32px; }
+  section { margin-bottom: 56px; }
+  h2 { font-size: 20px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+  img.graph { width: 100%; height: auto; border: 1px solid #ddd; background: #f5f5f5; }
+  table.scores { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 13px; }
+  table.scores th { background: #e8e8e8; text-align: left; padding: 6px 8px; }
+  table.scores td { padding: 5px 8px; border-bottom: 1px solid #f0f0f0; }
+  table.scores tr:nth-child(even) td { background: #fafafa; }
+  footer { color: #999; font-size: 13px; margin-top: 32px; }
+  .legend { color: #555; font-size: 13px; margin: -20px 0 20px; }
+  .tutorial-link { font-size: 13px; margin: -12px 0 20px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; padding: 12px 14px; background: #f5f5f5; border: 1px solid #ddd; }
+  .controls label { font-size: 12px; color: #666; display: block; margin-bottom: 4px; }
+  .controls select { font-size: 14px; padding: 6px 8px; min-width: 160px; }
+  .loops-note { color: #8a6d00; font-size: 13px; margin: -4px 0 12px; }
+  .loading { color: #666; font-size: 13px; }
+  .img-error { color: #a00; font-size: 13px; }
+  .interactive-link { font-size: 13px; margin-top: 12px; }
+</style>
+</head>
+<body>
+<h1>ECNL Graphs</h1>
+<p class="sub">Weighted Method (<a href="https://www.beatgraphs.com/BeatGraphBasics.php">BeatGraph</a>) &middot; rebuilt weekly from league schedules</p>
+<p class="legend"><b>BeatWin</b> = direct win, arrow weighted by goal difference &middot; <b>BeatPath</b> = chain of BeatWins &middot; <b>Broken BeatLoop</b> = a win cycle resolved by removing its weakest link &middot; Draws create no link. Only the smallest set of arrows is drawn: an arrow is omitted when a BeatPath through other teams already implies it.</p>
+<p class="tutorial-link">New here? <a href="tutorial.html">Read the tutorial: how to read a BeatGraph</a></p>
+<div class="controls" id="controls">
+  <div><label for="sel-season">Season</label><select id="sel-season"></select></div>
+  <div><label for="sel-gender">Gender</label><select id="sel-gender"></select></div>
+  <div><label for="sel-age">Age</label><select id="sel-age"></select></div>
+  <div><label for="sel-type">Type</label><select id="sel-type"></select></div>
+  <div><label for="sel-competition">Competition</label><select id="sel-competition"></select></div>
+</div>
+<div id="view"></div>
+<footer>Method: BeatGraph Weighted Method &middot; <a href="https://github.com/hborham/ecnlgraphs">hborham/ecnlgraphs</a></footer>
+
+<script>
+function esc(s) {
+  return String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+}
+function scoresTable(league) {
+  const rows = league.games_list.map(g =>
+    `<tr><td>${g.date}</td><td>${g.home}</td><td>${g.home_score}&ndash;${g.away_score}</td><td>${g.away}</td></tr>`
+  ).join('');
+  return `<h3>Game Scores</h3><table class="scores"><tr><th>Date</th><th>Home</th><th>Score</th><th>Away</th></tr>${rows}</table>`;
+}
+function uniq(values) {
+  const seen = new Set(), out = [];
+  for (const v of values) { if (!seen.has(v)) { seen.add(v); out.push(v); } }
+  return out;
+}
+// Resolve a selection against the data: each level falls back to the first
+// available value when the requested one does not exist.
+function resolveSelection(leagues, want) {
+  const seasons = uniq(leagues.map(l => l.season));
+  const season = seasons.includes(want.season) ? want.season : seasons[0];
+  const genders = uniq(leagues.filter(l => l.season === season).map(l => l.gender));
+  const gender = genders.includes(want.gender) ? want.gender : genders[0];
+  const ages = uniq(leagues.filter(l => l.season === season && l.gender === gender).map(l => l.age));
+  const age = ages.includes(want.age) ? want.age : ages[0];
+  const types = uniq(leagues.filter(l => l.season === season && l.gender === gender && l.age === age).map(l => l.type));
+  const type = types.includes(want.type) ? want.type : types[0];
+  const matches = leagues.filter(l => l.season === season && l.gender === gender && l.age === age && l.type === type);
+  const league = matches.find(l => l.id === want.competition) || matches[0];
+  return { season, gender, age, type, league, seasons, genders, ages, types, matches };
+}
+function competitionOptions(matches) {
+  const counts = {};
+  matches.forEach(l => { counts[l.competition] = (counts[l.competition] || 0) + 1; });
+  return matches.map(l => ({
+    value: l.id,
+    label: counts[l.competition] > 1 ? l.competition + ' — ' + l.title : l.competition
+  }));
+}
+
+let ALL = [];
+let renderSeq = 0;
+
+function fillSelect(el, options, current) {
+  el.innerHTML = '';
+  options.forEach(o => {
+    const opt = document.createElement('option');
+    opt.value = o.value; opt.textContent = o.label;
+    el.appendChild(opt);
+  });
+  el.value = current;
+}
+function readParams() {
+  const p = new URLSearchParams(location.search);
+  return { season: p.get('season') || '', gender: p.get('gender') || '', age: p.get('age') || '', type: p.get('type') || '', competition: p.get('competition') || '' };
+}
+function syncURL(sel) {
+  try {
+    const p = new URLSearchParams();
+    p.set('season', sel.season); p.set('gender', sel.gender); p.set('age', sel.age); p.set('type', sel.type); p.set('competition', sel.league.id);
+    history.replaceState(null, '', '?' + p.toString());
+  } catch (e) { /* file:// or restricted contexts: URL sharing unavailable */ }
+}
+function interactiveURL(sel) {
+  const p = new URLSearchParams();
+  p.set('season', sel.season); p.set('gender', sel.gender); p.set('age', sel.age); p.set('type', sel.type); p.set('competition', sel.league.id);
+  return 'ecnl-beatgraphs-d3.html?' + p.toString();
+}
+function canvasURL(sel) {
+  const p = new URLSearchParams();
+  p.set('season', sel.season); p.set('gender', sel.gender); p.set('age', sel.age); p.set('type', sel.type); p.set('competition', sel.league.id);
+  return 'ecnl-beatgraphs-canvas.html?' + p.toString();
+}
+
+async function renderSelected() {
+  const seq = ++renderSeq;
+  const want = {
+    season: document.getElementById('sel-season').value,
+    gender: document.getElementById('sel-gender').value,
+    age: document.getElementById('sel-age').value,
+    type: document.getElementById('sel-type').value,
+    competition: document.getElementById('sel-competition').value
+  };
+  const sel = resolveSelection(ALL, want);
+  fillSelect(document.getElementById('sel-season'), sel.seasons.map(v => ({ value: v, label: v })), sel.season);
+  fillSelect(document.getElementById('sel-gender'), sel.genders.map(v => ({ value: v, label: v })), sel.gender);
+  fillSelect(document.getElementById('sel-age'), sel.ages.map(v => ({ value: v, label: v })), sel.age);
+  fillSelect(document.getElementById('sel-type'), sel.types.map(v => ({ value: v, label: v })), sel.type);
+  fillSelect(document.getElementById('sel-competition'), competitionOptions(sel.matches), sel.league.id);
+  syncURL(sel);
+  const view = document.getElementById('view');
+  const league = sel.league;
+  view.innerHTML = `<section><h2>${esc(league.title)}</h2>` +
+    (league.loops_resolved > 0 ? `<p class="loops-note">${league.loops_resolved} BeatLoop${league.loops_resolved === 1 ? '' : 's'} resolved &mdash; the weakest link in each cycle was removed.</p>` : '') +
+    `<p class="loading" id="img-status">Loading graph image&hellip;</p>` +
+    `<img class="graph" id="graph-img" alt="${esc(league.title)} graph" style="display:none">` +
+    `<p class="interactive-link">Interactive graph: <a href="${interactiveURL(sel)}">swimlane view (D3)</a> &middot; <a href="${canvasURL(sel)}">canvas view (Cytoscape)</a></p></section>`;
+  view.querySelector('section').insertAdjacentHTML('beforeend', scoresTable(league));
+  const img = document.getElementById('graph-img');
+  img.onerror = () => {
+    if (seq !== renderSeq) return;
+    img.outerHTML = '<p class="img-error">Graph image failed to load.</p>';
+  };
+  try {
+    const r = await fetch('img/' + league.id + '.jpg.b64');
+    if (!r.ok) throw 0;
+    const b64 = (await r.text()).trim();
+    if (seq !== renderSeq) return;
+    img.src = 'data:image/jpeg;base64,' + b64;
+    img.style.display = '';
+    document.getElementById('img-status').remove();
+  } catch (e) {
+    if (seq !== renderSeq) return;
+    img.remove();
+    document.getElementById('img-status').outerHTML =
+      `<p class="img-error">Graph image unavailable (img/${league.id}.jpg.b64 not found).</p>`;
+  }
+}
+
+async function main() {
+  const data = await (await fetch('data.json')).json();
+  ALL = data.leagues;
+  const sel = resolveSelection(ALL, readParams());
+  fillSelect(document.getElementById('sel-season'), sel.seasons.map(v => ({ value: v, label: v })), sel.season);
+  fillSelect(document.getElementById('sel-gender'), sel.genders.map(v => ({ value: v, label: v })), sel.gender);
+  fillSelect(document.getElementById('sel-age'), sel.ages.map(v => ({ value: v, label: v })), sel.age);
+  fillSelect(document.getElementById('sel-type'), sel.types.map(v => ({ value: v, label: v })), sel.type);
+  fillSelect(document.getElementById('sel-competition'), competitionOptions(sel.matches), sel.league.id);
+  ['sel-season', 'sel-gender', 'sel-age', 'sel-type', 'sel-competition'].forEach(id =>
+    document.getElementById(id).addEventListener('change', renderSelected));
+  renderSelected();
+}
+main();
+</script>
+</body>
+</html>
