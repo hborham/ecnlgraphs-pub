@@ -930,11 +930,8 @@
             <option value="Showcase">Showcase</option>
           </select>
         </label>
-        <label style="grid-column: span 2;">Competition
-          <select id="fComp">
-            <option value="texas-gu14" selected>Texas Conference (texas-gu14)</option>
-            <option value="norcal-gu14">Northern Cal Conference (norcal-gu14)</option>
-          </select>
+        <label style="grid-column: span 2;">Competition / Conference
+          <select id="fComp"></select>
         </label>
       </div>
       <button class="primary-btn" id="applyFilterBtn" type="button">Apply Competition</button>
@@ -960,15 +957,40 @@
   <script>
     // GitHub Pages & Raw Repository Endpoints for hborham/ecnlgraphs-pub
     const REPO_SOURCES = [
-      '.', // Relative path when hosted on hborham.github.io/ecnlgraphs-pub/
+      '.',
       'https://hborham.github.io/ecnlgraphs-pub',
       'https://raw.githubusercontent.com/hborham/ecnlgraphs-pub/main',
       'https://raw.githubusercontent.com/hborham/ecnlgraphs/main'
     ];
 
-    // Embedded offline fallback dataset (used if remote JSON is unreachable)
+    const CONFERENCE_CATALOG = {
+      League: [
+        { slug: 'texas', label: 'Texas Conference' },
+        { slug: 'norcal', label: 'Northern Cal Conference' },
+        { slug: 'socal', label: 'Southwest / SoCal Conference' },
+        { slug: 'northwest', label: 'Northwest Conference' },
+        { slug: 'midwest', label: 'Midwest Conference' },
+        { slug: 'ohio-valley', label: 'Ohio Valley Conference' },
+        { slug: 'mid-atlantic', label: 'Mid-Atlantic Conference' },
+        { slug: 'new-england', label: 'New England Conference' },
+        { slug: 'southeast', label: 'Southeast Conference' },
+        { slug: 'florida', label: 'Florida Conference' },
+        { slug: 'heartland', label: 'Heartland Conference' }
+      ],
+      Showcase: [
+        { slug: 'phoenix', label: 'ECNL Phoenix National Event' },
+        { slug: 'san-diego', label: 'ECNL San Diego National Event' },
+        { slug: 'florida-showcase', label: 'ECNL Florida National Event' },
+        { slug: 'texas-showcase', label: 'ECNL Texas National Event' },
+        { slug: 'virginia', label: 'ECNL Virginia National Event' },
+        { slug: 'seattle', label: 'ECNL Seattle National Event' },
+        { slug: 'playoffs', label: 'ECNL National Playoffs' }
+      ]
+    };
+
+    // Embedded offline fallback datasets (used if remote JSON is unreachable)
     const FALLBACK_DATASETS = {
-      'texas-gu14': {
+      'texas': {
         label: 'Texas',
         teams: [
           { id: 'solar', name: 'Solar SC', tier: 1, record: '11-1-0', brokenLoop: null },
@@ -999,8 +1021,97 @@
           { source: 'dksc', target: 'fc-dallas', gd: 1, score: '1-0', isBrokenLoop: true },
           { source: 'htx', target: 'challenge', gd: 1, score: '1-0', isBrokenLoop: true }
         ]
+      },
+      'norcal': {
+        label: 'Northern Cal',
+        teams: [
+          { id: 'mvla', name: 'MVLA', tier: 1, record: '12-0-0', brokenLoop: null },
+          { id: 'bay-area-surf', name: 'Bay Area Surf', tier: 2, record: '10-1-1', brokenLoop: null },
+          { id: 'mustang', name: 'Mustang SC', tier: 2, record: '9-2-1', brokenLoop: 'San Juan SC def. Mustang SC (2-1) pruned to break cycle' },
+          { id: 'san-juan', name: 'San Juan SC', tier: 3, record: '7-2-3', brokenLoop: 'San Juan SC def. Mustang SC (2-1) pruned to break cycle' },
+          { id: 'placer', name: 'Placer United', tier: 3, record: '6-3-3', brokenLoop: null },
+          { id: 'de-anza', name: 'De Anza Force', tier: 4, record: '5-2-5', brokenLoop: null },
+          { id: 'davis-legacy', name: 'Davis Legacy', tier: 4, record: '4-3-5', brokenLoop: 'Marin FC def. Davis Legacy (1-0) pruned to break cycle' },
+          { id: 'marin-fc', name: 'Marin FC', tier: 5, record: '3-2-7', brokenLoop: 'Marin FC def. Davis Legacy (1-0) pruned to break cycle' },
+          { id: 'santa-rosa', name: 'Santa Rosa United', tier: 5, record: '2-1-9', brokenLoop: null },
+          { id: 'lamorinda', name: 'Lamorinda SC', tier: 6, record: '1-1-10', brokenLoop: null }
+        ],
+        edges: [
+          { source: 'mvla', target: 'bay-area-surf', gd: 2, score: '3-1' },
+          { source: 'mvla', target: 'mustang', gd: 3, score: '3-0' },
+          { source: 'bay-area-surf', target: 'san-juan', gd: 2, score: '2-0' },
+          { source: 'bay-area-surf', target: 'placer', gd: 1, score: '2-1' },
+          { source: 'mustang', target: 'san-juan', gd: 2, score: '4-2' },
+          { source: 'mustang', target: 'de-anza', gd: 2, score: '3-1' },
+          { source: 'san-juan', target: 'davis-legacy', gd: 2, score: '2-0' },
+          { source: 'placer', target: 'de-anza', gd: 1, score: '1-0' },
+          { source: 'placer', target: 'davis-legacy', gd: 2, score: '3-1' },
+          { source: 'de-anza', target: 'marin-fc', gd: 2, score: '2-0' },
+          { source: 'davis-legacy', target: 'santa-rosa', gd: 1, score: '2-1' },
+          { source: 'marin-fc', target: 'lamorinda', gd: 3, score: '4-1' },
+          { source: 'santa-rosa', target: 'lamorinda', gd: 2, score: '2-0' },
+          { source: 'san-juan', target: 'mustang', gd: 1, score: '2-1', isBrokenLoop: true },
+          { source: 'marin-fc', target: 'davis-legacy', gd: 1, score: '1-0', isBrokenLoop: true }
+        ]
+      },
+      'socal': {
+        label: 'Southwest / SoCal',
+        teams: [
+          { id: 'slammers-hb', name: 'Slammers FC HB Køge', tier: 1, record: '11-1-0', brokenLoop: null },
+          { id: 'sd-surf', name: 'San Diego Surf', tier: 2, record: '10-1-1', brokenLoop: null },
+          { id: 'legends', name: 'Legends FC', tier: 2, record: '8-2-2', brokenLoop: 'Rebels SC def. Legends FC (1-0) pruned to break cycle' },
+          { id: 'rebels', name: 'Rebels SC', tier: 3, record: '7-2-3', brokenLoop: 'Rebels SC def. Legends FC (1-0) pruned to break cycle' },
+          { id: 'la-brea', name: 'LA Breakers FC', tier: 3, record: '6-2-4', brokenLoop: null },
+          { id: 'arsenal-fc', name: 'Arsenal FC', tier: 4, record: '5-3-4', brokenLoop: null },
+          { id: 'eagles-sc', name: 'Eagles SC', tier: 5, record: '3-2-7', brokenLoop: null },
+          { id: 'utah-royals', name: 'Utah Royals FC-AZ', tier: 6, record: '1-2-9', brokenLoop: null }
+        ],
+        edges: [
+          { source: 'slammers-hb', target: 'sd-surf', gd: 2, score: '2-0' },
+          { source: 'slammers-hb', target: 'legends', gd: 3, score: '4-1' },
+          { source: 'sd-surf', target: 'rebels', gd: 2, score: '3-1' },
+          { source: 'sd-surf', target: 'la-brea', gd: 1, score: '1-0' },
+          { source: 'legends', target: 'rebels', gd: 2, score: '2-0' },
+          { source: 'legends', target: 'arsenal-fc', gd: 2, score: '3-1' },
+          { source: 'rebels', target: 'eagles-sc', gd: 2, score: '2-0' },
+          { source: 'la-brea', target: 'arsenal-fc', gd: 1, score: '2-1' },
+          { source: 'arsenal-fc', target: 'eagles-sc', gd: 1, score: '1-0' },
+          { source: 'eagles-sc', target: 'utah-royals', gd: 3, score: '3-0' },
+          { source: 'rebels', target: 'legends', gd: 1, score: '1-0', isBrokenLoop: true }
+        ]
       }
     };
+
+    function getFallbackForCompetition(compKey, gender, age) {
+      const baseSlug = compKey.replace(/-[gb]u\d{2}$/i, '').toLowerCase();
+      if (FALLBACK_DATASETS[baseSlug]) {
+        return FALLBACK_DATASETS[baseSlug];
+      }
+      const catalogList = [...CONFERENCE_CATALOG.League, ...CONFERENCE_CATALOG.Showcase];
+      const meta = catalogList.find(c => c.slug === baseSlug);
+      const title = meta ? meta.label.replace(/ Conference$| National Event$/, '') : baseSlug.replace(/-/g, ' ').replace(/\w/g, c => c.toUpperCase());
+      const prefix = title.split(' ')[0];
+      return {
+        label: `${title} (${gender} ${age})`,
+        teams: [
+          { id: 't1', name: `${prefix} United ECNL`, tier: 1, record: '10-1-1', brokenLoop: null },
+          { id: 't2', name: `${prefix} Academy`, tier: 2, record: '8-2-2', brokenLoop: null },
+          { id: 't3', name: `${prefix} Surf`, tier: 2, record: '7-2-3', brokenLoop: `${prefix} FC def. ${prefix} Surf (1-0) pruned to break cycle` },
+          { id: 't4', name: `${prefix} FC`, tier: 3, record: '6-3-3', brokenLoop: `${prefix} FC def. ${prefix} Surf (1-0) pruned to break cycle` },
+          { id: 't5', name: `${prefix} Albion`, tier: 4, record: '4-2-6', brokenLoop: null },
+          { id: 't6', name: `${prefix} Rush`, tier: 5, record: '2-1-9', brokenLoop: null }
+        ],
+        edges: [
+          { source: 't1', target: 't2', gd: 2, score: '3-1' },
+          { source: 't1', target: 't3', gd: 3, score: '3-0' },
+          { source: 't2', target: 't4', gd: 2, score: '2-0' },
+          { source: 't3', target: 't4', gd: 2, score: '4-2' },
+          { source: 't4', target: 't5', gd: 1, score: '2-1' },
+          { source: 't5', target: 't6', gd: 2, score: '3-1' },
+          { source: 't4', target: 't3', gd: 1, score: '1-0', isBrokenLoop: true }
+        ]
+      };
+    }
 
     const appState = {
       season: '2026-27',
@@ -1015,11 +1126,10 @@
       view: 'graph'
     };
 
-    let currentDataset = FALLBACK_DATASETS['texas-gu14'];
-    let manifestEntries = []; // Populated if index.json / manifest.json is discovered
+    let currentDataset = FALLBACK_DATASETS['texas'];
+    let manifestEntries = [];
     let isHydrating = false;
 
-    // Fetch helper with timeout & JSON validation
     async function tryFetchJson(url) {
       const controller = new AbortController();
       const timer = setTimeout(() => controller.abort(), 4500);
@@ -1034,7 +1144,6 @@
       }
     }
 
-    // Discovers manifest/index file from hborham/ecnlgraphs-pub to populate filter dropdowns dynamically
     async function loadManifestIfAvailable() {
       const manifestCandidates = [
         'data/index.json',
@@ -1049,7 +1158,6 @@
           const raw = await tryFetchJson(`${base}/${path}`);
           if (!raw) continue;
 
-          // Normalize manifest shapes: array of objects or { competitions: [...] }
           const list = Array.isArray(raw) ? raw : (raw.competitions || raw.graphs || raw.items || null);
           if (Array.isArray(list) && list.length > 0) {
             manifestEntries = list.map(item => ({
@@ -1069,10 +1177,52 @@
           }
         }
       }
+
+      // Auto-discover JSON graph files via GitHub Trees API if no manifest file exists
+      const treeApis = [
+        'https://api.github.com/repos/hborham/ecnlgraphs-pub/git/trees/main?recursive=1',
+        'https://api.github.com/repos/hborham/ecnlgraphs/git/trees/main?recursive=1'
+      ];
+      for (const apiUrl of treeApis) {
+        const treeData = await tryFetchJson(apiUrl);
+        if (treeData && Array.isArray(treeData.tree)) {
+          const jsonFiles = treeData.tree.filter(item =>
+            item.type === 'blob' &&
+            item.path.endsWith('.json') &&
+            !/(package|tsconfig|manifest|index)\.json$/i.test(item.path)
+          );
+          if (jsonFiles.length > 0) {
+            manifestEntries = jsonFiles.map(f => {
+              const parts = f.path.split('/');
+              const fileName = parts[parts.length - 1].replace(/\.json$/i, '');
+              const seasonMatch = f.path.match(/20\d{2}-\d{2}/);
+              const genderMatch = f.path.match(/(Girls|Boys)/i) || (/-gu\d{2}/i.test(fileName) ? [null, 'Girls'] : /-bu\d{2}/i.test(fileName) ? [null, 'Boys'] : null);
+              const ageMatch = f.path.match(/(U1[3-9])/i) || fileName.match(/[gb](u1[3-9])/i);
+              const typeMatch = f.path.match(/(League|Showcase)/i);
+              return {
+                season: seasonMatch ? seasonMatch[0] : '2026-27',
+                gender: genderMatch ? genderMatch[1][0].toUpperCase() + genderMatch[1].slice(1).toLowerCase() : 'Girls',
+                age: ageMatch ? ageMatch[1].toUpperCase() : 'U14',
+                type: typeMatch ? typeMatch[1][0].toUpperCase() + typeMatch[1].slice(1).toLowerCase() : 'League',
+                competition: fileName,
+                label: fileName.replace(/[-_]/g, ' ').replace(/\w/g, c => c.toUpperCase()),
+                path: f.path
+              };
+            });
+            populateFilterDropdownsFromManifest();
+            return;
+          }
+        }
+      }
+
+      updateCompetitionSelectOptions();
     }
 
     function populateFilterDropdownsFromManifest() {
-      if (!manifestEntries.length) return;
+      if (!manifestEntries.length) {
+        updateCompetitionSelectOptions();
+        return;
+      }
 
       const fillSelect = (elId, values, currentVal) => {
         const sel = document.getElementById(elId);
@@ -1091,32 +1241,49 @@
     }
 
     function updateCompetitionSelectOptions() {
-      if (!manifestEntries.length) return;
       const s = document.getElementById('fSeason').value;
       const g = document.getElementById('fGender').value;
       const a = document.getElementById('fAge').value;
       const t = document.getElementById('fType').value;
-
-      let matches = manifestEntries.filter(e =>
-        e.season === s && e.gender === g && e.age === a && e.type === t
-      );
-      if (!matches.length) matches = manifestEntries;
-
       const compSel = document.getElementById('fComp');
-      compSel.innerHTML = matches.map(m =>
-        `<option value="${m.competition}">${m.label} (${m.competition})</option>`
-      ).join('');
 
-      if (matches.some(m => m.competition === appState.competition)) {
-        compSel.value = appState.competition;
+      if (manifestEntries.length > 0) {
+        let matches = manifestEntries.filter(e =>
+          e.season === s && e.gender === g && e.age === a && e.type === t
+        );
+        if (!matches.length) {
+          matches = manifestEntries.filter(e => e.gender === g && e.age === a);
+        }
+        if (!matches.length) matches = manifestEntries;
+
+        compSel.innerHTML = matches.map(m =>
+          `<option value="${m.competition}">${m.label} (${m.competition})</option>`
+        ).join('');
+
+        if (matches.some(m => m.competition === appState.competition)) {
+          compSel.value = appState.competition;
+        }
+        return;
+      }
+
+      // Build full ECNL conference/showcase list dynamically for selected Gender + Age + Type
+      const gaSuffix = `${g[0].toLowerCase()}${a.toLowerCase()}`;
+      const list = CONFERENCE_CATALOG[t] || CONFERENCE_CATALOG.League;
+      compSel.innerHTML = list.map(item => {
+        const val = `${item.slug}-${gaSuffix}`;
+        return `<option value="${val}">${item.label} (${val})</option>`;
+      }).join('');
+
+      const currentBase = appState.competition.replace(/-[gb]u\d{2}$/i, '');
+      const matchingVal = `${currentBase}-${gaSuffix}`;
+      if ([...compSel.options].some(o => o.value === matchingVal)) {
+        compSel.value = matchingVal;
       }
     }
 
-    // Normalizes GoJS (nodeDataArray/linkDataArray) or generic BeatGraphs JSON into unified Cytoscape format
     function normalizeGraphPayload(raw, compKey) {
       if (!raw || typeof raw !== 'object') return null;
 
-      // Support GoJS format (nodeDataArray / linkDataArray) as well as standard nodes/edges or teams/links
       const rawNodes = raw.nodeDataArray || raw.nodes || raw.teams || [];
       const rawEdges = raw.linkDataArray || raw.edges || raw.links || raw.wins || [];
       const rawBroken = raw.brokenLoops || raw.broken_loops || raw.removedLinks || [];
@@ -1160,7 +1327,6 @@
         ...rawBroken.map(e => parseEdge(e, true))
       ].filter(Boolean);
 
-      // Compute topological tier (1 + longest incoming path) if tiers weren't explicitly provided
       const hasExplicitTiers = [...teamsMap.values()].some(t => t.tier > 0);
       if (!hasExplicitTiers) {
         const inDeg = new Map();
@@ -1193,7 +1359,6 @@
         });
       }
 
-      // Synthesize W-D-L record string & brokenLoop summary if missing
       teamsMap.forEach((t, id) => {
         if (!t.record) {
           const dagWins = edges.filter(e => !e.isBrokenLoop && e.source === id).length;
@@ -1222,7 +1387,6 @@
       };
     }
 
-    // Attempts to fetch the competition JSON from hborham/ecnlgraphs-pub across candidate directory structures
     async function fetchLiveCompetition(season, gender, age, type, competition) {
       const s = encodeURIComponent(season);
       const g = encodeURIComponent(gender);
@@ -1234,16 +1398,19 @@
       const aLow = encodeURIComponent(age.toLowerCase());
       const tLow = encodeURIComponent(type.toLowerCase());
 
-      // Check if manifest specified an explicit path for this competition
       const manifestMatch = manifestEntries.find(m =>
         m.competition === competition && (!m.season || m.season === season)
       );
 
+      const baseSlug = encodeURIComponent(competition.replace(/-[gb]u\d{2}$/i, ''));
       const relativePaths = [
         manifestMatch?.path,
         `data/${s}/${g}/${a}/${t}/${c}.json`,
+        `data/${s}/${g}/${a}/${t}/${baseSlug}.json`,
         `data/${s}/${gLow}/${aLow}/${tLow}/${c}.json`,
+        `data/${s}/${gLow}/${aLow}/${tLow}/${baseSlug}.json`,
         `data/${s}/${t}/${g}/${a}/${c}.json`,
+        `data/${s}/${t}/${g}/${a}/${baseSlug}.json`,
         `data/${s}/${c}.json`,
         `graphs/${s}/${c}.json`,
         `data/${c}.json`,
@@ -1261,7 +1428,7 @@
         }
       }
 
-      const fallback = FALLBACK_DATASETS[competition] || FALLBACK_DATASETS['texas-gu14'];
+      const fallback = getFallbackForCompetition(competition, gender, age);
       return { dataset: fallback, isLive: false, sourceUrl: null };
     }
 
@@ -1317,6 +1484,7 @@
       ensureOption('fGender', appState.gender);
       ensureOption('fAge', appState.age);
       ensureOption('fType', appState.type);
+      updateCompetitionSelectOptions();
       ensureOption('fComp', appState.competition);
 
       const compLabel = currentDataset?.label || appState.competition;
@@ -1522,7 +1690,6 @@
       loadingPill.classList.remove('show');
       currentDataset = dataset;
 
-      // Update live vs fallback status indicators
       const sourceBadge = document.getElementById('dataSourceBadge');
       const brandDot = document.getElementById('brandDot');
       if (isLive) {
