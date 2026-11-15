@@ -954,7 +954,7 @@
       </button>
       <button class="share-btn" id="shareUrlBtn" type="button" title="Copy shareable link">Share</button>
       <button class="share-btn" id="switchViewBtn" type="button" title="Switch to the Cytoscape interactive canvas view">Canvas view</button>
-      <button class="share-btn" id="graphsViewBtn" type="button" title="Switch to the Graphs view: graph pictures and scores">Graphs</button>
+      <button class="share-btn" id="tutorialBtn" type="button" title="Interactive tutorial: how to read a BeatGraph">Tutorial</button>
       <button class="icon-btn" id="openHelpBtn" type="button" aria-label="Legend and Methodology">?</button>
     </div>
 
@@ -2391,7 +2391,7 @@
       const teams = (currentDataset?.teams || []).slice().sort((a, b) => a.tier - b.tier);
       if (scoresFilter && !teams.some(t => t.id === scoresFilter)) scoresFilter = '';
       const games = (currentDataset?.gamesList || []).slice()
-        .sort((a, b) => String(a.date).localeCompare(String(b.date)));
+        .sort((a, b) => String(b.date).localeCompare(String(a.date)));
       const filtered = scoresFilter
         ? games.filter(g => g.home === scoresFilter || g.away === scoresFilter)
         : games;
@@ -2427,7 +2427,7 @@
       const short = new Map(teams.map(t => [t.id, t.short]));
       const games = (currentDataset?.gamesList || [])
         .filter(g => g.home === teamId || g.away === teamId)
-        .slice().sort((a, b) => String(a.date).localeCompare(String(b.date)));
+        .slice().sort((a, b) => String(b.date).localeCompare(String(a.date)));
       if (!games.length) {
         el.innerHTML = '<span style="font-size:12px;color:var(--text-muted)">No scored games.</span>';
         return;
@@ -2531,8 +2531,8 @@
       window.location.href = 'ecnl-beatgraphs-canvas.html' + window.location.search;
     };
 
-    document.getElementById('graphsViewBtn').onclick = () => {
-      window.location.href = 'ecnl-beatgraphs-graphs.html' + window.location.search;
+    document.getElementById('tutorialBtn').onclick = () => {
+      window.location.href = 'tutorial.html';
     };
 
     // Modals & Cascading Filter Listeners

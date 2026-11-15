@@ -47,7 +47,7 @@ function esc(s) {
   return String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
 }
 function scoresTable(league) {
-  const rows = league.games_list.map(g =>
+  const rows = league.games_list.slice().sort((a, b) => String(b.date).localeCompare(String(a.date))).map(g =>
     `<tr><td>${g.date}</td><td>${g.home}</td><td>${g.home_score}&ndash;${g.away_score}</td><td>${g.away}</td></tr>`
   ).join('');
   return `<h3>Game Scores</h3><table class="scores"><tr><th>Date</th><th>Home</th><th>Score</th><th>Away</th></tr>${rows}</table>`;
