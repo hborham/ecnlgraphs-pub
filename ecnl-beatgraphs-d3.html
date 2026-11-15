@@ -635,6 +635,7 @@
       padding: 10px 16px 8px;
       cursor: pointer;
       flex-shrink: 0;
+      touch-action: none;
     }
 
     .sheet-grabber {
@@ -1962,11 +1963,17 @@
       nodesSel.exit().remove();
     }
 
+    // Fits leave 52px clear at the top for the floating legend / Fit All row
+    // (all widths: the row overlays the container top everywhere). When no
+    // selection is showing and the fitted graph is taller than the band,
+    // the top of the graph is pinned to the band top instead of centering,
+    // so rank #1 stays visible and the overflow goes to the pannable bottom.
+    const FIT_TOP_INSET = 52;
     function fitBounds(customBounds = null, duration = 280, bottomInset = 0) {
       const svgEl = svg.node();
       const rect = svgEl.getBoundingClientRect();
       const vw = rect.width || window.innerWidth;
-      const vh = (rect.height || (window.innerHeight - 128)) - bottomInset;
+      const vh = (rect.height || (window.innerHeight - 128)) - FIT_TOP_INSET - bottomInset;
 
       const b = customBounds || graphLayout.bounds;
       const gw = Math.max(120, b.maxX - b.minX);
@@ -1974,7 +1981,10 @@
 
       const scale = Math.min(1.35, Math.max(0.4, 0.88 * Math.min(vw / gw, vh / gh)));
       const tx = vw / 2 - scale * (b.minX + gw / 2);
-      const ty = vh / 2 - scale * (b.minY + gh / 2);
+      let ty = FIT_TOP_INSET + vh / 2 - scale * (b.minY + gh / 2);
+      if (bottomInset === 0 && scale * gh > vh) {
+        ty = FIT_TOP_INSET + 4 - scale * b.minY;
+      }
 
       svg.transition()
         .duration(duration)
@@ -2598,31 +2608,34 @@
     document.getElementById('fitBtn').onclick = () => fitBounds(null, 260);
     document.getElementById('clearBtn').onclick = resetSelection;
 
-    // Swipe down on the sheet handle to step it down: open -> peek ->
-    // dismissed. A short drag still counts as a tap (toggle).
-    let sheetTouchStartY = null;
-    let sheetSwipeHandled = false;
+    // Drag the sheet handle down to step it down: open -> peek -> dismissed.
+    // Pointer events cover touch and mouse alike; a short drag still counts
+    // as a tap (toggle). touch-action:none on the handle keeps the browser
+    // from taking over vertical drags for scrolling.
+    let sheetDragStartY = null;
+    let sheetDragHandled = false;
     const sheetToggleEl = document.getElementById('sheetToggle');
-    sheetToggleEl.addEventListener('touchstart', e => {
-      if (e.touches.length === 1) { sheetTouchStartY = e.touches[0].clientY; sheetSwipeHandled = false; }
-    }, { passive: true });
-    sheetToggleEl.addEventListener('touchmove', e => {
-      if (sheetTouchStartY === null) return;
-      if (e.touches[0].clientY - sheetTouchStartY > 12) e.preventDefault();
-    }, { passive: false });
-    sheetToggleEl.addEventListener('touchend', e => {
-      if (sheetTouchStartY === null || !appState.team) return;
-      const dy = e.changedTouches[0].clientY - sheetTouchStartY;
-      sheetTouchStartY = null;
+    sheetToggleEl.addEventListener('pointerdown', e => {
+      sheetDragStartY = e.clientY;
+      sheetDragHandled = false;
+      if (e.pointerId !== undefined && typeof sheetToggleEl.setPointerCapture === 'function') {
+        try { sheetToggleEl.setPointerCapture(e.pointerId); } catch (err) { /* no capture support */ }
+      }
+    });
+    sheetToggleEl.addEventListener('pointerup', e => {
+      if (sheetDragStartY === null || !appState.team) return;
+      const dy = e.clientY - sheetDragStartY;
+      sheetDragStartY = null;
       if (dy > 60) {
-        sheetSwipeHandled = true;
+        sheetDragHandled = true;
         const sheet = document.getElementById('bottomSheet');
         if (sheet.classList.contains('open')) openBottomSheet(false);
         else resetSelection();
       }
-    }, { passive: true });
+    });
+    sheetToggleEl.addEventListener('pointercancel', () => { sheetDragStartY = null; });
     sheetToggleEl.onclick = () => {
-      if (sheetSwipeHandled) { sheetSwipeHandled = false; return; }
+      if (sheetDragHandled) { sheetDragHandled = false; return; }
       if (!appState.team) return;
       const sheet = document.getElementById('bottomSheet');
       openBottomSheet(!sheet.classList.contains('open'));

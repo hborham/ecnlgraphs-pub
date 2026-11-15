@@ -496,6 +496,7 @@
       padding: 10px 16px 8px;
       cursor: pointer;
       flex-shrink: 0;
+      touch-action: none;
     }
 
     .sheet-grabber {
@@ -1813,6 +1814,41 @@
       }
     }
 
+    // Fit helper: centers the elements in the band below the floating
+    // legend / Fit All row (52px at all widths), leaving the sheet's peek
+    // strip clear on phones when a team is focused. When the fitted graph
+    // is taller than the band and nothing is focused, the top is pinned to
+    // the band top so rank #1 stays visible instead of centering the
+    // overflow off both ends. Pan/zoom are computed directly (rather than
+    // the built-in fit-viewport call) so the min/max zoom clamp is honored exactly.
+    const FIT_TOP_ROOM = 52;
+    function fitViewport(eles, padding, duration, focusNode) {
+      const bb = eles.boundingBox();
+      if (!bb || bb.w <= 0 || bb.h <= 0) {
+        cy.animate({ fit: { eles, padding } }, { duration });
+        return;
+      }
+      const W = cy.width(), H = cy.height();
+      const bottomRoom = (focusNode && isNarrowScreen()) ? sheetInset() : 0;
+      const availW = Math.max(60, W - 2 * padding);
+      const availH = Math.max(60, H - FIT_TOP_ROOM - bottomRoom - 2 * padding);
+      let zoom = Math.min(availW / bb.w, availH / bb.h);
+      zoom = Math.max(cy.minZoom(), Math.min(cy.maxZoom(), zoom));
+      const cx = bb.x1 + bb.w / 2, cy0 = bb.y1 + bb.h / 2;
+      const panX = W / 2 - cx * zoom;
+      let panY = FIT_TOP_ROOM + padding + availH / 2 - cy0 * zoom;
+      if (!focusNode && bb.h * zoom > availH) {
+        panY = FIT_TOP_ROOM + padding + 4 - bb.y1 * zoom;
+      }
+      if (focusNode) {
+        const pos = focusNode.position();
+        const renderedY = pos.y * zoom + panY;
+        const safeY = H - sheetInset();
+        if (renderedY > safeY) panY -= (renderedY - safeY);
+      }
+      cy.animate({ zoom, pan: { x: panX, y: panY } }, { duration });
+    }
+
     function selectTeam(nodeId, targetOpponentId = null) {
       const node = cy.getElementById(nodeId);
       if (!node || node.empty()) {
@@ -1859,20 +1895,7 @@
         .union(connectedLoops)
         .union(loopPeers);
 
-      // Fit the focused neighborhood, then shift it up on a phone so the
-      // selected team clears the sheet's peek row instead of sliding under it.
-      const fitVp = cy.getFitViewport(focusCollection, 45);
-      let targetVp = fitVp;
-      if (fitVp && isNarrowScreen()) {
-        const pos = node.position();
-        const renderedY = pos.y * fitVp.zoom + fitVp.pan.y;
-        const safeY = cy.height() - sheetInset();
-        if (renderedY > safeY) {
-          targetVp = { zoom: fitVp.zoom, pan: { x: fitVp.pan.x, y: fitVp.pan.y - (renderedY - safeY) } };
-        }
-      }
-      if (targetVp) cy.animate(targetVp, { duration: 280 });
-      else cy.animate({ fit: { eles: focusCollection, padding: 45 } }, { duration: 280 });
+      fitViewport(focusCollection, 45, 280, node);
 
       document.getElementById('clearBtn').style.display = 'block';
       populateBottomSheet(node, outEdges, inEdges, reachableNodes, activeDag);
@@ -1891,7 +1914,7 @@
           if (n.connectedEdges().not('.filtered-out').empty()) n.addClass('dimmed');
         });
       }
-      cy.animate({ fit: { eles: cy.elements().not('.filtered-out'), padding: 26 } }, { duration: 250 });
+      fitViewport(cy.elements().not('.filtered-out'), 26, 250);
       document.getElementById('clearBtn').style.display = 'none';
       document.getElementById('sheetTeamName').textContent = 'Tap any team to inspect';
       document.getElementById('sheetTeamMeta').textContent = 'View direct BeatWins, transitive BeatPaths & loops';
@@ -2004,12 +2027,7 @@
         ? notes.join(' · ')
         : 'No shared direct opponents in the current filtered DAG.';
 
-      cy.animate({
-        fit: {
-          eles: cy.elements().not('.dimmed').not('.filtered-out').union(rightNode),
-          padding: 45
-        }
-      }, { duration: 260 });
+      fitViewport(cy.elements().not('.dimmed').not('.filtered-out').union(rightNode), 45, 260);
     }
 
     function populateBottomSheet(node, outEdges, inEdges, reachableNodes, activeDag) {
@@ -2234,34 +2252,37 @@
     };
 
     document.getElementById('fitBtn').onclick = () =>
-      cy.animate({ fit: { eles: cy.elements().not('.filtered-out'), padding: 26 } }, { duration: 250 });
+      fitViewport(cy.elements().not('.filtered-out'), 26, 250);
     document.getElementById('clearBtn').onclick = resetSelection;
 
-    // Swipe down on the sheet handle to step it down: open -> peek ->
-    // dismissed. A short drag still counts as a tap (toggle).
-    let sheetTouchStartY = null;
-    let sheetSwipeHandled = false;
+    // Drag the sheet handle down to step it down: open -> peek -> dismissed.
+    // Pointer events cover touch and mouse alike; a short drag still counts
+    // as a tap (toggle). touch-action:none on the handle keeps the browser
+    // from taking over vertical drags for scrolling.
+    let sheetDragStartY = null;
+    let sheetDragHandled = false;
     const sheetToggleEl = document.getElementById('sheetToggle');
-    sheetToggleEl.addEventListener('touchstart', e => {
-      if (e.touches.length === 1) { sheetTouchStartY = e.touches[0].clientY; sheetSwipeHandled = false; }
-    }, { passive: true });
-    sheetToggleEl.addEventListener('touchmove', e => {
-      if (sheetTouchStartY === null) return;
-      if (e.touches[0].clientY - sheetTouchStartY > 12) e.preventDefault();
-    }, { passive: false });
-    sheetToggleEl.addEventListener('touchend', e => {
-      if (sheetTouchStartY === null || !appState.team) return;
-      const dy = e.changedTouches[0].clientY - sheetTouchStartY;
-      sheetTouchStartY = null;
+    sheetToggleEl.addEventListener('pointerdown', e => {
+      sheetDragStartY = e.clientY;
+      sheetDragHandled = false;
+      if (e.pointerId !== undefined && typeof sheetToggleEl.setPointerCapture === 'function') {
+        try { sheetToggleEl.setPointerCapture(e.pointerId); } catch (err) { /* no capture support */ }
+      }
+    });
+    sheetToggleEl.addEventListener('pointerup', e => {
+      if (sheetDragStartY === null || !appState.team) return;
+      const dy = e.clientY - sheetDragStartY;
+      sheetDragStartY = null;
       if (dy > 60) {
-        sheetSwipeHandled = true;
+        sheetDragHandled = true;
         const sheet = document.getElementById('bottomSheet');
         if (sheet.classList.contains('open')) openBottomSheet(false);
         else resetSelection();
       }
-    }, { passive: true });
+    });
+    sheetToggleEl.addEventListener('pointercancel', () => { sheetDragStartY = null; });
     sheetToggleEl.onclick = () => {
-      if (sheetSwipeHandled) { sheetSwipeHandled = false; return; }
+      if (sheetDragHandled) { sheetDragHandled = false; return; }
       if (!appState.team) return;
       const sheet = document.getElementById('bottomSheet');
       openBottomSheet(!sheet.classList.contains('open'));
