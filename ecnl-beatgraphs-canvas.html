@@ -2232,7 +2232,11 @@
 
     // Event Listeners
     cy.on('tap', 'node', evt => selectTeam(evt.target.id()));
-    cy.on('tap', evt => { if (evt.target === cy) resetSelection(); });
+    cy.on('tap', evt => {
+      // Empty space clears the selection; taps on arrows count as empty
+      // space too (arrows do nothing on tap).
+      if (evt.target === cy || (evt.target.isEdge && evt.target.isEdge())) resetSelection();
+    });
 
     document.querySelectorAll('.gd-btn').forEach(btn => {
       btn.onclick = () => {
@@ -2273,7 +2277,7 @@
       if (sheetDragStartY === null || !appState.team) return;
       const dy = e.clientY - sheetDragStartY;
       sheetDragStartY = null;
-      if (dy > 60) {
+      if (dy > 30) { // the peek handle sits ~62px above the screen bottom, so a dismiss drag has little travel
         sheetDragHandled = true;
         const sheet = document.getElementById('bottomSheet');
         if (sheet.classList.contains('open')) openBottomSheet(false);
@@ -2281,6 +2285,7 @@
       }
     });
     sheetToggleEl.addEventListener('pointercancel', () => { sheetDragStartY = null; });
+    sheetToggleEl.addEventListener('lostpointercapture', () => { sheetDragStartY = null; });
     sheetToggleEl.onclick = () => {
       if (sheetDragHandled) { sheetDragHandled = false; return; }
       if (!appState.team) return;
