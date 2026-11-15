@@ -17,6 +17,7 @@
   table.scores tr:nth-child(even) td { background: #fafafa; }
   footer { color: #999; font-size: 13px; margin-top: 32px; }
   .legend { color: #555; font-size: 13px; margin: -20px 0 20px; }
+  .tutorial-link { font-size: 13px; margin: -12px 0 20px; }
   .controls { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; padding: 12px 14px; background: #f5f5f5; border: 1px solid #ddd; }
   .controls label { font-size: 12px; color: #666; display: block; margin-bottom: 4px; }
   .controls select { font-size: 14px; padding: 6px 8px; min-width: 160px; }
@@ -30,6 +31,7 @@
 <h1>ECNL Graphs</h1>
 <p class="sub">Weighted Method (<a href="https://www.beatgraphs.com/BeatGraphBasics.php">BeatGraph</a>) &middot; rebuilt weekly from league schedules</p>
 <p class="legend"><b>BeatWin</b> = direct win, arrow weighted by goal difference &middot; <b>BeatPath</b> = chain of BeatWins &middot; <b>Broken BeatLoop</b> = a win cycle resolved by removing its weakest link &middot; Draws create no link. Only the smallest set of arrows is drawn: an arrow is omitted when a BeatPath through other teams already implies it.</p>
+<p class="tutorial-link">New here? <a href="tutorial.html">Read the tutorial: how to read a BeatGraph</a></p>
 <div class="controls" id="controls">
   <div><label for="sel-season">Season</label><select id="sel-season"></select></div>
   <div><label for="sel-gender">Gender</label><select id="sel-gender"></select></div>

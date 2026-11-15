@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to read a BeatGraph — ECNL Graphs</title>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px; background: #fff; color: #222; line-height: 1.55; }
+  h1 { font-size: 28px; margin-bottom: 4px; }
+  h2 { font-size: 20px; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-top: 36px; }
+  .sub { color: #666; margin-bottom: 24px; }
+  .back { font-size: 14px; margin-bottom: 24px; }
+  table { border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+  th { background: #e8e8e8; text-align: left; padding: 6px 10px; }
+  td { padding: 5px 10px; border-bottom: 1px solid #f0f0f0; }
+  .note { background: #f5f5f5; border: 1px solid #ddd; padding: 12px 14px; font-size: 14px; }
+  footer { color: #999; font-size: 13px; margin-top: 40px; }
+  figure { margin: 16px 0; text-align: center; }
+  figcaption { color: #666; font-size: 13px; margin-top: 6px; }
+</style>
+</head>
+<body>
+<p class="back"><a href="index.html">&larr; Back to the graphs</a></p>
+<h1>How to read a BeatGraph</h1>
+<p class="sub">A short tutorial for ECNL Graphs. No math required.</p>
+
+<h2>What you're looking at</h2>
+<p>Each graph shows one competition — one league, or one tournament. Every
+team is a badge. The best team sits at the top, and arrows point from a
+winner down to the teams it beat. Read an arrow as a sentence: <b>A beat
+B</b>. The graph is a picture of the season so far: who beat whom, all at
+once.</p>
+<p>There is one graph per competition. Teams only appear with the opponents
+they actually played, so each graph stands on its own.</p>
+
+<h2>Three words to know</h2>
+<p><b>BeatWin.</b> A direct win. When A beats B, A earns a BeatWin over B,
+weighted by the goal difference — winning 4–0 counts for more than winning
+1–0. Draws create no BeatWin: nobody beat anybody.</p>
+<p><b>BeatPath.</b> A chain of BeatWins. If A beat B and B beat C, then A has
+a BeatPath to C, even if A and C never played each other. The whole ranking
+is built out of these chains.</p>
+<p><b>BeatLoop.</b> A win cycle: A beat B, B beat C, and C beat A. Nobody is
+clearly on top, so the loop has to be resolved before anyone can be ranked.
+The next section shows how.</p>
+
+<h2>How a loop gets resolved</h2>
+<p>Say the results are: A beat B by 7 goals, B beat C by 14, and C beat A
+by 3. That last result is the weakest link in the cycle, so its weight (3)
+is subtracted from every link in the loop:</p>
+<table>
+<tr><th>Link</th><th>Before</th><th>After</th></tr>
+<tr><td>A beat B</td><td>7</td><td>4</td></tr>
+<tr><td>B beat C</td><td>14</td><td>11</td></tr>
+<tr><td>C beat A</td><td>3</td><td>gone</td></tr>
+</table>
+<p>The weakest result drops out, the other two survive with reduced weight,
+and the cycle is broken: A sits above B, B above C. The smallest loops are
+resolved first, and as little data as possible is removed. On the
+interactive views, the <em>Broken Loops</em> button shows you exactly which
+links were pruned.</p>
+<figure>
+<svg width="300" height="150" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#333"/></marker></defs>
+  <circle cx="150" cy="28" r="20" fill="#1f77b4"/><text x="150" y="34" text-anchor="middle" fill="#fff" font-weight="bold">A</text>
+  <circle cx="60" cy="118" r="20" fill="#ff7f0e"/><text x="60" y="124" text-anchor="middle" fill="#fff" font-weight="bold">B</text>
+  <circle cx="240" cy="118" r="20" fill="#2ca02c"/><text x="240" y="124" text-anchor="middle" fill="#fff" font-weight="bold">C</text>
+  <line x1="132" y1="42" x2="80" y2="100" stroke="#333" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="80" y1="118" x2="216" y2="118" stroke="#333" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="232" y1="98" x2="170" y2="44" stroke="#999" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#ah)"/>
+  <text x="96" y="72" font-size="12">4</text><text x="142" y="110" font-size="12">11</text><text x="212" y="72" font-size="12" fill="#999">3, out</text>
+</svg>
+<figcaption>After resolving the loop: A &rarr; B (4), B &rarr; C (11). The dashed arrow is the removed link.</figcaption>
+</figure>
+
+<h2>Why some wins have no arrow</h2>
+<p>Only the smallest set of arrows is drawn. If A beat B and B beat C, the
+fact that A sits above C is already implied — drawing a third arrow would
+add clutter without adding information. So an arrow is left out whenever a
+BeatPath through other teams already says the same thing. The ratings still
+count every game; only the drawing is simplified. On one published example,
+285 games reduced to 38 arrows.</p>
+<p>On the interactive views, tapping a team highlights its BeatPaths and
+reveals its direct wins, including ones the drawing left out.</p>
+
+<h2>What the number means</h2>
+<p>Each team has a rating, roughly on a scale from −10 to 10. Higher means
+a stronger record <i>against the teams in that competition</i>: the rating
+counts every BeatPath in and out, weighted by goal difference, so beating
+strong teams matters more than beating weak ones.</p>
+<div class="note">
+<b>Two cautions.</b> The rating describes what has already happened — it
+does not predict the next game. And ratings only compare teams inside the
+same competition: a 6.5 in one league and a 6.5 in another were earned
+against different opponents, so they are not directly comparable.
+</div>
+
+<h2>Gold rings, empty graphs, and scores</h2>
+<p><b>Gold rings</b> mark bracket teams, and only appear on tournament
+graphs (Surf Cup). In a league every team is in the competition, so rings
+would be meaningless and are left off.</p>
+<p><b>Empty graphs</b> mean the schedule is posted but no games have been
+scored yet. Those graphs fill in on their own as results come in.</p>
+<p><b>Scores</b> sit under every graph on the home view, and on the
+interactive views each team's results appear when you tap it.</p>
+
+<h2>The three views</h2>
+<p><b>Graphs</b> — the home view: the graph as a picture, with the full
+scores table as readable text. <b>Swimlane</b> — the interactive D3 view:
+teams in rank layers, tap a team for its details. <b>Canvas</b> — the
+interactive Cytoscape view: the same graph on a canvas you can pan and
+zoom. All three show the same data and the same filters, and switching
+between them keeps your selection.</p>
+<p>Use the five filters — Season, Gender, Age, Type, Competition — to pick
+a competition. The page address holds your selection, so you can copy the
+link to share exactly what you're looking at.</p>
+
+<h2>Where it comes from</h2>
+<p>The game data comes from the league schedules (Total Global Sports) and
+the Surf Cup results site, and the graphs are rebuilt weekly. The ranking
+method is the Weighted Method from
+<a href="https://www.beatgraphs.com/BeatGraphBasics.php">BeatGraph</a>.
+The interactive views are built with
+<a href="https://d3js.org/">D3</a>,
+<a href="https://github.com/cpettitt/dagre">dagre</a>, and
+<a href="https://js.cytoscape.org/">Cytoscape.js</a>.</p>
+
+<footer><a href="index.html">&larr; Back to the graphs</a></footer>
+</body>
+</html>
