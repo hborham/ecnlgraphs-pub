@@ -110,7 +110,7 @@ function interactiveURL(sel) {
 function canvasURL(sel) {
   const p = new URLSearchParams();
   p.set('season', sel.season); p.set('gender', sel.gender); p.set('age', sel.age); p.set('type', sel.type); p.set('competition', sel.league.id);
-  return 'ecnl-beatgraphs-mobile.html?' + p.toString();
+  return 'ecnl-beatgraphs-canvas.html?' + p.toString();
 }
 
 async function renderSelected() {
