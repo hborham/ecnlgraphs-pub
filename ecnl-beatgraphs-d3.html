@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>ECNL BeatGraphs · D3.js Mobile DAG Explorer</title>
+  <title>ECNL BeatGraphs · Swimlane View (D3)</title>
 
   <!-- D3.js v7 & Dagre v1.1.4 (for hierarchical DAG coordinates) -->
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
@@ -897,7 +897,8 @@
         <span>▾</span>
       </button>
       <button class="share-btn" id="shareUrlBtn" type="button" title="Copy shareable link">Share</button>
-      <button class="share-btn" id="switchViewBtn" type="button" title="Open this league in the mobile (Cytoscape) view">Mobile view</button>
+      <button class="share-btn" id="switchViewBtn" type="button" title="Switch to the Cytoscape interactive canvas view">Canvas view</button>
+      <button class="share-btn" id="homeViewBtn" type="button" title="Back to the filter page: graph pictures and scores">Pictures</button>
       <button class="icon-btn" id="openHelpBtn" type="button" aria-label="Legend and Methodology">?</button>
     </div>
 
@@ -2397,6 +2398,10 @@
 
     document.getElementById('switchViewBtn').onclick = () => {
       window.location.href = 'ecnl-beatgraphs-mobile.html' + window.location.search;
+    };
+
+    document.getElementById('homeViewBtn').onclick = () => {
+      window.location.href = 'index.html' + window.location.search;
     };
 
     // Modals & Cascading Filter Listeners

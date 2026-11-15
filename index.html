@@ -107,6 +107,11 @@ function interactiveURL(sel) {
   p.set('season', sel.season); p.set('gender', sel.gender); p.set('age', sel.age); p.set('type', sel.type); p.set('competition', sel.league.id);
   return 'ecnl-beatgraphs-d3.html?' + p.toString();
 }
+function canvasURL(sel) {
+  const p = new URLSearchParams();
+  p.set('season', sel.season); p.set('gender', sel.gender); p.set('age', sel.age); p.set('type', sel.type); p.set('competition', sel.league.id);
+  return 'ecnl-beatgraphs-mobile.html?' + p.toString();
+}
 
 async function renderSelected() {
   const seq = ++renderSeq;
@@ -130,7 +135,7 @@ async function renderSelected() {
     (league.loops_resolved > 0 ? `<p class="loops-note">${league.loops_resolved} BeatLoop${league.loops_resolved === 1 ? '' : 's'} resolved &mdash; the weakest link in each cycle was removed.</p>` : '') +
     `<p class="loading" id="img-status">Loading graph image&hellip;</p>` +
     `<img class="graph" id="graph-img" alt="${esc(league.title)} beatgraph" style="display:none">` +
-    `<p class="interactive-link"><a href="${interactiveURL(sel)}">View the interactive graph &rarr;</a></p></section>`;
+    `<p class="interactive-link">Interactive graph: <a href="${interactiveURL(sel)}">swimlane view (D3)</a> &middot; <a href="${canvasURL(sel)}">canvas view (Cytoscape)</a></p></section>`;
   view.querySelector('section').insertAdjacentHTML('beforeend', scoresTable(league));
   const img = document.getElementById('graph-img');
   img.onerror = () => {
