@@ -941,6 +941,46 @@
       cursor: pointer;
     }
 
+    /* --- Hamburger menu (mobile only) --- */
+    .menu-btn {
+      display: none;
+    }
+
+    .menu-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 6px 12px 10px;
+      z-index: 31;
+    }
+
+    .menu-panel.open {
+      display: block;
+    }
+
+    .menu-panel button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: none;
+      border-top: 1px solid var(--border);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      min-height: 44px;
+      padding: 10px 4px;
+      cursor: pointer;
+    }
+
+    .menu-panel button:first-child {
+      border-top: none;
+    }
+
     /* --- Mobile: the competition pill gets its own full-width row --- */
     /* The first header row holds the brand, the pill, and four action
        buttons; on a phone the pill (flex:1, min-width:0) was squeezed to
@@ -958,8 +998,12 @@
         min-height: 40px;
         font-size: 13px;
       }
-      .topbar-row:first-child .brand {
-        font-size: 13px;
+      .topbar-row:first-child .share-btn,
+      .topbar-row:first-child #openHelpBtn {
+        display: none;
+      }
+      .topbar-row:first-child .menu-btn {
+        display: grid;
       }
       .topbar-row:first-child .share-btn {
         padding: 0 8px;
@@ -968,13 +1012,6 @@
       #rankingsView,
       #scoresView {
         top: 176px;
-      }
-    }
-    /* Very small phones: the brand collapses to its status dot so the
-       four action buttons still fit on one line. */
-    @media (max-width: 400px) {
-      .topbar-row:first-child .brand {
-        font-size: 0;
       }
     }
   </style>
@@ -993,6 +1030,7 @@
       <button class="share-btn" id="switchViewBtn" type="button" title="Switch to the Cytoscape interactive canvas view">Canvas view</button>
       <button class="share-btn" id="tutorialBtn" type="button" title="Interactive tutorial: how to read a BeatGraph">Tutorial</button>
       <button class="icon-btn" id="openHelpBtn" type="button" aria-label="Legend and Methodology">?</button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menuPanel">☰</button>
     </div>
 
     <div class="topbar-row">
@@ -1018,6 +1056,13 @@
         <span id="loopBtnText">Broken Loops (0)</span>
       </button>
     </div>
+
+    <nav class="menu-panel" id="menuPanel" aria-label="Site menu">
+      <button type="button" id="menuShareBtn">Share</button>
+      <button type="button" id="menuViewBtn">Canvas view</button>
+      <button type="button" id="menuTutorialBtn">Tutorial</button>
+      <button type="button" id="menuHelpBtn">Help</button>
+    </nav>
   </header>
 
   <!-- Minimal Floating Legend -->
@@ -2572,6 +2617,36 @@
     document.getElementById('tutorialBtn').onclick = () => {
       window.location.href = 'tutorial.html';
     };
+
+    // Hamburger menu (mobile): the menu items drive the same buttons
+    // that are hidden on small screens, so behavior stays identical.
+    const menuBtn = document.getElementById('menuBtn');
+    const menuPanel = document.getElementById('menuPanel');
+    const closeMenu = () => {
+      menuPanel.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    };
+    menuBtn.onclick = (ev) => {
+      ev.stopPropagation();
+      const open = menuPanel.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    document.addEventListener('click', (ev) => {
+      if (menuPanel.classList.contains('open') && !menuPanel.contains(ev.target)) closeMenu();
+    });
+    document.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape') closeMenu();
+    });
+    const menuAction = (menuId, btnId) => {
+      document.getElementById(menuId).onclick = () => {
+        closeMenu();
+        document.getElementById(btnId).click();
+      };
+    };
+    menuAction('menuShareBtn', 'shareUrlBtn');
+    menuAction('menuViewBtn', 'switchViewBtn');
+    menuAction('menuTutorialBtn', 'tutorialBtn');
+    menuAction('menuHelpBtn', 'openHelpBtn');
 
     // Modals & Cascading Filter Listeners
     const filterModal = document.getElementById('filterModal');
