@@ -2265,28 +2265,42 @@
     // from taking over vertical drags for scrolling.
     let sheetDragStartY = null;
     let sheetDragHandled = false;
+    let sheetDragStepped = false;
     const sheetToggleEl = document.getElementById('sheetToggle');
     sheetToggleEl.addEventListener('pointerdown', e => {
       sheetDragStartY = e.clientY;
       sheetDragHandled = false;
+      sheetDragStepped = false;
       if (e.pointerId !== undefined && typeof sheetToggleEl.setPointerCapture === 'function') {
         try { sheetToggleEl.setPointerCapture(e.pointerId); } catch (err) { /* no capture support */ }
       }
     });
-    // A drag can end three ways: pointerup (normal release), pointercancel
-    // (touch interrupted, e.g. the finger slides off the screen edge), or
-    // lostpointercapture (capture lost, e.g. the pointer leaves the page).
-    // All three run the same step-down logic from the last known position,
-    // so a drag that ends off-screen still dismisses instead of stranding.
+    // A drag steps the sheet down as soon as it passes 20px — mid-drag, not
+    // on release — because a drag starting at the peek row's center runs
+    // out of screen after ~30px, and the release may land off-screen. One
+    // gesture steps at most once; the next drag steps again. The drag-end
+    // handlers cover fast flicks with no intermediate moves and drags that
+    // end off-screen (pointercancel / lostpointercapture).
+    function stepSheetDown() {
+      sheetDragHandled = true;
+      const sheet = document.getElementById('bottomSheet');
+      if (sheet.classList.contains('open')) openBottomSheet(false);
+      else resetSelection();
+    }
+    sheetToggleEl.addEventListener('pointermove', e => {
+      if (sheetDragStartY === null || sheetDragStepped || !appState.team) return;
+      if (e.clientY - sheetDragStartY > 20) {
+        sheetDragStepped = true;
+        stepSheetDown();
+      }
+    });
     function endSheetDrag(e) {
       if (sheetDragStartY === null || !appState.team) return;
       const dy = e.clientY - sheetDragStartY;
       sheetDragStartY = null;
-      if (dy > 30) { // the peek handle sits ~62px above the screen bottom, so a dismiss drag has little travel
-        sheetDragHandled = true;
-        const sheet = document.getElementById('bottomSheet');
-        if (sheet.classList.contains('open')) openBottomSheet(false);
-        else resetSelection();
+      if (!sheetDragStepped && dy > 20) {
+        sheetDragStepped = true;
+        stepSheetDown();
       }
     }
     sheetToggleEl.addEventListener('pointerup', endSheetDrag);
