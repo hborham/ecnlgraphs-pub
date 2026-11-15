@@ -2273,7 +2273,12 @@
         try { sheetToggleEl.setPointerCapture(e.pointerId); } catch (err) { /* no capture support */ }
       }
     });
-    sheetToggleEl.addEventListener('pointerup', e => {
+    // A drag can end three ways: pointerup (normal release), pointercancel
+    // (touch interrupted, e.g. the finger slides off the screen edge), or
+    // lostpointercapture (capture lost, e.g. the pointer leaves the page).
+    // All three run the same step-down logic from the last known position,
+    // so a drag that ends off-screen still dismisses instead of stranding.
+    function endSheetDrag(e) {
       if (sheetDragStartY === null || !appState.team) return;
       const dy = e.clientY - sheetDragStartY;
       sheetDragStartY = null;
@@ -2283,9 +2288,10 @@
         if (sheet.classList.contains('open')) openBottomSheet(false);
         else resetSelection();
       }
-    });
-    sheetToggleEl.addEventListener('pointercancel', () => { sheetDragStartY = null; });
-    sheetToggleEl.addEventListener('lostpointercapture', () => { sheetDragStartY = null; });
+    }
+    sheetToggleEl.addEventListener('pointerup', endSheetDrag);
+    sheetToggleEl.addEventListener('pointercancel', endSheetDrag);
+    sheetToggleEl.addEventListener('lostpointercapture', endSheetDrag);
     sheetToggleEl.onclick = () => {
       if (sheetDragHandled) { sheetDragHandled = false; return; }
       if (!appState.team) return;
