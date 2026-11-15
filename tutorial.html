@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to read a BeatGraph — ECNL Graphs</title>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@dagrejs/dagre@1.1.4/dist/dagre.min.js"></script>
 <style>
   body { font-family: -apple-system, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px; background: #fff; color: #222; line-height: 1.55; }
   h1 { font-size: 28px; margin-bottom: 4px; }
@@ -15,14 +17,337 @@
   td { padding: 5px 10px; border-bottom: 1px solid #f0f0f0; }
   .note { background: #f5f5f5; border: 1px solid #ddd; padding: 12px 14px; font-size: 14px; }
   footer { color: #999; font-size: 13px; margin-top: 40px; }
-  figure { margin: 16px 0; text-align: center; }
-  figcaption { color: #666; font-size: 13px; margin-top: 6px; }
+  #demoPanel { border: 1px solid #ddd; border-radius: 10px; padding: 16px; background: #fafafa; }
+  #demoPanel svg { width: 100%; height: auto; display: block; }
+  #demoCaption { font-size: 14px; margin: 12px 0; min-height: 66px; }
+  #demoControls { display: flex; align-items: center; gap: 12px; }
+  #demoControls button { font-size: 14px; padding: 6px 14px; border: 1px solid #ccc; border-radius: 8px; background: #fff; cursor: pointer; }
+  #demoControls button:disabled { opacity: 0.4; cursor: default; }
+  #demoStepLabel { font-size: 13px; color: #666; }
+  .demo-node rect { fill: #fff; stroke: #ccc; stroke-width: 1.5; }
+  .demo-node.hl rect { stroke: #2563eb; stroke-width: 3; }
+  .demo-node.dim { opacity: 0.3; }
+  #demoPanel.free .demo-node { cursor: pointer; }
+  .demo-edge { stroke: #555; stroke-width: 2; fill: none; }
+  .demo-edge.hl { stroke: #2563eb; stroke-width: 3.5; }
+  .demo-edge.weakest { stroke: #dc2626; stroke-width: 3.5; }
+  .demo-edge.removed { stroke: #999; stroke-width: 2; stroke-dasharray: 6, 4; }
+  .demo-edge.dim { opacity: 0.25; }
+  .demo-edge-label { font-size: 12px; fill: #333; text-anchor: middle; }
+  .demo-edge-label.hl { fill: #2563eb; font-weight: 700; }
+  .demo-edge-label.weakest { fill: #dc2626; font-weight: 700; }
+  .demo-edge-label.removed { fill: #999; }
 </style>
 </head>
 <body>
-<p class="back"><a href="index.html">&larr; Back to the graphs</a></p>
+<p class="back"><a href="index.html">&larr; Back to ECNL Graphs</a></p>
 <h1>How to read a BeatGraph</h1>
-<p class="sub">A short tutorial for ECNL Graphs. No math required.</p>
+<p class="sub">A short tutorial for ECNL Graphs. No math required. The demo below
+runs the real ranking steps on six made-up teams — the same layout engine and
+the same method as the live graphs.</p>
+
+<div id="demoPanel">
+  <div id="demoStage"></div>
+  <p id="demoCaption"></p>
+  <div id="demoControls">
+    <button id="demoPrev" type="button">&larr; Back</button>
+    <button id="demoNext" type="button">Next &rarr;</button>
+    <span id="demoStepLabel"></span>
+  </div>
+</div>
+
+<script>
+// ---- Demo data: six teams, seven games. One win cycle on purpose. ----
+const DEMO_TEAMS = [
+  { id: 'aces', name: 'Aces', color: '#1f77b4' },
+  { id: 'blaze', name: 'Blaze', color: '#ff7f0e' },
+  { id: 'comets', name: 'Comets', color: '#2ca02c' },
+  { id: 'dynamo', name: 'Dynamo', color: '#d62728' },
+  { id: 'embers', name: 'Embers', color: '#9467bd' },
+  { id: 'falcons', name: 'Falcons', color: '#8c564b' },
+];
+const DEMO_GAMES = [
+  { home: 'aces', away: 'blaze', hs: 3, as: 1 },
+  { home: 'blaze', away: 'comets', hs: 2, as: 0 },
+  { home: 'comets', away: 'aces', hs: 1, as: 0 },
+  { home: 'aces', away: 'dynamo', hs: 2, as: 1 },
+  { home: 'dynamo', away: 'embers', hs: 4, as: 0 },
+  { home: 'falcons', away: 'comets', hs: 3, as: 2 },
+  { home: 'embers', away: 'falcons', hs: 1, as: 0 },
+];
+
+// ---- The method, in miniature: edges, loop-breaking, reach, ratings. ----
+function demoEdges(games) {
+  return games.map(g => {
+    const winner = g.hs > g.as ? g.home : g.away;
+    const loser = g.hs > g.as ? g.away : g.home;
+    const w = Math.abs(g.hs - g.as);
+    return { source: winner, target: loser, weight: w, origWeight: w,
+             score: `${g.hs}\u2013${g.as}`, home: g.home, away: g.away };
+  }).filter(e => e.weight > 0);
+}
+
+function findCycle(edges) {
+  const adj = new Map();
+  for (const e of edges) {
+    if (!adj.has(e.source)) adj.set(e.source, []);
+    adj.get(e.source).push(e);
+  }
+  const state = new Map();
+  const stack = [];
+  let found = null;
+  function dfs(u) {
+    state.set(u, 1);
+    for (const e of adj.get(u) || []) {
+      if (found) return;
+      const v = e.target;
+      if (state.get(v) === 1) {
+        const idx = stack.findIndex(se => se.source === v);
+        found = [...stack.slice(idx), e];
+        return;
+      }
+      if (!state.get(v)) { stack.push(e); dfs(v); stack.pop(); }
+    }
+    state.set(u, 2);
+  }
+  for (const e of edges) {
+    if (found) break;
+    if (!state.get(e.source)) dfs(e.source);
+  }
+  return found;
+}
+
+function resolveLoops(rawEdges) {
+  let eds = rawEdges.map(e => ({ ...e }));
+  const removed = [];
+  const reduced = new Map();
+  for (;;) {
+    const cycle = findCycle(eds);
+    if (!cycle) break;
+    const minW = Math.min(...cycle.map(e => e.weight));
+    const next = [];
+    for (const e of eds) {
+      if (!cycle.includes(e)) { next.push(e); continue; }
+      const w = e.weight - minW;
+      const key = e.source + '>' + e.target;
+      if (w <= 0) removed.push({ source: e.source, target: e.target, weight: e.weight });
+      else {
+        reduced.set(key, { before: e.origWeight, after: w });
+        next.push({ ...e, weight: w });
+      }
+    }
+    eds = next;
+  }
+  return { edges: eds, removed, reduced };
+}
+
+function reachSets(edges, ids) {
+  const adj = new Map(ids.map(id => [id, []]));
+  for (const e of edges) adj.get(e.source).push(e.target);
+  const reach = new Map();
+  for (const id of ids) {
+    const seen = new Set();
+    const q = [...adj.get(id)];
+    while (q.length) {
+      const v = q.pop();
+      if (seen.has(v)) continue;
+      seen.add(v);
+      q.push(...adj.get(v));
+    }
+    reach.set(id, seen);
+  }
+  return reach;
+}
+
+const RAW_EDGES = demoEdges(DEMO_GAMES);
+const RESOLVED = resolveLoops(RAW_EDGES);
+const IDS = DEMO_TEAMS.map(t => t.id);
+const REACH = reachSets(RESOLVED.edges, IDS);
+const RANKED = DEMO_TEAMS.map(t => {
+  const out = REACH.get(t.id).size;
+  let inn = 0;
+  for (const id of IDS) if (REACH.get(id).has(t.id)) inn++;
+  const score = out - inn;
+  return { ...t, score, rating: 10 * score / (Math.abs(score) + 2) };
+}).sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
+RANKED.forEach((t, i) => { t.rank = i + 1; });
+
+// ---- Steps ----
+const STEPS = [
+  { title: 'Meet the teams',
+    text: 'Six teams, one graph. The best team sits at the top, and every arrow points from a winner down to a team it beat. Read an arrow as a sentence: <b>Aces beat Blaze</b>.' },
+  { title: 'A BeatWin',
+    text: 'The highlighted arrow is a <b>BeatWin</b>: a direct win. Aces beat Blaze 3\u20131, so the arrow carries weight 2 — the goal difference. Bigger wins count for more.' },
+  { title: 'A BeatPath',
+    text: 'Follow the highlighted chain: Aces beat Dynamo, and Dynamo beat Embers. That gives Aces a <b>BeatPath</b> to Embers — even though Aces and Embers never played each other. Rankings are built out of these chains.' },
+  { title: 'A BeatLoop',
+    text: 'Now the problem. Aces beat Blaze, Blaze beat Comets, and Comets beat Aces — a <b>BeatLoop</b>, a win cycle. Nobody is clearly on top. The red arrow is the weakest link in the cycle: Comets won by just one goal.' },
+  { title: 'Breaking the loop',
+    text: 'The weakest link\u2019s weight (1) is subtracted from every link in the loop. The red arrow drops out entirely; the other two survive with reduced weight. The cycle is broken and the ranking falls into place. The smallest loops are resolved first, and as little data as possible is removed.' },
+  { title: 'Ratings',
+    text: 'Each team now shows its rank and rating. Higher means a stronger record <i>against these six teams</i>: the rating counts every BeatPath in and out, weighted by goal difference. It describes what happened — it does not predict the next game.' },
+  { title: 'Try it yourself',
+    text: 'Tap any team to trace its BeatPaths. Tap the background to clear. When you\u2019re ready, <a href="index.html">see the real graphs &rarr;</a>' },
+];
+
+let demoStep = 0;
+let freeSelected = null;
+
+function demoRender() {
+  const stage = document.getElementById('demoStage');
+  stage.innerHTML = '';
+  const showRatings = demoStep >= 5;
+  const showRaw = demoStep === 3;
+
+  // Layout once, from the resolved graph, so nodes never jump between steps.
+  const g = new dagre.graphlib.Graph();
+  g.setGraph({ rankdir: 'TB', nodesep: 24, ranksep: 46, marginx: 16, marginy: 16 });
+  g.setDefaultEdgeLabel(() => ({}));
+  for (const t of DEMO_TEAMS) g.setNode(t.id, { width: 132, height: 46 });
+  for (const e of RESOLVED.edges) g.setEdge(e.source, e.target);
+  dagre.layout(g);
+  const pos = id => ({ x: g.node(id).x, y: g.node(id).y });
+  const gw = g.graph().width, gh = g.graph().height;
+
+  const svg = d3.select(stage).append('svg')
+    .attr('viewBox', `0 0 ${gw} ${gh}`)
+    .attr('role', 'img').attr('aria-label', 'Demo BeatGraph');
+  svg.append('defs').append('marker')
+    .attr('id', 'demo-arrow').attr('markerWidth', 8).attr('markerHeight', 8)
+    .attr('refX', 7).attr('refY', 4).attr('orient', 'auto')
+    .append('path').attr('d', 'M0,0 L8,4 L0,8 Z').attr('fill', '#555');
+  svg.append('defs').append('marker')
+    .attr('id', 'demo-arrow-hl').attr('markerWidth', 8).attr('markerHeight', 8)
+    .attr('refX', 7).attr('refY', 4).attr('orient', 'auto')
+    .append('path').attr('d', 'M0,0 L8,4 L0,8 Z').attr('fill', '#2563eb');
+
+  const key = e => e.source + '>' + e.target;
+  const loopKeys = new Set(['aces>blaze', 'blaze>comets', 'comets>aces']);
+  const edges = showRaw ? RAW_EDGES : [...RESOLVED.edges];
+  if (demoStep === 4) {
+    for (const r of RESOLVED.removed) edges.push({ ...r, removed: true, weight: r.weight });
+  }
+
+  // Highlight sets per step.
+  let hlEdges = new Set(), hlNodes = new Set(), dimAll = false;
+  if (demoStep === 1) { hlEdges = new Set(['aces>blaze']); hlNodes = new Set(['aces', 'blaze']); dimAll = true; }
+  if (demoStep === 2) { hlEdges = new Set(['aces>dynamo', 'dynamo>embers']); hlNodes = new Set(['aces', 'dynamo', 'embers']); dimAll = true; }
+  if (demoStep === 3) { hlEdges = loopKeys; hlNodes = new Set(['aces', 'blaze', 'comets']); dimAll = true; }
+  if (demoStep === 4) { hlEdges = new Set(['aces>blaze', 'blaze>comets']); }
+  if (demoStep === 6 && freeSelected) {
+    hlNodes = new Set([freeSelected, ...REACH.get(freeSelected)]);
+    hlEdges = new Set(RESOLVED.edges.filter(e => hlNodes.has(e.source) && hlNodes.has(e.target) &&
+      (e.source === freeSelected || REACH.get(freeSelected).has(e.source))).map(key));
+    dimAll = true;
+  }
+
+  const edgeLayer = svg.append('g');
+  const labelLayer = svg.append('g');
+  for (const e of edges) {
+    const a = pos(e.source), b = pos(e.target);
+    const dx = b.x - a.x, dy = b.y - a.y;
+    const len = Math.hypot(dx, dy) || 1;
+    const ux = dx / len, uy = dy / len;
+    const sx = a.x + ux * 28, sy = a.y + uy * 28;
+    const tx = b.x - ux * 30, ty = b.y - uy * 30;
+    const isLoopBack = showRaw && e.source === 'comets' && e.target === 'aces';
+    let d;
+    let lx, ly;
+    if (isLoopBack) {
+      const mx = (sx + tx) / 2 - uy * 70, my = (sy + ty) / 2 + ux * 70;
+      d = `M${sx},${sy} Q${mx},${my} ${tx},${ty}`;
+      lx = 0.25 * sx + 0.5 * mx + 0.25 * tx;
+      ly = 0.25 * sy + 0.5 * my + 0.25 * ty;
+    } else {
+      d = `M${sx},${sy} L${tx},${ty}`;
+      lx = (sx + tx) / 2; ly = (sy + ty) / 2;
+    }
+    const k = key(e);
+    const cls = ['demo-edge'];
+    if (e.removed) cls.push('removed');
+    else if (demoStep === 3 && k === 'comets>aces') cls.push('weakest');
+    else if (hlEdges.has(k)) cls.push('hl');
+    else if (dimAll) cls.push('dim');
+    edgeLayer.append('path')
+      .attr('d', d).attr('class', cls.join(' '))
+      .attr('data-edge', k)
+      .attr('marker-end', hlEdges.has(k) && !e.removed ? 'url(#demo-arrow-hl)' : 'url(#demo-arrow)');
+    let label = String(e.weight);
+    if (demoStep === 1 && k === 'aces>blaze') label = '3\u20131';
+    if (demoStep === 4 && RESOLVED.reduced.has(k)) {
+      const r = RESOLVED.reduced.get(k);
+      label = `${r.before} \u2192 ${r.after}`;
+    }
+    if (e.removed) label = `${e.weight} \u00B7 removed`;
+    const lcls = ['demo-edge-label'];
+    if (e.removed) lcls.push('removed');
+    else if (demoStep === 3 && k === 'comets>aces') lcls.push('weakest');
+    else if (hlEdges.has(k)) lcls.push('hl');
+    labelLayer.append('text')
+      .attr('x', lx).attr('y', ly - 6).attr('class', lcls.join(' '))
+      .attr('data-edge-label', k).text(label);
+  }
+
+  const nodeLayer = svg.append('g');
+  for (const t of RANKED) {
+    const p = pos(t.id);
+    const grp = nodeLayer.append('g')
+      .attr('class', 'demo-node' + (hlNodes.has(t.id) ? ' hl' : dimAll && !hlNodes.has(t.id) ? ' dim' : ''))
+      .attr('data-team', t.id)
+      .attr('transform', `translate(${p.x - 66},${p.y - 23})`);
+    grp.append('rect').attr('width', 132).attr('height', 46).attr('rx', 10);
+    grp.append('circle').attr('cx', 23).attr('cy', 23).attr('r', 15).attr('fill', t.color);
+    grp.append('text').attr('x', 23).attr('y', 28).attr('text-anchor', 'middle')
+      .attr('fill', '#fff').attr('font-weight', 'bold').attr('font-size', '13px')
+      .text(t.name.slice(0, 1));
+    grp.append('text').attr('x', 46).attr('y', showRatings ? 20 : 28)
+      .attr('font-weight', '700').attr('font-size', '14px').attr('fill', '#222')
+      .text(t.name);
+    if (showRatings) {
+      grp.append('text').attr('x', 46).attr('y', 36).attr('font-size', '12px').attr('fill', '#666')
+        .attr('data-rating', t.id)
+        .text(`#${t.rank} \u00B7 ${t.rating.toFixed(2)}`);
+    }
+    if (demoStep === 6) {
+      grp.on('click', event => {
+        event.stopPropagation();
+        freeSelected = freeSelected === t.id ? null : t.id;
+        demoRender();
+      });
+    }
+  }
+  if (demoStep === 6) {
+    svg.on('click', () => { freeSelected = null; demoRender(); });
+  }
+
+  document.getElementById('demoPanel').classList.toggle('free', demoStep === 6);
+  document.getElementById('demoCaption').innerHTML =
+    `<b>${STEPS[demoStep].title}.</b> ${STEPS[demoStep].text}`;
+  document.getElementById('demoStepLabel').textContent =
+    `Step ${demoStep + 1} of ${STEPS.length} \u00B7 ${STEPS[demoStep].title}`;
+  document.getElementById('demoPrev').disabled = demoStep === 0;
+  document.getElementById('demoNext').disabled = demoStep === STEPS.length - 1;
+}
+
+function demoInit() {
+  if (typeof d3 === 'undefined' || typeof dagre === 'undefined') throw new Error('chart libraries unavailable');
+  document.getElementById('demoPrev').onclick = () => {
+    if (demoStep > 0) { demoStep--; freeSelected = null; demoRender(); }
+  };
+  document.getElementById('demoNext').onclick = () => {
+    if (demoStep < STEPS.length - 1) { demoStep++; freeSelected = null; demoRender(); }
+  };
+  demoRender();
+}
+
+try {
+  demoInit();
+} catch (err) {
+  console.error(err);
+  document.getElementById('demoPanel').innerHTML =
+    '<p style="font-size:14px;">The interactive demo needs its chart libraries, which did not load. The written guide below covers the same ground.</p>';
+}
+</script>
 
 <h2>What you're looking at</h2>
 <p>Each graph shows one competition — one league, or one tournament. Every
@@ -36,42 +361,29 @@ they actually played, so each graph stands on its own.</p>
 <h2>Three words to know</h2>
 <p><b>BeatWin.</b> A direct win. When A beats B, A earns a BeatWin over B,
 weighted by the goal difference — winning 4–0 counts for more than winning
-1–0. Draws create no BeatWin: nobody beat anybody.</p>
+1–0. Draws create no BeatWin: nobody beat anybody. (Demo step 2.)</p>
 <p><b>BeatPath.</b> A chain of BeatWins. If A beat B and B beat C, then A has
 a BeatPath to C, even if A and C never played each other. The whole ranking
-is built out of these chains.</p>
+is built out of these chains. (Demo step 3.)</p>
 <p><b>BeatLoop.</b> A win cycle: A beat B, B beat C, and C beat A. Nobody is
 clearly on top, so the loop has to be resolved before anyone can be ranked.
-The next section shows how.</p>
+(Demo steps 4–5.)</p>
 
 <h2>How a loop gets resolved</h2>
-<p>Say the results are: A beat B by 7 goals, B beat C by 14, and C beat A
-by 3. That last result is the weakest link in the cycle, so its weight (3)
-is subtracted from every link in the loop:</p>
+<p>In the demo, the results are: Aces beat Blaze by 2, Blaze beat Comets by
+2, and Comets beat Aces by 1. That last result is the weakest link in the
+cycle, so its weight (1) is subtracted from every link in the loop:</p>
 <table>
 <tr><th>Link</th><th>Before</th><th>After</th></tr>
-<tr><td>A beat B</td><td>7</td><td>4</td></tr>
-<tr><td>B beat C</td><td>14</td><td>11</td></tr>
-<tr><td>C beat A</td><td>3</td><td>gone</td></tr>
+<tr><td>Aces beat Blaze</td><td>2</td><td>1</td></tr>
+<tr><td>Blaze beat Comets</td><td>2</td><td>1</td></tr>
+<tr><td>Comets beat Aces</td><td>1</td><td>gone</td></tr>
 </table>
 <p>The weakest result drops out, the other two survive with reduced weight,
-and the cycle is broken: A sits above B, B above C. The smallest loops are
-resolved first, and as little data as possible is removed. On the
-interactive views, the <em>Broken Loops</em> button shows you exactly which
-links were pruned.</p>
-<figure>
-<svg width="300" height="150" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
-  <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#333"/></marker></defs>
-  <circle cx="150" cy="28" r="20" fill="#1f77b4"/><text x="150" y="34" text-anchor="middle" fill="#fff" font-weight="bold">A</text>
-  <circle cx="60" cy="118" r="20" fill="#ff7f0e"/><text x="60" y="124" text-anchor="middle" fill="#fff" font-weight="bold">B</text>
-  <circle cx="240" cy="118" r="20" fill="#2ca02c"/><text x="240" y="124" text-anchor="middle" fill="#fff" font-weight="bold">C</text>
-  <line x1="132" y1="42" x2="80" y2="100" stroke="#333" stroke-width="2" marker-end="url(#ah)"/>
-  <line x1="80" y1="118" x2="216" y2="118" stroke="#333" stroke-width="2" marker-end="url(#ah)"/>
-  <line x1="232" y1="98" x2="170" y2="44" stroke="#999" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#ah)"/>
-  <text x="96" y="72" font-size="12">4</text><text x="142" y="110" font-size="12">11</text><text x="212" y="72" font-size="12" fill="#999">3, out</text>
-</svg>
-<figcaption>After resolving the loop: A &rarr; B (4), B &rarr; C (11). The dashed arrow is the removed link.</figcaption>
-</figure>
+and the cycle is broken: Aces sits above Blaze, Blaze above Comets. The
+smallest loops are resolved first, and as little data as possible is
+removed. On the interactive views, the <em>Broken Loops</em> button shows
+you exactly which links were pruned.</p>
 
 <h2>Why some wins have no arrow</h2>
 <p>Only the smallest set of arrows is drawn. If A beat B and B beat C, the
@@ -79,7 +391,8 @@ fact that A sits above C is already implied — drawing a third arrow would
 add clutter without adding information. So an arrow is left out whenever a
 BeatPath through other teams already says the same thing. The ratings still
 count every game; only the drawing is simplified. On one published example,
-285 games reduced to 38 arrows.</p>
+285 games reduced to 38 arrows. In the demo above, every arrow earns its
+place — none is implied by the others.</p>
 <p>On the interactive views, tapping a team highlights its BeatPaths and
 reveals its direct wins, including ones the drawing left out.</p>
 
@@ -87,7 +400,7 @@ reveals its direct wins, including ones the drawing left out.</p>
 <p>Each team has a rating, roughly on a scale from −10 to 10. Higher means
 a stronger record <i>against the teams in that competition</i>: the rating
 counts every BeatPath in and out, weighted by goal difference, so beating
-strong teams matters more than beating weak ones.</p>
+strong teams matters more than beating weak ones. (Demo step 6.)</p>
 <div class="note">
 <b>Two cautions.</b> The rating describes what has already happened — it
 does not predict the next game. And ratings only compare teams inside the
@@ -101,16 +414,17 @@ graphs (Surf Cup). In a league every team is in the competition, so rings
 would be meaningless and are left off.</p>
 <p><b>Empty graphs</b> mean the schedule is posted but no games have been
 scored yet. Those graphs fill in on their own as results come in.</p>
-<p><b>Scores</b> sit under every graph on the home view, and on the
-interactive views each team's results appear when you tap it.</p>
+<p><b>Scores</b> sit under every graph on the Graphs view. On the swimlane
+and canvas views, the <b>Scores</b> tab lists every game in the league
+(filterable by team), and tapping a team shows its own scores table.</p>
 
 <h2>The three views</h2>
-<p><b>Graphs</b> — the home view: the graph as a picture, with the full
-scores table as readable text. <b>Swimlane</b> — the interactive D3 view:
-teams in rank layers, tap a team for its details. <b>Canvas</b> — the
-interactive Cytoscape view: the same graph on a canvas you can pan and
-zoom. All three show the same data and the same filters, and switching
-between them keeps your selection.</p>
+<p><b>Swimlane</b> — the default view: the interactive D3 graph, teams in
+rank layers, tap a team for its details. <b>Canvas</b> — the interactive
+Cytoscape view: the same graph on a canvas you can pan and zoom.
+<b>Graphs</b> — the graph as a picture, with the full scores table as
+readable text. All three show the same data and the same filters, and
+switching between them keeps your selection.</p>
 <p>Use the five filters — Season, Gender, Age, Type, Competition — to pick
 a competition. The page address holds your selection, so you can copy the
 link to share exactly what you're looking at.</p>
@@ -125,6 +439,6 @@ The interactive views are built with
 <a href="https://github.com/cpettitt/dagre">dagre</a>, and
 <a href="https://js.cytoscape.org/">Cytoscape.js</a>.</p>
 
-<footer><a href="index.html">&larr; Back to the graphs</a></footer>
+<footer><a href="index.html">&larr; Back to ECNL Graphs</a></footer>
 </body>
 </html>
