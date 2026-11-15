@@ -23,7 +23,7 @@
   .loops-note { color: #8a6d00; font-size: 13px; margin: -4px 0 12px; }
   .loading { color: #666; font-size: 13px; }
   .img-error { color: #a00; font-size: 13px; }
-  .gojs-link { font-size: 13px; margin-top: 12px; }
+  .interactive-link { font-size: 13px; margin-top: 12px; }
 </style>
 </head>
 <body>
@@ -102,10 +102,10 @@ function syncURL(sel) {
     history.replaceState(null, '', '?' + p.toString());
   } catch (e) { /* file:// or restricted contexts: URL sharing unavailable */ }
 }
-function gojsURL(sel) {
+function interactiveURL(sel) {
   const p = new URLSearchParams();
   p.set('season', sel.season); p.set('gender', sel.gender); p.set('age', sel.age); p.set('type', sel.type); p.set('competition', sel.league.id);
-  return 'gojs.html?' + p.toString();
+  return 'ecnl-beatgraphs-d3.html?' + p.toString();
 }
 
 async function renderSelected() {
@@ -130,7 +130,7 @@ async function renderSelected() {
     (league.loops_resolved > 0 ? `<p class="loops-note">${league.loops_resolved} BeatLoop${league.loops_resolved === 1 ? '' : 's'} resolved &mdash; the weakest link in each cycle was removed.</p>` : '') +
     `<p class="loading" id="img-status">Loading graph image&hellip;</p>` +
     `<img class="graph" id="graph-img" alt="${esc(league.title)} beatgraph" style="display:none">` +
-    `<p class="gojs-link"><a href="${gojsURL(sel)}">View the interactive graph &rarr;</a></p></section>`;
+    `<p class="interactive-link"><a href="${interactiveURL(sel)}">View the interactive graph &rarr;</a></p></section>`;
   view.querySelector('section').insertAdjacentHTML('beforeend', scoresTable(league));
   const img = document.getElementById('graph-img');
   img.onerror = () => {

@@ -897,6 +897,7 @@
         <span>▾</span>
       </button>
       <button class="share-btn" id="shareUrlBtn" type="button" title="Copy shareable link">Share</button>
+      <button class="share-btn" id="switchViewBtn" type="button" title="Open this league in the mobile (Cytoscape) view">Mobile view</button>
       <button class="icon-btn" id="openHelpBtn" type="button" aria-label="Legend and Methodology">?</button>
     </div>
 
@@ -942,6 +943,7 @@
 
   <!-- Loading Indicator -->
   <div class="loading-pill" id="loadingPill">Loading competition graph...</div>
+  <div id="emptyNotice" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); z-index:20; background:#1e293b; color:#e2e8f0; border:1px solid #475569; border-radius:12px; padding:14px 18px; max-width:min(92vw,480px); font-size:13px; line-height:1.5; text-align:center;"></div>
 
   <!-- D3.js SVG Vertical DAG Canvas -->
   <main id="graphContainer">
@@ -956,6 +958,7 @@
     <div class="sheet-handle-area" id="sheetToggle">
       <div class="sheet-grabber"></div>
       <div class="sheet-peek-row">
+        <img id="sheetTeamLogo" alt="" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none;display:none;" />
         <div>
           <h2 class="sheet-title" id="sheetTeamName">Tap any team to inspect</h2>
           <div class="sheet-subtitle" id="sheetTeamMeta">View direct BeatWins, transitive BeatPaths &amp; loops</div>
@@ -968,7 +971,7 @@
       <div class="stat-strip">
         <div class="stat-box">
           <div class="stat-val" id="statRank">#1</div>
-          <div class="stat-lbl">Graph Tier</div>
+          <div class="stat-lbl">Rank</div>
         </div>
         <div class="stat-box">
           <div class="stat-val" id="statRecord">0-0-0</div>
@@ -1003,7 +1006,7 @@
           <div class="h2h-rows">
             <div class="h2h-row">
               <div class="h2h-val-left" id="h2hLeftTier">#1</div>
-              <div class="h2h-metric">Graph Tier</div>
+              <div class="h2h-metric">Rank</div>
               <div class="h2h-val-right" id="h2hRightTier">#2</div>
             </div>
             <div class="h2h-row">
@@ -1048,27 +1051,28 @@
         <label>Season
           <select id="fSeason">
             <option value="2026-27" selected>2026–27</option>
-            <option value="2025-26">2025–26</option>
+            <option value="2026">2026</option>
           </select>
         </label>
         <label>Gender
           <select id="fGender">
             <option value="Girls" selected>Girls</option>
-            <option value="Boys">Boys</option>
           </select>
         </label>
         <label>Age
           <select id="fAge">
+            <option value="U13">U13</option>
             <option value="U14" selected>U14</option>
             <option value="U15">U15</option>
             <option value="U16">U16</option>
             <option value="U17">U17</option>
+            <option value="U18/19">U18/19</option>
           </select>
         </label>
         <label>Type
           <select id="fType">
             <option value="League" selected>League</option>
-            <option value="Showcase">Showcase</option>
+            <option value="Tournament">Tournament</option>
           </select>
         </label>
         <label style="grid-column: span 2;">Competition / Conference
@@ -1096,162 +1100,160 @@
   </div>
 
   <script>
-    const REPO_SOURCES = [
-      '.',
-      'https://hborham.github.io/ecnlgraphs-pub',
-      'https://raw.githubusercontent.com/hborham/ecnlgraphs-pub/main',
-      'https://raw.githubusercontent.com/hborham/ecnlgraphs/main'
+    // ==BEATGRAPH-DATA-LAYER-START==
+    // Data comes from the single data.json published with the site: one entry
+    // per league with rankings, arrows (transitively reduced BeatWins),
+    // beatwins, loops and games_list. No demo or generated standings are
+    // ever shown: if data.json cannot be loaded, the page says so.
+    const DATA_URLS = [
+      'data.json',
+      'https://hborham.github.io/ecnlgraphs-pub/data.json'
     ];
 
-    const CONFERENCE_CATALOG = {
-      League: [
-        { slug: 'texas', label: 'Texas Conference' },
-        { slug: 'norcal', label: 'Northern Cal Conference' },
-        { slug: 'socal', label: 'Southwest / SoCal Conference' },
-        { slug: 'northwest', label: 'Northwest Conference' },
-        { slug: 'midwest', label: 'Midwest Conference' },
-        { slug: 'ohio-valley', label: 'Ohio Valley Conference' },
-        { slug: 'mid-atlantic', label: 'Mid-Atlantic Conference' },
-        { slug: 'new-england', label: 'New England Conference' },
-        { slug: 'southeast', label: 'Southeast Conference' },
-        { slug: 'florida', label: 'Florida Conference' },
-        { slug: 'heartland', label: 'Heartland Conference' }
-      ],
-      Showcase: [
-        { slug: 'phoenix', label: 'ECNL Phoenix National Event' },
-        { slug: 'san-diego', label: 'ECNL San Diego National Event' },
-        { slug: 'florida-showcase', label: 'ECNL Florida National Event' },
-        { slug: 'texas-showcase', label: 'ECNL Texas National Event' },
-        { slug: 'virginia', label: 'ECNL Virginia National Event' },
-        { slug: 'seattle', label: 'ECNL Seattle National Event' },
-        { slug: 'playoffs', label: 'ECNL National Playoffs' }
-      ]
-    };
+    const LOGO_PALETTE = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd",
+      "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"];
+    const logoCache = new Map();
 
-    const FALLBACK_DATASETS = {
-      'texas': {
-        label: 'Texas',
-        teams: [
-          { id: 'solar', name: 'Solar SC', tier: 1, record: '11-1-0', brokenLoop: null },
-          { id: 'sting-aus', name: 'Sting Austin', tier: 2, record: '9-2-1', brokenLoop: null },
-          { id: 'fc-dallas', name: 'FC Dallas', tier: 2, record: '8-2-2', brokenLoop: 'DKSC def. FC Dallas (1-0) pruned to break cycle' },
-          { id: 'dksc', name: 'DKSC', tier: 3, record: '7-1-4', brokenLoop: 'DKSC def. FC Dallas (1-0) pruned to break cycle' },
-          { id: 'albion-hurr', name: 'Albion Hurricanes', tier: 3, record: '6-3-3', brokenLoop: null },
-          { id: 'challenge', name: 'Challenge SC', tier: 4, record: '5-2-5', brokenLoop: 'HTX def. Challenge SC (1-0) pruned to break cycle' },
-          { id: 'sting-dal', name: 'Sting Dallas Black', tier: 4, record: '4-3-5', brokenLoop: null },
-          { id: 'htx', name: 'HTX Soccer', tier: 5, record: '3-2-7', brokenLoop: 'HTX def. Challenge SC (1-0) pruned to break cycle' },
-          { id: 'classics', name: 'Classics Elite', tier: 5, record: '2-1-9', brokenLoop: null },
-          { id: 'tulsa', name: 'Tulsa SC', tier: 6, record: '1-1-10', brokenLoop: null }
-        ],
-        edges: [
-          { source: 'solar', target: 'sting-aus', gd: 2, score: '3-1' },
-          { source: 'solar', target: 'fc-dallas', gd: 3, score: '4-1' },
-          { source: 'sting-aus', target: 'dksc', gd: 2, score: '2-0' },
-          { source: 'sting-aus', target: 'albion-hurr', gd: 1, score: '2-1' },
-          { source: 'fc-dallas', target: 'dksc', gd: 2, score: '3-1' },
-          { source: 'fc-dallas', target: 'sting-dal', gd: 3, score: '3-0' },
-          { source: 'dksc', target: 'challenge', gd: 2, score: '2-0' },
-          { source: 'albion-hurr', target: 'challenge', gd: 1, score: '1-0' },
-          { source: 'albion-hurr', target: 'sting-dal', gd: 2, score: '3-1' },
-          { source: 'challenge', target: 'htx', gd: 2, score: '4-2' },
-          { source: 'sting-dal', target: 'classics', gd: 1, score: '2-1' },
-          { source: 'htx', target: 'tulsa', gd: 3, score: '3-0' },
-          { source: 'classics', target: 'tulsa', gd: 2, score: '2-0' },
-          { source: 'dksc', target: 'fc-dallas', gd: 1, score: '1-0', isBrokenLoop: true },
-          { source: 'htx', target: 'challenge', gd: 1, score: '1-0', isBrokenLoop: true }
-        ]
-      },
-      'norcal': {
-        label: 'Northern Cal',
-        teams: [
-          { id: 'mvla', name: 'MVLA', tier: 1, record: '12-0-0', brokenLoop: null },
-          { id: 'bay-area-surf', name: 'Bay Area Surf', tier: 2, record: '10-1-1', brokenLoop: null },
-          { id: 'mustang', name: 'Mustang SC', tier: 2, record: '9-2-1', brokenLoop: 'San Juan SC def. Mustang SC (2-1) pruned to break cycle' },
-          { id: 'san-juan', name: 'San Juan SC', tier: 3, record: '7-2-3', brokenLoop: 'San Juan SC def. Mustang SC (2-1) pruned to break cycle' },
-          { id: 'placer', name: 'Placer United', tier: 3, record: '6-3-3', brokenLoop: null },
-          { id: 'de-anza', name: 'De Anza Force', tier: 4, record: '5-2-5', brokenLoop: null },
-          { id: 'davis-legacy', name: 'Davis Legacy', tier: 4, record: '4-3-5', brokenLoop: 'Marin FC def. Davis Legacy (1-0) pruned to break cycle' },
-          { id: 'marin-fc', name: 'Marin FC', tier: 5, record: '3-2-7', brokenLoop: 'Marin FC def. Davis Legacy (1-0) pruned to break cycle' },
-          { id: 'santa-rosa', name: 'Santa Rosa United', tier: 5, record: '2-1-9', brokenLoop: null },
-          { id: 'lamorinda', name: 'Lamorinda SC', tier: 6, record: '1-1-10', brokenLoop: null }
-        ],
-        edges: [
-          { source: 'mvla', target: 'bay-area-surf', gd: 2, score: '3-1' },
-          { source: 'mvla', target: 'mustang', gd: 3, score: '3-0' },
-          { source: 'bay-area-surf', target: 'san-juan', gd: 2, score: '2-0' },
-          { source: 'bay-area-surf', target: 'placer', gd: 1, score: '2-1' },
-          { source: 'mustang', target: 'san-juan', gd: 2, score: '4-2' },
-          { source: 'mustang', target: 'de-anza', gd: 2, score: '3-1' },
-          { source: 'san-juan', target: 'davis-legacy', gd: 2, score: '2-0' },
-          { source: 'placer', target: 'de-anza', gd: 1, score: '1-0' },
-          { source: 'placer', target: 'davis-legacy', gd: 2, score: '3-1' },
-          { source: 'de-anza', target: 'marin-fc', gd: 2, score: '2-0' },
-          { source: 'davis-legacy', target: 'santa-rosa', gd: 1, score: '2-1' },
-          { source: 'marin-fc', target: 'lamorinda', gd: 3, score: '4-1' },
-          { source: 'santa-rosa', target: 'lamorinda', gd: 2, score: '2-0' },
-          { source: 'san-juan', target: 'mustang', gd: 1, score: '2-1', isBrokenLoop: true },
-          { source: 'marin-fc', target: 'davis-legacy', gd: 1, score: '1-0', isBrokenLoop: true }
-        ]
-      },
-      'socal': {
-        label: 'Southwest / SoCal',
-        teams: [
-          { id: 'slammers-hb', name: 'Slammers FC HB Køge', tier: 1, record: '11-1-0', brokenLoop: null },
-          { id: 'sd-surf', name: 'San Diego Surf', tier: 2, record: '10-1-1', brokenLoop: null },
-          { id: 'legends', name: 'Legends FC', tier: 2, record: '8-2-2', brokenLoop: 'Rebels SC def. Legends FC (1-0) pruned to break cycle' },
-          { id: 'rebels', name: 'Rebels SC', tier: 3, record: '7-2-3', brokenLoop: 'Rebels SC def. Legends FC (1-0) pruned to break cycle' },
-          { id: 'la-brea', name: 'LA Breakers FC', tier: 3, record: '6-2-4', brokenLoop: null },
-          { id: 'arsenal-fc', name: 'Arsenal FC', tier: 4, record: '5-3-4', brokenLoop: null },
-          { id: 'eagles-sc', name: 'Eagles SC', tier: 5, record: '3-2-7', brokenLoop: null },
-          { id: 'utah-royals', name: 'Utah Royals FC-AZ', tier: 6, record: '1-2-9', brokenLoop: null }
-        ],
-        edges: [
-          { source: 'slammers-hb', target: 'sd-surf', gd: 2, score: '2-0' },
-          { source: 'slammers-hb', target: 'legends', gd: 3, score: '4-1' },
-          { source: 'sd-surf', target: 'rebels', gd: 2, score: '3-1' },
-          { source: 'sd-surf', target: 'la-brea', gd: 1, score: '1-0' },
-          { source: 'legends', target: 'rebels', gd: 2, score: '2-0' },
-          { source: 'legends', target: 'arsenal-fc', gd: 2, score: '3-1' },
-          { source: 'rebels', target: 'eagles-sc', gd: 2, score: '2-0' },
-          { source: 'la-brea', target: 'arsenal-fc', gd: 1, score: '2-1' },
-          { source: 'arsenal-fc', target: 'eagles-sc', gd: 1, score: '1-0' },
-          { source: 'eagles-sc', target: 'utah-royals', gd: 3, score: '3-0' },
-          { source: 'rebels', target: 'legends', gd: 1, score: '1-0', isBrokenLoop: true }
-        ]
-      }
-    };
+    function teamInitials(name) {
+      const words = String(name).split(/\s+/).filter(w => /^[a-z]/i.test(w));
+      return (words.slice(0, 2).map(w => w[0].toUpperCase()).join('') || '?');
+    }
 
-    function getFallbackForCompetition(compKey, gender, age) {
-      const baseSlug = compKey.replace(/-[gb]u\d{2}$/i, '').toLowerCase();
-      if (FALLBACK_DATASETS[baseSlug]) {
-        return FALLBACK_DATASETS[baseSlug];
+    function placeholderURI(name, color) {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">` +
+        `<circle cx="32" cy="32" r="30" fill="${color}"/>` +
+        `<text x="32" y="41" text-anchor="middle" font-size="22" font-weight="bold" fill="white">${teamInitials(name)}</text></svg>`;
+      return 'data:image/svg+xml;base64,' + btoa(svg);
+    }
+
+    // Club badge for a team: logos/<club-key>.png.b64 holds the base64 PNG.
+    // Successful fetches are cached by club key; failures fall back to an
+    // initials disc (never cached, so a later publish can still supply it).
+    async function logoURI(logoKey, team, idx) {
+      if (!logoKey) return placeholderURI(team, LOGO_PALETTE[idx % LOGO_PALETTE.length]);
+      if (logoCache.has(logoKey)) return logoCache.get(logoKey);
+      try {
+        const r = await fetch('logos/' + logoKey + '.png.b64');
+        if (!r.ok) throw new Error('logo not found');
+        const uri = 'data:image/png;base64,' + (await r.text()).trim();
+        logoCache.set(logoKey, uri);
+        return uri;
+      } catch (_) {
+        return placeholderURI(team, LOGO_PALETTE[idx % LOGO_PALETTE.length]);
       }
-      // Generate a tailored demo graph for any selected conference/showcase when offline
-      const catalogList = [...CONFERENCE_CATALOG.League, ...CONFERENCE_CATALOG.Showcase];
-      const meta = catalogList.find(c => c.slug === baseSlug);
-      const title = meta ? meta.label.replace(/ Conference$| National Event$/, '') : baseSlug.replace(/-/g, ' ').replace(/\w/g, c => c.toUpperCase());
-      const prefix = title.split(' ')[0];
+    }
+
+    async function preloadLogos(dataset) {
+      await Promise.all(dataset.teams.map(async (t, i) => {
+        t.logoURI = await logoURI(t.logoKey, t.name, i);
+      }));
+    }
+
+    // Best decisive result for winner over loser: largest margin, then latest.
+    // Returns { margin, score } with the score from the winner's perspective,
+    // or null when the pair never produced a decisive game.
+    function gameLineForPair(byPair, winner, loser) {
+      const list = byPair.get([winner, loser].sort().join('\x00')) || [];
+      let best = null;
+      for (const g of list) {
+        const wScore = g.home === winner ? g.home_score : g.away_score;
+        const lScore = g.home === winner ? g.away_score : g.home_score;
+        if (wScore <= lScore) continue;
+        const margin = wScore - lScore;
+        if (!best || margin > best.margin || (margin === best.margin && g.date > best.date)) {
+          best = { margin, date: g.date, score: `${wScore}-${lScore}` };
+        }
+      }
+      return best;
+    }
+
+    // Adapt one data.json league to the { teams, edges } shape the graph
+    // renderers consume. Teams are ranked (tier = rank); drawn edges are the
+    // league's arrows (transitive reduction); pruned loop links come from
+    // loops[].broken. All lists are null-safe: leagues with no scored games
+    // yet normalize to an empty dataset, never a crash.
+    function normalizeLeague(league) {
+      const rankings = league.rankings || [];
+      const games = league.games_list || [];
+      const teams = rankings.map(r => ({
+        id: r.team,
+        name: r.team,
+        short: r.short || r.team,
+        logoKey: r.logo || '',
+        logoURI: '',
+        tier: r.rank,
+        rating: r.rating,
+        record: `${r.w}-${r.d}-${r.l}`,
+        wins: r.w,
+        draws: r.d,
+        losses: r.l,
+        pathsOut: r.paths_out,
+        pathsIn: r.paths_in,
+        bracket: !!r.bracket_team,
+        brokenLoop: null
+      }));
+      const byId = new Map(teams.map(t => [t.id, t]));
+      const byPair = new Map();
+      for (const g of games) {
+        const k = [g.home, g.away].sort().join('\x00');
+        if (!byPair.has(k)) byPair.set(k, []);
+        byPair.get(k).push(g);
+      }
+      const toEdge = (winner, loser, weight, isBroken) => {
+        if (!byId.has(winner) || !byId.has(loser)) return null;
+        const line = gameLineForPair(byPair, winner, loser);
+        return {
+          source: winner,
+          target: loser,
+          gd: line ? line.margin : Math.max(1, Math.round(weight || 1)),
+          score: line ? line.score : '',
+          weight: weight || 1,
+          isBrokenLoop: !!isBroken
+        };
+      };
+      const edges = [];
+      for (const a of (league.arrows || [])) {
+        const e = toEdge(a.winner, a.loser, a.weight, false);
+        if (e) edges.push(e);
+      }
+      for (const lp of (league.loops || [])) {
+        for (const b of (lp.broken || [])) {
+          const e = toEdge(b.winner, b.loser, lp.weight, true);
+          if (e) edges.push(e);
+        }
+      }
+      const shortName = id => (byId.get(id) || {}).short || id;
+      for (const e of edges) {
+        if (!e.isBrokenLoop) continue;
+        const text = `${shortName(e.source)} def. ${shortName(e.target)}` +
+          (e.score ? ` (${e.score})` : '') + ' pruned to break cycle';
+        for (const id of [e.source, e.target]) {
+          const t = byId.get(id);
+          if (t && !t.brokenLoop) t.brokenLoop = text;
+        }
+      }
       return {
-        label: `${title} (${gender} ${age})`,
-        teams: [
-          { id: 't1', name: `${prefix} United ECNL`, tier: 1, record: '10-1-1', brokenLoop: null },
-          { id: 't2', name: `${prefix} Academy`, tier: 2, record: '8-2-2', brokenLoop: null },
-          { id: 't3', name: `${prefix} Surf`, tier: 2, record: '7-2-3', brokenLoop: `${prefix} FC def. ${prefix} Surf (1-0) pruned to break cycle` },
-          { id: 't4', name: `${prefix} FC`, tier: 3, record: '6-3-3', brokenLoop: `${prefix} FC def. ${prefix} Surf (1-0) pruned to break cycle` },
-          { id: 't5', name: `${prefix} Albion`, tier: 4, record: '4-2-6', brokenLoop: null },
-          { id: 't6', name: `${prefix} Rush`, tier: 5, record: '2-1-9', brokenLoop: null }
-        ],
-        edges: [
-          { source: 't1', target: 't2', gd: 2, score: '3-1' },
-          { source: 't1', target: 't3', gd: 3, score: '3-0' },
-          { source: 't2', target: 't4', gd: 2, score: '2-0' },
-          { source: 't3', target: 't4', gd: 2, score: '4-2' },
-          { source: 't4', target: 't5', gd: 1, score: '2-1' },
-          { source: 't5', target: 't6', gd: 2, score: '3-1' },
-          { source: 't4', target: 't3', gd: 1, score: '1-0', isBrokenLoop: true }
-        ]
+        label: league.title,
+        leagueId: league.id,
+        teams,
+        edges,
+        games: league.games || 0,
+        draws: league.draws || 0,
+        empty: teams.length === 0
       };
     }
+
+    function buildManifestEntries(leagues) {
+      return leagues.map(l => ({
+        season: l.season,
+        gender: l.gender,
+        age: l.age,
+        type: l.type,
+        competition: l.id,
+        label: l.title
+      }));
+    }
+    // ==BEATGRAPH-DATA-LAYER-END==
 
     const appState = {
       season: '2026-27',
@@ -1266,7 +1268,7 @@
       view: 'graph'
     };
 
-    let currentDataset = FALLBACK_DATASETS['texas-gu14'];
+    let currentDataset = null;
     let manifestEntries = [];
     let isHydrating = false;
 
@@ -1324,93 +1326,61 @@
       }
     });
 
-    // --- GitHub Data Adapter ---
-    async function tryFetchJson(url) {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 4500);
-      try {
-        const res = await fetch(url, { signal: controller.signal, cache: 'no-cache' });
-        clearTimeout(timer);
-        if (!res.ok) return null;
-        return await res.json();
-      } catch (_) {
-        clearTimeout(timer);
-        return null;
+    let beatgraphLeagues = [];
+
+    function showDataError() {
+      document.getElementById('compSummary').textContent = 'Competition data unavailable';
+      document.getElementById('dataSourceBadge').textContent = 'Data unavailable';
+      const emptyNotice = document.getElementById('emptyNotice');
+      emptyNotice.textContent = 'Could not load data.json. Check the connection and reload — no placeholder standings are shown.';
+      emptyNotice.style.display = 'block';
+    }
+
+    function sanitizeAppState() {
+      const pick = (field, fallback) => {
+        const vals = [...new Set(manifestEntries.map(e => e[field]))];
+        if (!vals.includes(appState[field])) {
+          appState[field] = vals.includes(fallback) ? fallback : vals[0];
+        }
+      };
+      pick('season', '2026-27');
+      pick('gender', 'Girls');
+      pick('age', 'U14');
+      pick('type', 'League');
+      if (!manifestEntries.some(e => e.competition === appState.competition)) {
+        const m = manifestEntries.find(e =>
+          e.season === appState.season && e.gender === appState.gender &&
+          e.age === appState.age && e.type === appState.type) || manifestEntries[0];
+        if (m) {
+          appState.competition = m.competition;
+          appState.season = m.season;
+          appState.gender = m.gender;
+          appState.age = m.age;
+          appState.type = m.type;
+        }
       }
     }
 
-    async function loadManifestIfAvailable() {
-      const manifestCandidates = [
-        'data/index.json',
-        'data/manifest.json',
-        'data/competitions.json',
-        'index.json',
-        'manifest.json'
-      ];
-
-      for (const base of REPO_SOURCES) {
-        for (const path of manifestCandidates) {
-          const raw = await tryFetchJson(`${base}/${path}`);
-          if (!raw) continue;
-
-          const list = Array.isArray(raw) ? raw : (raw.competitions || raw.graphs || raw.items || null);
-          if (Array.isArray(list) && list.length > 0) {
-            manifestEntries = list.map(item => ({
-              season: item.season || item.Season || '2026-27',
-              gender: item.gender || item.Gender || 'Girls',
-              age: item.age || item.Age || 'U14',
-              type: item.type || item.Type || 'League',
-              competition: item.competition || item.slug || item.id || item.key,
-              label: item.label || item.name || item.title || item.competition || item.slug,
-              path: item.path || item.file || item.url || null
-            })).filter(e => e.competition);
-
-            if (manifestEntries.length > 0) {
-              populateFilterDropdownsFromManifest();
-              return;
-            }
+    async function loadBeatgraphDataAndFilters() {
+      let raw = null;
+      for (const url of DATA_URLS) {
+        try {
+          const res = await fetch(url, { cache: 'no-cache' });
+          if (res.ok) {
+            const parsed = await res.json();
+            if (parsed && Array.isArray(parsed.leagues)) { raw = parsed; break; }
           }
-        }
+        } catch (_) { /* try the next source */ }
       }
-
-      // Auto-discover JSON graph files via GitHub Trees API if no manifest file exists
-      const treeApis = [
-        'https://api.github.com/repos/hborham/ecnlgraphs-pub/git/trees/main?recursive=1',
-        'https://api.github.com/repos/hborham/ecnlgraphs/git/trees/main?recursive=1'
-      ];
-      for (const apiUrl of treeApis) {
-        const treeData = await tryFetchJson(apiUrl);
-        if (treeData && Array.isArray(treeData.tree)) {
-          const jsonFiles = treeData.tree.filter(item =>
-            item.type === 'blob' &&
-            item.path.endsWith('.json') &&
-            !/(package|tsconfig|manifest|index)\.json$/i.test(item.path)
-          );
-          if (jsonFiles.length > 0) {
-            manifestEntries = jsonFiles.map(f => {
-              const parts = f.path.split('/');
-              const fileName = parts[parts.length - 1].replace(/\.json$/i, '');
-              const seasonMatch = f.path.match(/20\d{2}-\d{2}/);
-              const genderMatch = f.path.match(/(Girls|Boys)/i) || (/-gu\d{2}/i.test(fileName) ? [null, 'Girls'] : /-bu\d{2}/i.test(fileName) ? [null, 'Boys'] : null);
-              const ageMatch = f.path.match(/(U1[3-9])/i) || fileName.match(/[gb](u1[3-9])/i);
-              const typeMatch = f.path.match(/(League|Showcase)/i);
-              return {
-                season: seasonMatch ? seasonMatch[0] : '2026-27',
-                gender: genderMatch ? genderMatch[1][0].toUpperCase() + genderMatch[1].slice(1).toLowerCase() : 'Girls',
-                age: ageMatch ? ageMatch[1].toUpperCase() : 'U14',
-                type: typeMatch ? typeMatch[1][0].toUpperCase() + typeMatch[1].slice(1).toLowerCase() : 'League',
-                competition: fileName,
-                label: fileName.replace(/[-_]/g, ' ').replace(/\w/g, c => c.toUpperCase()),
-                path: f.path
-              };
-            });
-            populateFilterDropdownsFromManifest();
-            return;
-          }
-        }
+      if (!raw) {
+        manifestEntries = [];
+        showDataError();
+        return;
       }
-
-      updateCompetitionSelectOptions();
+      beatgraphLeagues = raw.leagues;
+      manifestEntries = buildManifestEntries(beatgraphLeagues);
+      sanitizeAppState();
+      populateFilterDropdownsFromManifest();
     }
 
     function populateFilterDropdownsFromManifest() {
@@ -1418,9 +1388,19 @@
         updateCompetitionSelectOptions();
         return;
       }
+      const sortValues = values => {
+        const key = v => {
+          const m = /^U(\d+)/.exec(v);
+          return m ? [0, parseInt(m[1], 10)] : [1, 0];
+        };
+        return [...values].sort((a, b) => {
+          const ka = key(a), kb = key(b);
+          return ka[0] - kb[0] || ka[1] - kb[1] || (a < b ? -1 : a > b ? 1 : 0);
+        });
+      };
       const fillSelect = (elId, values, currentVal) => {
         const sel = document.getElementById(elId);
-        const unique = [...new Set(values)];
+        const unique = sortValues(new Set(values));
         if (!unique.length) return;
         sel.innerHTML = unique.map(v => `<option value="${v}">${v}</option>`).join('');
         if (unique.includes(currentVal)) sel.value = currentVal;
@@ -1439,192 +1419,28 @@
       const t = document.getElementById('fType').value;
       const compSel = document.getElementById('fComp');
 
-      if (manifestEntries.length > 0) {
-        let matches = manifestEntries.filter(e =>
-          e.season === s && e.gender === g && e.age === a && e.type === t
-        );
-        if (!matches.length) {
-          matches = manifestEntries.filter(e => e.gender === g && e.age === a);
-        }
-        if (!matches.length) matches = manifestEntries;
-
-        compSel.innerHTML = matches.map(m =>
-          `<option value="${m.competition}">${m.label} (${m.competition})</option>`
-        ).join('');
-
-        if (matches.some(m => m.competition === appState.competition)) {
-          compSel.value = appState.competition;
-        }
+      if (!manifestEntries.length) {
+        compSel.innerHTML = '<option value="">(no data loaded)</option>';
         return;
       }
 
-      // Build full ECNL conference/showcase list dynamically for selected Gender + Age + Type
-      const gaSuffix = `${g[0].toLowerCase()}${a.toLowerCase()}`;
-      const list = CONFERENCE_CATALOG[t] || CONFERENCE_CATALOG.League;
-      compSel.innerHTML = list.map(item => {
-        const val = `${item.slug}-${gaSuffix}`;
-        return `<option value="${val}">${item.label} (${val})</option>`;
-      }).join('');
-
-      const currentBase = appState.competition.replace(/-[gb]u\d{2}$/i, '');
-      const matchingVal = `${currentBase}-${gaSuffix}`;
-      if ([...compSel.options].some(o => o.value === matchingVal)) {
-        compSel.value = matchingVal;
-      }
-    }
-
-    function normalizeGraphPayload(raw, compKey) {
-      if (!raw || typeof raw !== 'object') return null;
-
-      const rawNodes = raw.nodeDataArray || raw.nodes || raw.teams || [];
-      const rawEdges = raw.linkDataArray || raw.edges || raw.links || raw.wins || [];
-      const rawBroken = raw.brokenLoops || raw.broken_loops || raw.removedLinks || [];
-
-      if (!Array.isArray(rawNodes) || rawNodes.length === 0) return null;
-
-      const slugify = str => String(str || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-
-      const teamsMap = new Map();
-      rawNodes.forEach((n, idx) => {
-        const rawName = n.name || n.team || n.text || n.label || String(n.key || n.id || `Team ${idx + 1}`);
-        const id = String(n.id || n.key || slugify(rawName));
-        teamsMap.set(id, {
-          id,
-          name: rawName,
-          tier: Number(n.tier || n.rank || n.level || 0),
-          record: n.record || n.wdl || null,
-          wins: Number(n.wins ?? n.w ?? 0),
-          draws: Number(n.draws ?? n.d ?? 0),
-          losses: Number(n.losses ?? n.l ?? 0),
-          brokenLoop: n.brokenLoop || n.broken_loop || null
-        });
-      });
-
-      const parseEdge = (e, forceBroken = false) => {
-        const src = String(e.source ?? e.from ?? e.winner ?? '');
-        const tgt = String(e.target ?? e.to ?? e.loser ?? '');
-        if (!teamsMap.has(src) || !teamsMap.has(tgt)) return null;
-
-        let gd = Number(e.gd ?? e.goalDiff ?? e.goal_diff ?? e.weight ?? 1);
-        if (!Number.isFinite(gd) || gd < 1) gd = 1;
-
-        const score = e.score || e.result || (e.gf != null && e.ga != null ? `${e.gf}-${e.ga}` : `+${gd}`);
-        const isBrokenLoop = forceBroken || Boolean(e.isBrokenLoop || e.broken || e.is_loop || e.loop);
-
-        return { source: src, target: tgt, gd, score, isBrokenLoop };
-      };
-
-      const edges = [
-        ...rawEdges.map(e => parseEdge(e, false)),
-        ...rawBroken.map(e => parseEdge(e, true))
-      ].filter(Boolean);
-
-      const hasExplicitTiers = [...teamsMap.values()].some(t => t.tier > 0);
-      if (!hasExplicitTiers) {
-        const inDeg = new Map();
-        const adj = new Map();
-        teamsMap.forEach((_, id) => { inDeg.set(id, 0); adj.set(id, []); });
-
-        edges.filter(e => !e.isBrokenLoop).forEach(e => {
-          adj.get(e.source).push(e.target);
-          inDeg.set(e.target, (inDeg.get(e.target) || 0) + 1);
-        });
-
-        const tierCalc = new Map();
-        const q = [];
-        inDeg.forEach((deg, id) => {
-          if (deg === 0) { q.push(id); tierCalc.set(id, 1); }
-        });
-
-        while (q.length > 0) {
-          const u = q.shift();
-          const uTier = tierCalc.get(u) || 1;
-          for (const v of adj.get(u)) {
-            tierCalc.set(v, Math.max(tierCalc.get(v) || 1, uTier + 1));
-            inDeg.set(v, inDeg.get(v) - 1);
-            if (inDeg.get(v) === 0) q.push(v);
-          }
-        }
-
-        teamsMap.forEach((t, id) => {
-          t.tier = tierCalc.get(id) || 1;
-        });
-      }
-
-      teamsMap.forEach((t, id) => {
-        if (!t.record) {
-          const dagWins = edges.filter(e => !e.isBrokenLoop && e.source === id).length;
-          const dagLosses = edges.filter(e => !e.isBrokenLoop && e.target === id).length;
-          t.record = (t.wins || t.losses || t.draws)
-            ? `${t.wins}-${t.draws}-${t.losses}`
-            : `${dagWins}W-${dagLosses}L (DAG)`;
-        }
-        if (!t.brokenLoop) {
-          const loopEdge = edges.find(e => e.isBrokenLoop && (e.source === id || e.target === id));
-          if (loopEdge) {
-            const wName = teamsMap.get(loopEdge.source)?.name || loopEdge.source;
-            const lName = teamsMap.get(loopEdge.target)?.name || loopEdge.target;
-            t.brokenLoop = `${wName} def. ${lName} (${loopEdge.score}) pruned to break cycle`;
-          }
-        }
-      });
-
-      const compLabel = raw.label || raw.title || raw.name ||
-        compKey.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-
-      return {
-        label: compLabel,
-        teams: [...teamsMap.values()],
-        edges
-      };
-    }
-
-    async function fetchLiveCompetition(season, gender, age, type, competition) {
-      const s = encodeURIComponent(season);
-      const g = encodeURIComponent(gender);
-      const a = encodeURIComponent(age);
-      const t = encodeURIComponent(type);
-      const c = encodeURIComponent(competition);
-
-      const gLow = encodeURIComponent(gender.toLowerCase());
-      const aLow = encodeURIComponent(age.toLowerCase());
-      const tLow = encodeURIComponent(type.toLowerCase());
-
-      const manifestMatch = manifestEntries.find(m =>
-        m.competition === competition && (!m.season || m.season === season)
+      let matches = manifestEntries.filter(e =>
+        e.season === s && e.gender === g && e.age === a && e.type === t
       );
-
-      const baseSlug = encodeURIComponent(competition.replace(/-[gb]u\d{2}$/i, ''));
-      const relativePaths = [
-        manifestMatch?.path,
-        `data/${s}/${g}/${a}/${t}/${c}.json`,
-        `data/${s}/${g}/${a}/${t}/${baseSlug}.json`,
-        `data/${s}/${gLow}/${aLow}/${tLow}/${c}.json`,
-        `data/${s}/${gLow}/${aLow}/${tLow}/${baseSlug}.json`,
-        `data/${s}/${t}/${g}/${a}/${c}.json`,
-        `data/${s}/${t}/${g}/${a}/${baseSlug}.json`,
-        `data/${s}/${c}.json`,
-        `graphs/${s}/${c}.json`,
-        `data/${c}.json`,
-        `graphs/${c}.json`
-      ].filter(Boolean);
-
-      for (const base of REPO_SOURCES) {
-        for (const rel of relativePaths) {
-          const url = rel.startsWith('http') ? rel : `${base}/${rel}`;
-          const raw = await tryFetchJson(url);
-          const normalized = normalizeGraphPayload(raw, competition);
-          if (normalized) {
-            return { dataset: normalized, isLive: true, sourceUrl: url };
-          }
-        }
+      if (!matches.length) {
+        matches = manifestEntries.filter(e => e.gender === g && e.age === a);
       }
+      if (!matches.length) matches = manifestEntries;
 
-      const fallback = getFallbackForCompetition(competition, gender, age);
-      return { dataset: fallback, isLive: false, sourceUrl: null };
+      compSel.innerHTML = matches.map(m =>
+        `<option value="${m.competition}">${m.label} (${m.competition})</option>`
+      ).join('');
+
+      if (matches.some(m => m.competition === appState.competition)) {
+        compSel.value = appState.competition;
+      }
     }
 
-    // --- URL Query Sync ---
     function readStateFromUrl() {
       const params = new URLSearchParams(window.location.search);
       if (params.has('season')) appState.season = params.get('season');
@@ -1695,6 +1511,16 @@
 
     // --- D3 + Dagre Hierarchical Layout Engine ---
     function computeD3Layout(dataset) {
+      if (!dataset.teams.length) {
+        graphLayout = {
+          nodes: [],
+          nodeMap: new Map(),
+          edges: [],
+          tierBands: [],
+          bounds: { minX: 0, minY: 0, maxX: 400, maxY: 300 }
+        };
+        return;
+      }
       const g = new dagre.graphlib.Graph({ multigraph: true });
       g.setGraph({
         rankdir: 'TB',
@@ -1708,9 +1534,9 @@
 
       const nodeMap = new Map();
       dataset.teams.forEach(t => {
-        const label = `#${t.tier} ${t.name}`;
-        const width = Math.max(118, label.length * 7.6 + 24);
-        const height = 38;
+        const label = `#${t.tier} ${t.short}`;
+        const width = Math.max(112, label.length * 7.6 + 28);
+        const height = 88;
         const nodeObj = {
           ...t,
           label,
@@ -1752,8 +1578,8 @@
           const avgY = d3.mean(items, d => d.y);
           return {
             tier,
-            y: avgY - 26,
-            height: 52
+            y: avgY - 47,
+            height: 94
           };
         });
 
@@ -1767,8 +1593,8 @@
           sourceNode: src,
           targetNode: tgt,
           points: dagrePoints,
-          edgeLabel: `+${e.gd} (${e.score})`,
-          loopLabel: `Loop ${e.score}`
+          edgeLabel: e.score ? `+${e.gd} (${e.score})` : `+${e.gd}`,
+          loopLabel: e.score ? `Loop ${e.score}` : 'Loop link'
         };
       });
 
@@ -1846,7 +1672,7 @@
           g.select('text')
             .attr('x', bounds.minX + 10)
             .attr('y', d.y + 14)
-            .text(`Tier #${d.tier}`);
+            .text(`Rank #${d.tier}`);
         });
 
       bandsSel.exit().remove();
@@ -1915,7 +1741,10 @@
         });
 
       nodesEnter.append('rect').attr('class', 'node-rect');
+      nodesEnter.append('image').attr('class', 'node-logo');
+      nodesEnter.append('circle').attr('class', 'node-ring');
       nodesEnter.append('text').attr('class', 'node-title');
+      nodesEnter.append('title');
 
       nodesSel.merge(nodesEnter)
         .attr('transform', d => `translate(${d.x}, ${d.y})`)
@@ -1926,8 +1755,25 @@
             .attr('y', -d.height / 2)
             .attr('width', d.width)
             .attr('height', d.height);
+          g.select('image')
+            .attr('x', -24)
+            .attr('y', -d.height / 2 + 6)
+            .attr('width', 48)
+            .attr('height', 48)
+            .attr('href', d.logoURI);
+          g.select('circle')
+            .attr('cx', 0)
+            .attr('cy', -d.height / 2 + 30)
+            .attr('r', 25)
+            .attr('fill', 'none')
+            .attr('stroke', '#fbbf24')
+            .attr('stroke-width', 2.5)
+            .style('display', d.bracket ? null : 'none');
           g.select('text')
+            .attr('y', d.height / 2 - 12)
             .text(d.label);
+          g.select('title')
+            .text(`${d.name} · Rank #${d.tier} · ${d.record} · rating ${d.rating.toFixed(2)}`);
         });
 
       nodesSel.exit().remove();
@@ -2010,32 +1856,45 @@
       const loadingPill = document.getElementById('loadingPill');
       loadingPill.classList.add('show');
 
-      const { dataset, isLive } = await fetchLiveCompetition(
-        appState.season,
-        appState.gender,
-        appState.age,
-        appState.type,
-        compKey
-      );
-
+      let league = beatgraphLeagues.find(l => l.id === compKey) || null;
+      if (!league) {
+        const m = manifestEntries.find(e =>
+          e.season === appState.season && e.gender === appState.gender &&
+          e.age === appState.age && e.type === appState.type) || manifestEntries[0];
+        if (m) {
+          league = beatgraphLeagues.find(l => l.id === m.competition) || null;
+          if (league) {
+            appState.competition = league.id;
+            appState.season = league.season;
+            appState.gender = league.gender;
+            appState.age = league.age;
+            appState.type = league.type;
+          }
+        }
+      }
       loadingPill.classList.remove('show');
+      if (!league) {
+        showDataError();
+        currentDataset = { label: appState.competition, teams: [], edges: [], games: 0, empty: true };
+        renderRankingsList();
+        return;
+      }
+      const dataset = normalizeLeague(league);
+      await preloadLogos(dataset);
       currentDataset = dataset;
 
-      const sourceBadge = document.getElementById('dataSourceBadge');
-      const brandDot = document.getElementById('brandDot');
-      if (isLive) {
-        sourceBadge.textContent = 'Live GitHub';
-        sourceBadge.classList.remove('demo');
-        brandDot.classList.remove('fallback');
-      } else {
-        sourceBadge.textContent = 'Demo Data';
-        sourceBadge.classList.add('demo');
-        brandDot.classList.add('fallback');
-      }
-
+      document.getElementById('dataSourceBadge').textContent =
+        dataset.empty ? 'No scored games yet' : `${dataset.games} games · ${dataset.teams.length} teams`;
+      document.getElementById('brandDot').classList.remove('fallback');
       document.getElementById('compSummary').textContent =
         `${appState.season} · ${appState.gender} ${appState.age} · ${dataset.label}`;
-
+      const emptyNotice = document.getElementById('emptyNotice');
+      if (dataset.empty) {
+        emptyNotice.textContent = `No scored games yet for ${dataset.label} — the schedule is posted and results will appear as games are played.`;
+        emptyNotice.style.display = 'block';
+      } else {
+        emptyNotice.style.display = 'none';
+      }
       const loopCount = dataset.edges.filter(e => e.isBrokenLoop).length;
       document.getElementById('loopBtnText').textContent = `Broken Loops (${loopCount})`;
 
@@ -2207,6 +2066,7 @@
       document.getElementById('clearBtn').style.display = 'none';
       document.getElementById('sheetTeamName').textContent = 'Tap any team to inspect';
       document.getElementById('sheetTeamMeta').textContent = 'View direct BeatWins, transitive BeatPaths & loops';
+      document.getElementById('sheetTeamLogo').style.display = 'none';
       document.getElementById('sheetBody').style.display = 'none';
       openBottomSheet(false);
       syncStateToUrl();
@@ -2333,8 +2193,11 @@
     }
 
     function populateBottomSheet(node, outEdges, inEdges, reachableNodeIds, dagEdges) {
+      const sheetLogo = document.getElementById('sheetTeamLogo');
+      sheetLogo.src = node.logoURI || '';
+      sheetLogo.style.display = 'block';
       document.getElementById('sheetTeamName').textContent = node.name;
-      document.getElementById('sheetTeamMeta').textContent = `Tier #${node.tier} · Record ${node.record} · ${reachableNodeIds.size} BeatPath wins`;
+      document.getElementById('sheetTeamMeta').textContent = `Rank #${node.tier} · Record ${node.record} · ${reachableNodeIds.size} BeatPath wins`;
       document.getElementById('sheetBody').style.display = 'flex';
 
       document.getElementById('statRank').textContent = `#${node.tier}`;
@@ -2381,7 +2244,7 @@
         reachableNodes.forEach(tNode => {
           const opt = document.createElement('option');
           opt.value = tNode.id;
-          opt.textContent = `${tNode.name} (Tier #${tNode.tier})`;
+          opt.textContent = `${tNode.name} (Rank #${tNode.tier})`;
           reachGroup.appendChild(opt);
         });
         targetSelect.appendChild(reachGroup);
@@ -2394,7 +2257,7 @@
         otherNodes.forEach(oNode => {
           const opt = document.createElement('option');
           opt.value = oNode.id;
-          opt.textContent = `${oNode.name} (Tier #${oNode.tier})`;
+          opt.textContent = `${oNode.name} (Rank #${oNode.tier})`;
           otherGroup.appendChild(opt);
         });
         targetSelect.appendChild(otherGroup);
@@ -2434,9 +2297,10 @@
         <div class="rank-card" data-id="${t.id}">
           <div style="display:flex; align-items:center; gap:10px;">
             <div class="rank-badge">#${t.tier}</div>
+            <img src="${t.logoURI || ''}" alt="" style="width:40px;height:40px;border-radius:50%;object-fit:cover;flex:none;" />
             <div>
               <div style="font-weight:700; font-size:14px;">${t.name}</div>
-              <div style="font-size:12px; color:var(--text-muted);">Record: ${t.record}</div>
+              <div style="font-size:12px; color:var(--text-muted);">Record: ${t.record} · Rating ${t.rating.toFixed(2)}</div>
             </div>
           </div>
           <span style="font-size:12px; color:var(--accent); font-weight:600;">Inspect ›</span>
@@ -2531,6 +2395,10 @@
       } catch (_) {}
     };
 
+    document.getElementById('switchViewBtn').onclick = () => {
+      window.location.href = 'ecnl-beatgraphs-mobile.html' + window.location.search;
+    };
+
     // Modals & Cascading Filter Listeners
     const filterModal = document.getElementById('filterModal');
     const helpModal = document.getElementById('helpModal');
@@ -2550,6 +2418,7 @@
       appState.age = document.getElementById('fAge').value;
       appState.type = document.getElementById('fType').value;
       const newComp = document.getElementById('fComp').value;
+      appState.competition = newComp;
 
       syncControlsToState();
       filterModal.classList.remove('show');
@@ -2559,7 +2428,7 @@
     async function bootFromUrl() {
       isHydrating = true;
       readStateFromUrl();
-      await loadManifestIfAvailable();
+      await loadBeatgraphDataAndFilters();
       syncControlsToState();
       switchTab(appState.view);
       await loadCompetition(appState.competition, true);
