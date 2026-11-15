@@ -269,7 +269,7 @@
     /* --- Main Graph Viewport --- */
     #cy {
       position: fixed;
-      top: 128px;
+      top: var(--header-h, 128px);
       left: 0;
       right: 0;
       bottom: 0;
@@ -304,7 +304,7 @@
     .fab-stack {
       position: fixed;
       right: 12px;
-      top: 140px;
+      top: calc(var(--header-h, 128px) + 12px);
       z-index: 15;
       display: flex;
       flex-direction: column;
@@ -327,7 +327,7 @@
     .legend-chip {
       position: fixed;
       left: 12px;
-      top: 140px;
+      top: calc(var(--header-h, 128px) + 12px);
       z-index: 15;
       background: rgba(17, 24, 39, 0.88);
       backdrop-filter: blur(8px);
@@ -372,7 +372,7 @@
     /* --- Rankings List View --- */
     #rankingsView {
       position: fixed;
-      top: 128px;
+      top: var(--header-h, 128px);
       left: 0;
       right: 0;
       bottom: 0;
@@ -386,7 +386,7 @@
     /* --- Scores Table View --- */
     #scoresView {
       position: fixed;
-      top: 128px;
+      top: var(--header-h, 128px);
       left: 0;
       right: 0;
       bottom: 0;
@@ -842,19 +842,20 @@
       border-top: none;
     }
 
-    /* --- Mobile: the competition pill gets its own full-width row --- */
+    /* --- Mobile: title first, the competition pill on its own row below --- */
     /* The first header row holds the brand, the pill, and four action
        buttons; on a phone the pill (flex:1, min-width:0) was squeezed to
-       almost nothing. Below 640px the pill moves to its own line, full
-       width and 40px tall, so the current selection stays readable and
-       clearly tappable; the brand and buttons share the line below it.
-       The fixed viewports drop by the added row (48px). */
+       almost nothing. Below 640px the pill wraps to its own line (order:1,
+       after the brand + hamburger row), full width and 40px tall, so the
+       current selection stays readable and clearly tappable. The title
+       owns the top row. The fixed viewports track the measured header
+       height via --header-h, so no hardcoded offset lives here. */
     @media (max-width: 640px) {
       .topbar-row:first-child {
         flex-wrap: wrap;
       }
       .topbar-row:first-child .comp-pill {
-        order: -1;
+        order: 1;
         flex: 1 1 100%;
         min-height: 40px;
         font-size: 13px;
@@ -869,10 +870,16 @@
       .topbar-row:first-child .share-btn {
         padding: 0 8px;
       }
-      #cy,
-      #rankingsView,
-      #scoresView {
-        top: 176px;
+      /* The sheet stays fully off-screen until a team is selected: no
+         permanent peek bar eating graph height on a phone. */
+      .bottom-sheet {
+        transform: translateY(calc(100% + 8px));
+      }
+      .bottom-sheet.has-selection {
+        transform: translateY(calc(100% - 62px));
+      }
+      .bottom-sheet.has-selection.open {
+        transform: translateY(0);
       }
     }
   </style>
@@ -1242,6 +1249,7 @@
       }
       return {
         label: league.title,
+        competition: league.competition,
         leagueId: league.id,
         teams,
         edges,
@@ -1263,6 +1271,32 @@
       }));
     }
     // ==BEATGRAPH-DATA-LAYER-END==
+
+    // Keep the fixed viewports below the header at every width: measure the
+    // header instead of hardcoding its height (it wraps to extra rows on
+    // phones, and a guessed offset clipped the top of the graph). The
+    // --header-h variable drives the viewport, legend, and button offsets.
+    function syncHeaderHeight() {
+      const bar = document.querySelector('.topbar');
+      if (!bar) return;
+      document.documentElement.style.setProperty('--header-h', bar.offsetHeight + 'px');
+    }
+    syncHeaderHeight();
+    window.addEventListener('resize', syncHeaderHeight);
+    const topbarEl = document.querySelector('.topbar');
+    if (topbarEl && typeof ResizeObserver === 'function') {
+      new ResizeObserver(syncHeaderHeight).observe(topbarEl);
+    }
+
+    // Narrow-screen rules (the <=640px media query): the sheet rests at its
+    // peek row instead of opening fully, and fits leave the peek strip clear.
+    function isNarrowScreen() {
+      return typeof window.matchMedia === 'function' &&
+        window.matchMedia('(max-width: 640px)').matches;
+    }
+    function sheetInset() {
+      return isNarrowScreen() ? 78 : 0;
+    }
 
     const appState = {
       season: '2026-27',
@@ -1451,7 +1485,7 @@
       updateCompetitionSelectOptions();
       ensureOption('fComp', appState.competition);
 
-      const compLabel = currentDataset?.label || appState.competition;
+      const compLabel = currentDataset?.competition || appState.competition;
       document.getElementById('compSummary').textContent =
         `${appState.season} · ${appState.gender} ${appState.age} · ${compLabel}`;
 
@@ -1688,7 +1722,7 @@
         dataset.empty ? 'No scored games yet' : `${dataset.games} games · ${dataset.teams.length} teams`;
       document.getElementById('brandDot').classList.remove('fallback');
       document.getElementById('compSummary').textContent =
-        `${appState.season} · ${appState.gender} ${appState.age} · ${dataset.label}`;
+        `${appState.season} · ${appState.gender} ${appState.age} · ${dataset.competition}`;
       const emptyNotice = document.getElementById('emptyNotice');
       if (dataset.empty) {
         emptyNotice.textContent = `No scored games yet for ${dataset.label} — the schedule is posted and results will appear as games are played.`;
@@ -1825,13 +1859,25 @@
         .union(connectedLoops)
         .union(loopPeers);
 
-      cy.animate({
-        fit: { eles: focusCollection, padding: 45 }
-      }, { duration: 280 });
+      // Fit the focused neighborhood, then shift it up on a phone so the
+      // selected team clears the sheet's peek row instead of sliding under it.
+      const fitVp = cy.getFitViewport(focusCollection, 45);
+      let targetVp = fitVp;
+      if (fitVp && isNarrowScreen()) {
+        const pos = node.position();
+        const renderedY = pos.y * fitVp.zoom + fitVp.pan.y;
+        const safeY = cy.height() - sheetInset();
+        if (renderedY > safeY) {
+          targetVp = { zoom: fitVp.zoom, pan: { x: fitVp.pan.x, y: fitVp.pan.y - (renderedY - safeY) } };
+        }
+      }
+      if (targetVp) cy.animate(targetVp, { duration: 280 });
+      else cy.animate({ fit: { eles: focusCollection, padding: 45 } }, { duration: 280 });
 
       document.getElementById('clearBtn').style.display = 'block';
       populateBottomSheet(node, outEdges, inEdges, reachableNodes, activeDag);
-      openBottomSheet(true);
+      document.getElementById('bottomSheet').classList.add('has-selection');
+      openBottomSheet(!isNarrowScreen());
       syncStateToUrl();
     }
 
@@ -1851,6 +1897,7 @@
       document.getElementById('sheetTeamMeta').textContent = 'View direct BeatWins, transitive BeatPaths & loops';
       document.getElementById('sheetTeamLogo').style.display = 'none';
       document.getElementById('sheetBody').style.display = 'none';
+      document.getElementById('bottomSheet').classList.remove('has-selection');
       openBottomSheet(false);
       syncStateToUrl();
     }
@@ -2190,7 +2237,31 @@
       cy.animate({ fit: { eles: cy.elements().not('.filtered-out'), padding: 26 } }, { duration: 250 });
     document.getElementById('clearBtn').onclick = resetSelection;
 
-    document.getElementById('sheetToggle').onclick = () => {
+    // Swipe down on the sheet handle to step it down: open -> peek ->
+    // dismissed. A short drag still counts as a tap (toggle).
+    let sheetTouchStartY = null;
+    let sheetSwipeHandled = false;
+    const sheetToggleEl = document.getElementById('sheetToggle');
+    sheetToggleEl.addEventListener('touchstart', e => {
+      if (e.touches.length === 1) { sheetTouchStartY = e.touches[0].clientY; sheetSwipeHandled = false; }
+    }, { passive: true });
+    sheetToggleEl.addEventListener('touchmove', e => {
+      if (sheetTouchStartY === null) return;
+      if (e.touches[0].clientY - sheetTouchStartY > 12) e.preventDefault();
+    }, { passive: false });
+    sheetToggleEl.addEventListener('touchend', e => {
+      if (sheetTouchStartY === null || !appState.team) return;
+      const dy = e.changedTouches[0].clientY - sheetTouchStartY;
+      sheetTouchStartY = null;
+      if (dy > 60) {
+        sheetSwipeHandled = true;
+        const sheet = document.getElementById('bottomSheet');
+        if (sheet.classList.contains('open')) openBottomSheet(false);
+        else resetSelection();
+      }
+    }, { passive: true });
+    sheetToggleEl.onclick = () => {
+      if (sheetSwipeHandled) { sheetSwipeHandled = false; return; }
       if (!appState.team) return;
       const sheet = document.getElementById('bottomSheet');
       openBottomSheet(!sheet.classList.contains('open'));
