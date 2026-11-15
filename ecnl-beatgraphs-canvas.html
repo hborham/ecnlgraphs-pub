@@ -801,6 +801,43 @@
       font-size: 14px;
       cursor: pointer;
     }
+
+    /* --- Mobile: the competition pill gets its own full-width row --- */
+    /* The first header row holds the brand, the pill, and four action
+       buttons; on a phone the pill (flex:1, min-width:0) was squeezed to
+       almost nothing. Below 640px the pill moves to its own line, full
+       width and 40px tall, so the current selection stays readable and
+       clearly tappable; the brand and buttons share the line below it.
+       The fixed viewports drop by the added row (48px). */
+    @media (max-width: 640px) {
+      .topbar-row:first-child {
+        flex-wrap: wrap;
+      }
+      .topbar-row:first-child .comp-pill {
+        order: -1;
+        flex: 1 1 100%;
+        min-height: 40px;
+        font-size: 13px;
+      }
+      .topbar-row:first-child .brand {
+        font-size: 13px;
+      }
+      .topbar-row:first-child .share-btn {
+        padding: 0 8px;
+      }
+      #cy,
+      #rankingsView,
+      #scoresView {
+        top: 176px;
+      }
+    }
+    /* Very small phones: the brand collapses to its status dot so the
+       four action buttons still fit on one line. */
+    @media (max-width: 400px) {
+      .topbar-row:first-child .brand {
+        font-size: 0;
+      }
+    }
   </style>
 </head>
 <body>
