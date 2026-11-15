@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BeatGraphs</title>
+<title>ECNL Graphs</title>
 <style>
   body { font-family: -apple-system, sans-serif; max-width: 1100px; margin: 0 auto; padding: 24px; background: #fff; color: #222; }
   h1 { font-size: 28px; margin-bottom: 4px; }
@@ -27,8 +27,8 @@
 </style>
 </head>
 <body>
-<h1>BeatGraphs</h1>
-<p class="sub">Weighted Method (beatgraphs.com) &middot; rebuilt weekly from league schedules</p>
+<h1>ECNL Graphs</h1>
+<p class="sub">Weighted Method (<a href="https://www.beatgraphs.com/BeatGraphBasics.php">BeatGraph</a>) &middot; rebuilt weekly from league schedules</p>
 <p class="legend"><b>BeatWin</b> = direct win, arrow weighted by goal difference &middot; <b>BeatPath</b> = chain of BeatWins &middot; <b>Broken BeatLoop</b> = a win cycle resolved by removing its weakest link &middot; Draws create no link. Only the smallest set of arrows is drawn: an arrow is omitted when a BeatPath through other teams already implies it.</p>
 <div class="controls" id="controls">
   <div><label for="sel-season">Season</label><select id="sel-season"></select></div>
@@ -38,7 +38,7 @@
   <div><label for="sel-competition">Competition</label><select id="sel-competition"></select></div>
 </div>
 <div id="view"></div>
-<footer>Data: beatgraphs.com Weighted Method &middot; <a href="https://github.com/hborham/ecnlgraphs">hborham/ecnlgraphs</a></footer>
+<footer>Method: BeatGraph Weighted Method &middot; <a href="https://github.com/hborham/ecnlgraphs">hborham/ecnlgraphs</a></footer>
 
 <script>
 function esc(s) {
@@ -134,7 +134,7 @@ async function renderSelected() {
   view.innerHTML = `<section><h2>${esc(league.title)}</h2>` +
     (league.loops_resolved > 0 ? `<p class="loops-note">${league.loops_resolved} BeatLoop${league.loops_resolved === 1 ? '' : 's'} resolved &mdash; the weakest link in each cycle was removed.</p>` : '') +
     `<p class="loading" id="img-status">Loading graph image&hellip;</p>` +
-    `<img class="graph" id="graph-img" alt="${esc(league.title)} beatgraph" style="display:none">` +
+    `<img class="graph" id="graph-img" alt="${esc(league.title)} graph" style="display:none">` +
     `<p class="interactive-link">Interactive graph: <a href="${interactiveURL(sel)}">swimlane view (D3)</a> &middot; <a href="${canvasURL(sel)}">canvas view (Cytoscape)</a></p></section>`;
   view.querySelector('section').insertAdjacentHTML('beforeend', scoresTable(league));
   const img = document.getElementById('graph-img');

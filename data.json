@@ -1,7 +1,7 @@
 {
   "meta": {
-    "method": "beatgraphs.com Weighted Method, one graph per league",
-    "note": "Scaling uses rating = 10*raw/(|raw|+k), k=(maxOut+maxIn)/4.4; beatgraphs.com does not publish its exact scaling formula."
+    "method": "BeatGraph Weighted Method, one graph per league",
+    "note": "Scaling uses rating = 10*raw/(|raw|+k), k=(maxOut+maxIn)/4.4; BeatGraph does not publish its exact scaling formula."
   },
   "leagues": [
     {
