@@ -614,7 +614,11 @@
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: 25;
+      /* Above the header (30) and menu panel (31), below dialogs
+         (50): an open sheet's top reaches behind the tall wrapped
+         header on phones, and its handle must stay visible and
+         swipeable OVER the header, never hidden under it. */
+      z-index: 40;
       background: var(--surface);
       border-top: 1px solid var(--border);
       border-top-left-radius: 20px;
@@ -1006,6 +1010,11 @@
       }
       .topbar-row:first-child .menu-btn {
         display: grid;
+        /* The gate appends the profile/logout cluster after this
+           button; without the auto margin, space-between strands the
+           hamburger mid-row. It belongs immediately left of the
+           profile/logout buttons, right-aligned with them. */
+        margin-left: auto;
       }
       .topbar-row:first-child .share-btn {
         padding: 0 8px;
