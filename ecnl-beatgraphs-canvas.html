@@ -1126,6 +1126,42 @@
       'https://hborham.github.io/ecnlgraphs-pub/data.json'
     ];
 
+    // Firebase enforcement (phase 2): when the sign-in gate markup is
+    // present, this copy is served behind auth. Data and badge fetches
+    // wait for the gate to admit the visitor, then carry the Firebase
+    // ID token; the public fallback URL is never used in that mode.
+    // Without gate markup (GitHub Pages) everything fetches as before.
+    function gateEnforced() {
+      return !!document.getElementById('firebase-gate');
+    }
+
+    let gateTokenPromise = null;
+    function gateTokenGetter() {
+      if (!gateTokenPromise) {
+        gateTokenPromise = new Promise(resolve => {
+          if (typeof window.__ECNL_GET_ID_TOKEN__ === 'function') {
+            resolve(window.__ECNL_GET_ID_TOKEN__);
+          } else {
+            window.addEventListener('ecnl-gate-admitted',
+              e => resolve(e.detail.getIdToken), { once: true });
+          }
+        });
+      }
+      return gateTokenPromise;
+    }
+
+    async function authedFetch(url, options) {
+      const opts = Object.assign({}, options);
+      if (gateEnforced()) {
+        const getIdToken = await gateTokenGetter();
+        const token = getIdToken ? await getIdToken() : null;
+        if (token) {
+          opts.headers = Object.assign({}, opts.headers, { Authorization: 'Bearer ' + token });
+        }
+      }
+      return fetch(url, opts);
+    }
+
     const LOGO_PALETTE = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd",
       "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"];
     const logoCache = new Map();
@@ -1149,7 +1185,7 @@
       if (!logoKey) return placeholderURI(team, LOGO_PALETTE[idx % LOGO_PALETTE.length]);
       if (logoCache.has(logoKey)) return logoCache.get(logoKey);
       try {
-        const r = await fetch('logos/' + logoKey + '.png.b64');
+        const r = await authedFetch('logos/' + logoKey + '.png.b64');
         if (!r.ok) throw new Error('logo not found');
         const uri = 'data:image/png;base64,' + (await r.text()).trim();
         logoCache.set(logoKey, uri);
@@ -1353,9 +1389,11 @@
 
     async function loadBeatgraphDataAndFilters() {
       let raw = null;
-      for (const url of DATA_URLS) {
+      // Enforced mode: only the same-origin URL, never the public fallback.
+      const urls = gateEnforced() ? DATA_URLS.slice(0, 1) : DATA_URLS;
+      for (const url of urls) {
         try {
-          const res = await fetch(url, { cache: 'no-cache' });
+          const res = await authedFetch(url, { cache: 'no-cache' });
           if (res.ok) {
             const parsed = await res.json();
             if (parsed && Array.isArray(parsed.leagues)) { raw = parsed; break; }
